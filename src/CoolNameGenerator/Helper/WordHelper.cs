@@ -21,12 +21,18 @@ namespace CoolNameGenerator.Helper
                     : hasHyphen ? EnglishLettersByHyphen
                         : EnglishLetters;
 
-            var resourceLen = resourceChars.Length;
-
             var word = "";
             for (var index = 0; index < wordLength; index++)
             {
-                word += resourceChars[RandomNumber.Next(0, resourceLen - 1)];
+                // First and Last char of word must be has not hyphen or number
+                if (index == 0 || index == wordLength - 1)
+                {
+                    word += EnglishLetters[RandomNumber.Next(0, EnglishLetters.Length - 1)];
+                }
+                else
+                {
+                    word += resourceChars[RandomNumber.Next(0, resourceChars.Length - 1)];
+                }
             }
 
             return word;

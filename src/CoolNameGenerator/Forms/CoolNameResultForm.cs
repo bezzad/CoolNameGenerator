@@ -12,6 +12,8 @@ namespace CoolNameGenerator.Forms
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            txtResult.Clear();
+
             for (int i = 0; i < 300; i++)
             {
                 txtResult.Text += WordHelper.GenerateWord(RandomNumber.Next((int)numWordMinLen.Value, 
