@@ -88,6 +88,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Crossover.
+        /// </summary>
+        internal static string Crossover {
+            get {
+                return ResourceManager.GetString("Crossover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Display result realtime.
         /// </summary>
         internal static string DisplayRealtime {
@@ -115,11 +124,29 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mutation.
+        /// </summary>
+        internal static string Mutation {
+            get {
+                return ResourceManager.GetString("Mutation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Parallel Genetic Algorithm Toolbox.
         /// </summary>
         internal static string PGAToolbox {
             get {
                 return ResourceManager.GetString("PGAToolbox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Population Size.
+        /// </summary>
+        internal static string PopulationSize {
+            get {
+                return ResourceManager.GetString("PopulationSize", resourceCulture);
             }
         }
         

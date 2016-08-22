@@ -59,6 +59,12 @@
     <Compile Include="Forms\CoolNameResultForm.Designer.cs">
       <DependentUpon>CoolNameResultForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Graphics\WordLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Graphics\WordsPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Helper\RandomNumber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

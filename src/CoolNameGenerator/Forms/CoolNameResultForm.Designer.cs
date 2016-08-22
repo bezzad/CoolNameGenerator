@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.gbResult = new System.Windows.Forms.GroupBox();
-            this.txtResult = new System.Windows.Forms.RichTextBox();
             this.gbGAToolbox = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelWordToolbox = new System.Windows.Forms.FlowLayoutPanel();
@@ -43,7 +42,11 @@
             this.numWordMinLen = new System.Windows.Forms.NumericUpDown();
             this.chkDisplayRealtime = new System.Windows.Forms.CheckBox();
             this.panelGAToolbox = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numPopulationSize = new System.Windows.Forms.NumericUpDown();
             this.btnStart = new System.Windows.Forms.Button();
+            this.wpResults = new CoolNameGenerator.Graphics.WordsPanel();
             this.gbResult.SuspendLayout();
             this.gbGAToolbox.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -52,6 +55,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numWordMaxLen)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numWordMinLen)).BeginInit();
+            this.panelGAToolbox.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPopulationSize)).BeginInit();
             this.SuspendLayout();
             // 
             // gbResult
@@ -59,23 +65,13 @@
             this.gbResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbResult.Controls.Add(this.txtResult);
+            this.gbResult.Controls.Add(this.wpResults);
             this.gbResult.Location = new System.Drawing.Point(12, 276);
             this.gbResult.Name = "gbResult";
-            this.gbResult.Size = new System.Drawing.Size(800, 363);
+            this.gbResult.Size = new System.Drawing.Size(841, 363);
             this.gbResult.TabIndex = 0;
             this.gbResult.TabStop = false;
             this.gbResult.Text = "Result";
-            // 
-            // txtResult
-            // 
-            this.txtResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtResult.Font = new System.Drawing.Font("Segoe UI Emoji", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResult.Location = new System.Drawing.Point(3, 18);
-            this.txtResult.Name = "txtResult";
-            this.txtResult.Size = new System.Drawing.Size(794, 342);
-            this.txtResult.TabIndex = 0;
-            this.txtResult.Text = "";
             // 
             // gbGAToolbox
             // 
@@ -85,7 +81,7 @@
             this.gbGAToolbox.Controls.Add(this.btnStart);
             this.gbGAToolbox.Location = new System.Drawing.Point(12, 12);
             this.gbGAToolbox.Name = "gbGAToolbox";
-            this.gbGAToolbox.Size = new System.Drawing.Size(800, 258);
+            this.gbGAToolbox.Size = new System.Drawing.Size(841, 258);
             this.gbGAToolbox.TabIndex = 1;
             this.gbGAToolbox.TabStop = false;
             this.gbGAToolbox.Text = "PGAToolbox";
@@ -99,7 +95,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 18);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(794, 178);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(835, 178);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // panelWordToolbox
@@ -226,17 +222,58 @@
             // 
             // panelGAToolbox
             // 
+            this.panelGAToolbox.Controls.Add(this.panel3);
             this.panelGAToolbox.Location = new System.Drawing.Point(271, 8);
             this.panelGAToolbox.Name = "panelGAToolbox";
             this.panelGAToolbox.Size = new System.Drawing.Size(387, 151);
             this.panelGAToolbox.TabIndex = 8;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.numPopulationSize);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(261, 29);
+            this.panel3.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "PopulationSize";
+            // 
+            // numPopulationSize
+            // 
+            this.numPopulationSize.Location = new System.Drawing.Point(157, 4);
+            this.numPopulationSize.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.numPopulationSize.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numPopulationSize.Name = "numPopulationSize";
+            this.numPopulationSize.Size = new System.Drawing.Size(99, 22);
+            this.numPopulationSize.TabIndex = 3;
+            this.numPopulationSize.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // btnStart
             // 
             this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStart.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(617, 202);
+            this.btnStart.Location = new System.Drawing.Point(658, 202);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(177, 50);
             this.btnStart.TabIndex = 0;
@@ -244,16 +281,28 @@
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
+            // wpResults
+            // 
+            this.wpResults.AutoScroll = true;
+            this.wpResults.AutoSize = true;
+            this.wpResults.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.wpResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wpResults.Location = new System.Drawing.Point(3, 18);
+            this.wpResults.Name = "wpResults";
+            this.wpResults.Size = new System.Drawing.Size(835, 342);
+            this.wpResults.TabIndex = 0;
+            // 
             // CoolNameResultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 651);
+            this.ClientSize = new System.Drawing.Size(865, 651);
             this.Controls.Add(this.gbGAToolbox);
             this.Controls.Add(this.gbResult);
             this.Name = "CoolNameResultForm";
             this.Text = "CoolNameGenerator_PGA";
             this.gbResult.ResumeLayout(false);
+            this.gbResult.PerformLayout();
             this.gbGAToolbox.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panelWordToolbox.ResumeLayout(false);
@@ -264,6 +313,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numWordMinLen)).EndInit();
+            this.panelGAToolbox.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPopulationSize)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -272,7 +325,6 @@
 
         private System.Windows.Forms.GroupBox gbResult;
         private System.Windows.Forms.GroupBox gbGAToolbox;
-        private System.Windows.Forms.RichTextBox txtResult;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.CheckBox chkHasHyphen;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
@@ -286,6 +338,10 @@
         private System.Windows.Forms.CheckBox chkDisplayRealtime;
         private System.Windows.Forms.FlowLayoutPanel panelWordToolbox;
         private System.Windows.Forms.FlowLayoutPanel panelGAToolbox;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numPopulationSize;
+        private Graphics.WordsPanel wpResults;
     }
 }
 

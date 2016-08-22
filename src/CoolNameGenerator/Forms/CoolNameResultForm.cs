@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using CoolNameGenerator.Graphics;
 using CoolNameGenerator.Helper;
 
 namespace CoolNameGenerator.Forms
@@ -10,15 +12,29 @@ namespace CoolNameGenerator.Forms
             InitializeComponent();
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private async void btnStart_Click(object sender, EventArgs e)
         {
-            txtResult.Clear();
+            wpResults.SetWordsCount((int)numPopulationSize.Value);
 
-            for (int i = 0; i < 300; i++)
+            await Task.Delay(1000);
+            for (int j = 0; j < 100; j++)
             {
-                txtResult.Text += WordHelper.GenerateWord(RandomNumber.Next((int)numWordMinLen.Value, 
-                    (int)numWordMaxLen.Value), chkHasNumeric.Checked, chkHasHyphen.Checked) + Environment.NewLine;
+                await Task.Delay(100);
+
+                for (var i = 0; i < numPopulationSize.Value; i++)
+                {
+                    wpResults.WordsLabels[i].Text = WordHelper.GenerateWord(RandomNumber.Next((int)numWordMinLen.Value,
+                        (int)numWordMaxLen.Value), chkHasNumeric.Checked, chkHasHyphen.Checked);
+                }
+
+                // Check cross thread exception:
+                //Parallel.For(0, (int) numPopulationSize.Value, (l, state) =>
+                //{
+                //    wpResults.WordsLabels[l].Text = WordHelper.GenerateWord(RandomNumber.Next((int)numWordMinLen.Value,
+                //        (int)numWordMaxLen.Value), chkHasNumeric.Checked, chkHasHyphen.Checked);
+                //});
             }
+
         }
     }
 }
