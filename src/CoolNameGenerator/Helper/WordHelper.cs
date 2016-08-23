@@ -8,6 +8,9 @@ namespace CoolNameGenerator.Helper
         public const int MaxHyphenUsage = 4;
         public const char HyphenChar = '-';
 
+        public static readonly char[] NotIgnoreChars = { ' ', ',', '|', '~', '!', '@', '#', '$', '%', '^', '&',
+            '*', '(', ')', '-', '=', '+', '_', '/', '\\', '\r', '\n', '\b', '\t', '[', ']', '{', '}', '?', '>', '<', '.' };
+
         public static char[] EnglishLetters { get; } = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
         public static char[] NumericLetters { get; } = "0123456789".ToCharArray();
         public static char[] EnglishNumericLetters { get; } = EnglishLetters.Concat(NumericLetters).ToArray();

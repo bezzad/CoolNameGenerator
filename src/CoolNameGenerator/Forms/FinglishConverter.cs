@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CoolNameGenerator.Helper;
 using CoolNameGenerator.Properties;
 
 namespace CoolNameGenerator.Forms
@@ -55,7 +56,7 @@ namespace CoolNameGenerator.Forms
             var row = 1;
             foreach (var name in persianNames.Distinct().SkipWhile(string.IsNullOrEmpty))
             {
-                dgvWords.Rows.Add(row++, name, "");
+                dgvWords.Rows.Add(row++, name.Trim().Trim(WordHelper.NotIgnoreChars), "");
             }
         }
     }
