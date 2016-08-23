@@ -59,6 +59,12 @@
     <Compile Include="Forms\CoolNameResultForm.Designer.cs">
       <DependentUpon>CoolNameResultForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FinglishConverter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FinglishConverter.Designer.cs">
+      <DependentUpon>FinglishConverter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Graphics\WordLabel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -73,10 +79,13 @@
     <EmbeddedResource Include="Forms\CoolNameResultForm.resx">
       <DependentUpon>CoolNameResultForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FinglishConverter.resx">
+      <DependentUpon>FinglishConverter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localization.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Localization1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\Localization.Designer.cs">
       <AutoGen>True</AutoGen>

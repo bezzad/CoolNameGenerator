@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using CoolNameGenerator.Graphics;
 using CoolNameGenerator.Helper;
 
 namespace CoolNameGenerator.Forms
@@ -28,6 +27,11 @@ namespace CoolNameGenerator.Forms
                 }
             }
 
+        }
+
+        private void finglishConverterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FinglishConverter().ShowDialog();
         }
     }
 }

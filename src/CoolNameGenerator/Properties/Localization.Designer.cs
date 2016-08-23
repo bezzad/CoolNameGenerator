@@ -133,6 +133,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Import Persian Words.
+        /// </summary>
+        internal static string ImportPersianWords {
+            get {
+                return ResourceManager.GetString("ImportPersianWords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mutation.
         /// </summary>
         internal static string Mutation {
@@ -169,11 +178,29 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Setting.
+        /// </summary>
+        internal static string Setting {
+            get {
+                return ResourceManager.GetString("Setting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start Generator.
         /// </summary>
         internal static string Start {
             get {
                 return ResourceManager.GetString("Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toolbox.
+        /// </summary>
+        internal static string Toolbox {
+            get {
+                return ResourceManager.GetString("Toolbox", resourceCulture);
             }
         }
         
