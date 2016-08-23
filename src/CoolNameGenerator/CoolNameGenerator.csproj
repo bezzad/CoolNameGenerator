@@ -65,6 +65,7 @@
     <Compile Include="Graphics\WordsPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Helper\Extentions.cs" />
     <Compile Include="Helper\RandomNumber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoolNameGenerator.Helper;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -32,5 +33,19 @@ namespace CoolNameGenerator.Graphics
             ForeColor = Color.Brown;
             Font = new System.Drawing.Font("Segoe UI Symbol", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         }
+
+        public override string Text
+        {
+            get { return base.Text; }
+            set
+            {
+                this.InvokeIfRequired(() =>
+                {
+                    base.Text = value;
+                });
+            }
+        }
+
+
     }
 }

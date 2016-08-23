@@ -26,13 +26,6 @@ namespace CoolNameGenerator.Forms
                     wpResults.WordsLabels[i].Text = WordHelper.GenerateWord(RandomNumber.Next((int)numWordMinLen.Value,
                         (int)numWordMaxLen.Value), chkHasNumeric.Checked, chkHasHyphen.Checked);
                 }
-
-                // Check cross thread exception:
-                //Parallel.For(0, (int) numPopulationSize.Value, (l, state) =>
-                //{
-                //    wpResults.WordsLabels[l].Text = WordHelper.GenerateWord(RandomNumber.Next((int)numWordMinLen.Value,
-                //        (int)numWordMaxLen.Value), chkHasNumeric.Checked, chkHasHyphen.Checked);
-                //});
             }
 
         }
