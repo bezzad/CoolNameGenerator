@@ -106,6 +106,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Persian To Finglish Converter.
+        /// </summary>
+        internal static string FinglishConverter {
+            get {
+                return ResourceManager.GetString("FinglishConverter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Has hyphen -.
         /// </summary>
         internal static string HasHyphen {

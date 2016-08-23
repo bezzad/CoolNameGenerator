@@ -159,4 +159,7 @@
   <data name="PopulationSize" xml:space="preserve">
     <value>Population Size</value>
   </data>
+  <data name="FinglishConverter" xml:space="preserve">
+    <value>Persian To Finglish Converter</value>
+  </data>
 </root>
