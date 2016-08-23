@@ -37,8 +37,8 @@ namespace CoolNameGenerator.Forms
         {
             using (var ofd = new OpenFileDialog())
             {
-                //ofd.Title = Localization.OpenPersianFileDialogTitle;
-                //ofd.Filter = Localization.FilterWordFiles;
+                ofd.Title = Localization.OpenPersianFileDialogTitle;
+                ofd.Filter = Localization.FilterWordFiles;
                 ofd.CheckFileExists = true;
                 return ofd.ShowDialog() == DialogResult.OK ? ofd.FileName : null;
             }

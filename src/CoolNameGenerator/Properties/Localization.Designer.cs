@@ -22,7 +22,7 @@ namespace CoolNameGenerator.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Localization {
+    public class Localization {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace CoolNameGenerator.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CoolNameGenerator.Properties.Localization", typeof(Localization).Assembly);
@@ -51,7 +51,7 @@ namespace CoolNameGenerator.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace CoolNameGenerator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Argument MinValue must be less than MaxValue.
         /// </summary>
-        internal static string Argument_MinMaxValue {
+        public static string Argument_MinMaxValue {
             get {
                 return ResourceManager.GetString("Argument_MinMaxValue", resourceCulture);
             }
@@ -72,16 +72,25 @@ namespace CoolNameGenerator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to The Argument out Of range and must be positive.
         /// </summary>
-        internal static string ArgumentOutOfRange_MustBePositive {
+        public static string ArgumentOutOfRange_MustBePositive {
             get {
                 return ResourceManager.GetString("ArgumentOutOfRange_MustBePositive", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Convert.
+        /// </summary>
+        public static string Convert {
+            get {
+                return ResourceManager.GetString("Convert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cool Name Generator (PGA).
         /// </summary>
-        internal static string CoolNameGenerator_PGA {
+        public static string CoolNameGenerator_PGA {
             get {
                 return ResourceManager.GetString("CoolNameGenerator_PGA", resourceCulture);
             }
@@ -90,7 +99,7 @@ namespace CoolNameGenerator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Crossover.
         /// </summary>
-        internal static string Crossover {
+        public static string Crossover {
             get {
                 return ResourceManager.GetString("Crossover", resourceCulture);
             }
@@ -99,16 +108,25 @@ namespace CoolNameGenerator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Display result realtime.
         /// </summary>
-        internal static string DisplayRealtime {
+        public static string DisplayRealtime {
             get {
                 return ResourceManager.GetString("DisplayRealtime", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Word Files (*.txt, *.csv)|*.txt;*.csv.
+        /// </summary>
+        public static string FilterWordFiles {
+            get {
+                return ResourceManager.GetString("FilterWordFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Persian To Finglish Converter.
         /// </summary>
-        internal static string FinglishConverter {
+        public static string FinglishConverter {
             get {
                 return ResourceManager.GetString("FinglishConverter", resourceCulture);
             }
@@ -117,7 +135,7 @@ namespace CoolNameGenerator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Has hyphen -.
         /// </summary>
-        internal static string HasHyphen {
+        public static string HasHyphen {
             get {
                 return ResourceManager.GetString("HasHyphen", resourceCulture);
             }
@@ -126,7 +144,7 @@ namespace CoolNameGenerator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Has numeric letters.
         /// </summary>
-        internal static string HasNumeric {
+        public static string HasNumeric {
             get {
                 return ResourceManager.GetString("HasNumeric", resourceCulture);
             }
@@ -135,7 +153,7 @@ namespace CoolNameGenerator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Import Persian Words.
         /// </summary>
-        internal static string ImportPersianWords {
+        public static string ImportPersianWords {
             get {
                 return ResourceManager.GetString("ImportPersianWords", resourceCulture);
             }
@@ -144,16 +162,25 @@ namespace CoolNameGenerator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Mutation.
         /// </summary>
-        internal static string Mutation {
+        public static string Mutation {
             get {
                 return ResourceManager.GetString("Mutation", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open Persian Words File.
+        /// </summary>
+        public static string OpenPersianFileDialogTitle {
+            get {
+                return ResourceManager.GetString("OpenPersianFileDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Parallel Genetic Algorithm Toolbox.
         /// </summary>
-        internal static string PGAToolbox {
+        public static string PGAToolbox {
             get {
                 return ResourceManager.GetString("PGAToolbox", resourceCulture);
             }
@@ -162,7 +189,7 @@ namespace CoolNameGenerator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Population Size.
         /// </summary>
-        internal static string PopulationSize {
+        public static string PopulationSize {
             get {
                 return ResourceManager.GetString("PopulationSize", resourceCulture);
             }
@@ -171,16 +198,25 @@ namespace CoolNameGenerator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Result.
         /// </summary>
-        internal static string Result {
+        public static string Result {
             get {
                 return ResourceManager.GetString("Result", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save Result.
+        /// </summary>
+        public static string SaveResult {
+            get {
+                return ResourceManager.GetString("SaveResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Setting.
         /// </summary>
-        internal static string Setting {
+        public static string Setting {
             get {
                 return ResourceManager.GetString("Setting", resourceCulture);
             }
@@ -189,7 +225,7 @@ namespace CoolNameGenerator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Start Generator.
         /// </summary>
-        internal static string Start {
+        public static string Start {
             get {
                 return ResourceManager.GetString("Start", resourceCulture);
             }
@@ -198,7 +234,7 @@ namespace CoolNameGenerator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Toolbox.
         /// </summary>
-        internal static string Toolbox {
+        public static string Toolbox {
             get {
                 return ResourceManager.GetString("Toolbox", resourceCulture);
             }
@@ -207,7 +243,7 @@ namespace CoolNameGenerator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Word maximum length.
         /// </summary>
-        internal static string WordMaxLen {
+        public static string WordMaxLen {
             get {
                 return ResourceManager.GetString("WordMaxLen", resourceCulture);
             }
@@ -216,7 +252,7 @@ namespace CoolNameGenerator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Word minimum length.
         /// </summary>
-        internal static string WordMinLen {
+        public static string WordMinLen {
             get {
                 return ResourceManager.GetString("WordMinLen", resourceCulture);
             }

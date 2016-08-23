@@ -117,26 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CoolNameGenerator_PGA" xml:space="preserve">
-    <value>Cool Name Generator (PGA)</value>
-  </data>
-  <data name="PGAToolbox" xml:space="preserve">
-    <value>Parallel Genetic Algorithm Toolbox</value>
-  </data>
-  <data name="Result" xml:space="preserve">
-    <value>Result</value>
-  </data>
-  <data name="Start" xml:space="preserve">
-    <value>Start Generator</value>
-  </data>
   <data name="ArgumentOutOfRange_MustBePositive" xml:space="preserve">
     <value>The Argument out Of range and must be positive</value>
   </data>
   <data name="Argument_MinMaxValue" xml:space="preserve">
     <value>Argument MinValue must be less than MaxValue</value>
   </data>
+  <data name="Convert" xml:space="preserve">
+    <value>Convert</value>
+  </data>
+  <data name="CoolNameGenerator_PGA" xml:space="preserve">
+    <value>Cool Name Generator (PGA)</value>
+  </data>
+  <data name="Crossover" xml:space="preserve">
+    <value>Crossover</value>
+  </data>
   <data name="DisplayRealtime" xml:space="preserve">
     <value>Display result realtime</value>
+  </data>
+  <data name="FilterWordFiles" xml:space="preserve">
+    <value>Word Files (*.txt, *.csv)|*.txt;*.csv</value>
+  </data>
+  <data name="FinglishConverter" xml:space="preserve">
+    <value>Persian To Finglish Converter</value>
   </data>
   <data name="HasHyphen" xml:space="preserve">
     <value>Has hyphen -</value>
@@ -144,35 +147,23 @@
   <data name="HasNumeric" xml:space="preserve">
     <value>Has numeric letters</value>
   </data>
-  <data name="WordMaxLen" xml:space="preserve">
-    <value>Word maximum length</value>
-  </data>
-  <data name="WordMinLen" xml:space="preserve">
-    <value>Word minimum length</value>
-  </data>
-  <data name="Crossover" xml:space="preserve">
-    <value>Crossover</value>
+  <data name="ImportPersianWords" xml:space="preserve">
+    <value>Import Persian Words</value>
   </data>
   <data name="Mutation" xml:space="preserve">
     <value>Mutation</value>
   </data>
+  <data name="OpenPersianFileDialogTitle" xml:space="preserve">
+    <value>Open Persian Words File</value>
+  </data>
+  <data name="PGAToolbox" xml:space="preserve">
+    <value>Parallel Genetic Algorithm Toolbox</value>
+  </data>
   <data name="PopulationSize" xml:space="preserve">
     <value>Population Size</value>
   </data>
-  <data name="FinglishConverter" xml:space="preserve">
-    <value>Persian To Finglish Converter</value>
-  </data>
-  <data name="Convert" xml:space="preserve">
-    <value>Convert</value>
-  </data>
-  <data name="FilterWordFiles" xml:space="preserve">
-    <value>Word Files (*.txt, *.csv)|*.txt;*.csv</value>
-  </data>
-  <data name="ImportPersianWords" xml:space="preserve">
-    <value>Import Persian Words</value>
-  </data>
-  <data name="OpenPersianFileDialogTitle" xml:space="preserve">
-    <value>Open Persian Words File</value>
+  <data name="Result" xml:space="preserve">
+    <value>Result</value>
   </data>
   <data name="SaveResult" xml:space="preserve">
     <value>Save Result</value>
@@ -180,7 +171,16 @@
   <data name="Setting" xml:space="preserve">
     <value>Setting</value>
   </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start Generator</value>
+  </data>
   <data name="Toolbox" xml:space="preserve">
     <value>Toolbox</value>
+  </data>
+  <data name="WordMaxLen" xml:space="preserve">
+    <value>Word maximum length</value>
+  </data>
+  <data name="WordMinLen" xml:space="preserve">
+    <value>Word minimum length</value>
   </data>
 </root>
