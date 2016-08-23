@@ -141,6 +141,9 @@
   <data name="FinglishConverter" xml:space="preserve">
     <value>Persian To Finglish Converter</value>
   </data>
+  <data name="FinglishName" xml:space="preserve">
+    <value>Finglish Name</value>
+  </data>
   <data name="HasHyphen" xml:space="preserve">
     <value>Has hyphen -</value>
   </data>
@@ -155,6 +158,9 @@
   </data>
   <data name="OpenPersianFileDialogTitle" xml:space="preserve">
     <value>Open Persian Words File</value>
+  </data>
+  <data name="PersianName" xml:space="preserve">
+    <value>Persian Name</value>
   </data>
   <data name="PGAToolbox" xml:space="preserve">
     <value>Parallel Genetic Algorithm Toolbox</value>
@@ -182,5 +188,8 @@
   </data>
   <data name="WordMinLen" xml:space="preserve">
     <value>Word minimum length</value>
+  </data>
+  <data name="Row" xml:space="preserve">
+    <value>Row</value>
   </data>
 </root>

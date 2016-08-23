@@ -15,7 +15,7 @@ namespace CoolNameGenerator.Forms
             Load += (s, e) => LocalizingControl(this);
         }
 
-        
+
         protected virtual void LocalizingControl(Control ctrl)
         {
             if (string.IsNullOrEmpty(ctrl?.Text)) return;
@@ -24,17 +24,35 @@ namespace CoolNameGenerator.Forms
 
             var controls = GetControls(ctrl);
 
-            foreach (Control c in controls.SkipWhile(x => x.GetType() == typeof(NumericUpDown)))
+            foreach (Control c in controls)
             {
                 if (c.GetType() == typeof(MenuStrip))
                 {
                     LocalizingMenuStrip((MenuStrip)c);
-                    continue;
                 }
-                var replacmentText = Localization.ResourceManager.GetString(c.Text);
+                else if (c.GetType() == typeof(DataGridView))
+                {
+                    LocalizingGridColumns((DataGridView)c);
+                }
+                else
+                {
+                    var replacmentText = Localization.ResourceManager.GetString(c.Text);
+                    if (!string.IsNullOrEmpty(replacmentText))
+                    {
+                        c.Text = replacmentText;
+                    }
+                }
+            }
+        }
+
+        protected virtual void LocalizingGridColumns(DataGridView dgv)
+        {
+            foreach (DataGridViewColumn col in dgv.Columns)
+            {
+                var replacmentText = Localization.ResourceManager.GetString(col.HeaderText);
                 if (!string.IsNullOrEmpty(replacmentText))
                 {
-                    c.Text = replacmentText;
+                    col.HeaderText = replacmentText;
                 }
             }
         }

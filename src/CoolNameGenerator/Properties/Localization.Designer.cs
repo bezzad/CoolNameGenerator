@@ -133,6 +133,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Finglish Name.
+        /// </summary>
+        public static string FinglishName {
+            get {
+                return ResourceManager.GetString("FinglishName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Has hyphen -.
         /// </summary>
         public static string HasHyphen {
@@ -178,6 +187,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Persian Name.
+        /// </summary>
+        public static string PersianName {
+            get {
+                return ResourceManager.GetString("PersianName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Parallel Genetic Algorithm Toolbox.
         /// </summary>
         public static string PGAToolbox {
@@ -201,6 +219,15 @@ namespace CoolNameGenerator.Properties {
         public static string Result {
             get {
                 return ResourceManager.GetString("Result", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Row.
+        /// </summary>
+        public static string Row {
+            get {
+                return ResourceManager.GetString("Row", resourceCulture);
             }
         }
         
