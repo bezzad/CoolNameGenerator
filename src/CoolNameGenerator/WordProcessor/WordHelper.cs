@@ -1,6 +1,7 @@
 ﻿using System.Linq;
+using CoolNameGenerator.Helper;
 
-namespace CoolNameGenerator.Helper
+namespace CoolNameGenerator.WordProcessor
 {
     public static class WordHelper
     {

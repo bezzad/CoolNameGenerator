@@ -75,7 +75,8 @@
     <Compile Include="Helper\RandomNumber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Helper\WordHelper.cs" />
+    <Compile Include="WordProcessor\FinglishConverterApi.cs" />
+    <Compile Include="WordProcessor\WordHelper.cs" />
     <Compile Include="Properties\Localization.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

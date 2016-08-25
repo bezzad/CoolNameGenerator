@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using CoolNameGenerator.Helper;
+using CoolNameGenerator.WordProcessor;
 
 namespace CoolNameGenerator.Forms
 {

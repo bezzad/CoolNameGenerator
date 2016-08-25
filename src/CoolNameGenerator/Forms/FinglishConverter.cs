@@ -10,11 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoolNameGenerator.Helper;
 using CoolNameGenerator.Properties;
+using CoolNameGenerator.WordProcessor;
 
 namespace CoolNameGenerator.Forms
 {
     public partial class FinglishConverter : BaseForm
     {
+        private List<Tuple<string, string>> _words;
+
         public FinglishConverter()
         {
             InitializeComponent();
@@ -37,7 +40,9 @@ namespace CoolNameGenerator.Forms
 
         private void btnConvert_Click(object sender, EventArgs e)
         {
-
+            var api = new FinglishConverterApi();
+            var result = api.GetFinglish(_words.Select(x => x.Item1).ToArray());
+            
         }
 
         private string GetPersianWordsFilePath()
@@ -53,11 +58,17 @@ namespace CoolNameGenerator.Forms
 
         private void FillGrid(string[] persianNames)
         {
+            _words = new List<Tuple<string, string>>();
+
             var row = 1;
-            foreach (var name in persianNames.Distinct().SkipWhile(string.IsNullOrEmpty))
+            foreach (var name in persianNames.SelectMany(x => x.Split(WordHelper.NotIgnoreChars)).Distinct().SkipWhile(string.IsNullOrEmpty))
             {
-                dgvWords.Rows.Add(row++, name.Trim().Trim(WordHelper.NotIgnoreChars), "");
+                var word = name.Trim(WordHelper.NotIgnoreChars).Trim();
+                _words.Add(Tuple.Create(word, ""));
+                dgvWords.Rows.Add(row++, word, "");
             }
+
+            btnConvert.Enabled = true;
         }
     }
 }
