@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GA.Randomizations;
 using CoolNameGenerator.Helper;
 
@@ -23,8 +24,7 @@ namespace CoolNameGenerator.Forms
 
                 for (var i = 0; i < numPopulationSize.Value; i++)
                 {
-                    wpResults.WordsLabels[i].Text = RandomizationWord.GenerateWord(FastRandom.Next((int)numWordMinLen.Value,
-                        (int)numWordMaxLen.Value), chkHasNumeric.Checked, chkHasHyphen.Checked);
+                    wpResults.WordsLabels[i].Text = new ChromosomeWord(FastRandom.Next((int)numWordMinLen.Value, (int)numWordMaxLen.Value), chkHasNumeric.Checked, chkHasHyphen.Checked).ToString();
                 }
             }
 

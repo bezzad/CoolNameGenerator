@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GA.Randomizations;
 using CoolNameGenerator.Properties;
 using CoolNameGenerator.Helper;
@@ -133,7 +134,7 @@ namespace CoolNameGenerator.Forms
 
             var row = 1;
             foreach (var name in persianNames.SelectMany(x =>
-                new string(x.Where(w => w != '\t' && w != ' ').ToArray()).Split(RandomizationWord.NotIgnoreChars)).Distinct())
+                new string(x.Where(w => w != '\t' && w != ' ').ToArray()).Split(ChromosomeWord.NotIgnoreChars)).Distinct())
             {
                 var isFinglishedWord = name.Contains(':');
                 var persian = isFinglishedWord ? name.Substring(name.IndexOf(':') + 1) : name;
