@@ -142,6 +142,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GetFinglish Exception!.
+        /// </summary>
+        public static string GetFinglish_Exception {
+            get {
+                return ResourceManager.GetString("GetFinglish_Exception", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Has hyphen -.
         /// </summary>
         public static string HasHyphen {
@@ -228,6 +237,15 @@ namespace CoolNameGenerator.Properties {
         public static string Row {
             get {
                 return ResourceManager.GetString("Row", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save Finglish Words File.
+        /// </summary>
+        public static string SaveFinglishWordsFileDialogTitle {
+            get {
+                return ResourceManager.GetString("SaveFinglishWordsFileDialogTitle", resourceCulture);
             }
         }
         

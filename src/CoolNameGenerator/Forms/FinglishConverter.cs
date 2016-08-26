@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
-using CoolNameGenerator.Helper;
 using CoolNameGenerator.Properties;
 using CoolNameGenerator.WordProcessor;
 
@@ -16,7 +14,7 @@ namespace CoolNameGenerator.Forms
 {
     public partial class FinglishConverter : BaseForm
     {
-        private List<Tuple<string, string>> _words;
+        private Dictionary<string, string> _words;
 
         public FinglishConverter()
         {
@@ -35,17 +33,41 @@ namespace CoolNameGenerator.Forms
 
         private void btnSaveResult_Click(object sender, EventArgs e)
         {
-
+            var path = GetWordsStorageFilePath();
+            if (path != null)
+            {
+                File.WriteAllLines(path, GetWordsByFormat());
+                Process.Start(path);
+            }
         }
 
-        private void btnConvert_Click(object sender, EventArgs e)
+        private async void btnConvert_Click(object sender, EventArgs e)
         {
+            btnImportPersianWords.Enabled = false;
             var api = new FinglishConverterApi();
-            var result = api.GetFinglish(_words.Select(x => x.Item1).ToArray());
-            
+            api.ProgressChanged += Api_ProgressChanged;
+            api.ProgressCompleted += (s, ea) => btnImportPersianWords.Enabled = true;
+            var persians = _words.Select(x => x.Key).ToArray();
+            progConvert.Maximum = persians.Length;
+            progConvert.Value = 0;
+            var result = await api.GetFinglishAsync(persians);
         }
 
-        private string GetPersianWordsFilePath()
+        private void Api_ProgressChanged(string persian, string finglish, int row, int count)
+        {
+            _words[persian] = finglish;
+            progConvert.Value++;
+            foreach (DataGridViewRow dgvRow in dgvWords.Rows)
+            {
+                if (((string)dgvRow.Cells["colPersianName"].Value).Equals(persian, StringComparison.OrdinalIgnoreCase))
+                {
+                    dgvRow.Cells["colFinglishName"].Value = finglish;
+                    dgvRow.DefaultCellStyle.BackColor = finglish == null ? Color.Brown : Color.Aquamarine;
+                }
+            }
+        }
+
+        private static string GetPersianWordsFilePath()
         {
             using (var ofd = new OpenFileDialog())
             {
@@ -56,19 +78,36 @@ namespace CoolNameGenerator.Forms
             }
         }
 
-        private void FillGrid(string[] persianNames)
+        private static string GetWordsStorageFilePath()
         {
-            _words = new List<Tuple<string, string>>();
+            using (var sfd = new SaveFileDialog())
+            {
+                sfd.Title = Localization.SaveFinglishWordsFileDialogTitle;
+                sfd.Filter = Localization.FilterWordFiles;
+                return sfd.ShowDialog() == DialogResult.OK ? sfd.FileName : null;
+            }
+        }
+
+        private void FillGrid(IEnumerable<string> persianNames)
+        {
+            _words = new Dictionary<string, string>();
 
             var row = 1;
             foreach (var name in persianNames.SelectMany(x => x.Split(WordHelper.NotIgnoreChars)).Distinct().SkipWhile(string.IsNullOrEmpty))
             {
                 var word = name.Trim(WordHelper.NotIgnoreChars).Trim();
-                _words.Add(Tuple.Create(word, ""));
+                _words[word] = "";
                 dgvWords.Rows.Add(row++, word, "");
             }
 
             btnConvert.Enabled = true;
+        }
+
+        public string[] GetWordsByFormat()
+        {
+            var result = _words.Select(kv => $"{kv.Key}\t\t\t:\t{kv.Value}").ToArray();
+
+            return result;
         }
     }
 }

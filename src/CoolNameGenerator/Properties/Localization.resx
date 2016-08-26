@@ -192,4 +192,10 @@
   <data name="Row" xml:space="preserve">
     <value>Row</value>
   </data>
+  <data name="GetFinglish_Exception" xml:space="preserve">
+    <value>GetFinglish Exception!</value>
+  </data>
+  <data name="SaveFinglishWordsFileDialogTitle" xml:space="preserve">
+    <value>Save Finglish Words File</value>
+  </data>
 </root>
