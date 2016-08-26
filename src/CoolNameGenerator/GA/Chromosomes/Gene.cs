@@ -1,19 +1,19 @@
 ﻿using System;
 
-namespace CoolNameGenerator.PGA.Chromosomes
+namespace CoolNameGenerator.GA.Chromosomes
 {
     /// <summary>
     /// Represents a gene of a chromosome.
     /// </summary>
-    public struct Gene<T> : IEquatable<Gene<T>>
+    public struct Gene : IEquatable<Gene>
     {
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CoolNameGenerator.PGA.Chromosomes.Gene"/> struct.
+        /// Initializes a new instance of the <see cref="CoolNameGenerator.GA.Chromosomes.Gene"/> struct.
         /// </summary>
         /// <param name="val">The gene initial value.</param>
-        public Gene(T val)
+        public Gene(object val)
         {
             Value = val;
         }
@@ -26,7 +26,7 @@ namespace CoolNameGenerator.PGA.Chromosomes
         /// Gets the value.
         /// </summary>
         /// <value>The value.</value>
-        public T Value { get; }
+        public object Value { get; }
 
         #endregion
 
@@ -40,7 +40,7 @@ namespace CoolNameGenerator.PGA.Chromosomes
         /// <returns>
         /// The result of the operator.
         /// </returns>
-        public static bool operator ==(Gene<T> first, Gene<T> second)
+        public static bool operator ==(Gene first, Gene second)
         {
             return first.Equals(second);
         }
@@ -53,42 +53,42 @@ namespace CoolNameGenerator.PGA.Chromosomes
         /// <returns>
         /// The result of the operator.
         /// </returns>
-        public static bool operator !=(Gene<T> first, Gene<T> second)
+        public static bool operator !=(Gene first, Gene second)
         {
             return !(first == second);
         }
 
         /// <summary>
-        /// Returns a <see cref="System.String"/> that represents the current <see cref="GeneticSharp.Domain.Chromosomes.Gene"/>.
+        /// Returns a <see cref="System.String"/> that represents the current <see cref="CoolNameGenerator.GA.Chromosomes.Gene"/>.
         /// </summary>
-        /// <returns>A <see cref="System.String"/> that represents the current <see cref="GeneticSharp.Domain.Chromosomes.Gene"/>.</returns>
+        /// <returns>A <see cref="System.String"/> that represents the current <see cref="CoolNameGenerator.GA.Chromosomes.Gene"/>.</returns>
         public override string ToString()
         {
             return Value?.ToString() ?? string.Empty;
         }
 
         /// <summary>
-        /// Determines whether the specified <see cref="CoolNameGenerator.PGA.Chromosomes.Gene"/> is equal to the current <see cref="CoolNameGenerator.PGA.Chromosomes.Gene"/>.
+        /// Determines whether the specified <see cref="CoolNameGenerator.GA.Chromosomes.Gene"/> is equal to the current <see cref="CoolNameGenerator.GA.Chromosomes.Gene"/>.
         /// </summary>
-        /// <param name="other">The <see cref="CoolNameGenerator.PGA.Chromosomes.Gene"/> to compare with the current <see cref="CoolNameGenerator.PGA.Chromosomes.Gene"/>.</param>
-        /// <returns><c>true</c> if the specified <see cref="CoolNameGenerator.PGA.Chromosomes.Gene"/> is equal to the current
-        /// <see cref="CoolNameGenerator.PGA.Chromosomes.Gene"/>; otherwise, <c>false</c>.</returns>
-        public bool Equals(Gene<T> other)
+        /// <param name="other">The <see cref="CoolNameGenerator.GA.Chromosomes.Gene"/> to compare with the current <see cref="CoolNameGenerator.GA.Chromosomes.Gene"/>.</param>
+        /// <returns><c>true</c> if the specified <see cref="CoolNameGenerator.GA.Chromosomes.Gene"/> is equal to the current
+        /// <see cref="CoolNameGenerator.GA.Chromosomes.Gene"/>; otherwise, <c>false</c>.</returns>
+        public bool Equals(Gene other)
         {
             return Value.Equals(other.Value);
         }
 
         /// <summary>
-        /// Determines whether the specified <see cref="System.Object"/> is equal to the current <see cref="GeneticSharp.Domain.Chromosomes.Gene"/>.
+        /// Determines whether the specified <see cref="System.Object"/> is equal to the current <see cref="CoolNameGenerator.GA.Chromosomes.Gene"/>.
         /// </summary>
-        /// <param name="obj">The <see cref="System.Object"/> to compare with the current <see cref="GeneticSharp.Domain.Chromosomes.Gene"/>.</param>
+        /// <param name="obj">The <see cref="System.Object"/> to compare with the current <see cref="CoolNameGenerator.GA.Chromosomes.Gene"/>.</param>
         /// <returns><c>true</c> if the specified <see cref="System.Object"/> is equal to the current
-        /// <see cref="GeneticSharp.Domain.Chromosomes.Gene"/>; otherwise, <c>false</c>.</returns>
+        /// <see cref="CoolNameGenerator.GA.Chromosomes.Gene"/>; otherwise, <c>false</c>.</returns>
         public override bool Equals(object obj)
         {
-            if (obj is Gene<T>)
+            if (obj is Gene)
             {
-                var other = (Gene<T>)obj;
+                var other = (Gene)obj;
 
                 return Value.Equals(other.Value);
             }
@@ -104,7 +104,7 @@ namespace CoolNameGenerator.PGA.Chromosomes
         /// </returns>
         public override int GetHashCode()
         {
-            return Value == null ? 0 : Value.GetHashCode();
+            return Value?.GetHashCode() ?? 0;
         }
 
         #endregion

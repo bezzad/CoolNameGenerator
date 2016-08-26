@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using CoolNameGenerator.PGA.Randomizations;
+using CoolNameGenerator.GA.Randomizations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Test.GA.Randomizations

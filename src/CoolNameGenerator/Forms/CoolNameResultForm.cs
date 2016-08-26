@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using CoolNameGenerator.GA.Randomizations;
 using CoolNameGenerator.Helper;
-using CoolNameGenerator.PGA.Randomizations;
 
 namespace CoolNameGenerator.Forms
 {

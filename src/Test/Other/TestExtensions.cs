@@ -3,8 +3,8 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using CoolNameGenerator.GA.Randomizations;
 using CoolNameGenerator.Helper;
-using CoolNameGenerator.PGA.Randomizations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Test.Other

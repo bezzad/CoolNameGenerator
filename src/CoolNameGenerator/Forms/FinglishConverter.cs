@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using CoolNameGenerator.GA.Randomizations;
 using CoolNameGenerator.Properties;
 using CoolNameGenerator.Helper;
-using CoolNameGenerator.PGA.Randomizations;
 
 namespace CoolNameGenerator.Forms
 {

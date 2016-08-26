@@ -1,7 +1,7 @@
 ﻿using System;
 using CoolNameGenerator.Properties;
 
-namespace CoolNameGenerator.PGA.Randomizations
+namespace CoolNameGenerator.GA.Randomizations
 {
     public static class FastRandom
     {

@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace CoolNameGenerator.PGA.Randomizations
+namespace CoolNameGenerator.GA.Randomizations
 {
     public static class RandomizationWord
     {
