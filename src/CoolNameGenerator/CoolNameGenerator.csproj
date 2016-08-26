@@ -193,7 +193,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VersionUpdater.tt</DependentUpon>
     </Content>
-    <Content Include="Resources\FinglishDictionary.txt" />
+    <Content Include="Resources\FinglishNames.txt" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

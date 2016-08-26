@@ -64,6 +64,7 @@ namespace CoolNameGenerator.Forms
                 btnConvert.Enabled = true;
                 numMaxParallelismDegree.Enabled = true;
                 btnCancel.Enabled = false;
+                Cursor = System.Windows.Forms.Cursors.Default;
             };
 
             var persians = _words.Where(w => string.IsNullOrEmpty(w.Value) || w.Value.StartsWith("<HTML>")).Select(x => x.Key).ToArray();
@@ -73,6 +74,12 @@ namespace CoolNameGenerator.Forms
             var result = chkParallelProcess.Checked
                 ? await api.GetParallelFinglishAsync(persians, _cts)
                 : await api.GetFinglishAsync(persians, _cts);
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            btnCancel.Enabled = false;
+            _cts.Cancel();
         }
 
 
@@ -122,6 +129,7 @@ namespace CoolNameGenerator.Forms
         private void FillGrid(IEnumerable<string> persianNames)
         {
             _words = new Dictionary<string, string>();
+            dgvWords.Rows.Clear();
 
             var row = 1;
             foreach (var name in persianNames.SelectMany(x =>
@@ -151,10 +159,6 @@ namespace CoolNameGenerator.Forms
             return result;
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            _cts.Cancel();
-        }
 
         protected override void OnClosing(CancelEventArgs e)
         {
