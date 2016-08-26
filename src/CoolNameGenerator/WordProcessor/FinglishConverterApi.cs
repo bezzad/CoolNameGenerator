@@ -101,8 +101,8 @@ namespace CoolNameGenerator.WordProcessor
                 {
                     if (cts.IsCancellationRequested) return result.SelectMany(x => x).ToList();
 
-                    tasks[tCount] =
-                        Task.Run(async () => result.Add(await GetFinglishByOneHttpClientAsync(chunkedArray[tCount], cts)), cts.Token);
+                    tasks[tCount] = Task.Run(async () => result.Add(await GetFinglishByOneHttpClientAsync(chunkedArray[tCount], cts)), cts.Token);
+                    await Task.Delay(50);
                 }
 
                 await Task.Run(() => Task.WaitAll(tasks.ToArray()));

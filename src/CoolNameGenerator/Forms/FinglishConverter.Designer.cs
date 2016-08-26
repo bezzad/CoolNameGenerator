@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbResultWords = new System.Windows.Forms.GroupBox();
             this.dgvWords = new System.Windows.Forms.DataGridView();
             this.colRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPersianName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFinglishName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbToolbox = new System.Windows.Forms.GroupBox();
+            this.numMaxParallelismDegree = new System.Windows.Forms.NumericUpDown();
             this.chkParallelProcess = new System.Windows.Forms.CheckBox();
             this.lblCounter = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.btnConvert = new System.Windows.Forms.Button();
             this.btnSaveResult = new System.Windows.Forms.Button();
             this.btnImportPersianWords = new System.Windows.Forms.Button();
-            this.numMaxParallelismDegree = new System.Windows.Forms.NumericUpDown();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.gbResultWords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWords)).BeginInit();
@@ -70,16 +70,16 @@
             // dgvWords
             // 
             this.dgvWords.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvWords.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Emoji", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvWords.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Emoji", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvWords.ColumnHeadersHeight = 40;
             this.dgvWords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colRow,
@@ -133,6 +133,24 @@
             this.gbToolbox.TabStop = false;
             this.gbToolbox.Text = "Toolbox";
             // 
+            // numMaxParallelismDegree
+            // 
+            this.numMaxParallelismDegree.Location = new System.Drawing.Point(556, 30);
+            this.numMaxParallelismDegree.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numMaxParallelismDegree.Name = "numMaxParallelismDegree";
+            this.numMaxParallelismDegree.Size = new System.Drawing.Size(61, 22);
+            this.numMaxParallelismDegree.TabIndex = 7;
+            this.toolTip.SetToolTip(this.numMaxParallelismDegree, "Max of Parallelism Degree");
+            this.numMaxParallelismDegree.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
             // chkParallelProcess
             // 
             this.chkParallelProcess.AutoSize = true;
@@ -157,6 +175,7 @@
             // btnCancel
             // 
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Enabled = false;
             this.btnCancel.Location = new System.Drawing.Point(321, 31);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
@@ -213,24 +232,6 @@
             this.btnImportPersianWords.Text = "ImportPersianWords";
             this.btnImportPersianWords.UseVisualStyleBackColor = true;
             this.btnImportPersianWords.Click += new System.EventHandler(this.btnImportPersianWords_Click);
-            // 
-            // numMaxParallelismDegree
-            // 
-            this.numMaxParallelismDegree.Location = new System.Drawing.Point(556, 30);
-            this.numMaxParallelismDegree.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numMaxParallelismDegree.Name = "numMaxParallelismDegree";
-            this.numMaxParallelismDegree.Size = new System.Drawing.Size(61, 22);
-            this.numMaxParallelismDegree.TabIndex = 7;
-            this.toolTip.SetToolTip(this.numMaxParallelismDegree, "Max of Parallelism Degree");
-            this.numMaxParallelismDegree.Value = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
             // 
             // toolTip
             // 

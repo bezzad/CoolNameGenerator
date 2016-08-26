@@ -18,7 +18,7 @@ namespace CoolNameGenerator.Forms
     {
         private Dictionary<string, string> _words;
         private CancellationTokenSource _cts;
-        private object _syncLocker = new object();
+        private readonly object _syncLocker = new object();
 
 
         public FinglishConverter()
@@ -49,7 +49,11 @@ namespace CoolNameGenerator.Forms
         private async void btnConvert_Click(object sender, EventArgs e)
         {
             btnImportPersianWords.Enabled = false;
+            btnConvert.Enabled = false;
             chkParallelProcess.Enabled = false;
+            numMaxParallelismDegree.Enabled = false;
+            btnCancel.Enabled = true;
+
             _cts = new CancellationTokenSource();
             var api = new FinglishConverterApi();
             api.ProgressChanged += Api_ProgressChanged;
@@ -57,8 +61,12 @@ namespace CoolNameGenerator.Forms
             {
                 btnImportPersianWords.Enabled = true;
                 chkParallelProcess.Enabled = true;
+                btnConvert.Enabled = true;
+                numMaxParallelismDegree.Enabled = true;
+                btnCancel.Enabled = false;
             };
-            var persians = _words.Select(x => x.Key).ToArray();
+
+            var persians = _words.Where(w => string.IsNullOrEmpty(w.Value) || w.Value.StartsWith("<HTML>")).Select(x => x.Key).ToArray();
             progConvert.Maximum = persians.Length;
             progConvert.Value = 0;
             api.MaxParallelismDegree = (int)numMaxParallelismDegree.Value;
@@ -116,11 +124,15 @@ namespace CoolNameGenerator.Forms
             _words = new Dictionary<string, string>();
 
             var row = 1;
-            foreach (var name in persianNames.SkipWhile(seq => seq.Contains(":")).SelectMany(x => x.Split(WordHelper.NotIgnoreChars)).Distinct().SkipWhile(string.IsNullOrEmpty))
+            foreach (var name in persianNames.SelectMany(x =>
+                new string(x.Where(w => w != '\t' && w != ' ').ToArray()).Split(WordHelper.NotIgnoreChars)).Distinct())
             {
-                var word = name.Trim(WordHelper.NotIgnoreChars);
-                _words[word] = "";
-                dgvWords.Rows.Add(row++, word, "");
+                var isFinglishedWord = name.Contains(':');
+                var persian = isFinglishedWord ? name.Substring(name.IndexOf(':') + 1) : name;
+                var finglish = isFinglishedWord ? name.Substring(0, name.IndexOf(':')) : null;
+                _words[persian] = finglish;
+                var index = dgvWords.Rows.Add(row++, persian, finglish);
+                if (isFinglishedWord) dgvWords.Rows[index].DefaultCellStyle.BackColor = Color.Aquamarine;
             }
 
             btnConvert.Enabled = true;
@@ -129,11 +141,12 @@ namespace CoolNameGenerator.Forms
         public string[] GetWordsByFormat()
         {
             var result = _words.Select(kv => string.IsNullOrEmpty(kv.Value) ? kv.Key
-                : kv.Value.Trim().Length < 4 ? $"{kv.Value.Trim()}\t\t\t\t:\t{kv.Key}"
-                : kv.Value.Trim().Length < 8 ? $"{kv.Value.Trim()}\t\t\t:\t{kv.Key}"
-                : kv.Value.Trim().Length < 12 ? $"{kv.Value.Trim()}\t\t:\t{kv.Key}"
-                : kv.Value.Trim().Length < 16 ? $"{kv.Value.Trim()}\t:\t{kv.Key}"
-                : $"{kv.Value.Trim()}:\t{kv.Key}").ToArray();
+                : kv.Value.Trim().Length < 04 ? $"{kv.Value.Trim()}\t\t\t\t\t:\t\t{kv.Key}"
+                : kv.Value.Trim().Length < 08 ? $"{kv.Value.Trim()}\t\t\t\t:\t\t{kv.Key}"
+                : kv.Value.Trim().Length < 12 ? $"{kv.Value.Trim()}\t\t\t:\t\t{kv.Key}"
+                : kv.Value.Trim().Length < 16 ? $"{kv.Value.Trim()}\t\t:\t\t{kv.Key}"
+                : kv.Value.Trim().Length < 20 ? $"{kv.Value.Trim()}\t:\t\t{kv.Key}"
+                : $"{kv.Value.Trim()}:\t\t{kv.Key}").ToArray();
 
             return result;
         }
