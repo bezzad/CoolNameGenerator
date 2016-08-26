@@ -198,4 +198,16 @@
   <data name="SaveFinglishWordsFileDialogTitle" xml:space="preserve">
     <value>Save Finglish Words File</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WordProgressCounter" xml:space="preserve">
+    <value>Word Progress Counter</value>
+  </data>
+  <data name="ParallelProcess" xml:space="preserve">
+    <value>Parallel Process</value>
+  </data>
 </root>

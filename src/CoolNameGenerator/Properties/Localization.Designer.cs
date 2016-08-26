@@ -79,6 +79,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Convert.
         /// </summary>
         public static string Convert {
@@ -196,6 +205,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Parallel Process.
+        /// </summary>
+        public static string ParallelProcess {
+            get {
+                return ResourceManager.GetString("ParallelProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Persian Name.
         /// </summary>
         public static string PersianName {
@@ -277,6 +295,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Toolbox.
         /// </summary>
         public static string Toolbox {
@@ -300,6 +327,15 @@ namespace CoolNameGenerator.Properties {
         public static string WordMinLen {
             get {
                 return ResourceManager.GetString("WordMinLen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Word Progress Counter.
+        /// </summary>
+        public static string WordProgressCounter {
+            get {
+                return ResourceManager.GetString("WordProgressCounter", resourceCulture);
             }
         }
     }

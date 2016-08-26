@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -9,16 +10,22 @@ using System.Threading;
 using System.Windows.Forms;
 using CoolNameGenerator.Properties;
 using CoolNameGenerator.WordProcessor;
+using CoolNameGenerator.Helper;
 
 namespace CoolNameGenerator.Forms
 {
     public partial class FinglishConverter : BaseForm
     {
         private Dictionary<string, string> _words;
+        private CancellationTokenSource _cts;
+        private object _syncLocker = new object();
+
 
         public FinglishConverter()
         {
             InitializeComponent();
+
+            numMaxParallelismDegree.Value = Environment.ProcessorCount;
         }
 
         private void btnImportPersianWords_Click(object sender, EventArgs e)
@@ -42,26 +49,43 @@ namespace CoolNameGenerator.Forms
         private async void btnConvert_Click(object sender, EventArgs e)
         {
             btnImportPersianWords.Enabled = false;
+            chkParallelProcess.Enabled = false;
+            _cts = new CancellationTokenSource();
             var api = new FinglishConverterApi();
             api.ProgressChanged += Api_ProgressChanged;
-            api.ProgressCompleted += (s, ea) => btnImportPersianWords.Enabled = true;
+            api.ProgressCompleted += (s, ea) =>
+            {
+                btnImportPersianWords.Enabled = true;
+                chkParallelProcess.Enabled = true;
+            };
             var persians = _words.Select(x => x.Key).ToArray();
             progConvert.Maximum = persians.Length;
             progConvert.Value = 0;
-            var result = await api.GetFinglishAsync(persians);
+            api.MaxParallelismDegree = (int)numMaxParallelismDegree.Value;
+            var result = chkParallelProcess.Checked
+                ? await api.GetParallelFinglishAsync(persians, _cts)
+                : await api.GetFinglishAsync(persians, _cts);
         }
 
 
-        private void Api_ProgressChanged(string persian, string finglish, int row, int count)
+        private void Api_ProgressChanged(string persian, string finglish)
         {
             _words[persian] = finglish;
-            progConvert.Value++;
+            lock (_syncLocker)
+            {
+                progConvert.InvokeIfRequired(() => progConvert.Value++);
+                lblCounter.InvokeIfRequired(() => lblCounter.Text = $"{progConvert.Value}/{progConvert.Maximum}");
+            }
+
             foreach (DataGridViewRow dgvRow in dgvWords.Rows)
             {
                 if (((string)dgvRow.Cells["colPersianName"].Value).Equals(persian, StringComparison.OrdinalIgnoreCase))
                 {
-                    dgvRow.Cells["colFinglishName"].Value = finglish;
-                    dgvRow.DefaultCellStyle.BackColor = finglish == null ? Color.Brown : Color.Aquamarine;
+                    dgvWords.InvokeIfRequired(() =>
+                    {
+                        dgvRow.Cells["colFinglishName"].Value = finglish;
+                        dgvRow.DefaultCellStyle.BackColor = finglish == null ? Color.Brown : Color.Aquamarine;
+                    });
                 }
             }
         }
@@ -105,13 +129,24 @@ namespace CoolNameGenerator.Forms
         public string[] GetWordsByFormat()
         {
             var result = _words.Select(kv => string.IsNullOrEmpty(kv.Value) ? kv.Key
-                : kv.Value.Length < 4 ? $"{kv.Value.Trim()}\t\t\t\t:\t{kv.Key}"
-                : kv.Value.Length < 8 ? $"{kv.Value.Trim()}\t\t\t:\t{kv.Key}"
-                : kv.Value.Length < 12 ? $"{kv.Value.Trim()}\t\t:\t{kv.Key}"
-                : kv.Value.Length < 16 ? $"{kv.Value.Trim()}\t:\t{kv.Key}"
+                : kv.Value.Trim().Length < 4 ? $"{kv.Value.Trim()}\t\t\t\t:\t{kv.Key}"
+                : kv.Value.Trim().Length < 8 ? $"{kv.Value.Trim()}\t\t\t:\t{kv.Key}"
+                : kv.Value.Trim().Length < 12 ? $"{kv.Value.Trim()}\t\t:\t{kv.Key}"
+                : kv.Value.Trim().Length < 16 ? $"{kv.Value.Trim()}\t:\t{kv.Key}"
                 : $"{kv.Value.Trim()}:\t{kv.Key}").ToArray();
 
             return result;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            _cts.Cancel();
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            _cts?.Cancel();
+            base.OnClosing(e);
         }
     }
 }
