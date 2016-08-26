@@ -71,8 +71,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="TestExtensions.cs" />
-    <Compile Include="TestRandomNumber.cs" />
+    <Compile Include="GA\Chromosomes\GeneTest.cs" />
+    <Compile Include="Other\TestExtensions.cs" />
+    <Compile Include="GA\Randomizations\TestFastRandom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +82,7 @@
       <Name>CoolNameGenerator</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

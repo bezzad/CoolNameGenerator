@@ -7,10 +7,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CoolNameGenerator.Helper;
 using CoolNameGenerator.Properties;
 
-namespace CoolNameGenerator.WordProcessor
+namespace CoolNameGenerator.Helper
 {
     public class FinglishConverterApi
     {

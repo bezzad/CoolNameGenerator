@@ -1,9 +1,8 @@
 ﻿using System.Linq;
-using CoolNameGenerator.Helper;
 
-namespace CoolNameGenerator.WordProcessor
+namespace CoolNameGenerator.PGA.Randomizations
 {
-    public static class WordHelper
+    public static class RandomizationWord
     {
         public const int MaxCharactersLong = 67;
         public const int MaxHyphenUsage = 4;
@@ -31,11 +30,11 @@ namespace CoolNameGenerator.WordProcessor
                 // First and Last char of word must be has not hyphen or number
                 if (index == 0 || index == wordLength - 1)
                 {
-                    word += EnglishLetters[RandomNumber.Next(0, EnglishLetters.Length - 1)];
+                    word += EnglishLetters[FastRandom.Next(0, EnglishLetters.Length - 1)];
                 }
                 else
                 {
-                    word += resourceChars[RandomNumber.Next(0, resourceChars.Length - 1)];
+                    word += resourceChars[FastRandom.Next(0, resourceChars.Length - 1)];
                 }
             }
 

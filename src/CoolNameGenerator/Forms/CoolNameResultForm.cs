@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using CoolNameGenerator.Helper;
-using CoolNameGenerator.WordProcessor;
+using CoolNameGenerator.PGA.Randomizations;
 
 namespace CoolNameGenerator.Forms
 {
@@ -23,7 +23,7 @@ namespace CoolNameGenerator.Forms
 
                 for (var i = 0; i < numPopulationSize.Value; i++)
                 {
-                    wpResults.WordsLabels[i].Text = WordHelper.GenerateWord(RandomNumber.Next((int)numWordMinLen.Value,
+                    wpResults.WordsLabels[i].Text = RandomizationWord.GenerateWord(FastRandom.Next((int)numWordMinLen.Value,
                         (int)numWordMaxLen.Value), chkHasNumeric.Checked, chkHasHyphen.Checked);
                 }
             }

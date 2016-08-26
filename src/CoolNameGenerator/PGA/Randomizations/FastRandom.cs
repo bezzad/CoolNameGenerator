@@ -1,9 +1,9 @@
 ﻿using System;
 using CoolNameGenerator.Properties;
 
-namespace CoolNameGenerator.Helper
+namespace CoolNameGenerator.PGA.Randomizations
 {
-    public static class RandomNumber
+    public static class FastRandom
     {
         public static int Next(int minValue, int maxValue)
         {

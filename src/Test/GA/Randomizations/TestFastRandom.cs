@@ -1,28 +1,28 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using CoolNameGenerator.Helper;
+using CoolNameGenerator.PGA.Randomizations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Test
+namespace Test.GA.Randomizations
 {
     [TestClass]
-    public class TestRandomNumber
+    [Category("Randomizations")]
+    public class TestFastRandom
     {
         [TestMethod]
-        [TestCategory("Next(...)")]
         public void TestRandomMaxMinRangeLimit()
         {
             for (var i = 0; i < 1000000; i++)
             {
-                var rand = RandomNumber.Next(1000, 10000);
+                var rand = FastRandom.Next(1000, 10000);
                 Assert.AreEqual(rand >= 1000, true, "Min not correct");
                 Assert.AreEqual(rand <= 10000, true, "Max not correct");
             }
         }
 
         [TestMethod]
-        [TestCategory("Next(...)")]
         public void TestMaxMinNominalNearbly()
         {
             int minRand = 100, maxRand = 1000;
@@ -32,7 +32,7 @@ namespace Test
 
             for (var i = 0; i < maxTestRepeat; i++)
             {
-                var rand = RandomNumber.Next(minRand, maxRand);
+                var rand = FastRandom.Next(minRand, maxRand);
                 if (rand >= minRand && rand <= (maxRand - minRand) * nearblyPercent + minRand) minApplyCount++;
                 if (rand >= maxRand - (maxRand - minRand) * nearblyPercent && rand <= maxRand) maxApplyCount++;
             }
@@ -42,14 +42,13 @@ namespace Test
         }
 
         [TestMethod]
-        [TestCategory("Next(...)")]
         public void TestNearblyPercentage()
         {
             int minRand = 100, maxRand = 1000;
             int[] buffer = new int[maxRand + 1];
             for (var i = 0; i < 1000000; i++)
             {
-                var rand = RandomNumber.Next(minRand, maxRand);
+                var rand = FastRandom.Next(minRand, maxRand);
                 buffer[rand]++;
             }
 

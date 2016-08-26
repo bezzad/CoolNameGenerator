@@ -142,11 +142,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Helper\Extentions.cs" />
-    <Compile Include="Helper\RandomNumber.cs" />
+    <Compile Include="PGA\Randomizations\FastRandom.cs" />
+    <Compile Include="PGA\Chromosomes\Gene.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WordProcessor\FinglishConverterApi.cs" />
-    <Compile Include="WordProcessor\WordHelper.cs" />
+    <Compile Include="Helper\FinglishConverterApi.cs" />
+    <Compile Include="PGA\Randomizations\RandomizationWord.cs" />
     <Compile Include="Properties\Localization.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -180,9 +181,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PGA\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Properties\VersionUpdater.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

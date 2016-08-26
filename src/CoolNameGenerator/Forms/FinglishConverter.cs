@@ -9,8 +9,8 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using CoolNameGenerator.Properties;
-using CoolNameGenerator.WordProcessor;
 using CoolNameGenerator.Helper;
+using CoolNameGenerator.PGA.Randomizations;
 
 namespace CoolNameGenerator.Forms
 {
@@ -133,7 +133,7 @@ namespace CoolNameGenerator.Forms
 
             var row = 1;
             foreach (var name in persianNames.SelectMany(x =>
-                new string(x.Where(w => w != '\t' && w != ' ').ToArray()).Split(WordHelper.NotIgnoreChars)).Distinct())
+                new string(x.Where(w => w != '\t' && w != ' ').ToArray()).Split(RandomizationWord.NotIgnoreChars)).Distinct())
             {
                 var isFinglishedWord = name.Contains(':');
                 var persian = isFinglishedWord ? name.Substring(name.IndexOf(':') + 1) : name;

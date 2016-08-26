@@ -1,13 +1,16 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using CoolNameGenerator.Helper;
+using CoolNameGenerator.PGA.Randomizations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Test
+namespace Test.Other
 {
     [TestClass]
+    [Category("Other")]
     public class TestExtensions
     {
         [TestMethod]
@@ -16,8 +19,8 @@ namespace Test
         {
             for (int dup = 0; dup < 100; dup++)
             {
-                var chunkCount = RandomNumber.Next(0, 100000);
-                var aryLength = RandomNumber.Next(0, 100000);
+                var chunkCount = FastRandom.Next(0, 100000);
+                var aryLength = FastRandom.Next(0, 100000);
 
                 // build sample data with aryLength Strings
                 string[] items = Enumerable.Range(1, aryLength).Select(i => "Item" + i).ToArray();
