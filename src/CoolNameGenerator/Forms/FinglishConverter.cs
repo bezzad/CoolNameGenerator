@@ -30,7 +30,6 @@ namespace CoolNameGenerator.Forms
                 FillGrid(data);
             }
         }
-
         private void btnSaveResult_Click(object sender, EventArgs e)
         {
             var path = GetWordsStorageFilePath();
@@ -40,7 +39,6 @@ namespace CoolNameGenerator.Forms
                 Process.Start(path);
             }
         }
-
         private async void btnConvert_Click(object sender, EventArgs e)
         {
             btnImportPersianWords.Enabled = false;
@@ -52,6 +50,7 @@ namespace CoolNameGenerator.Forms
             progConvert.Value = 0;
             var result = await api.GetFinglishAsync(persians);
         }
+
 
         private void Api_ProgressChanged(string persian, string finglish, int row, int count)
         {
@@ -93,9 +92,9 @@ namespace CoolNameGenerator.Forms
             _words = new Dictionary<string, string>();
 
             var row = 1;
-            foreach (var name in persianNames.SelectMany(x => x.Split(WordHelper.NotIgnoreChars)).Distinct().SkipWhile(string.IsNullOrEmpty))
+            foreach (var name in persianNames.SkipWhile(seq => seq.Contains(":")).SelectMany(x => x.Split(WordHelper.NotIgnoreChars)).Distinct().SkipWhile(string.IsNullOrEmpty))
             {
-                var word = name.Trim(WordHelper.NotIgnoreChars).Trim();
+                var word = name.Trim(WordHelper.NotIgnoreChars);
                 _words[word] = "";
                 dgvWords.Rows.Add(row++, word, "");
             }
@@ -105,7 +104,12 @@ namespace CoolNameGenerator.Forms
 
         public string[] GetWordsByFormat()
         {
-            var result = _words.Select(kv => $"{kv.Key}\t\t\t:\t{kv.Value}").ToArray();
+            var result = _words.Select(kv => string.IsNullOrEmpty(kv.Value) ? kv.Key
+                : kv.Value.Length < 4 ? $"{kv.Value.Trim()}\t\t\t\t:\t{kv.Key}"
+                : kv.Value.Length < 8 ? $"{kv.Value.Trim()}\t\t\t:\t{kv.Key}"
+                : kv.Value.Length < 12 ? $"{kv.Value.Trim()}\t\t:\t{kv.Key}"
+                : kv.Value.Length < 16 ? $"{kv.Value.Trim()}\t:\t{kv.Key}"
+                : $"{kv.Value.Trim()}:\t{kv.Key}").ToArray();
 
             return result;
         }
