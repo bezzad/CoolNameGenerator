@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using CoolNameGenerator.GA.Chromosomes;
 
 namespace CoolNameGenerator.Helper
 {
@@ -234,6 +237,23 @@ namespace CoolNameGenerator.Helper
         public static bool ContainsIgnoreCase(this string source, string substring)
         {
             return source.IndexOf(substring, StringComparison.OrdinalIgnoreCase) >= 0;
+        }
+
+        public static Dictionary<string, string> GetPairUniqueWords(this IEnumerable<string> source)
+        {
+            var res = source.SelectMany(x => new string(x.Where(w => w != '\t' && w != ' ').ToArray())
+                .Split(Words.NotIgnoreChars.Concat(Words.NumericLetters)
+                    .ToArray())).Where(word => word.Length > 1).Distinct();
+
+            var pairWords = res.Select(x => new
+            {
+                persian = x.Contains(':') ? x.Substring(x.IndexOf(':') + 1) : x,
+                finglish = x.Contains(':') ? x.Substring(0, x.IndexOf(':')) : null
+            });
+
+            var uniqueWords = pairWords.Distinct((a,b) => a.persian == b.persian, c=> c.persian.GetHashCode()).ToDictionary(p => p.persian, p => p.finglish);
+
+            return uniqueWords;
         }
     }
 }

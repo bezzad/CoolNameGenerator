@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CoolNameGenerator.Helper
@@ -39,6 +41,15 @@ namespace CoolNameGenerator.Helper
                 if (chunkSize > 0) Array.Copy(array, srcIndex, result[cc], 0, chunkSize);
             }
             return result;
+        }
+
+        public static IEnumerable<T> Distinct<T>(this IEnumerable<T> items, Func<T, T, bool> equals, Func<T, int> hashCode)
+        {
+            return items.Distinct(new DelegateComparer<T>(equals, hashCode));
+        }
+        public static IEnumerable<T> Distinct<T>(this IEnumerable<T> items, Func<T, T, bool> equals)
+        {
+            return items.Distinct(new DelegateComparer<T>(equals, null));
         }
     }
 }

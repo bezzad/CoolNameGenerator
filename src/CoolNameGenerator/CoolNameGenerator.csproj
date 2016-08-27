@@ -147,10 +147,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Helper\CharExtensions.cs" />
+    <Compile Include="Helper\DelegateComparer.cs" />
     <Compile Include="Helper\Extentions.cs" />
     <Compile Include="GA\Randomizations\FastRandom.cs" />
     <Compile Include="GA\Chromosomes\Gene.cs" />
     <Compile Include="Helper\StringExtensions.cs" />
+    <Compile Include="Helper\Words.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helper\FinglishConverterApi.cs" />
@@ -180,9 +182,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Content Include="Resources\EnglishNames.txt" />
-    <Content Include="Resources\EnglishFemaleNames.txt" />
-    <Content Include="Resources\EnglishMaleNames.txt" />
-    <Content Include="Resources\EnglishPlaces.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

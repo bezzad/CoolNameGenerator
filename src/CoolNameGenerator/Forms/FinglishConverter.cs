@@ -8,8 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using CoolNameGenerator.GA.Chromosomes;
-using CoolNameGenerator.GA.Randomizations;
 using CoolNameGenerator.Properties;
 using CoolNameGenerator.Helper;
 
@@ -129,25 +127,20 @@ namespace CoolNameGenerator.Forms
 
         private void FillGrid(IEnumerable<string> persianNames)
         {
-            _words = new Dictionary<string, string>();
+            _words = persianNames.GetPairUniqueWords();
             dgvWords.Rows.Clear();
 
             var row = 1;
-            foreach (var name in persianNames.SelectMany(x =>
-                new string(x.Where(w => w != '\t' && w != ' ').ToArray()).Split(ChromosomeWord.NotIgnoreChars.Concat(ChromosomeWord.NumericLetters).ToArray())).Distinct())
+            foreach (var w in _words)
             {
-                var isFinglishedWord = name.Contains(':');
-                var persian = isFinglishedWord ? name.Substring(name.IndexOf(':') + 1) : name;
-                var finglish = isFinglishedWord ? name.Substring(0, name.IndexOf(':')) : null;
-                _words[persian] = finglish;
-                var index = dgvWords.Rows.Add(row++, persian, finglish);
-                if (isFinglishedWord) dgvWords.Rows[index].DefaultCellStyle.BackColor = Color.Aquamarine;
+                var index = dgvWords.Rows.Add(row++, w.Key, w.Value);
+                if (w.Value != null) dgvWords.Rows[index].DefaultCellStyle.BackColor = Color.Aquamarine;
             }
 
             btnConvert.Enabled = true;
         }
 
-        public string[] GetWordsByFormat()
+        protected string[] GetWordsByFormat()
         {
             var result = _words.Select(kv => string.IsNullOrEmpty(kv.Value) ? kv.Key
                 : kv.Value.Trim().Length < 04 ? $"{kv.Value.Trim()}\t\t\t\t\t:\t\t{kv.Key}"
