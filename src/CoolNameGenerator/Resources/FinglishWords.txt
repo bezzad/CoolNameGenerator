@@ -1543,60 +1543,60 @@ rad					:		رد
 dadkhavast			:		دادخواست
 raftn				:		رفتنى
 rafthfth			:		رفته
-رونده
-بینى
-بک
-درآمدن
-درآمده
-مطیع
-درآمد
-درنیامده
-ترین
-پدر
-پرداخت
-طفره
-پستان
-پشت
-پهلو
-پهلوى
-پهنا
-درآورنده
-پیچیدگى
-آگاهى
-داد
-یاحدى
-آماده
-اشغال
-تصرف
+rondeh				:		رونده
+bin					:		بینى
+bak					:		بک
+daramadan			:		درآمدن
+daramdh				:		درآمده
+mati				:		مطیع
+da					:		درآمد
+darniamdh			:		درنیامده
+tarin				:		ترین
+padr				:		پدر
+pardakht			:		پرداخت
+tafreh				:		طفره
+pestan				:		پستان
+posht				:		پشت
+pahlo				:		پهلو
+pahlo				:		پهلوى
+pahna				:		پهنا
+dearorndeh			:		درآورنده
+pichidg				:		پیچیدگى
+agah				:		آگاهى
+dad					:		داد
+yahd				:		یاحدى
+amadeh				:		آماده
+eshghal				:		اشغال
+tasarof				:		تصرف
 taser				:		تصور
 tarif				:		تعریف
-حاکى
-حفظ
+hak					:		حاکى
+hefz				:		حفظ
 danestan			:		دانستن
-سفارش
-فرستاده
-فرض
-قضاوت
-مسلح
-مشعر
-مقدر
-محکوم
-مقرر
-نشاندن
-پیشرفت
-بازداشتن
-تابعیت
-تاریخ
-تخم
-ترس
-دولاشدن
-تملک
-تنگنا
-جاى
-باریکى
-گذشتن
-تنور
-تهمت
+safaresh			:		سفارش
+ferestadeh			:		فرستاده
+farz				:		فرض
+ghezavt				:		قضاوت
+mosalah				:		مسلح
+mosher				:		مشعر
+moghadar			:		مقدر
+mahkom				:		محکوم
+mogharar			:		مقرر
+neshandan			:		نشاندن
+pishraft			:		پیشرفت
+bazdashtan			:		بازداشتن
+tabeiat				:		تابعیت
+toarikh				:		تاریخ
+tokhm				:		تخم
+tors				:		ترس
+dolashdn			:		دولاشدن
+tamalok				:		تملک
+tangna				:		تنگنا
+ja					:		جاى
+barik				:		باریکى
+gozashtan			:		گذشتن
+tanovr				:		تنور
+tohmat				:		تهمت
 tabrah				:		تبرئه
 to					:		توى
 savsn				:		سوسن
@@ -3249,191 +3249,190 @@ ata					:		اعطاى
 amir				:		امیرى
 amir				:		امیر
 beyat				:		بیعت
-او
-یاحق
-انتخابات
-اعطایى
-اعقاب
-اعلا
-اعلاء
-اعلام
-تقصیرى
-جرم
-جرمى
-ظهر
-صحه
-گذارند
-متحد
-متفقى
-سکوت
-شروع
-وصول
-اعلامیه
-اتباع
-اعلان
-ارایه
-پیشنهاد
-کسانى
-اعتراضى
-زوجین
-سمعى
-فروش
-نصب
-آگهى
-اعلانات
-اعلانى
-اعلى
-اعلیحضرت
-اعلیحضرتا
-اعماد
-اعماقى
-اعمال
-شاقه
-رشوه
-اعوجاج
-پیشقدرى
-تاخیرى
-فاز
-نامتقارن
-هارمونیک
-اعور
-اعیان
-اسقفان
-پیرانى
-شوراى
-کردند
-اعیانى
-اغتشاش
-اغذیه
-حاضر
-فروشى
-مشروب
-لذیذ
-اغراض
-نفسانى
-اغراق
-اغراقى
-اغضاب
-اغفال
-اغماء
-اغماض
-اغوا
-اغواء
-اف
-افاده
-افار
-افاضه
-افت
-افتادنى
-حال
-افتان
-خیزان
-افتتاح
-افتتاحى
-افتخار
-افتخارا
-معاف
-افتخارى
-افترا
-افتراء
-افتراق
-افتراقى
-افتضاح
-افتنده
-افرا
-افرائیان
-ظلمات
-افراز
-افرازیاب
-افراس
-افراشتگى
-افراشتن
-الفاظ
-وظیفه
-شرب
-مراعات
-افراه
-افراى
-قندى
-افرایان
-افروختگى
-افروختن
-افروزه
-افزار
-افزارمند
-افزایش
-اموال
-بافت
-لیفى
-تعداد
-پایان
-عدد
-قلیاى
-نرخ
-افزایشگر
-ورودى
-موازى
-نوبتى
-کاهشگر
-افزایشى
-افزاینده
-افزودن
-افزودنى
-افزوده
-افزون
-افزونگى
-افزونه
-افزونى
-افسار
-گریخته
-گسیختگى
-گسیخته
-گیسخته
-پردازى
-موزون
-نگار
-روایات
-قومى
-افست
-افسر
-سروان
-پزشک
-گشتى
-ترفیع
-فرود
-نظارت
-جوان
-بعضى
-اختیارات
-دون
-رئیس
-ستاد
-سربازى
-سرپرست
-صفى
-عالى
-فرمانده
-قصر
-مامور
-دامپزشک
-منصبان
-افسردگى
-حزن
-اندوه
-افسردن
-افسرده
-مایوس
-ملول
-افسرى
-مسئول
-بادبان
-لنگر
-طناب
-افسنتین
-افسنطین
-افسوس
-افسون
-افسونگر
+anglisi				:		او
+yahgh				:		یاحق
+antkhabat			:		انتخابات
+atay				:		اعطایى
+aghab				:		اعقاب
+ala					:		اعلا
+ela					:		اعلاء
+alam				:		اعلام
+taghsir				:		تقصیرى
+jorm				:		جرم
+jarm				:		جرمى
+zahr				:		ظهر
+sahoh				:		صحه
+gazarnd				:		گذارند
+motahed				:		متحد
+matfgh				:		متفقى
+sokot				:		سکوت
+shoro				:		شروع
+vosol				:		وصول
+elameyeh			:		اعلامیه
+etba				:		اتباع
+elan				:		اعلان
+arayh				:		ارایه
+pishnhad			:		پیشنهاد
+kasan				:		کسانى
+atraz				:		اعتراضى
+zovjeyn				:		زوجین
+sama				:		سمعى
+forosh				:		فروش
+nasb				:		نصب
+agh					:		آگهى
+alanat				:		اعلانات
+alan				:		اعلانى
+al					:		اعلى
+alihzrt				:		اعلیحضرت
+alihzrta			:		اعلیحضرتا
+amad				:		اعماد
+amagh				:		اعماقى
+amal				:		اعمال
+shaghh				:		شاقه
+reshoh				:		رشوه
+eoejaj				:		اعوجاج
+pishghdr			:		پیشقدرى
+takhir				:		تاخیرى
+faz					:		فاز
+namtgharn			:		نامتقارن
+harmovnik			:		هارمونیک
+oar					:		اعور
+aian				:		اعیان
+asghfan				:		اسقفان
+piran				:		پیرانى
+shora				:		شوراى
+kardnd				:		کردند
+ayan				:		اعیانى
+eghteshash			:		اغتشاش
+aghzieh				:		اغذیه
+hazr				:		حاضر
+farosh				:		فروشى
+laziz				:		لذیذ
+aghraz				:		اغراض
+nafsan				:		نفسانى
+eghragh				:		اغراق
+aghragh				:		اغراقى
+aghzab				:		اغضاب
+eghfal				:		اغفال
+aghma				:		اغماء
+eghmaz				:		اغماض
+aghoa				:		اغوا
+eghoa				:		اغواء
+of					:		اف
+efadeh				:		افاده
+afar				:		افار
+efazh				:		افاضه
+oft					:		افت
+aftadn				:		افتادنى
+hal					:		حال
+oftan				:		افتان
+khizan				:		خیزان
+eftetah				:		افتتاح
+afttah				:		افتتاحى
+eftkhar				:		افتخار
+aftkhara			:		افتخارا
+moaf				:		معاف
+aftkhar				:		افتخارى
+aftra				:		افترا
+eftera				:		افتراء
+efteragh			:		افتراق
+aftragh				:		افتراقى
+eftezah				:		افتضاح
+aftndh				:		افتنده
+afra				:		افرا
+afraian				:		افرائیان
+zolamat				:		ظلمات
+efraz				:		افراز
+afraziab			:		افرازیاب
+afras				:		افراس
+afrashtg			:		افراشتگى
+afrashtan			:		افراشتن
+alfaz				:		الفاظ
+vazifeh				:		وظیفه
+shorb				:		شرب
+morat				:		مراعات
+afrah				:		افراه
+afra				:		افراى
+ghand				:		قندى
+afrayan				:		افرایان
+afrokhtg			:		افروختگى
+afrokhtan			:		افروختن
+afrozeh				:		افروزه
+afzar				:		افزار
+afzarmnd			:		افزارمند
+afzayesh			:		افزایش
+amoal				:		اموال
+baft				:		بافت
+lif					:		لیفى
+tedad				:		تعداد
+payan				:		پایان
+adad				:		عدد
+ghalia				:		قلیاى
+nerkh				:		نرخ
+afzayshgr			:		افزایشگر
+varod				:		ورودى
+moaz				:		موازى
+nobt				:		نوبتى
+kahshgr				:		کاهشگر
+afzaysh				:		افزایشى
+afzayndh			:		افزاینده
+afzodan				:		افزودن
+afzodn				:		افزودنى
+afzodh				:		افزوده
+afzon				:		افزون
+afzong				:		افزونگى
+afzonh				:		افزونه
+afzon				:		افزونى
+afsar				:		افسار
+garikhth			:		گریخته
+gasikhtg			:		گسیختگى
+gosikhteh			:		گسیخته
+giskhth				:		گیسخته
+pardaz				:		پردازى
+movzon				:		موزون
+nagar				:		نگار
+roaiat				:		روایات
+ghom				:		قومى
+ofst				:		افست
+afsar				:		افسر
+saroan				:		سروان
+pezeshk				:		پزشک
+gasht				:		گشتى
+tarfi				:		ترفیع
+forod				:		فرود
+nazarat				:		نظارت
+javan				:		جوان
+baz					:		بعضى
+akhtiarat			:		اختیارات
+don					:		دون
+rais				:		رئیس
+satad				:		ستاد
+sarbaz				:		سربازى
+sarprst				:		سرپرست
+saf					:		صفى
+al					:		عالى
+farmandh			:		فرمانده
+ghasr				:		قصر
+mamor				:		مامور
+dampezeshk			:		دامپزشک
+mansban				:		منصبان
+afsrdg				:		افسردگى
+hazn				:		حزن
+andoh				:		اندوه
+afsordan			:		افسردن
+afsordeh			:		افسرده
+mayos				:		مایوس
+malol				:		ملول
+afsr				:		افسرى
+masol				:		مسئول
+badban				:		بادبان
+langar				:		لنگر
+tenab				:		طناب
+afsntin				:		افسنتین
+afsntin				:		افسنطین
+afsos				:		افسوس
+afson				:		افسون
+afsongr				:		افسونگر
 afsongr				:		افسونگرى
 afsha				:		افشا
 efsha				:		افشاء
@@ -4027,232 +4026,232 @@ shanoai				:		شنوایى
 hasb				:		حسب
 voltazh				:		ولتاژ
 amper				:		آمپر
-وزن
-غلظت
-متفاوت
-نمو
-اندالوزیت
-نرم
-شفاف
-بادبزنى
-بویایى
-زبرین
-ساقه
-محورى
-اندامگان
-اندامها
-مراکز
-اندر
-جاه
-اندراج
-اندرز
-اندروا
-اندروایى
-اندرون
-اندرونه
-اندرى
-اندوختن
-اندوختنى
-اندوخته
-اندود
-آهک
-گچ
-سیمان
-اندودن
-اندوده
-اندوگر
-اندوگین
-اندونزى
-آورد
-اندوهگین
-اندوهناک
-اندوکتانس
-اندیشمند
-اندیشناک
-اندیشناکى
-تفکر
-اندیشیدن
-اندیکاتور
-قلیل
-اندکى
-جوشاندن
-ماندن
-دیر
-فاسد
-متلاطم
-ناخوش
-انذدوه
-پتانسیل
-جنبشى
-سینتیک
-دلى
-انزال
-انزوا
-جویى
-انزواجو
-انزواى
-انژکتور
-انس
-انساب
-میمون
-نماى
-پلیوسن
-جمجمه
-اش
-جاوه
-پرورى
-سرگرد
-غارنشین
-تنبل
-مزاحم
-حیوانى
-انسانگراى
-انسانیت
-انسجام
-انسداد
-شرائین
-اکلیلى
-شریان
-انسگان
-انسگانى
-انسى
-انشا
-انشاء
-پرتصنع
-مغلق
-انشعاب
-شعبه
-شاخ
-گوزن
-خلیج
-انشعابى
-انشقاق
-انصاف
-غرضى
-انصراف
-انضباط
-انضباطى
-انضمام
-انطباق
-آداب
-رژیم
-شوروى
-بامورد
-زمانى
-انطباقى
-انعام
-انعزال
-انعطاف
-انعقاد
-انعکاس
-آلات
-تصویر
-جواب
-سرود
-انعکاسى
-انعکس
-انفاذ
-انفارکتوس
-انفجار
-درپى
-انفجارى
-انفراد
-انفرادا
-انفرادى
-انفصال
-خودبخود
-انفعالى
-انفلوانزا
-انفورماتیک
-انفیه
-جزایر
-مارتینیک
-دان
-انقؤوزه
-انقال
-نظم
-رشته
-عضلانى
-ماهیچه
-انقباضى
-انقراض
-انقصال
-انقضا
-انقضاء
-انقطاع
-انقلاب
-انقلابى
-انقوزه
-انقیاد
-فرامین
-قوانین
-انگ
-انگارگان
-انگاره
-انگارى
-انگاشت
-انگاشتن
-انگاشتنى
-انگاشته
-انگاشتى
-انگبین
-انگبینى
-انگپایه
-انگشتر
-چهارم
-چپ
-شهادت
-نگارش
-نمایى
-انگشتانه
-خاتم
-انگشترى
-انگشتى
-انگل
-زى
-جانور
-مالاریا
-اعم
-بخصوص
-میکرب
-سوزاک
-میزبانى
-انگلستان
-انگلهایى
-نیستند
-انگلوساکسن
-شکسته
-مخلوط
-چینى
-مابى
-انگم
-کاج
-انگنار
-انگور
-ترش
-نواحى
-چین
-خرس
-زود
-رس
-راین
-بیضى
-فرنگى
-مزه
-مشک
-موسکاتل
-انگورى
-انگورک
-انگیختار
-انگیختگر
-انگیختگى
-انگیختن
-انگیزش
-انگیزنده
-انگیزه
-آنى
-انهدام
-باکترى
+vazn				:		وزن
+ghelzat				:		غلظت
+matfavt				:		متفاوت
+nomov				:		نمو
+andalozit			:		اندالوزیت
+narm				:		نرم
+shafaf				:		شفاف
+badbzn				:		بادبزنى
+boyay				:		بویایى
+zabarin				:		زبرین
+saghah				:		ساقه
+mahor				:		محورى
+andamgan			:		اندامگان
+andamha				:		اندامها
+marakez				:		مراکز
+andar				:		اندر
+jah					:		جاه
+enderaj				:		اندراج
+andarz				:		اندرز
+androa				:		اندروا
+androai				:		اندروایى
+andaron				:		اندرون
+andronh				:		اندرونه
+andr				:		اندرى
+andokhtan			:		اندوختن
+andokhtn			:		اندوختنى
+andokhteh			:		اندوخته
+andod				:		اندود
+ahak				:		آهک
+gach				:		گچ
+siman				:		سیمان
+andavdn				:		اندودن
+andevdh				:		اندوده
+andogr				:		اندوگر
+andogin				:		اندوگین
+andonz				:		اندونزى
+oard				:		آورد
+andohgin			:		اندوهگین
+andohnak			:		اندوهناک
+andoktans			:		اندوکتانس
+andishmand			:		اندیشمند
+andishnak			:		اندیشناک
+andishnak			:		اندیشناکى
+tafakor				:		تفکر
+andayshidn			:		اندیشیدن
+andikatovr			:		اندیکاتور
+ghalil				:		قلیل
+andk				:		اندکى
+joshandan			:		جوشاندن
+mandan				:		ماندن
+dayr				:		دیر
+fasd				:		فاسد
+motalatem			:		متلاطم
+nakhovsh			:		ناخوش
+anzdoh				:		انذدوه
+potansiel			:		پتانسیل
+janbsh				:		جنبشى
+sintik				:		سینتیک
+dal					:		دلى
+enzal				:		انزال
+anzoa				:		انزوا
+joy					:		جویى
+anzoajo				:		انزواجو
+anzoa				:		انزواى
+azhetonzhktor		:		انژکتور
+ons					:		انس
+ansab				:		انساب
+meymon				:		میمون
+nama				:		نماى
+palivsn				:		پلیوسن
+jomjomeh			:		جمجمه
+ash					:		اش
+javh				:		جاوه
+paror				:		پرورى
+sargrd				:		سرگرد
+gharnshin			:		غارنشین
+tanbl				:		تنبل
+mozahem				:		مزاحم
+hivan				:		حیوانى
+ansangra			:		انسانگراى
+ensaniat			:		انسانیت
+ensjam				:		انسجام
+ensdad				:		انسداد
+sharain				:		شرائین
+aklil				:		اکلیلى
+sharian				:		شریان
+ansgan				:		انسگان
+ansgan				:		انسگانى
+ans					:		انسى
+ensha				:		انشا
+ansha				:		انشاء
+partsna				:		پرتصنع
+moghlagh			:		مغلق
+enshab				:		انشعاب
+shobah				:		شعبه
+shanhakh			:		شاخ
+gavazn				:		گوزن
+khalij				:		خلیج
+anshab				:		انشعابى
+enshghagh			:		انشقاق
+ansaf				:		انصاف
+gharz				:		غرضى
+ensraf				:		انصراف
+enzbat				:		انضباط
+anzbat				:		انضباطى
+enzmam				:		انضمام
+entebagh			:		انطباق
+adab				:		آداب
+rezhim				:		رژیم
+shoro				:		شوروى
+bamord				:		بامورد
+zaman				:		زمانى
+antbagh				:		انطباقى
+enam				:		انعام
+enezal				:		انعزال
+enetaf				:		انعطاف
+eneghad				:		انعقاد
+enekas				:		انعکاس
+alat				:		آلات
+tasoyr				:		تصویر
+javab				:		جواب
+sorod				:		سرود
+anakas				:		انعکاسى
+anaks				:		انعکس
+enfaz				:		انفاذ
+anfarktos			:		انفارکتوس
+enfejar				:		انفجار
+darp				:		درپى
+anfjar				:		انفجارى
+enferad				:		انفراد
+anfrada				:		انفرادا
+anfrad				:		انفرادى
+enfesal				:		انفصال
+khodbkhod			:		خودبخود
+anfal				:		انفعالى
+anfolovanza			:		انفلوانزا
+anfovrmatik			:		انفورماتیک
+anfih				:		انفیه
+jazayer				:		جزایر
+martinik			:		مارتینیک
+dan					:		دان
+anghozh				:		انقؤوزه
+anghal				:		انقال
+nazm				:		نظم
+reshteh				:		رشته
+azlan				:		عضلانى
+mahicheh			:		ماهیچه
+anghbaz				:		انقباضى
+engheraz			:		انقراض
+anghsal				:		انقصال
+anghza				:		انقضا
+engheza				:		انقضاء
+engheta				:		انقطاع
+enghelab			:		انقلاب
+anghlab				:		انقلابى
+anghozh				:		انقوزه
+enghiad				:		انقیاد
+faramin				:		فرامین
+ghavanin			:		قوانین
+ang					:		انگ
+angargan			:		انگارگان
+engareh				:		انگاره
+angar				:		انگارى
+angasht				:		انگاشت
+engashtan			:		انگاشتن
+angashtn			:		انگاشتنى
+engashteh			:		انگاشته
+angasht				:		انگاشتى
+angobin				:		انگبین
+angbin				:		انگبینى
+angpayh				:		انگپایه
+angshtr				:		انگشتر
+chaharm				:		چهارم
+chap				:		چپ
+shahadat			:		شهادت
+nagarsh				:		نگارش
+namay				:		نمایى
+angoshtaneh			:		انگشتانه
+khatem				:		خاتم
+angshtr				:		انگشترى
+angsht				:		انگشتى
+angol				:		انگل
+z					:		زى
+janevar				:		جانور
+malaria				:		مالاریا
+aam					:		اعم
+bakhsos				:		بخصوص
+mikrb				:		میکرب
+sozak				:		سوزاک
+mizban				:		میزبانى
+anglstan			:		انگلستان
+anglhay				:		انگلهایى
+nistnd				:		نیستند
+anglosaksn			:		انگلوساکسن
+shakasteh			:		شکسته
+makhlot				:		مخلوط
+chin				:		چینى
+mab					:		مابى
+angm				:		انگم
+kaj					:		کاج
+angnar				:		انگنار
+angor				:		انگور
+torsh				:		ترش
+noah				:		نواحى
+chin				:		چین
+kharas				:		خرس
+zod					:		زود
+ras					:		رس
+rayn				:		راین
+biz					:		بیضى
+farng				:		فرنگى
+mazeh				:		مزه
+mashk				:		مشک
+moskatl				:		موسکاتل
+angor				:		انگورى
+angork				:		انگورک
+angikhtar			:		انگیختار
+angikhtgr			:		انگیختگر
+angikhtg			:		انگیختگى
+angikhtan			:		انگیختن
+angizesh			:		انگیزش
+angizndh			:		انگیزنده
+angizeh				:		انگیزه
+an					:		آنى
+enhedam				:		انهدام
+baktr				:		باکترى
 anoa				:		انواع
 hav					:		حاوى
 paroton				:		پروتون
@@ -4383,388 +4382,388 @@ tonkn				:		تونکن
 jarjia				:		جرجیا
 palinz				:		پلینزى
 mikronz				:		میکرونزى
-جزیره
-تاهیتى
-سیسیل
-هائیتى
-جمهورى
-سابق
-درشمال
-جنوب
-غربى
-جهنم
-چکوسلواکى
-حبشه
-حومه
-دالماسى
-دانمارک
-دلفى
-دوئل
-رومانى
-سغدیا
-سغد
-سنت
-سوئد
-سوریه
-سومالى
-سیبرى
-شبه
-ایبرى
-آفریقا
-اخائیه
-شانگ
-مسین
-شوخى
-صنعت
-ضیافت
-طریقت
-عرفان
-فسق
-فلاندرز
-فن
-فنیقه
-فیلیپین
-لائوس
-لاس
-لواط
-لیبى
-مالت
-ماله
-مباحثه
-مجادله
-مجارستان
-محاوره
-محله
-مسکو
-مشاجره
-مناطق
-مرتفع
-مناظره
-موناکو
-میشیگان
-مکزیک
-ناتال
-ناصره
-جلیل
-یهودیه
-نصرانى
-نپال
-نرماندى
-نزاع
-کشمکش
-هاوایى
-ویتنام
-کارتاژ
-کانتن
-کرات
-کردستان
-مریخ
-آشور
-پرتقال
-تایلند
-تبت
-ترکیه
-رومامى
-سیام
-فنلاند
-لیتوانى
-ماد
-نوبى
-رسم
-ندارد
-کوهستان
-کیف
-خوشگذرانى
-اهله
-قمر
-اهلى
-اهلیت
-اهم
-اهمال
-اهمى
-نده
-اهن
-تلپ
-اهنانت
-اهوى
-اوباشى
-اوت
-اوتار
-اوج
-پرواز
-خوش
-لذت
-اوجى
-بهادار
-اورانگوتان
-اورانیم
-اورانیوم
-اورژانس
-اورشلیم
-اورنگ
-اوریدس
-اوزان
-مقیاسات
-اوستا
-اوغ
-اوف
-اوقات
-تلخى
-اوگاندا
-اوگلنا
-شیرین
-اولاً
-اولاد
-عمه
-عمو
-محصول
-اولس
-اولویت
-اولى
-اولیاء
-اولیسز
-قهرمان
-حماسه
-اودیسه
-منسوب
-هومر
-نابیناى
-اولین
-ایام
-روزه
-مسیحى
-عید
-اولکس
-اونس
-اونیفورم
-اوه
-اوهام
-اوول
-اوکادو
-اوکالیپتوس
-اوکر
-اوکراین
-والله
-واى
-کاش
-ایالات
-اولسیتر
-ایرلند
-شایر
-یورکشایر
-ژوئیه
-سپتامبر
-جوانى
-تجربگى
-تولد
-متبرکه
-درهفته
-کریسمس
-ایپکائین
-ایتالیا
-ایثار
-ایجاب
-آبراه
-عواطف
-دفاعى
-بزاق
-صبرى
-عصبانیت
-تشخص
-لیزى
-تقارن
-جبهه
-بارندگى
-جدایى
-لحن
-عمدى
-حفره
-مستقل
-خار
-انفعالات
-دفع
-روابط
-حسنه
-قرحه
-آشوب
-ریگ
-مجارى
-بامته
-ماورا
-فرابنفش
-اوره
-تشعشع
-گندیدن
-فرد
-کلیه
-شفیره
-شباهت
-مبداء
-طنین
-عدسى
-عقده
-لنفى
-بلورها
-مسمومیت
-موازنه
-شیار
-موجود
-جوانه
-مولود
-نطفه
-همزمانى
-آلى
-واکنش
-وسایل
-وقفه
-بذر
-تالیوم
-تورم
-تیروئید
-سیلیکون
-فش
-گواتر
-کورک
-کوه
-ایجاز
-ایدئولوژى
-ایدا
-آریزا
-ایده
-آل
-آلیست
-ایذاء
-ایراد
-ایراددار
-ایرادگیر
-ایرادى
-ایرانى
-ایرلندى
-ایرنلدى
-ایریدیم
-ایزابل
-ایزد
-ایزس
-ایزوتوپ
-پرتو
-ایزومر
-ایساتیس
-رنگرزان
-ایست
-درسخن
-طمث
-نورى
-ایستادانه
-ایستادگى
-ایستاده
-ایستاندن
-ایستایش
-ایستایى
-ایستگاه
-نشانى
-تعمیرگاه
-پرس
-فضایى
-راهى
-کلانترى
-ایسلند
-ایسلندى
-ایشان
-ایضا
-ایفا
-ایفاء
-ایفاى
-ایل
-تبار
-ایلامى
-ایلچى
-ایلخانى
-ایلعاذر
-ایلیاتى
-ایلیاد
-ایما
-ایماء
-ایمن
-درمانى
-ایمنى
-جهانى
-روزها
-جنبیدن
-قبیل
-پیشوند
-نیز
-معانى
-پسوند
-حجره
-سوال
-اینان
-اینچ
-ایندیم
-اینشتنیم
-اینقدر
-اینها
-اینک
-ایهام
-ایوان
-آفتابگیر
-طرفین
+jazirah				:		جزیره
+tahit				:		تاهیتى
+sisil				:		سیسیل
+hait				:		هائیتى
+jamhor				:		جمهورى
+sabegh				:		سابق
+darshmal			:		درشمال
+jonob				:		جنوب
+gharb				:		غربى
+jahanam				:		جهنم
+chakosloak			:		چکوسلواکى
+habshh				:		حبشه
+homeh				:		حومه
+dalmas				:		دالماسى
+danmark				:		دانمارک
+dalf				:		دلفى
+dovel				:		دوئل
+roman				:		رومانى
+saghdia				:		سغدیا
+saghd				:		سغد
+sonat				:		سنت
+soad				:		سوئد
+sorih				:		سوریه
+somal				:		سومالى
+sibr				:		سیبرى
+shabh				:		شبه
+aibr				:		ایبرى
+afrigha				:		آفریقا
+akhaih				:		اخائیه
+shang				:		شانگ
+masin				:		مسین
+shokh				:		شوخى
+sanat				:		صنعت
+ziafat				:		ضیافت
+tarighat			:		طریقت
+erfan				:		عرفان
+fesgh				:		فسق
+falandrz			:		فلاندرز
+fan					:		فن
+fanighh				:		فنیقه
+filipin				:		فیلیپین
+los					:		لائوس
+las					:		لاس
+levat				:		لواط
+lib					:		لیبى
+malt				:		مالت
+maleh				:		ماله
+mobahasah			:		مباحثه
+mojadeleh			:		مجادله
+majarstan			:		مجارستان
+mohaverah			:		محاوره
+mahaleh				:		محله
+masko				:		مسکو
+moshajerah			:		مشاجره
+manategh			:		مناطق
+mortafe				:		مرتفع
+monazarah			:		مناظره
+monako				:		موناکو
+mishigan			:		میشیگان
+makzik				:		مکزیک
+natal				:		ناتال
+nasrh				:		ناصره
+jalil				:		جلیل
+yahodih				:		یهودیه
+nasran				:		نصرانى
+napal				:		نپال
+narmand				:		نرماندى
+neza				:		نزاع
+kashmksh			:		کشمکش
+havay				:		هاوایى
+vitnam				:		ویتنام
+kartazh				:		کارتاژ
+kantn				:		کانتن
+korat				:		کرات
+kardstan			:		کردستان
+mereykh				:		مریخ
+ashor				:		آشور
+porteghal			:		پرتقال
+taylnd				:		تایلند
+tabt				:		تبت
+tarkih				:		ترکیه
+romam				:		رومامى
+siam				:		سیام
+fanland				:		فنلاند
+litoan				:		لیتوانى
+mad					:		ماد
+nob					:		نوبى
+rasm				:		رسم
+nadard				:		ندارد
+kohestan			:		کوهستان
+keyf				:		کیف
+khoshgzran			:		خوشگذرانى
+aheleh				:		اهله
+ghamar				:		قمر
+ahl					:		اهلى
+ahliat				:		اهلیت
+ohm					:		اهم
+ehmal				:		اهمال
+ahm					:		اهمى
+nadh				:		نده
+ahn					:		اهن
+telep				:		تلپ
+ahnant				:		اهنانت
+aho					:		اهوى
+obash				:		اوباشى
+ovt					:		اوت
+otar				:		اوتار
+avj					:		اوج
+paroaz				:		پرواز
+khovsh				:		خوش
+lazat				:		لذت
+oj					:		اوجى
+bahadar				:		بهادار
+orangotan			:		اورانگوتان
+oranim				:		اورانیم
+ovranivm			:		اورانیوم
+orzhans				:		اورژانس
+orshlim				:		اورشلیم
+ovrng				:		اورنگ
+orids				:		اوریدس
+avzan				:		اوزان
+maghiasat			:		مقیاسات
+avesta				:		اوستا
+ogh					:		اوغ
+of					:		اوف
+avghat				:		اوقات
+talkh				:		تلخى
+oganda				:		اوگاندا
+oglna				:		اوگلنا
+shirin				:		شیرین
+avalana				:		اولاً
+olad				:		اولاد
+ameh				:		عمه
+amo					:		عمو
+mahsol				:		محصول
+ols					:		اولس
+oloyt				:		اولویت
+ol					:		اولى
+avlia				:		اولیاء
+olisz				:		اولیسز
+ghahraman			:		قهرمان
+hamash				:		حماسه
+odish				:		اودیسه
+mansob				:		منسوب
+homr				:		هومر
+nabina				:		نابیناى
+avalin				:		اولین
+ayam				:		ایام
+rozeh				:		روزه
+masih				:		مسیحى
+eyd					:		عید
+olks				:		اولکس
+ovns				:		اونس
+ovnifovrm			:		اونیفورم
+oh					:		اوه
+avham				:		اوهام
+ovl					:		اوول
+okado				:		اوکادو
+okaliptos			:		اوکالیپتوس
+okr					:		اوکر
+okrayn				:		اوکراین
+vallah				:		والله
+va					:		واى
+kashb				:		کاش
+aialat				:		ایالات
+olsitr				:		اولسیتر
+airlnd				:		ایرلند
+shayr				:		شایر
+yorkshayr			:		یورکشایر
+zhoaih				:		ژوئیه
+saptambr			:		سپتامبر
+joan				:		جوانى
+tajrbg				:		تجربگى
+tavalod				:		تولد
+matbrkh				:		متبرکه
+darhfth				:		درهفته
+kerismas			:		کریسمس
+aipkain				:		ایپکائین
+aitalia				:		ایتالیا
+aisar				:		ایثار
+aijab				:		ایجاب
+abrah				:		آبراه
+avatef				:		عواطف
+dafa				:		دفاعى
+bozagh				:		بزاق
+sabr				:		صبرى
+asbanit				:		عصبانیت
+tashakhos			:		تشخص
+liz					:		لیزى
+tagharon			:		تقارن
+jabhah				:		جبهه
+barndg				:		بارندگى
+jaday				:		جدایى
+lahn				:		لحن
+amd					:		عمدى
+hofreh				:		حفره
+mostaghel			:		مستقل
+khar				:		خار
+anfalat				:		انفعالات
+dafa				:		دفع
+ravabet				:		روابط
+hasaneh				:		حسنه
+gharhh				:		قرحه
+ashob				:		آشوب
+rig					:		ریگ
+majar				:		مجارى
+bamth				:		بامته
+mavra				:		ماورا
+farabnfsh			:		فرابنفش
+oreh				:		اوره
+tashasho			:		تشعشع
+gandaydn			:		گندیدن
+fard				:		فرد
+kolieh				:		کلیه
+shafirh				:		شفیره
+shabaht				:		شباهت
+mabda				:		مبداء
+tanin				:		طنین
+ads					:		عدسى
+oghdeh				:		عقده
+lanf				:		لنفى
+balorha				:		بلورها
+masmomit			:		مسمومیت
+movazanah			:		موازنه
+shiar				:		شیار
+movjod				:		موجود
+javaneh				:		جوانه
+movlod				:		مولود
+notfeh				:		نطفه
+hamzman				:		همزمانى
+al					:		آلى
+vakonesh			:		واکنش
+vasayel				:		وسایل
+vaghfeh				:		وقفه
+bazr				:		بذر
+talivm				:		تالیوم
+tavarom				:		تورم
+tiroaid				:		تیروئید
+silikon				:		سیلیکون
+fash				:		فش
+govatr				:		گواتر
+korak				:		کورک
+kovah				:		کوه
+aijaz				:		ایجاز
+aidolozh			:		ایدئولوژى
+aida				:		ایدا
+ariza				:		آریزا
+aideh				:		ایده
+al					:		آل
+alist				:		آلیست
+aiza				:		ایذاء
+airad				:		ایراد
+airaddar			:		ایراددار
+airadgir			:		ایرادگیر
+airad				:		ایرادى
+airan				:		ایرانى
+airlnd				:		ایرلندى
+airnld				:		ایرنلدى
+airidim				:		ایریدیم
+aizabl				:		ایزابل
+aizad				:		ایزد
+aizs				:		ایزس
+aizotop				:		ایزوتوپ
+parto				:		پرتو
+aizovmer			:		ایزومر
+aisatis				:		ایساتیس
+rangrzan			:		رنگرزان
+aist				:		ایست
+darskhn				:		درسخن
+tams				:		طمث
+nor					:		نورى
+aistadanh			:		ایستادانه
+aistadg				:		ایستادگى
+aistadeh			:		ایستاده
+aistandn			:		ایستاندن
+aistaysh			:		ایستایش
+aistay				:		ایستایى
+aistgah				:		ایستگاه
+nashan				:		نشانى
+tamirgah			:		تعمیرگاه
+pors				:		پرس
+fazay				:		فضایى
+rah					:		راهى
+kalantr				:		کلانترى
+aislnd				:		ایسلند
+aislnd				:		ایسلندى
+aishan				:		ایشان
+aiza				:		ایضا
+aifa				:		ایفا
+aifa				:		ایفاء
+aifa				:		ایفاى
+ail					:		ایل
+tabar				:		تبار
+ailam				:		ایلامى
+ailch				:		ایلچى
+ailkhan				:		ایلخانى
+ailazr				:		ایلعاذر
+ailiat				:		ایلیاتى
+ailiad				:		ایلیاد
+aima				:		ایما
+aima				:		ایماء
+aimen				:		ایمن
+darman				:		درمانى
+aimn				:		ایمنى
+jahan				:		جهانى
+rozha				:		روزها
+jonbidan			:		جنبیدن
+ghabil				:		قبیل
+pishoand			:		پیشوند
+niz					:		نیز
+man					:		معانى
+pasoand				:		پسوند
+hojreh				:		حجره
+soval				:		سوال
+ainan				:		اینان
+ainch				:		اینچ
+aindim				:		ایندیم
+ainshtnim			:		اینشتنیم
+ainghdr				:		اینقدر
+ainha				:		اینها
+ainak				:		اینک
+aiham				:		ایهام
+ayoan				:		ایوان
+aftabgir			:		آفتابگیر
+tarafeyn			:		طرفین
 gardeshgah			:		گردشگاه
 avab				:		ایوب
-ایوتا
-ایوسن
-عهد
+aivta				:		ایوتا
+aivsn				:		ایوسن
+ahd					:		عهد
 sooom				:		سوم
-پلیوس
-اکیگوسن
-ایکاروس
-پسر
-دالوس
-ایکاش
-اکار
-اکاسیا
-اکالیت
-اکاکیا
-اکبر
-اکبیرى
-اکتاو
-اکتساب
-اکتسابى
-اکتشافى
-اکثریت
-مذاکرات
-اکراه
-اکستراسیستول
-اکسفورد
-اکسید
-هیدروژن
-زنگ
-قلع
-اکسیدنیترید
-اکسیدى
-اکسیژن
-فلز
-زیادى
-اکسیر
-آمیختن
-اکلیل
-الملک
-جنوبى
-اکنون
-اکوادور
-اکوردئون
-اکول
-اکید
-اکیدا
-آئورت
-بدرود
-دعاى
-خیر
-دینان
+palivs				:		پلیوس
+akigosn				:		اکیگوسن
+aikaros				:		ایکاروس
+pasrsr				:		پسر
+dalos				:		دالوس
+aikash				:		ایکاش
+akar				:		اکار
+akasia				:		اکاسیا
+akalit				:		اکالیت
+akakia				:		اکاکیا
+akbar				:		اکبر
+akbir				:		اکبیرى
+aktav				:		اکتاو
+ektesab				:		اکتساب
+aktsab				:		اکتسابى
+aktshaf				:		اکتشافى
+aksariat			:		اکثریت
+mozakerat			:		مذاکرات
+ekrah				:		اکراه
+akstrasistol		:		اکستراسیستول
+aksford				:		اکسفورد
+oksid				:		اکسید
+hidrozhen			:		هیدروژن
+zang				:		زنگ
+ghal				:		قلع
+aksidnitrid			:		اکسیدنیترید
+aksid				:		اکسیدى
+oksizhen			:		اکسیژن
+felez				:		فلز
+ziad				:		زیادى
+eksir				:		اکسیر
+amikhtan			:		آمیختن
+eklil				:		اکلیل
+almlk				:		الملک
+janob				:		جنوبى
+aknon				:		اکنون
+akoador				:		اکوادور
+akordon				:		اکوردئون
+akol				:		اکول
+akid				:		اکید
+akida				:		اکیدا
+aort				:		آئورت
+bedrod				:		بدرود
+da					:		دعاى
+khayr				:		خیر
+dinan				:		دینان
 masihkh				:		مسیحخى
-تدفین
-تشریفات
+tadfin				:		تدفین
+tashrifat			:		تشریفات
 tamid				:		تعمید
-تفسیر
+tafsir				:		تفسیر
 jakobin				:		جاکوبین
 ghosl				:		غسل
 namgzar				:		نامگذارى
@@ -4800,7 +4799,7 @@ khovresh			:		خورش
 dazdk				:		دزدک
 roan				:		روان
 favareh				:		فواره
-راکد
+raked				:		راکد
 rodar				:		رودار
 bazrkh				:		بزرخ
 zolal				:		زلال
@@ -4839,7 +4838,7 @@ varsho				:		ورشو
 kaft				:		کافت
 kopil				:		کوپیل
 aba					:		آبا
-آباء
+aba					:		آباء
 abad				:		آباد
 marghzar			:		مرغزار
 kavir				:		کویر
@@ -4920,7 +4919,7 @@ abgong				:		آبگونگى
 abgonh				:		آبگونه
 tasbit				:		تثبیت
 abgir				:		آبگیر
-آبگینه
+abgineh				:		آبگینه
 ablah				:		آبله
 gav					:		گاوى
 gavan				:		گون
@@ -4961,7 +4960,7 @@ motaghate			:		متقاطع
 atshbaz				:		آتشبازى
 jeragheh			:		جرقه
 atshparh			:		آتشپاره
-آتشخان
+atshkhan			:		آتشخان
 atashdan			:		آتشدان
 atshznh				:		آتشزنه
 atshfshan			:		آتشفشان
@@ -5001,7 +5000,7 @@ ajrkar				:		آجرکارى
 ajel				:		آجل
 ajla				:		آجلا
 ajodan				:		آجودان
-آجودانى
+ajodan				:		آجودانى
 ajil				:		آجیل
 sovkhteh			:		سوخته
 ach					:		آچ
@@ -5495,63 +5494,63 @@ sifilis				:		سیفیلیس
 for					:		فورى
 mikroskop			:		میکروسکپى
 honarpisheh			:		هنرپیشه
-آزمایشگاه
-آزماینده
-آزمایه
+azmayshgah			:		آزمایشگاه
+azmayandeh			:		آزماینده
+azmayeh				:		آزمایه
 azmand				:		آزمند
-آزمندى
-آزمودگى
-آزمودنى
-آزموده
-آزمون
-نامزد
-مسابقات
-پایکار
-پذیرش
-تشخیصى
-مرزى
-وارسى
-آزمونگاه
-آزمونگر
-آژ
-آژانس
-مسافرتى
-کاریابى
-آژنگ
-آژیر
-آس
-آسان
-دردسر
-آسانسورچى
-آسانى
-آسایش
-آسایشگاه
-جذامى
-پیران
-سالمندان
-آسپرین
-آستر
-برنجى
-دوزى
-آستردوز
-آسترى
-آستین
-آسم
-آسمان
-جل
-دره
-دهم
-غرش
-نیلگون
-آسمانسنجى
-آسمانه
-آسمى
-آسه
+azmnd				:		آزمندى
+azmodg				:		آزمودگى
+azmodn				:		آزمودنى
+azmodeh				:		آزموده
+azmon				:		آزمون
+namzad				:		نامزد
+masabghat			:		مسابقات
+paykar				:		پایکار
+paziresh			:		پذیرش
+tashkhis			:		تشخیصى
+marz				:		مرزى
+vars				:		وارسى
+azmongah			:		آزمونگاه
+azmongr				:		آزمونگر
+azh					:		آژ
+azhans				:		آژانس
+masafrt				:		مسافرتى
+kariab				:		کاریابى
+azhang				:		آژنگ
+azhir				:		آژیر
+as					:		آس
+asan				:		آسان
+dardsr				:		دردسر
+asansorch			:		آسانسورچى
+asan				:		آسانى
+asayesh				:		آسایش
+asayshgah			:		آسایشگاه
+jazam				:		جذامى
+piran				:		پیران
+salmndan			:		سالمندان
+asprin				:		آسپرین
+astar				:		آستر
+barnj				:		برنجى
+doz					:		دوزى
+astrdoz				:		آستردوز
+astr				:		آسترى
+astin				:		آستین
+asm					:		آسم
+asman				:		آسمان
+jala				:		جل
+derah				:		دره
+dahom				:		دهم
+ghoresh				:		غرش
+neylgon				:		نیلگون
+asmansnj			:		آسمانسنجى
+asmanh				:		آسمانه
+asm					:		آسمى
+ash					:		آسه
 asodg				:		آسودگى
 asodan				:		آسودن
-آسوده
+asodeh				:		آسوده
 nagzashtn			:		نگذاشتن
-بادى
+bad					:		بادى
 gholat				:		غلات
 asiaban				:		آسیابان
 asia				:		آسیاى
@@ -5587,7 +5586,7 @@ ashnan				:		آشنان
 ashnayan			:		آشنایان
 ashnay				:		آشنایى
 basol				:		باصول
-تصادفى
+tasadf				:		تصادفى
 ghovgha				:		غوغا
 ashobgar			:		آشوبگر
 ashobgranh			:		آشوبگرانه
@@ -5626,7 +5625,7 @@ hasham				:		حشم
 aghoz				:		آغوز
 aghosh				:		آغوش
 afaz				:		آفازى
-آفت
+afat				:		آفت
 pakhoarth			:		پخته
 zadg				:		زدگى
 gardan				:		گردان
@@ -5707,7 +5706,7 @@ sozn				:		سوزن
 geramafovn			:		گرامافون
 shakanjah			:		شکنجه
 madg				:		مادگى
-کرمها
+karmha				:		کرمها
 moghabel			:		مقابل
 malabeh				:		ملعبه
 bajabh				:		بجعبه
@@ -5787,8 +5786,8 @@ nofos				:		نفوس
 beshr				:		بشر
 amarh				:		آماره
 apandis				:		آپاندیس
-ایلئون
-شامه
+ailon				:		ایلئون
+shamah				:		شامه
 pasham				:		پاشام
 poshsh				:		پوشش
 zari				:		ضریع
@@ -5911,7 +5910,7 @@ anonnilim			:		آنوننیلیم
 anonhgzim			:		آنونهگزیم
 anononim			:		آنونونیم
 anonoktim			:		آنونوکتیم
-آنونکوادیم
+anonkoadim			:		آنونکوادیم
 ah					:		آه
 ahar				:		آهار
 farobr				:		فروبرى
@@ -6280,28 +6279,28 @@ gh					:		قى
 khirh				:		خیره
 cheshmha			:		چشمها
 khal				:		خال
-رنگارنگى
-برچه
+rangarng			:		رنگارنگى
+barchah				:		برچه
 chandni				:		چندین
 changak				:		چنگک
-هیدروکسیل
-ملکول
-کاسبرگ
-چروک
-تورى
-سنکوپ
-صمغى
-حداقل
-کرموسوم
-دشوار
-مارپیچى
-معوج
-بطبقه
-گلچین
-تعبیر
-حشو
-زوائد
-حفاظ
+hidroksil			:		هیدروکسیل
+malkol				:		ملکول
+kasbarg				:		کاسبرگ
+chorok				:		چروک
+tor					:		تورى
+sankop				:		سنکوپ
+samgh				:		صمغى
+hadeaghl			:		حداقل
+karmosom			:		کرموسوم
+doshoar				:		دشوار
+marpich				:		مارپیچى
+mooaj				:		معوج
+batbghh				:		بطبقه
+galchin				:		گلچین
+tabir				:		تعبیر
+hasho				:		حشو
+zoad				:		زوائد
+hefaz				:		حفاظ
 togrd				:		توگرد
 shofah				:		شفعه
 mosha				:		مشاع
@@ -6431,63 +6430,62 @@ soror				:		سرور
 shayb				:		شیب
 nahamoar			:		ناهموار
 sah					:		سعه
-مبتنى
-سلیقه
-گوگرد
-ضلع
-عبارت
-کانونى
-نشریه
-سیلیس
-انحرافى
-سینه
-سکته
-ملیح
-سکون
-شاخک
-چماقى
-ترکه
-تبلیغاتى
-برقیب
-شبکه
-شرایط
-پرچمى
-پرچمش
-بلندتر
-ضربه
-شمع
-شعف
-شیارهاى
-فرج
-شکافى
-مکعب
-شکلى
-دهانه
-منقبض
-صخامت
-ترق
-تروق
-تق
-تیک
-جرنگ
-چلب
-چلوپ
-چلپ
-خرخر
-خس
-خش
-دنگ
-رسا
-جغد
-غژ
-گوشخراش
-توتیاء
-البحر
-فاحشه
-صفاتى
-صورتى
-خمیر
-ضریب
+mabtn				:		مبتنى
+saligheh			:		سلیقه
+gevgrd				:		گوگرد
+zala				:		ضلع
+ebarat				:		عبارت
+kanon				:		کانونى
+nashrieh			:		نشریه
+silis				:		سیلیس
+anhraf				:		انحرافى
+sineh				:		سینه
+saktah				:		سکته
+malih				:		ملیح
+sokon				:		سکون
+shakhk				:		شاخک
+chamagh				:		چماقى
+tarekeh				:		ترکه
+tablighat			:		تبلیغاتى
+barghib				:		برقیب
+shabakah			:		شبکه
+sharayet			:		شرایط
+parchm				:		پرچمى
+parchmsh			:		پرچمش
+balndtr				:		بلندتر
+zarbah				:		ضربه
+shama				:		شمع
+shaf				:		شعف
+shiarha				:		شیارهاى
+farj				:		فرج
+shakaf				:		شکافى
+mokab				:		مکعب
+shakl				:		شکلى
+dahaneh				:		دهانه
+monghabez			:		منقبض
+sakhamt				:		صخامت
+teragh				:		ترق
+tarogh				:		تروق
+tagh				:		تق
+tik					:		تیک
+jarang				:		جرنگ
+chalab				:		چلب
+chalop				:		چلوپ
+chalp				:		چلپ
+khorkhor			:		خرخر
+khas				:		خس
+khash				:		خش
+dang				:		دنگ
+rasa				:		رسا
+joghd				:		جغد
+ghazh				:		غژ
+goshkhrash			:		گوشخراش
+totia				:		توتیاء
+albhr				:		البحر
+safat				:		صفاتى
+sort				:		صورتى
+khamir				:		خمیر
+zarib				:		ضریب
 ba					:		باء
 taravat				:		طراوت
 tala				:		طلاى
@@ -9372,110 +9370,110 @@ roainh				:		روئینه
 rava				:		روا
 bodn				:		بودنى
 roabodn				:		روابودن
-روادید
-گذرنامه
-رواق
-رواقى
-روال
-بازگشتى
-جابجاپذیر
-خدماتى
-فاصل
-مبصر
-کتابخانه
-پژوهش
-تنایى
-زایش
-روانبخش
-روانپاکساز
-روانپاکسازى
-روانپزشک
-روانپزشکى
-روانداز
-روانه
-روانکاو
-روانکاوى
-روایاتى
-قبول
-روایت
-روایتى
-روایى
-روبارب
-روبالش
-دورکلاه
-حمایل
-روباه
-روبباد
-روببالا
-روبترقى
-روبخاور
-روبدریا
-روبراه
-روبراهى
-روبزوال
-روبشمال
-روبطرف
-روبل
-روبلا
-روبنا
+ravadid				:		روادید
+gazrnamh			:		گذرنامه
+revagh				:		رواق
+roagh				:		رواقى
+roval				:		روال
+bazgsht				:		بازگشتى
+jabjapzir			:		جابجاپذیر
+khadmat				:		خدماتى
+fasl				:		فاصل
+mobsr				:		مبصر
+ke					:		کتابخانه
+pezhohsh			:		پژوهش
+tanay				:		تنایى
+zayesh				:		زایش
+roanbkhsh			:		روانبخش
+roanpaksaz			:		روانپاکساز
+roanpaksaz			:		روانپاکسازى
+roanpzshk			:		روانپزشک
+roanpzshk			:		روانپزشکى
+roandaz				:		روانداز
+ravaneh				:		روانه
+roankav				:		روانکاو
+roankav				:		روانکاوى
+roaiat				:		روایاتى
+ghabol				:		قبول
+revayat				:		روایت
+roait				:		روایتى
+roai				:		روایى
+robarb				:		روبارب
+robalsh				:		روبالش
+dorklah				:		دورکلاه
+hamayel				:		حمایل
+robah				:		روباه
+robbad				:		روبباد
+robbala				:		روببالا
+robtrgh				:		روبترقى
+robkhavr			:		روبخاور
+robdria				:		روبدریا
+robrah				:		روبراه
+robrah				:		روبراهى
+robzoal				:		روبزوال
+robshmal			:		روبشمال
+robtrf				:		روبطرف
+robl				:		روبل
+robla				:		روبلا
+robana				:		روبنا
 roband				:		روبند
 robandeh			:		روبنده
-روبه
-نقصان
+robh				:		روبه
+noghsan				:		نقصان
 gazard				:		گذارنده
-روبیان
-روبیدن
-روبیدیم
-روپنهان
-روپوست
-روپوش
-پزشکان
-روپیه
-روتختى
-روتنیم
-الارواح
-الاطلس
-القدس
-بازرگانى
-سوداگرى
-جادوگران
-مکد
-غرض
-صمیمت
-وش
-روحا
-روحانیت
-بخشد
-بمحلى
-جنگجویان
-تضعیف
-مطمئن
-روخاک
-روخاکى
-آمازون
-دجله
-ولگا
-رودادن
-فرات
+robian				:		روبیان
+robidan				:		روبیدن
+robidim				:		روبیدیم
+ropnhan				:		روپنهان
+ropost				:		روپوست
+roposh				:		روپوش
+pazshkan			:		پزشکان
+rovpieh				:		روپیه
+rotkht				:		روتختى
+rotnim				:		روتنیم
+alaroah				:		الارواح
+alatls				:		الاطلس
+alghds				:		القدس
+bazrgan				:		بازرگانى
+sodagr				:		سوداگرى
+jadogran			:		جادوگران
+makd				:		مکد
+gharaz				:		غرض
+samimt				:		صمیمت
+vash				:		وش
+roha				:		روحا
+rohanit				:		روحانیت
+bakhshd				:		بخشد
+bamhl				:		بمحلى
+jangjoyan			:		جنگجویان
+tazayf				:		تضعیف
+motmen				:		مطمئن
+rokhak				:		روخاک
+rokhak				:		روخاکى
+amazon				:		آمازون
+dajlh				:		دجله
+valga				:		ولگا
+rodadn				:		رودادن
+farat				:		فرات
 niagara				:		نیاگارا
-شعبات
-رودش
-رودل
-رودماغى
-خلفى
-فراخ
-درجراحى
-رودى
-رودیم
-روروک
-فوریه
+shabat				:		شعبات
+rodsh				:		رودش
+rodel				:		رودل
+rodmagh				:		رودماغى
+khalf				:		خلفى
+ferakh				:		فراخ
+darjrah				:		درجراحى
+rod					:		رودى
+rodim				:		رودیم
+rorok				:		روروک
+fevrieh				:		فوریه
 novambr				:		نوامبر
-ژانویه
-بارگیرى
-باراندازى
+zhanoyeh			:		ژانویه
+bargir				:		بارگیرى
+barandaz			:		باراندازى
 rasolan				:		رسولان
-پانزدهم
-مارس
+panzdhm				:		پانزدهم
+mars				:		مارس
 sizdhm				:		سیزدهم
 ghest				:		قسط
 davr				:		داورى
@@ -9665,7 +9663,7 @@ baz					:		بزى
 ghovm				:		قوم
 rishg				:		ریشگى
 rishnak				:		ریشناک
-پیچک
+pichak				:		پیچک
 choghondar			:		چغندر
 shaghoaghl			:		شقاقل
 masraf				:		مصرف
@@ -9706,8 +9704,8 @@ akhrm				:		اخرمى
 zar					:		زائر
 almghds				:		المقدس
 zo					:		زائو
-زائیدن
-زائیده
+zaidn				:		زائیدن
+zaidh				:		زائیده
 zab					:		زاب
 zaj					:		زاجى
 zadayst				:		زادایست
@@ -9998,14 +9996,12 @@ badzban				:		بدزبان
 badkar				:		بدکار
 barzgar				:		برزگر
 biveh				:		بیوه
-پتیاره
 pargo				:		پرگو
 saher				:		ساحر
 jadogar				:		جادوگر
 jadogr				:		جادوگرى
 jasn				:		جاسن
 jameh				:		جامه
-جاکش
 kar					:		کر
 chagh				:		چاق
 hakem				:		حاکم
@@ -10205,77 +10201,77 @@ zofa				:		زوفا
 zofa				:		زوفاى
 zom					:		زوم
 zona				:		زونا
-زیا
-زیاچه
+zia					:		زیا
+ziachh				:		زیاچه
 darrondh			:		دررونده
-برآورد
-گرانبار
-تپاندن
-خسته
-ستاندن
-ستودن
-شیفته
-کاوش
-زیادتر
-زیادترین
-زیادتى
-زیادشدن
-زیاده
-درکار
-ستان
-ستانى
-زیارت
-اعتاب
-حج
-زیارتگاه
-زیاگان
-عقدى
-زیاک
-زیب
-عیار
-زیبنده
-زیپ
-زیج
-زیچ
-بغلى
-لگد
-پالگد
-شلوارى
-کشباف
-پیراهنى
-ذربین
-گلدانى
-گلفهشنگ
-خندیدن
-معتدله
-نفوذزن
-بمى
-کتفى
-زیرآبى
-زیرا
-زیرالفبا
-زیرالگوریتم
-زیربار
-زیربخش
-زیربرنامه
-زیربغل
-زیربغلى
-زیربنا
-زیرپوش
-زیرپیراهنى
-زیرپیمانه
-زیرترین
-زیرجامه
-زیرجلى
-زیرجلکى
-زیرچانه
-زیرچشمى
-زیرحامل
-زیرداستان
-زیردرخت
-زیردست
-زیرروال
-زیررویه
+baravrd				:		برآورد
+geranbar			:		گرانبار
+tapandan			:		تپاندن
+khasteh				:		خسته
+satandan			:		ستاندن
+sotodan				:		ستودن
+shiftah				:		شیفته
+kavsh				:		کاوش
+ziadtr				:		زیادتر
+ziadtrin			:		زیادترین
+ziadt				:		زیادتى
+ziadshdn			:		زیادشدن
+ziadeh				:		زیاده
+darkar				:		درکار
+satan				:		ستان
+satan				:		ستانى
+ziarat				:		زیارت
+atab				:		اعتاب
+haj					:		حج
+ziartgah			:		زیارتگاه
+ziagan				:		زیاگان
+aghd				:		عقدى
+ziak				:		زیاک
+zib					:		زیب
+eyar				:		عیار
+zibandeh			:		زیبنده
+zip					:		زیپ
+zij					:		زیج
+zich				:		زیچ
+baghl				:		بغلى
+lagad				:		لگد
+palgd				:		پالگد
+shaloar				:		شلوارى
+kashbaf				:		کشباف
+pirahn				:		پیراهنى
+zarbin				:		ذربین
+galdan				:		گلدانى
+galfhshng			:		گلفهشنگ
+khandidn			:		خندیدن
+matdlh				:		معتدله
+nafozzn				:		نفوذزن
+bam					:		بمى
+katf				:		کتفى
+zirab				:		زیرآبى
+zira				:		زیرا
+ziralfba			:		زیرالفبا
+ziralgoritm			:		زیرالگوریتم
+zirbar				:		زیربار
+zirbkhsh			:		زیربخش
+zirbrnamh			:		زیربرنامه
+zirbghl				:		زیربغل
+zirbghl				:		زیربغلى
+zirbana				:		زیربنا
+zirposh				:		زیرپوش
+zirpirahn			:		زیرپیراهنى
+zirpimanh			:		زیرپیمانه
+zirtrin				:		زیرترین
+zirjameh			:		زیرجامه
+zirjl				:		زیرجلى
+zirjlk				:		زیرجلکى
+zirchanh			:		زیرچانه
+zirchshm			:		زیرچشمى
+zirhaml				:		زیرحامل
+zirdastan			:		زیرداستان
+zirdrkht			:		زیردرخت
+zirdast				:		زیردست
+zirroal				:		زیرروال
+zirroyh				:		زیررویه
 zayrzmin			:		زیرزمین
 zirsakht			:		زیرساخت
 zirsaz				:		زیرسازى
@@ -10858,193 +10854,193 @@ sarbtr				:		سربطرى
 ghot				:		قوطى
 sarblnd				:		سربلند
 sarblnd				:		سربلندى
-سربند
-پادشاهان
-سربه
-سربهوا
-سربهواه
-سرپا
-سرپارچه
-سرپایان
-سرپایى
-سرپخ
-سرپرستار
-سرپرستى
-سرپنجه
-سرپوش
-غبارگیر
-سرپیچ
-چوگان
-سرپیچى
-سرپیشخدمت
-سرپیما
-سرتاپا
-فراگرفتن
-سرتاسرى
-سرتافتن
-سرتراشیده
-سرتیپ
-سرتیپى
-سرتیز
-سرتیکه
-سرتکان
-سرتکه
-سرجاده
-سرجمع
-سرجوخه
-سرجوش
-سرجیوس
-سرچاه
-نفت
-سرچپق
-سرقلیانى
-سرچنگ
-سرچنگى
-سرچکش
-سرحال
-چابک
-سرحد
-سرحدات
-کمونیست
-سرحکم
-دختان
-ژاسب
-سرخاب
-سرخاندان
-سرخت
-سرخجه
-سرخچه
-سرخدار
-سرخر
-سرخرگ
-سرخرگچه
-سرخس
-مارزبان
-سرخسستان
-سرخورى
-سرخوش
-سرخوشى
-سرخونده
-شامگاه
-شفق
-خجلت
-سرخکى
-سرداب
-سردابه
-سردار
-سرداور
-سردبیر
-سردخانه
-سردر
-سردرد
-سردرگم
-هاج
-واج
-سردرگمى
-سردرهم
-سردسته
-سردستى
-سردشدن
-سردفتر
-سردماغ
-سرده
-سردهنده
-سردودمان
-سردودکش
-سردى
-سردیزه
-سردکن
-سرراست
-سررسید
-سررسیده
-سررشته
-سرریز
-سرریشه
-سرزدن
-سرزده
-سرزمین
-عجائب
-موعود
-نامسکون
-سرزندگى
-سرزنده
-بشاش
-سرزنش
-وجدان
-سرزنى
-سرژ
-سرساز
-سرسام
-سرسبز
-سرسبزى
-سرسبک
-سرسپردگى
-سرسپردن
-سرستون
-سرسختى
-درعقیده
-سرسراى
-سرسره
-سرسرى
-سرسلسله
-سرسنجاق
+sarbnd				:		سربند
+padshahan			:		پادشاهان
+sarbh				:		سربه
+sarbhoa				:		سربهوا
+sarbhoah			:		سربهواه
+sarpa				:		سرپا
+sarparchh			:		سرپارچه
+sarpayan			:		سرپایان
+sarpay				:		سرپایى
+sarpkh				:		سرپخ
+sarprstar			:		سرپرستار
+sarprst				:		سرپرستى
+sarpnjh				:		سرپنجه
+sarposh				:		سرپوش
+ghabargir			:		غبارگیر
+sarpich				:		سرپیچ
+chovgan				:		چوگان
+sarpich				:		سرپیچى
+sarpishkhdmt		:		سرپیشخدمت
+sarpima				:		سرپیما
+sartapa				:		سرتاپا
+faragrftn			:		فراگرفتن
+sartasr				:		سرتاسرى
+sartaftn			:		سرتافتن
+sartrashidh			:		سرتراشیده
+sartip				:		سرتیپ
+sartip				:		سرتیپى
+sartiz				:		سرتیز
+sartikh				:		سرتیکه
+sartkan				:		سرتکان
+sartkh				:		سرتکه
+sarjadh				:		سرجاده
+sarjama				:		سرجمع
+sarjokhh			:		سرجوخه
+sarjosh				:		سرجوش
+sarjivs				:		سرجیوس
+sarchah				:		سرچاه
+naft				:		نفت
+sarchpgh			:		سرچپق
+sarghlian			:		سرقلیانى
+sarchng				:		سرچنگ
+sarchng				:		سرچنگى
+sarchksh			:		سرچکش
+sarhal				:		سرحال
+chabok				:		چابک
+sarhd				:		سرحد
+sarhdat				:		سرحدات
+kamonist			:		کمونیست
+sarhkm				:		سرحکم
+dakhtan				:		دختان
+zhasb				:		ژاسب
+sorkhab				:		سرخاب
+sarkhandan			:		سرخاندان
+sarkht				:		سرخت
+sorkhejeh			:		سرخجه
+sarkhchh			:		سرخچه
+sarkhdar			:		سرخدار
+sa					:		سرخر
+sarkhrg				:		سرخرگ
+sarkhrgchh			:		سرخرگچه
+sarakhs				:		سرخس
+marzban				:		مارزبان
+sarkhsstan			:		سرخسستان
+sarkhor				:		سرخورى
+sarkhosh			:		سرخوش
+sarkhosh			:		سرخوشى
+sarkhondh			:		سرخونده
+shamgah				:		شامگاه
+shafagh				:		شفق
+khejlat				:		خجلت
+sarkhk				:		سرخکى
+sardab				:		سرداب
+sardabh				:		سردابه
+sardar				:		سردار
+sardavr				:		سرداور
+sa					:		سردبیر
+sardkhanh			:		سردخانه
+sardr				:		سردر
+sardrd				:		سردرد
+sardrgm				:		سردرگم
+haj					:		هاج
+vaj					:		واج
+sardrgm				:		سردرگمى
+sardrhm				:		سردرهم
+sardsth				:		سردسته
+sardst				:		سردستى
+sardshdn			:		سردشدن
+sa					:		سردفتر
+sardmagh			:		سردماغ
+sardah				:		سرده
+sardhndh			:		سردهنده
+sardodman			:		سردودمان
+sardodksh			:		سردودکش
+sard				:		سردى
+sardizh				:		سردیزه
+sardkn				:		سردکن
+sarrast				:		سرراست
+sarrsid				:		سررسید
+sarrsidh			:		سررسیده
+sarrshth			:		سررشته
+sarriz				:		سرریز
+sarrishh			:		سرریشه
+sarzdn				:		سرزدن
+sarzdh				:		سرزده
+sarzmin				:		سرزمین
+ajab				:		عجائب
+movavd				:		موعود
+namskon				:		نامسکون
+sarzndg				:		سرزندگى
+sarzndh				:		سرزنده
+bashash				:		بشاش
+sarzanesh			:		سرزنش
+vejdan				:		وجدان
+sarzn				:		سرزنى
+sarzh				:		سرژ
+sarsaz				:		سرساز
+sarsam				:		سرسام
+sarsbz				:		سرسبز
+sarsbz				:		سرسبزى
+sarsbk				:		سرسبک
+sarsprdg			:		سرسپردگى
+sa					:		سرسپردن
+sarston				:		سرستون
+sarskht				:		سرسختى
+daraghidh			:		درعقیده
+sarsra				:		سرسراى
+sarsrh				:		سرسره
+sarsr				:		سرسرى
+sarslslh			:		سرسلسله
+sarsnjagh			:		سرسنجاق
 sar					:		سرسنگین
 sarah				:		سرش
-سرشاخه
-سرشار
+sarshakhh			:		سرشاخه
+sarshar				:		سرشار
 sarshar				:		سرشارى
 saresht				:		سرشت
-سرشتن
-سرشتى
-سرشمارى
-سرشوى
-سرشویه
-سرشیردار
-سرشک
-سرشکن
-سرشکنى
-سرصفحه
-سرطان
-سرطانزا
-سرطانى
-مافوق
-سرعمله
-سرفرازى
-سرفرود
-سرفصل
-عظیم
-مسلحانه
-سرقلم
-سرگذشت
-سرگردانى
-هدفى
-سرگرم
+sareshtan			:		سرشتن
+sarsht				:		سرشتى
+sarshmar			:		سرشمارى
+sarsho				:		سرشوى
+sarshoyh			:		سرشویه
+sarshirdar			:		سرشیردار
+sareshk				:		سرشک
+sarshkn				:		سرشکن
+sarshkn				:		سرشکنى
+sarsfhh				:		سرصفحه
+saratan				:		سرطان
+sartanza			:		سرطانزا
+sartan				:		سرطانى
+mafavgh				:		مافوق
+saramlh				:		سرعمله
+sarfraz				:		سرفرازى
+sarfrod				:		سرفرود
+sarfsl				:		سرفصل
+azim				:		عظیم
+maslhanh			:		مسلحانه
+sarghlm				:		سرقلم
+sa					:		سرگذشت
+sargrdan			:		سرگردانى
+hadf				:		هدفى
+sargrm				:		سرگرم
 ghirjd				:		غیرجدى
 sargrm				:		سرگرمى
-سرگروهبان
-سرگشا
-سرگشاده
-سرگشایى
-سرگشتگى
-سرگشته
-سرگیجه
-سرگین
-سرلشکر
-سرلشکرى
-سرلوحه
-سرلوله
-سرماپا
-سرماخوردگى
-سرماخیز
-سرماریزه
+sargrohban			:		سرگروهبان
+sargsha				:		سرگشا
+sargshadh			:		سرگشاده
+sargshay			:		سرگشایى
+sargshtg			:		سرگشتگى
+sargshth			:		سرگشته
+sargijh				:		سرگیجه
+sargin				:		سرگین
+sa					:		سرلشکر
+sarlshkr			:		سرلشکرى
+sarlohh				:		سرلوحه
+sarlolh				:		سرلوله
+sarmapa				:		سرماپا
+sarmakhordg			:		سرماخوردگى
+sarmakhiz			:		سرماخیز
+sarmarizah			:		سرماریزه
 sarmazay			:		سرمازایى
 sarmazdg			:		سرمازدگى
-سرمازدن
-سرمازده
-سرمازى
-سرماسنج
-سرماسوزک
-امانى
+sarmazdn			:		سرمازدن
+sarmazdh			:		سرمازده
+sarmaz				:		سرمازى
+sarmasnj			:		سرماسنج
+sarmasozk			:		سرماسوزک
+aman				:		امانى
 sarmth				:		سرمته
 sarmhor				:		سرمحور
 sarmad				:		سرمد
@@ -11077,7 +11073,7 @@ nieaysh				:		نیایش
 mariam				:		مریم
 navakht				:		نواخت
 sarodsaz			:		سرودسازى
-سرودشب
+sarodshb			:		سرودشب
 not					:		نت
 sarodnamh			:		سرودنامه
 sarodn				:		سرودنى
@@ -11118,7 +11114,7 @@ sarkrdh				:		سرکرده
 sa					:		سرکش
 sarksht				:		سرکشتى
 sarksh				:		سرکشى
-سرکشید
+sarkshid			:		سرکشید
 sa					:		سرکشیدن
 sarkshish			:		سرکشیش
 sarklmh				:		سرکلمه
@@ -11279,10 +11275,10 @@ saroys				:		سلف
 baghimt				:		بقیمتى
 arzantr				:		ارزانتر
 solfidan			:		سلفیدن
-سلمانى
-سلنیم
-منشعب
-سازکه
+salman				:		سلمانى
+salnim				:		سلنیم
+monsheb				:		منشعب
+sazkh				:		سازکه
 dok					:		دوکى
 hambnd				:		همبندى
 fotoalktrik			:		فوتوالکتریک
@@ -11406,7 +11402,7 @@ kovartz				:		کوارتز
 shoynd				:		شویند
 safray				:		صفرایى
 talgh				:		طلق
-فندک
+fandak				:		فندک
 geran				:		گران
 garanbha			:		گرانبها
 lajoard				:		لاجورد
@@ -11448,7 +11444,7 @@ sangin				:		سنگینى
 maskokat			:		مسکوکات
 yadgar				:		یادگارى
 san					:		سنى
-سنین
+sanin				:		سنین
 sanivr				:		سنیور
 aghnom				:		اقنومى
 banian				:		بنیانى
@@ -11774,54 +11770,53 @@ simin				:		سیمین
 simksh				:		سیمکش
 sinma				:		سینماى
 sinamay				:		سینمایى
-کفترى
-سینوسى
-سینى
+kaftr				:		کفترى
+sinos				:		سینوسى
+sin					:		سینى
 hazar				:		حضار
 chadegan			:		چردگان
-مویان
-سیکران
-سیکل
-سیکلوئید
-سک
-سکاندار
-قلبى
-سکرات
-سکس
-سکستگى
-سکسى
-سکسکه
-سکندرى
-سکنه
-سکنى
-پنسى
-شیلینگ
-پنس
-شیلینکى
-شلیلینگ
-نقد
-شیلینگى
-سکو
-چرخنده
-سکونت
-سکوى
-معرفى
-سکویى
-کاپیتان
+moyan				:		مویان
+sikran				:		سیکران
+sikl				:		سیکل
+sikloaid			:		سیکلوئید
+sak					:		سک
+sakandar			:		سکاندار
+ghalb				:		قلبى
+sakarat				:		سکرات
+sakstg				:		سکستگى
+saks				:		سکسى
+sakskeh				:		سکسکه
+sakndr				:		سکندرى
+sakaneh				:		سکنه
+sakn				:		سکنى
+pans				:		پنسى
+shiling				:		شیلینگ
+pans				:		پنس
+shilink				:		شیلینکى
+shaliling			:		شلیلینگ
+naghd				:		نقد
+shiling				:		شیلینگى
+sako				:		سکو
+charkhndh			:		چرخنده
+sokonat				:		سکونت
+sako				:		سکوى
+marf				:		معرفى
+sakoy				:		سکویى
+kapitan				:		کاپیتان
 namzdha				:		نامزدهاى
-شأن
-شئون
-شائبه
-شابهت
-شاپو
-قوچ
-شاخابه
-شاخصها
-شاخصیت
-معالجه
-خونساز
-مکانیسم
-توارث
+shan				:		شأن
+shon				:		شئون
+shabh				:		شائبه
+shabht				:		شابهت
+shapov				:		شاپو
+ghoch				:		قوچ
+shakhabeh			:		شاخابه
+shakhsha			:		شاخصها
+shakhsit			:		شاخصیت
+moalajah			:		معالجه
+khonsaz				:		خونساز
+mekanism			:		مکانیسم
+tavaros				:		توارث
 manatis				:		معناطیس
 sodor				:		صدور
 tasirat				:		تاثیرات
@@ -14153,472 +14148,472 @@ barzakh				:		برزخ
 barzkh				:		برزخى
 ba					:		برزدن
 barzg				:		برزگ
-برزگرى
-فلاکت
-برزمین
-برزن
-برزیدن
-برزیستگر
-برزیستن
-برزیستى
-برزیل
-برس
+barzgr				:		برزگرى
+falakat				:		فلاکت
+barzmin				:		برزمین
+barzan				:		برزن
+barzidan			:		برزیدن
+barzistgr			:		برزیستگر
+barzistn			:		برزیستن
+barzist				:		برزیستى
+brezil				:		برزیل
+boros				:		برس
 pakn				:		پاکن
 barsam				:		برسام
-برسامه
-برسامى
-برسرلج
-برسمیت
-نشناختن
+barsamh				:		برسامه
+barsam				:		برسامى
+barsrlj				:		برسرلج
+barsmit				:		برسمیت
+nashnakhtn			:		نشناختن
 nazk				:		نازکى
-برشتن
-برشگاه
-برشمردن
-برشناخت
-برشناختى
-برصحنه
-برصلیب
-برطانى
-هجرى
-برطرف
+bereshtan			:		برشتن
+barshgah			:		برشگاه
+barshmrdn			:		برشمردن
+barshnakht			:		برشناخت
+barshnakht			:		برشناختى
+barshnh				:		برصحنه
+barslib				:		برصلیب
+bartan				:		برطانى
+hajr				:		هجرى
+bartaraf			:		برطرف
 baralih				:		برعلیه
 baraks				:		برعکس
-تگرگى
+tagrg				:		تگرگى
 boran				:		بورانى
 ghobar				:		غبار
-برفاب
-برفک
-برفکى
-پیچا
-مالشى
-برقرارى
-برقو
-برقوزن
-قارچها
-بیدى
-تنبول
-توتون
-برگبو
-تاتوره
-کتابى
-گیاهانى
-تربچه
-زیرگل
-برگدار
-برگذار
-برگرداندنى
-برگرداننده
-برگردانى
-برگردنده
-برگزارى
-برگزید
-برگزیدگى
-برگزیدن
-منتخب
-برگزیننده
-برگزینى
-خصال
-برگشتگى
-برگمارى
-برگنو
-برگک
-برلوح
-برلیان
-برم
-برمادگى
-برمحور
-برملا
-برمور
-برنا
-برناس
-پشتیبانى
-صحنى
-تصویب
-محصولات
-فرا
-مسئله
-مقیم
-نگهداشت
-کاربردى
-انتخاباتى
-کاربر
-برنجاسف
-برنجین
-برنچوب
-برندگر
-برندگى
-پولها
-جایزه
-غیرمترقبه
-برنز
-برنزه
-برنزى
-برنشیت
-برنفس
-برنگر
-برنگرداندنى
-برنگرى
-برنگشتنى
-برنوس
-بره
-حیو
-انپروارى
-برهانى
-برهما
-برهمن
-برهمکنش
-برو
-بروات
-وصولى
-بروت
-برودت
-برودتى
-برودره
-بروسلوز
-بروشور
-برومند
-تراوا
-نشست
-برونداد
-بروکسل
-الذمه
-بریان
-بریانى
-بریتانیاى
-بریتانیایى
-سردشمن
-غنیمت
-بریدنى
-بریلیم
-برین
-بریکت
-برکرسى
-برکلیم
-برکمدگى
-برکنار
-برکنارى
-تفریط
-برکندن
-برکه
-بزادى
-بزاز
-بزاقى
-بزچران
-بزدائید
-بزدار
-بزدلى
-خاندان
-بزرگان
-بزرگپا
-بزرگترین
-انگیسى
-مشاور
-بزرگداشت
-بزرگداشتن
-بزرگراه
-بزرگزاده
-بزرگوار
-بزرگوارى
-معنوى
-فربهى
-بزق
-بزم
-بزمجه
-بزندان
-بزه
-بزهکار
-بزهکارانه
-بزودى
-بزیارت
-بزک
-بزکوهى
-فرآورى
-گانى
-بسا
-بسادگى
-بساط
-کتابفروشى
-تلفیق
-بسامه
-تلفنى
-بسان
-بساوایى
-بساوند
-بساک
-بسپار
-بسپارش
-بسپارى
-بسپایک
-بستاب
-بستار
-بستاره
-بستانى
-کارتها
-بسترساز
-بستگاه
-بستگى
-بعقاید
-دوچیز
-بستنگاه
-فروشند
-گشودن
-موارد
-بستو
-بستون
-ملحق
-بستوه
-بسختى
-بسد
-بسرعت
-تلف
-درقیمت
-رویاندن
-قاپیدن
-گذرنده
-بسرفت
-بسرقت
-بسستى
-مقال
-بسفایج
-بسگوى
-بسندگى
-بسنده
-بسنگینى
-بسهولت
-بسى
-جاذب
-غیور
-گرسنه
-محتاط
-مشتاق
-وحشتناک
-بسیارى
-بسیطى
-بشارت
-بشارتى
-بشتاب
-بشدت
-پرتاپ
-فوران
-بشردوست
-بشریت
-بشهادت
-بشوخى
-بشور
-بپوش
-بشکست
-بشکلى
-بشکن
-بصخره
-بصراحت
-بصف
-بصل
-النخاع
-بصیر
-بصیرتى
-بصیرى
-بضربان
-بضمیمه
-بطالت
-بطرفى
-کوارتى
-سرپستانک
-داربراى
-منفجره
-تمثیل
-بطریقى
-بطریکه
-بطعنه
-بطلمیوسى
-بطو
-رکامل
-بطى
-بظاهر
-بظر
-بع
-بعبارت
-بعجله
-قائم
-بعدا
-بعداز
-بعدازظهر
-بعدها
-بعض
-کلنى
-ممالک
-المنافع
-بعلزبوب
-بعموم
-بعنوان
-بعیدترین
-بغاز
-بغایت
-بغبغو
-بغرنج
-بغرنجى
-بغلامى
-بغونیا
-بغیراز
-بفرمایید
-بفریفته
-بفهرست
-بفوریت
-بقا
-بقاء
-بقال
-بقالب
-بقالى
-بقایا
-جسد
-بقچه
-بقدرى
-بقدریک
-بقرار
-بقسمت
-بقطار
-بقعه
-اسود
-بقناعت
-بقولات
-بگاه
-بگرمى
-بگل
-بگیر
-بل
-بلااثر
-بلاانقطاع
-بلاتصدى
-بلاتلکیفى
-بلاجواب
-بلادن
-بلاروس
-بلاعوض
-بلافاصله
-بیصدا
-بلال
-بلانه
-بلاهت
-بلاى
-بلدرچین
-بلرزه
-بلژیکى
-بلسان
-بلشویک
-بلشیویکى
-بلعنده
-بلعیدنى
-بلغارستان
-بلغارى
-بلغمى
-پروازى
-جار
-نطر
-همت
-همتى
-بلندگوى
-عابرین
-بلهوس
-بلوا
-بلواگر
-بلوچ
-کریستال
-بلوردان
-درجوف
-بلوز
-بلوزى
-بلوزیا
-ویرجینیا
-بلوف
-بلونى
-بلوکى
-بلى
-بلید
-بلیه
-بلکه
-آتشزا
-تخریبى
-هیدروژنى
-بمبئى
-بمباران
-بمثابه
-بمجرد
-بمراتب
-بمرکز
-بمصرف
-بمعرض
-بمعیار
-بمقدار
-بمقیاس
-بمن
-بموجب
-بمورد
-بموقع
-بمیان
-بمیزان
-بمیهن
-بنابر
-بناچار
-بناحق
-بناز
-پروردن
-بناى
-بنایى
-بناکننده
-بنت
-قنسول
-بنتیجه
-بنجل
-خرچنگى
-تنبان
-جنبنده
-زیرشلوارى
-قیقاجى
-درزهاى
-بنداب
-بنداد
-بندباز
-بندبند
-بنددار
-مالاگا
-مقصد
-بندرت
-بندرجه
-بندرگاه
-بندزدن
-بندق
-بنده
-بندها
-بندهاى
-بندیزه
-بندکفش
-بنشن
-بنشینید
-بنض
-بنظرم
-چنین
-بنقطه
-بنگ
-بنگاب
-معاوضه
-بنگر
-بنگلادش
-بنگله
-بنواحى
-بنوسان
-بنوعى
-جنه
-بنیانگذار
-بنیچه
-بنکدار
-گدار
-ممکن
-اسانى
-استثناى
-اعشار
-خیک
-کمترى
-تبدبل
-موکول
+barfab				:		برفاب
+barfak				:		برفک
+barfk				:		برفکى
+picha				:		پیچا
+malsh				:		مالشى
+barghrar			:		برقرارى
+bargho				:		برقو
+barghozn			:		برقوزن
+gharchha			:		قارچها
+bid					:		بیدى
+tanbol				:		تنبول
+toton				:		توتون
+bargbo				:		برگبو
+tatoreh				:		تاتوره
+katab				:		کتابى
+giahan				:		گیاهانى
+torobcheh			:		تربچه
+zirgl				:		زیرگل
+bargdar				:		برگدار
+bargzar				:		برگذار
+bargrdandn			:		برگرداندنى
+bargardanandeh		:		برگرداننده
+bargrdan			:		برگردانى
+bargrdndh			:		برگردنده
+bargzar				:		برگزارى
+bargzid				:		برگزید
+bargzidg			:		برگزیدگى
+ba					:		برگزیدن
+montakhab			:		منتخب
+bargzinndh			:		برگزیننده
+bargzin				:		برگزینى
+khesal				:		خصال
+bargshtg			:		برگشتگى
+bargmar				:		برگمارى
+bargno				:		برگنو
+bargk				:		برگک
+barloh				:		برلوح
+berelian			:		برلیان
+baram				:		برم
+barmadg				:		برمادگى
+barmhor				:		برمحور
+barmla				:		برملا
+barmor				:		برمور
+borna				:		برنا
+barnas				:		برناس
+pashtiban			:		پشتیبانى
+sahn				:		صحنى
+tasoyb				:		تصویب
+mahsolat			:		محصولات
+fara				:		فرا
+masalah				:		مسئله
+moghim				:		مقیم
+naghdasht			:		نگهداشت
+karbrd				:		کاربردى
+antkhabat			:		انتخاباتى
+karbr				:		کاربر
+barnjasf			:		برنجاسف
+barnjin				:		برنجین
+barnchob			:		برنچوب
+barndgr				:		برندگر
+barndg				:		برندگى
+polha				:		پولها
+jayezeh				:		جایزه
+ghayremotaraghebeh	:		غیرمترقبه
+boronz				:		برنز
+barnzh				:		برنزه
+barnz				:		برنزى
+boronshit			:		برنشیت
+barnfs				:		برنفس
+barngr				:		برنگر
+barngrdandn			:		برنگرداندنى
+barngr				:		برنگرى
+barngshtn			:		برنگشتنى
+barnos				:		برنوس
+bareh				:		بره
+hiv					:		حیو
+anproar				:		انپروارى
+barhan				:		برهانى
+barahma				:		برهما
+barahman			:		برهمن
+barhmknsh			:		برهمکنش
+boro				:		برو
+baroat				:		بروات
+vasol				:		وصولى
+borot				:		بروت
+borodat				:		برودت
+barodt				:		برودتى
+barodrh				:		برودره
+barosloz			:		بروسلوز
+borovshor			:		بروشور
+baromnd				:		برومند
+tarava				:		تراوا
+neshast				:		نشست
+barondad			:		برونداد
+baroksl				:		بروکسل
+alzmh				:		الذمه
+berian				:		بریان
+barian				:		بریانى
+baritania			:		بریتانیاى
+baritaniai			:		بریتانیایى
+sardshmn			:		سردشمن
+ghanimat			:		غنیمت
+baridn				:		بریدنى
+barilim				:		بریلیم
+borin				:		برین
+barikt				:		بریکت
+barkrs				:		برکرسى
+barklim				:		برکلیم
+barkmdg				:		برکمدگى
+barknar				:		برکنار
+barknar				:		برکنارى
+tafrit				:		تفریط
+barkndn				:		برکندن
+berkeh				:		برکه
+bazad				:		بزادى
+bazaz				:		بزاز
+bazagh				:		بزاقى
+bazchran			:		بزچران
+bazdaid				:		بزدائید
+bazdar				:		بزدار
+bazdl				:		بزدلى
+khandan				:		خاندان
+bazrgan				:		بزرگان
+bazrgpa				:		بزرگپا
+bazrgtrin			:		بزرگترین
+angis				:		انگیسى
+moshaver			:		مشاور
+bazrgdasht			:		بزرگداشت
+bazrgdashtn			:		بزرگداشتن
+bazrgrah			:		بزرگراه
+bazrgzadh			:		بزرگزاده
+bozorgoar			:		بزرگوار
+bazrgoar			:		بزرگوارى
+mano				:		معنوى
+farbh				:		فربهى
+bazgh				:		بزق
+bazm				:		بزم
+bozmajeh			:		بزمجه
+bazndan				:		بزندان
+bezeh				:		بزه
+bazhkar				:		بزهکار
+bazhkaranh			:		بزهکارانه
+bazod				:		بزودى
+baziart				:		بزیارت
+bazak				:		بزک
+bazkoh				:		بزکوهى
+faravr				:		فرآورى
+gan					:		گانى
+basa				:		بسا
+basadg				:		بسادگى
+basat				:		بساط
+katabfrosh			:		کتابفروشى
+talfigh				:		تلفیق
+basamh				:		بسامه
+talfn				:		تلفنى
+besan				:		بسان
+basavay				:		بساوایى
+basavnd				:		بساوند
+basak				:		بساک
+baspar				:		بسپار
+basparsh			:		بسپارش
+baspar				:		بسپارى
+baspayk				:		بسپایک
+bastab				:		بستاب
+bestar				:		بستار
+bastarh				:		بستاره
+bastan				:		بستانى
+kartha				:		کارتها
+bastrsaz			:		بسترساز
+bastgah				:		بستگاه
+bastg				:		بستگى
+baghayd				:		بعقاید
+dochiz				:		دوچیز
+bastngah			:		بستنگاه
+faroshnd			:		فروشند
+goshodan			:		گشودن
+mavared				:		موارد
+basto				:		بستو
+baston				:		بستون
+molhagh				:		ملحق
+bestoh				:		بستوه
+baskht				:		بسختى
+bosd				:		بسد
+basrat				:		بسرعت
+talaf				:		تلف
+darghimt			:		درقیمت
+royandan			:		رویاندن
+ghapidan			:		قاپیدن
+gazrndh				:		گذرنده
+basrft				:		بسرفت
+basrght				:		بسرقت
+basst				:		بسستى
+maghal				:		مقال
+basfayj				:		بسفایج
+basgo				:		بسگوى
+basndg				:		بسندگى
+basandeh			:		بسنده
+basngin				:		بسنگینى
+basholt				:		بسهولت
+bas					:		بسى
+jazeb				:		جاذب
+ghayor				:		غیور
+gorosneh			:		گرسنه
+mohtat				:		محتاط
+moshtagh			:		مشتاق
+vahshtnak			:		وحشتناک
+basiar				:		بسیارى
+basit				:		بسیطى
+basharat			:		بشارت
+bashart				:		بشارتى
+bashtab				:		بشتاب
+bashdt				:		بشدت
+partap				:		پرتاپ
+favaran				:		فوران
+bashrdost			:		بشردوست
+bashariat			:		بشریت
+bashhadt			:		بشهادت
+bashokh				:		بشوخى
+bashor				:		بشور
+baposh				:		بپوش
+bashkst				:		بشکست
+bashkl				:		بشکلى
+beshkan				:		بشکن
+baskhrh				:		بصخره
+basraht				:		بصراحت
+basf				:		بصف
+basal				:		بصل
+alnkha				:		النخاع
+basir				:		بصیر
+basirt				:		بصیرتى
+basir				:		بصیرى
+bazrban				:		بضربان
+bazmimh				:		بضمیمه
+batalat				:		بطالت
+batrf				:		بطرفى
+koart				:		کوارتى
+sarpstank			:		سرپستانک
+darbra				:		داربراى
+manfjrh				:		منفجره
+tamsil				:		تمثیل
+batrigh				:		بطریقى
+batrikh				:		بطریکه
+batanh				:		بطعنه
+batlmivs			:		بطلمیوسى
+bato				:		بطو
+rakaml				:		رکامل
+bat					:		بطى
+bazahr				:		بظاهر
+bazr				:		بظر
+ba					:		بع
+babart				:		بعبارت
+bajlh				:		بعجله
+gham				:		قائم
+bada				:		بعدا
+badaz				:		بعداز
+badazzhr			:		بعدازظهر
+badha				:		بعدها
+baz					:		بعض
+kaln				:		کلنى
+mamalek				:		ممالک
+almnafa				:		المنافع
+balzbob				:		بعلزبوب
+bamom				:		بعموم
+banoan				:		بعنوان
+baydtrin			:		بعیدترین
+boghaz				:		بغاز
+baghayt				:		بغایت
+baghbgho			:		بغبغو
+boghranj			:		بغرنج
+baghrnj				:		بغرنجى
+baghlam				:		بغلامى
+baghonia			:		بغونیا
+baghiraz			:		بغیراز
+bafrmhtrmanhayid	:		بفرمایید
+bafrifth			:		بفریفته
+bafhrst				:		بفهرست
+baforit				:		بفوریت
+bagha				:		بقا
+bagha				:		بقاء
+baghal				:		بقال
+baghalb				:		بقالب
+baghal				:		بقالى
+baghaya				:		بقایا
+jasad				:		جسد
+baghchh				:		بقچه
+baghdr				:		بقدرى
+baghdrik			:		بقدریک
+baghrar				:		بقرار
+baghsmt				:		بقسمت
+baghtar				:		بقطار
+bogheh				:		بقعه
+asoad				:		اسود
+baghnat				:		بقناعت
+bagholat			:		بقولات
+begah				:		بگاه
+bagrm				:		بگرمى
+bagl				:		بگل
+bagir				:		بگیر
+bal					:		بل
+balasr				:		بلااثر
+balanghta			:		بلاانقطاع
+balatsd				:		بلاتصدى
+balatlkif			:		بلاتلکیفى
+balajoab			:		بلاجواب
+baladn				:		بلادن
+balaros				:		بلاروس
+baloz				:		بلاعوض
+belafaslh			:		بلافاصله
+bisda				:		بیصدا
+balal				:		بلال
+balanh				:		بلانه
+balahat				:		بلاهت
+bala				:		بلاى
+baldrchin			:		بلدرچین
+balrzh				:		بلرزه
+balzhik				:		بلژیکى
+balsan				:		بلسان
+balshoyk			:		بلشویک
+balshivik			:		بلشیویکى
+balandh				:		بلعنده
+balaydn				:		بلعیدنى
+balgharstan			:		بلغارستان
+balghar				:		بلغارى
+balghm				:		بلغمى
+paroaz				:		پروازى
+jar					:		جار
+natr				:		نطر
+hamot				:		همت
+hamt				:		همتى
+balndgo				:		بلندگوى
+abrin				:		عابرین
+bolhavas			:		بلهوس
+baloa				:		بلوا
+baloagr				:		بلواگر
+baloch				:		بلوچ
+keristal			:		کریستال
+balordan			:		بلوردان
+darjof				:		درجوف
+boloz				:		بلوز
+baloz				:		بلوزى
+balozia				:		بلوزیا
+virjinia			:		ویرجینیا
+balof				:		بلوف
+balon				:		بلونى
+balok				:		بلوکى
+bal					:		بلى
+balid				:		بلید
+balieh				:		بلیه
+balkeh				:		بلکه
+atshza				:		آتشزا
+takhrib				:		تخریبى
+hidrozhn			:		هیدروژنى
+bamba				:		بمبئى
+bambaran			:		بمباران
+bamsabh				:		بمثابه
+bamjrd				:		بمجرد
+bamratb				:		بمراتب
+bamrkz				:		بمرکز
+bamsrf				:		بمصرف
+bamarz				:		بمعرض
+bamayar				:		بمعیار
+bamghdar			:		بمقدار
+bamghias			:		بمقیاس
+bamn				:		بمن
+bamojb				:		بموجب
+bamord				:		بمورد
+bamogha				:		بموقع
+bamian				:		بمیان
+bamizan				:		بمیزان
+bamihn				:		بمیهن
+banabr				:		بنابر
+banachar			:		بناچار
+banahgh				:		بناحق
+banaz				:		بناز
+paroardan			:		پروردن
+bana				:		بناى
+banay				:		بنایى
+banaknndh			:		بناکننده
+bent				:		بنت
+ghonsol				:		قنسول
+bantijh				:		بنتیجه
+bonjol				:		بنجل
+kharchng			:		خرچنگى
+tonban				:		تنبان
+jonbandeh			:		جنبنده
+zirshloar			:		زیرشلوارى
+ghighaj				:		قیقاجى
+darzha				:		درزهاى
+bandab				:		بنداب
+bondad				:		بنداد
+bandbaz				:		بندباز
+bandbnd				:		بندبند
+banddar				:		بنددار
+malaga				:		مالاگا
+maghsad				:		مقصد
+bandrt				:		بندرت
+bandrjh				:		بندرجه
+bandrgah			:		بندرگاه
+bandzdn				:		بندزدن
+bondogh				:		بندق
+bandeh				:		بنده
+bandha				:		بندها
+bandha				:		بندهاى
+bandizh				:		بندیزه
+bandkfsh			:		بندکفش
+bonshan				:		بنشن
+banshinid			:		بنشینید
+banz				:		بنض
+banzrm				:		بنظرم
+chonin				:		چنین
+banghth				:		بنقطه
+bang				:		بنگ
+bangab				:		بنگاب
+moavazah			:		معاوضه
+bangr				:		بنگر
+bangladsh			:		بنگلادش
+bangaleh			:		بنگله
+banoah				:		بنواحى
+banosan				:		بنوسان
+bano				:		بنوعى
+jonah				:		جنه
+baniangzar			:		بنیانگذار
+bonicheh			:		بنیچه
+bonakdar			:		بنکدار
+godar				:		گدار
+momakan				:		ممکن
+asan				:		اسانى
+astsna				:		استثناى
+ashar				:		اعشار
+khik				:		خیک
+kamtr				:		کمترى
+tabdbl				:		تبدبل
+movkol				:		موکول
 bahtrin				:		بهترین
 biraheh				:		بیراهه
 periz				:		پریز
@@ -14748,64 +14743,64 @@ tahghighat			:		تحقیقات
 anavin				:		عناوین
 hamghtar			:		همقطار
 faravan				:		فراوانى
-قتل
-بیلچه
-چمچه
-لیوان
-غارت
-قهقرا
-قور
-کفیل
-گدایى
-گونیا
-لطافت
-مبارکى
-دهسال
-مزایده
-مقدسات
-حرمتى
-میراث
-نفع
-نیابت
-نیکنامى
-نیکوترین
-هدر
-مکانى
-چسباننده
-فشردگى
-نپیوسته
-نخوردن
-نخوردنى
-همین
-شراکت
-هنجارى
-وجد
-زورکارى
-جارو
-تطمیع
-لیزین
-ناودان
-پستال
-مکاتبه
-کلون
-یغما
-یون
-نوعى
-متکى
-گمارى
-اندازنده
-گماردن
-نبرده
-نرفته
-نیداختنى
-نیفتاده
-کارخورى
-کارگیرى
-کالاهاى
-واگذارنده
-بهادر
-بهادرى
-درزمان
+ghatl				:		قتل
+bilchh				:		بیلچه
+chamchh				:		چمچه
+livan				:		لیوان
+gharat				:		غارت
+ghahghara			:		قهقرا
+ghor				:		قور
+kafil				:		کفیل
+gaday				:		گدایى
+gonia				:		گونیا
+latafat				:		لطافت
+mabark				:		مبارکى
+dahsal				:		دهسال
+mozayedeh			:		مزایده
+maghdsat			:		مقدسات
+harmt				:		حرمتى
+miras				:		میراث
+nafa				:		نفع
+neyabat				:		نیابت
+niknam				:		نیکنامى
+nikotrin			:		نیکوترین
+hadar				:		هدر
+makan				:		مکانى
+chasbanndh			:		چسباننده
+fashrdg				:		فشردگى
+napivsth			:		نپیوسته
+nakhordn			:		نخوردن
+nakhordn			:		نخوردنى
+hamin				:		همین
+sharakat			:		شراکت
+hanjar				:		هنجارى
+vajd				:		وجد
+zorkar				:		زورکارى
+jaro				:		جارو
+tatmi				:		تطمیع
+lizin				:		لیزین
+navdan				:		ناودان
+pastal				:		پستال
+mokatabah			:		مکاتبه
+kolon				:		کلون
+yaghma				:		یغما
+yovn				:		یون
+no					:		نوعى
+matk				:		متکى
+gamar				:		گمارى
+andazndh			:		اندازنده
+gomardan			:		گماردن
+nabardeh			:		نبرده
+narfth				:		نرفته
+nidakhtn			:		نیداختنى
+niftadh				:		نیفتاده
+karkhor				:		کارخورى
+kargir				:		کارگیرى
+kalaha				:		کالاهاى
+vagzarndh			:		واگذارنده
+bahador				:		بهادر
+bahadr				:		بهادرى
+darzman				:		درزمان
 behbod				:		بهبود
 bohtan				:		بهتان
 bahtr				:		بهترى
@@ -15398,365 +15393,365 @@ arizh				:		عریضه
 arizih				:		عریضیه
 azadar				:		عزادار
 azadar				:		عزادارى
-عزب
-عزبى
-عزت
-عزل
-پادشاهى
-عزیزترین
-نزد
-عزیزم
-عزیمت
-عسر
-البلع
-عسرالبلع
-عسرالبول
-عسرالتنفس
-عسرالطمث
-دشتاک
-عسلاب
-عسلبند
-عسلى
-عسلک
-عشا
-عشایى
-عشبه
-خیلون
-عشرتکده
-عشریه
-یاغرض
-لود
-عاشقى
-مجامعت
-عشقه
-چوپ
-لیموترش
-چاووش
-سرفلزى
-عصایى
-عصرانه
-عصعص
-عصعصى
-عصیان
-عصیر
-عضاده
-خیاطه
-ماسکه
-مستعرضه
-مضو
-ممدده
-منبسط
-خواهرى
-کمونیستى
-روتارى
-پیشاهنگى
-نهانزادان
-درویشان
-فرانسیس
-کوکلس
-کلان
-دموکرات
-هیتلرى
-ویگ
-مهرگان
-فضولات
-غریق
-معدود
-البدل
-فراموش
-فراموشخانه
-مرتاض
-صلیبیون
-لایولا
-کویکر
-فرهنگستان
-گازانبرى
-قانونگذارى
-مجمع
-مجوف
-محفل
-نمازخانه
-کنندگان
-مشاوره
-قبضه
-عضودار
-عضوطبقه
-عضوهیئت
-عطا
-عطاء
-عطار
-عطارد
-عطارى
-پمادموى
-یاسمین
-عطردان
-عطرگل
-عطرگیرى
-عطریات
-عطش
-بگذشته
-ماسبق
-عطفى
-عطوفت
-عظم
-عانه
-الجثگى
-عفریت
-عفریته
-عفو
-مشروط
-عفونت
-عفیف
-عقاب
-عقابى
-عقار
-لنین
-وسطایى
-لوتر
-مندل
-ناسیونالیزم
-نهیلیستى
-ماندگى
-عقبه
-معوض
-عقلا
-عقلانیت
-عقلایى
-عقید
-بخودش
-منطبق
-مستقیما
-مارکس
-سلیمانى
-عقیقه
-عقیم
-عقیمى
-علاء
-الدین
-تلگرافى
-مرس
-نظارتى
-درجملات
-اختصارات
-دردها
-علاجى
-علاقجات
-بغذاى
-فضانوردى
-علاقمندى
-غارها
-اجساد
-علام
-جذر
-عمداً
-متمایز
-منها
-مکث
-حجارى
-علامتى
-آرایشگاهها
-گامى
-علاوه
-العلل
-بتواند
-وجودى
-علتى
-علظ
-چرى
-پازهر
-چراگاه
-خنازیر
-دروکن
-قلیاب
-ماست
-سرخیان
-نیزار
-علفى
-علقه
-شنود
-نجوم
-کلیساها
-نوامیس
-لذیذه
-الاجتماع
-الاخلاق
-الاصوات
-الحرکات
-السنه
-العبادات
-العلاج
-اللغات
-براهین
-پیدایش
-بنیرو
-توپخانه
-جغرافیا
-هواو
-تنى
-گیاهها
-مترشحه
-طبیعیات
-کالبد
-فرآیندهاى
-لایتناهى
-مدیریت
-علل
-میاه
-هندسه
-الاعضاء
-کتابدارى
-کیمیا
-علما
-تجمع
-علمیات
-نرمش
-علناً
-علو
-علومقام
-البدلى
-رغم
-ورجه
-علیت
-علیحده
-علیق
-علیل
-عم
-واشینگتن
-عمامه
-عمان
-عمد
-مجوفى
-عمقى
-عمگر
-یاغله
-پیراستن
-بذرات
-تبرک
-ترور
-تنزل
-خزیدن
-خصمانه
-خطاب
-خیساندن
-دوشرطى
-لنگیدن
-متهورانه
-موهن
-ناهمانى
-نفى
-نقض
-همانى
-همزاد
-وند
-یگانى
-کفر
-عملاً
-عملگر
-تکین
-کارش
-بخواهد
-عملواره
-عملوند
-آکروباتى
-عنیف
-نظامیان
-عملکرد
-عمودا
-عمودیت
-عموم
-عموماً
-عمیقا
-عن
-عنابیان
-عنان
-عنبر
-عنبرچه
-عنبرسائل
-عنبه
-عنبیه
-عنتر
-پردازشى
-تناوبى
-مول
-مولى
-گرمکن
-عنقا
-عنقریب
-عنن
-تجلیلى
-چشمگیر
-پاکت
-مردها
-لردى
-هلند
-عنکبوتى
-عنکبوتیان
-عنکبوتیه
-میثاق
-عوا
-بندرى
-عواقب
-الناسى
-فریبى
+azab				:		عزب
+azb					:		عزبى
+ezat				:		عزت
+azl					:		عزل
+padshah				:		پادشاهى
+aziztrin			:		عزیزترین
+nazd				:		نزد
+azizm				:		عزیزم
+azimat				:		عزیمت
+osr					:		عسر
+albla				:		البلع
+asralbla			:		عسرالبلع
+asralbol			:		عسرالبول
+asraltnfs			:		عسرالتنفس
+asraltms			:		عسرالطمث
+dashtak				:		دشتاک
+aslab				:		عسلاب
+aslbnd				:		عسلبند
+asl					:		عسلى
+aslk				:		عسلک
+asha				:		عشا
+ashay				:		عشایى
+ashbh				:		عشبه
+khilon				:		خیلون
+ashrtkdh			:		عشرتکده
+ashrih				:		عشریه
+yaghrz				:		یاغرض
+lod					:		لود
+ashgh				:		عاشقى
+mojamat				:		مجامعت
+ashagheh			:		عشقه
+chop				:		چوپ
+limotrsh			:		لیموترش
+chavosh				:		چاووش
+sarflz				:		سرفلزى
+asay				:		عصایى
+asraneh				:		عصرانه
+osos				:		عصعص
+asas				:		عصعصى
+esyan				:		عصیان
+asir				:		عصیر
+ezadah				:		عضاده
+khiath				:		خیاطه
+maskeh				:		ماسکه
+mastarzh			:		مستعرضه
+mazo				:		مضو
+mamddh				:		ممدده
+monbaset			:		منبسط
+khoahr				:		خواهرى
+kamonist			:		کمونیستى
+rotar				:		روتارى
+pishahng			:		پیشاهنگى
+nahanzadan			:		نهانزادان
+daroyshan			:		درویشان
+faransis			:		فرانسیس
+kokls				:		کوکلس
+kalan				:		کلان
+demovkrat			:		دموکرات
+hitlr				:		هیتلرى
+vig					:		ویگ
+mehrgan				:		مهرگان
+fozolat				:		فضولات
+gharigh				:		غریق
+madod				:		معدود
+albdl				:		البدل
+faramosh			:		فراموش
+faramoshkhanh		:		فراموشخانه
+mortaz				:		مرتاض
+salibivn			:		صلیبیون
+layola				:		لایولا
+koykr				:		کویکر
+farhngstan			:		فرهنگستان
+gazanbr				:		گازانبرى
+ghanongzar			:		قانونگذارى
+majma				:		مجمع
+majavaf				:		مجوف
+mahfel				:		محفل
+namazkhanh			:		نمازخانه
+kanndgan			:		کنندگان
+moshavereh			:		مشاوره
+ghabzah				:		قبضه
+azodar				:		عضودار
+azotbghh			:		عضوطبقه
+azohiat				:		عضوهیئت
+ata					:		عطا
+ata					:		عطاء
+atar				:		عطار
+otarod				:		عطارد
+atar				:		عطارى
+pamadmo				:		پمادموى
+yasmin				:		یاسمین
+atrdan				:		عطردان
+atrgl				:		عطرگل
+atrgir				:		عطرگیرى
+atriat				:		عطریات
+atash				:		عطش
+bagzshth			:		بگذشته
+masabagh			:		ماسبق
+atf					:		عطفى
+otofat				:		عطوفت
+ezam				:		عظم
+anah				:		عانه
+aljsg				:		الجثگى
+efrit				:		عفریت
+efriteh				:		عفریته
+afv					:		عفو
+mashrot				:		مشروط
+ofonat				:		عفونت
+afif				:		عفیف
+eghab				:		عقاب
+aghab				:		عقابى
+aghar				:		عقار
+lanin				:		لنین
+vastay				:		وسطایى
+lotr				:		لوتر
+mandal				:		مندل
+nasivnalizm			:		ناسیونالیزم
+nahilist			:		نهیلیستى
+mandg				:		ماندگى
+oghbah				:		عقبه
+mavz				:		معوض
+oghala				:		عقلا
+aghlanit			:		عقلانیت
+aghlay				:		عقلایى
+aghid				:		عقید
+bakhodsh			:		بخودش
+montabegh			:		منطبق
+mastghima			:		مستقیما
+marks				:		مارکس
+saliman				:		سلیمانى
+aghighh				:		عقیقه
+aghim				:		عقیم
+aghim				:		عقیمى
+ala					:		علاء
+aldin				:		الدین
+talgraf				:		تلگرافى
+mors				:		مرس
+nazart				:		نظارتى
+darjmlat			:		درجملات
+akhtsarat			:		اختصارات
+dardha				:		دردها
+alaj				:		علاجى
+alaghjat			:		علاقجات
+baghza				:		بغذاى
+fazanord			:		فضانوردى
+alaghmnd			:		علاقمندى
+gharha				:		غارها
+ajsad				:		اجساد
+alam				:		علام
+jazr				:		جذر
+amda				:		عمداً
+motamayez			:		متمایز
+menha				:		منها
+maks				:		مکث
+hajar				:		حجارى
+alamt				:		علامتى
+arayshgahha			:		آرایشگاهها
+gam					:		گامى
+elavh				:		علاوه
+alall				:		العلل
+batoand				:		بتواند
+vajod				:		وجودى
+alt					:		علتى
+alz					:		علظ
+char				:		چرى
+pazahr				:		پازهر
+charagah			:		چراگاه
+khanazir			:		خنازیر
+darokn				:		دروکن
+ghaliab				:		قلیاب
+mast				:		ماست
+sarkhian			:		سرخیان
+neyzar				:		نیزار
+alf					:		علفى
+olghah				:		علقه
+shonod				:		شنود
+nojom				:		نجوم
+kalisaha			:		کلیساها
+navamis				:		نوامیس
+lazizh				:		لذیذه
+alajtma				:		الاجتماع
+alakhlagh			:		الاخلاق
+alasoat				:		الاصوات
+alhrkat				:		الحرکات
+alsnh				:		السنه
+alabadat			:		العبادات
+alalaj				:		العلاج
+allghat				:		اللغات
+barahin				:		براهین
+payedaysh			:		پیدایش
+baniro				:		بنیرو
+topkhaneh			:		توپخانه
+jaghrafia			:		جغرافیا
+hoo					:		هواو
+tan					:		تنى
+giahha				:		گیاهها
+matrshhh			:		مترشحه
+tabiiat				:		طبیعیات
+kalbod				:		کالبد
+farayndha			:		فرآیندهاى
+laytnah				:		لایتناهى
+modiarit			:		مدیریت
+elal				:		علل
+miah				:		میاه
+hendesh				:		هندسه
+alaza				:		الاعضاء
+katabdar			:		کتابدارى
+kan					:		کیمیا
+alma				:		علما
+tajamo				:		تجمع
+almiat				:		علمیات
+narmsh				:		نرمش
+alanana				:		علناً
+elo					:		علو
+alomgham			:		علومقام
+albdl				:		البدلى
+raghm				:		رغم
+varjh				:		ورجه
+eliat				:		علیت
+alihdh				:		علیحده
+aleygh				:		علیق
+alil				:		علیل
+am					:		عم
+vashingtn			:		واشینگتن
+emeamh				:		عمامه
+aman				:		عمان
+amad				:		عمد
+majof				:		مجوفى
+amgh				:		عمقى
+amgr				:		عمگر
+yaghlh				:		یاغله
+pirastan			:		پیراستن
+bazrat				:		بذرات
+tabarok				:		تبرک
+terovr				:		ترور
+tanazol				:		تنزل
+khazidan			:		خزیدن
+khasmaneh			:		خصمانه
+khetab				:		خطاب
+khisandan			:		خیساندن
+doshrt				:		دوشرطى
+langidan			:		لنگیدن
+motahavoraneh		:		متهورانه
+movhen				:		موهن
+nahman				:		ناهمانى
+naf					:		نفى
+naghz				:		نقض
+haman				:		همانى
+hamzad				:		همزاد
+vand				:		وند
+yagan				:		یگانى
+kofr				:		کفر
+amala				:		عملاً
+amlgr				:		عملگر
+takin				:		تکین
+karsh				:		کارش
+bakhoahd			:		بخواهد
+amloarh				:		عملواره
+amlond				:		عملوند
+akrobat				:		آکروباتى
+aneyf				:		عنیف
+nazamian			:		نظامیان
+amlkrd				:		عملکرد
+amoda				:		عمودا
+amodit				:		عمودیت
+omom				:		عموم
+amoma				:		عموماً
+amigha				:		عمیقا
+an					:		عن
+anabian				:		عنابیان
+enan				:		عنان
+anbar				:		عنبر
+anbrchh				:		عنبرچه
+anbrsal				:		عنبرسائل
+anbh				:		عنبه
+enabieh				:		عنبیه
+antar				:		عنتر
+pardazsh			:		پردازشى
+tanavb				:		تناوبى
+mol					:		مول
+mol					:		مولى
+garmkn				:		گرمکن
+angha				:		عنقا
+anghrib				:		عنقریب
+anan				:		عنن
+tajlil				:		تجلیلى
+chashmgir			:		چشمگیر
+pakat				:		پاکت
+mardha				:		مردها
+lard				:		لردى
+halnd				:		هلند
+ankbot				:		عنکبوتى
+ankbotian			:		عنکبوتیان
+ankbotih			:		عنکبوتیه
+misagh				:		میثاق
+ava					:		عوا
+bandr				:		بندرى
+avagheb				:		عواقب
+alnas				:		الناسى
+farib				:		فریبى
 toars				:		توارثى
-همردیف
-عوامیت
-عوجه
+hamrdif				:		همردیف
+oamit				:		عوامیت
+ojh					:		عوجه
 simh				:		سیمه
-عودالانبیاء
-عودالبرق
-عودت
-عودزن
-عودسوز
-عوعو
-عوعوکن
-عوم
-عیادت
-عیادتى
-عیارسنج
-عیارسنجى
-عیارگرى
-عیارگیر
-عیارگیرى
-عیارى
-عیالى
-عیبجویى
-عیبناک
-پنجاهه
-تبشیر
-فرشته
-میکائیل
-فصح
-فطر
-فطیر
-عیدفصح
-عیدى
-عیسوى
-مسلمان
-عیشى
-الهر
-بیانات
-عیناً
-عینیت
-جوشکارى
-عینکى
-اطرافش
-اشتباهات
-عیوق
-عکاس
-کپى
-ترسیمات
-یاخطى
-بیندازند
-عکسى
+odalanbia			:		عودالانبیاء
+odalbrgh			:		عودالبرق
+ovdat				:		عودت
+odzn				:		عودزن
+odsoz				:		عودسوز
+oo					:		عوعو
+ookn				:		عوعوکن
+om					:		عوم
+eyadt				:		عیادت
+iadt				:		عیادتى
+iarsnj				:		عیارسنج
+iarsnj				:		عیارسنجى
+iargr				:		عیارگرى
+iargir				:		عیارگیر
+iargir				:		عیارگیرى
+iar					:		عیارى
+ial					:		عیالى
+ibjoy				:		عیبجویى
+ibnak				:		عیبناک
+panjaheh			:		پنجاهه
+tabshir				:		تبشیر
+fereshteh			:		فرشته
+mikail				:		میکائیل
+fesh				:		فصح
+fetr				:		فطر
+fatir				:		فطیر
+idfsh				:		عیدفصح
+id					:		عیدى
+iso					:		عیسوى
+mosalman			:		مسلمان
+ish					:		عیشى
+alhr				:		الهر
+bianat				:		بیانات
+ayna				:		عیناً
+init				:		عینیت
+joshkar				:		جوشکارى
+ink					:		عینکى
+atrafsh				:		اطرافش
+ashtbahat			:		اشتباهات
+ayovgh				:		عیوق
+akas				:		عکاس
+kap					:		کپى
+tarsimat			:		ترسیمات
+yakht				:		یاخطى
+bindaznd			:		بیندازند
+aks					:		عکسى
 chasbandh			:		چسبانده
 ghait				:		غائیت
-غات
-غارتگر
+ghat				:		غات
+ghartgr				:		غارتگر
 ghartgr				:		غارتگرى
 ghart				:		غارتى
 ghardar				:		غاردار
-غارزدن
+gharzdn				:		غارزدن
 gharz				:		غارزى
 gharghar			:		غارغار
 gharighon			:		غاریقون
@@ -15830,7 +15825,7 @@ ghozrovf			:		غضروف
 hialn				:		هیالن
 kanjd				:		کنجدى
 ghazo				:		غضو
-غفلت
+gheflat				:		غفلت
 ghaflta				:		غفلتا
 ghafo				:		غفو
 ghalafdar			:		غلافدار
@@ -15911,7 +15906,7 @@ tasliat				:		تسلیت
 mainat				:		معاینات
 tasrif				:		تصریف
 tamogh				:		تعمق
-تلخیص
+talkhis				:		تلخیص
 hosol				:		حصول
 hekayat				:		حکایت
 ghema				:		قمع
@@ -15951,7 +15946,7 @@ movasagh			:		موثق
 vajeb				:		واجب
 kalim				:		کلیمى
 ghirajtma			:		غیراجتماعى
-غیراخلاقى
+ghirakhlagh			:		غیراخلاقى
 ghirasl				:		غیراصلى
 ghiransan			:		غیرانسانى
 ghirahl				:		غیراهلى
@@ -15992,9 +15987,9 @@ ghirmashrt			:		غیرمعاشرتى
 ghirmntzrh			:		غیرمنتظره
 ghirmnsfanh			:		غیرمنصفانه
 ghirmhm				:		غیرمهم
-غیرموثر
+ghirmosr			:		غیرموثر
 ghirnghd			:		غیرنقدى
-غیرهمجوار
+ghirhmjoar			:		غیرهمجوار
 ghirhmzman			:		غیرهمزمانى
 ghiroajb			:		غیرواجب
 ghiriknoakht		:		غیریکنواخت
@@ -16320,7 +16315,7 @@ farogzar			:		فروگذارى
 farogsha			:		فروگشا
 farogir				:		فروگیر
 farogir				:		فروگیرى
-فروماندگى
+faromandg			:		فروماندگى
 faromayg			:		فرومایگى
 faromghnatis		:		فرومغناطیسى
 faronshat			:		فرونشاتى
@@ -16484,49 +16479,49 @@ fa					:		فناپذیر
 fananapzir			:		فناناپذیر
 fandghh				:		فندقه
 yasim				:		یاسیم
-فنلاندى
-فنونى
-فنیقى
-فنک
-اغلاط
-نمایشى
-تقابلى
-داوطلبان
-یملک
-منتظران
-یاعده
-خدمتى
-فهمیدم
-فهمیدنى
-مودب
-فوتوفوبى
-فوتون
-فوراً
-فورانى
-فورت
-فورسیتیه
-فورمول
-فورمیکا
-فوریت
-العادگى
-نماد
-همگردان
-فولکلور
-فوکسیه
-فوکولى
-البداهه
-الجمله
+fanland				:		فنلاندى
+fanon				:		فنونى
+fanigh				:		فنیقى
+fanak				:		فنک
+aghlat				:		اغلاط
+namaysh				:		نمایشى
+taghabl				:		تقابلى
+davtlban			:		داوطلبان
+yamlk				:		یملک
+mantzran			:		منتظران
+yadh				:		یاعده
+khadmt				:		خدمتى
+fahmidm				:		فهمیدم
+fahmidn				:		فهمیدنى
+modb				:		مودب
+fotofob				:		فوتوفوبى
+fovtovn				:		فوتون
+fora				:		فوراً
+foran				:		فورانى
+favrat				:		فورت
+forsitih			:		فورسیتیه
+formol				:		فورمول
+formika				:		فورمیکا
+fovriat				:		فوریت
+aladg				:		العادگى
+namad				:		نماد
+hamgrdan			:		همگردان
+fovlkalovr			:		فولکلور
+foksih				:		فوکسیه
+fokol				:		فوکولى
+albdahh				:		البداهه
+aljmlh				:		الجمله
 aloagha				:		الواقع
-فیبر
-فیبروسیت
-فیبرین
-فیتر
-فیروز
-فیروزه
-فیروزى
-فیزوالکتریک
-فیزیولوژى
-فیس
+fibr				:		فیبر
+fibrosit			:		فیبروسیت
+fibrin				:		فیبرین
+fitr				:		فیتر
+firoz				:		فیروز
+firozeh				:		فیروزه
+firoz				:		فیروزى
+fizoalktrik			:		فیزوالکتریک
+fizivlozh			:		فیزیولوژى
+fis					:		فیس
 fayslh				:		فیصله
 filban				:		فیلبان
 filsof				:		فیلسوف
@@ -16535,7 +16530,7 @@ filsofanh			:		فیلسوفانه
 mik					:		میکى
 movs				:		موس
 gavchranan			:		گاوچرانان
-فیلمى
+film				:		فیلمى
 fileh				:		فیله
 minivn				:		مینیون
 filipin				:		فیلیپینى
@@ -16730,7 +16725,7 @@ ghadosit			:		قدوسیت
 ghodovmoh			:		قدومه
 ghadir				:		قدیر
 gher				:		قر
-قرآن
+ghoran				:		قرآن
 gharan				:		قرآنى
 gharatkhanh			:		قرائتخانه
 gharabat			:		قرابت
@@ -16771,8 +16766,8 @@ ghat				:		قاط
 nokr				:		نوکرى
 gharhtaz			:		قرهطاض
 gharoghmzh			:		قروغمزه
-قریب
-الوقوع
+gharib				:		قریب
+alogho				:		الوقوع
 ghariba				:		قریبا
 gharin				:		قرین
 gharieh				:		قریه
@@ -17399,467 +17394,465 @@ kazhdm				:		کژدم
 kazh				:		کژى
 kasad				:		کساد
 kasan				:		کسان
-مرخصى
-حلال
-کسبه
-کسرپذیر
-کسردار
-مخرج
-کسوف
-خسوف
-تعهدى
-کاربد
-نظرات
-ننگین
-بدمد
-خشکاند
-گوید
-اطلاعى
-مردمان
-توانگر
-جنگد
-اظهارات
-یاگوى
-بدنش
-نشیند
-تخلف
-بلامقدمه
-نویسد
-گذارد
-بیگارى
-پاسدارى
-آموزد
-مدتها
-تراشد
-پیویین
-تاریخچه
-بدینى
-لله
-ثروتش
-عنوانش
-خرسند
-تقاضاهایش
-برآورده
-خواسته
-خونش
-مشتریان
-بگوید
-کلاس
-دراجراى
-درتاسیس
-مستعمره
-دلش
-خواهد
-بمقامى
-ایستد
-قراردهد
-شغلش
-بندد
-سراید
-نمیکند
-مفرطى
-منغص
-منقص
-تماشا
-مستندى
-شرعیان
-بداند
-گرماسنجى
-هجى
-مرغدارى
-معجزه
-پیچاند
-خرامد
-ناطقین
-تندرستى
-وسواسى
-نظریات
-حالات
-وهم
-ویلون
-چسباند
-کفن
-کسینوس
-آمدنى
-ندار
-کشاله
-کشاورده
-کشاورز
-کشاکش
-کشبافى
-کشتارگاه
-کشتارگر
-کشتزار
-کشتگر
-مصادره
-جودو
-امیرالبحرى
-متروکه
-کشتیدم
-کشتیران
-کشتکار
-کشدار
-کشسان
-کششى
-بیدانه
-کشمشک
-کشمیر
-کشندگى
-تصویرهاى
-کشندى
-کشو
-ایلام
-خوزستان
-الحمایه
-صربیا
-یوگوسلاوى
-لیبریا
-مصر
-کشورداراى
-کشورگشا
-کشویى
-آمرزنده
-کشیشه
-کشک
-کشکنجیر
-کشکى
-کعب
-کعبه
-کفاش
-کفاشى
-کفتار
-کفترباز
-کفتربند
-کفچه
-کفدار
-کفرگو
-کفرگویى
-کفس
-دمپایى
-واکس
-کفشیر
-کفشک
-کفگیر
-کفگیرى
-کفگیرک
-کفه
-کفى
-کفک
-کلاً
-کلاج
-کلارینت
-کلاسور
-جاره
-کلاغى
-کلافه
-کلانتر
-نشانها
-خودسبک
-سرکسى
-منگوله
-حاره
-وکلاى
-کاردینالى
-کلاهبردارى
-کلاهدوز
-کلاهدوزى
-کلاهى
-کلباد
-کلبى
-کلخوز
-کلده
-کلرات
-کلراید
-کلرور
-کلروفورم
-کلرین
-کلسیت
-کلش
-کلف
-پیشخدمت
-کلفتى
-کلگى
-نورس
-مقلوب
-کلمبیا
-چسبد
-محرا
-کوهنوردى
-شقى
-پزند
-برمى
-فیمه
-دارکه
-دارپاى
-یاکیک
-کلوخ
-کلورید
-کلوفون
-کلیت
-کلیجه
-جورسازى
-انگلشتى
-کلیددار
-کلیساهایى
-لوتران
-نسطورى
-کلیسیایى
-کلیم
-یایک
-اورند
-مایملک
-مخارج
-تاکنار
-پرداخته
-مستاجرین
-کلکسیون
-امیتاز
-بازدهى
-جراتى
-زورى
-ژرفازى
-مقاومتى
-ترانسفورماتور
-ناپدیدى
-کماج
-کماجدان
-کماد
-کماذریوس
-کمارگر
-پولادى
-زنبورکى
-ویولن
-کماندار
-کماندارى
-کمانگیر
-کمانها
-کمانک
-کمباین
-ویتامینها
-کمپرس
-کمپرسور
-کمپوت
-کمترین
-نازلترین
-کمد
-کمراه
-کمربندهاى
-آلن
-کمربندى
-کشتزارها
-مشجر
-کمردرد
-کمرنگى
-کمروتر
-کمروترین
-کملاف
-کموتاتور
-کمونیسم
-حاجب
-کمیابى
-کمیت
-کمیته
-کمیزدان
-کمیسر
-کمینه
-پرستار
-موسسات
-مساح
-بیکاران
-فقرا
-کناس
-کنام
-کنایى
-کنتال
-کنتر
-باس
-کنتراست
-فرآیندها
-ناهمگام
-کنتس
-کنتور
-کنتى
-کنج
-کنجاو
-کندروى
-غلتانى
-کندوى
-زنبو
-کنس
-کنسرت
-کنسرسیوم
-کنسولگرى
-کنعان
-کنعانى
-بنگالى
-کنفرانس
-مخفیانه
-کنگاش
-کنگر
-عمارات
-کنگو
-کنگویى
-کنونى
-کنیا
-کنیز
-کنیسه
-کنیه
-ایوا
-کنکاش
-کنکاشگاه
-کنکاشگر
-کنکاشى
-کهاد
-کهتر
-کهرباسنج
-کهرباى
-کهربایاب
-کهزلزله
-کهموج
-کهنسال
-کهنگى
-کهنهء
-کهور
-کهیر
-کهین
-کهکشند
-کو
-کوارت
-کواس
-کوبالتى
-کوبنده
-کوبیسم
-کوپال
-کوپن
-کوته
-کوتولگى
-کوچگر
-دانان
-سازان
-کوچیدن
-اندامى
-کوچکترین
-مربعات
-مضرب
-لغوى
-گرافیکى
-مانیتور
-چلغوزى
-کودتا
-کودگیاهى
-کودنى
-کودکانه
-کودکستان
-کودکستانى
-کودکش
-کودکها
-کودکى
-کوراب
-کورتیزون
-کورمالى
-سوزانند
-پزخانه
-کوریم
-کورکورانه
-جلورفتن
-کورکورى
-کوزل
-گرخانه
-کوژدار
-کوژى
-کوشا
-کوشاب
-کوشاد
-مداخلات
-مذبوحانه
-کوشندگى
-کوشنده
-کوشک
-انساج
-کوفته
-کولاب
-کولاک
-کولر
-کوله
-کولیس
-کومل
-کومه
-کونى
-المپ
-کوهپایه
-کوهمیز
-کوهمیزى
-کوهنورد
-کوهه
-کویت
-برودرى
-زیگزاگ
-کوکب
-کوکتیل
-کوکنار
-کوکورانه
-کوکوسان
-کوکوى
-کى
-کیاست
-کیالک
-کیپ
-کیر
-کیرى
-کیست
-هیداتیک
-متورم
-اندازند
-مراسلات
-ترشحى
-دفعى
-کیفرى
-کیفیتى
-کیل
-کیلو
-کیلوسى
-کیلولیتر
-کیلووات
-کیموس
-کیموسى
-کیمونو
-کیمیاشناس
-کیمیاگر
-کیمیاگرانه
-کیمیایى
-کین
-کینگاه
-توزى
-کیهان
-کیهانى
-کیوسک
-کیوى
-کیکى
-گزیدگى
-گائیدن
-گاباردین
-گاجره
-گادولینیم
-گار
-گاراژدار
-گارانتى
-گارد
-گاردن
-پارتى
-گارسون
-گارسى
-پرتکان
-کربونیک
-پانسمان
-متان
-باتلاقها
-هلیوم
-گازئیل
-گازاشک
-گازانبر
-گازدار
-گازر
-گازرى
+markhs				:		مرخصى
+halal				:		حلال
+kasabeh				:		کسبه
+kasrpzir			:		کسرپذیر
+kasrdar				:		کسردار
+mokharj				:		مخرج
+kosof				:		کسوف
+khosof				:		خسوف
+tahd				:		تعهدى
+karbd				:		کاربد
+nazrat				:		نظرات
+nangin				:		ننگین
+badmd				:		بدمد
+khashkand			:		خشکاند
+goyd				:		گوید
+atla				:		اطلاعى
+mardman				:		مردمان
+tavangar			:		توانگر
+jangd				:		جنگد
+azharat				:		اظهارات
+yago				:		یاگوى
+badnsh				:		بدنش
+nashind				:		نشیند
+takhalof			:		تخلف
+balamghdmh			:		بلامقدمه
+noysd				:		نویسد
+gozard				:		گذارد
+bigar				:		بیگارى
+pasdar				:		پاسدارى
+amozd				:		آموزد
+madtha				:		مدتها
+tarashd				:		تراشد
+piviyn				:		پیویین
+tarikhcheh			:		تاریخچه
+badin				:		بدینى
+lelh				:		لله
+sarotsh				:		ثروتش
+anoansh				:		عنوانش
+khorsand			:		خرسند
+taghazahaysh		:		تقاضاهایش
+baravrdh			:		برآورده
+khavasteh			:		خواسته
+khonsh				:		خونش
+mashtrian			:		مشتریان
+bagoyd				:		بگوید
+kelas				:		کلاس
+darajra				:		دراجراى
+dartasis			:		درتاسیس
+mostamereh			:		مستعمره
+dalsh				:		دلش
+khoahd				:		خواهد
+bamgham				:		بمقامى
+aistd				:		ایستد
+gharardhd			:		قراردهد
+shaghlsh			:		شغلش
+bandd				:		بندد
+sarayd				:		سراید
+namiknd				:		نمیکند
+mafrt				:		مفرطى
+monaghas			:		منغص
+manghs				:		منقص
+tamasha				:		تماشا
+mastnd				:		مستندى
+sharayan			:		شرعیان
+badand				:		بداند
+garmasnj			:		گرماسنجى
+haj					:		هجى
+marghdar			:		مرغدارى
+majzh				:		معجزه
+pichand				:		پیچاند
+kharamd				:		خرامد
+natghin				:		ناطقین
+tandrst				:		تندرستى
+vasoas				:		وسواسى
+nazriat				:		نظریات
+halat				:		حالات
+vahm				:		وهم
+vilon				:		ویلون
+chasband			:		چسباند
+kafn				:		کفن
+kosinos				:		کسینوس
+amdn				:		آمدنى
+nadar				:		ندار
+keshaleh			:		کشاله
+kashavrdh			:		کشاورده
+keshavarz			:		کشاورز
+kashakash			:		کشاکش
+kashbaf				:		کشبافى
+kashtargah			:		کشتارگاه
+kashtargr			:		کشتارگر
+kashtzar			:		کشتزار
+kashtgr				:		کشتگر
+mosadereh			:		مصادره
+jovdov				:		جودو
+amiralbhr			:		امیرالبحرى
+matrokh				:		متروکه
+kashtidm			:		کشتیدم
+kashtiran			:		کشتیران
+keshtkar			:		کشتکار
+kashdar				:		کشدار
+kashsan				:		کشسان
+kashsh				:		کششى
+bidanh				:		بیدانه
+kashmshk			:		کشمشک
+kashmir				:		کشمیر
+kashndg				:		کشندگى
+tasoyrha			:		تصویرهاى
+kashnd				:		کشندى
+kesho				:		کشو
+ailam				:		ایلام
+khozstan			:		خوزستان
+alhmayh				:		الحمایه
+sarbia				:		صربیا
+yogoslav			:		یوگوسلاوى
+libria				:		لیبریا
+mesr				:		مصر
+kashordara			:		کشورداراى
+kashorgsha			:		کشورگشا
+kashoy				:		کشویى
+amorzndeh			:		آمرزنده
+kashishh			:		کشیشه
+kashk				:		کشک
+kashknjir			:		کشکنجیر
+kashk				:		کشکى
+kab					:		کعب
+kabeh				:		کعبه
+kafash				:		کفاش
+kafash				:		کفاشى
+kaftar				:		کفتار
+kaftrbaz			:		کفترباز
+kaftrbnd			:		کفتربند
+kafchah				:		کفچه
+kafdar				:		کفدار
+kafrgo				:		کفرگو
+kafrgoy				:		کفرگویى
+kafs				:		کفس
+dampay				:		دمپایى
+vaks				:		واکس
+kafshir				:		کفشیر
+kafshak				:		کفشک
+kafgir				:		کفگیر
+kafgir				:		کفگیرى
+kafgirak			:		کفگیرک
+kafah				:		کفه
+kaf					:		کفى
+kafak				:		کفک
+kola				:		کلاً
+kalaj				:		کلاج
+kelarinet			:		کلارینت
+kelasovr			:		کلاسور
+jarh				:		جاره
+kalagh				:		کلاغى
+kalafeh				:		کلافه
+kalantar			:		کلانتر
+nashanha			:		نشانها
+khodsbk				:		خودسبک
+sarks				:		سرکسى
+mangoleh			:		منگوله
+hareh				:		حاره
+vakla				:		وکلاى
+kardinal			:		کاردینالى
+kalahbrdar			:		کلاهبردارى
+kalahdoz			:		کلاهدوز
+kalahdoz			:		کلاهدوزى
+kalah				:		کلاهى
+kalbad				:		کلباد
+kalb				:		کلبى
+kalkhoz				:		کلخوز
+kaldah				:		کلده
+kolorat				:		کلرات
+kalrayd				:		کلراید
+kalror				:		کلرور
+kalroform			:		کلروفورم
+kalrin				:		کلرین
+kalsit				:		کلسیت
+kelashlsh			:		کلش
+kalaf				:		کلف
+pishkhdmt			:		پیشخدمت
+kalft				:		کلفتى
+kalg				:		کلگى
+novras				:		نورس
+maghlob				:		مقلوب
+kalmbia				:		کلمبیا
+chasbd				:		چسبد
+mahra				:		محرا
+kohnord				:		کوهنوردى
+shagh				:		شقى
+paznd				:		پزند
+barm				:		برمى
+fimh				:		فیمه
+darkh				:		دارکه
+darpa				:		دارپاى
+yakik				:		یاکیک
+kolokh				:		کلوخ
+kalorid				:		کلورید
+kalofon				:		کلوفون
+koliat				:		کلیت
+kalijh				:		کلیجه
+jorsaz				:		جورسازى
+anglsht				:		انگلشتى
+kaliddar			:		کلیددار
+kalisahay			:		کلیساهایى
+lotran				:		لوتران
+nastor				:		نسطورى
+kalisiai			:		کلیسیایى
+kalim				:		کلیم
+yayk				:		یایک
+avrand				:		اورند
+mayamlak			:		مایملک
+makharej			:		مخارج
+taknar				:		تاکنار
+pardakhteh			:		پرداخته
+mastajrin			:		مستاجرین
+koleksioon			:		کلکسیون
+amitaz				:		امیتاز
+bazdh				:		بازدهى
+jarat				:		جراتى
+zor					:		زورى
+zharfaz				:		ژرفازى
+maghavmt			:		مقاومتى
+teransfovrmatovr	:		ترانسفورماتور
+napdid				:		ناپدیدى
+komaj				:		کماج
+kamajdan			:		کماجدان
+kemad				:		کماد
+kamazrivs			:		کماذریوس
+kamargr				:		کمارگر
+polad				:		پولادى
+zanbork				:		زنبورکى
+vivln				:		ویولن
+kamandar			:		کماندار
+kamandar			:		کماندارى
+kamangir			:		کمانگیر
+kamanha				:		کمانها
+kamank				:		کمانک
+kambayn				:		کمباین
+vitaminha			:		ویتامینها
+kompres				:		کمپرس
+kompresovr			:		کمپرسور
+kompot				:		کمپوت
+kamtrin				:		کمترین
+nazltrin			:		نازلترین
+komd				:		کمد
+kamrah				:		کمراه
+kamrbndha			:		کمربندهاى
+aln					:		آلن
+kamrbnd				:		کمربندى
+kashtzarha			:		کشتزارها
+moshajar			:		مشجر
+kamrdrd				:		کمردرد
+kamrng				:		کمرنگى
+kamrotr				:		کمروتر
+kamrotrin			:		کمروترین
+kamlaf				:		کملاف
+kamotator			:		کموتاتور
+komovnism			:		کمونیسم
+hajeb				:		حاجب
+kamiab				:		کمیابى
+komayt				:		کمیت
+komitah				:		کمیته
+kamizdan			:		کمیزدان
+komisr				:		کمیسر
+kamineh				:		کمینه
+parastar			:		پرستار
+mossat				:		موسسات
+masakhtman			:		مساح
+bikaran				:		بیکاران
+foghara				:		فقرا
+kanas				:		کناس
+konam				:		کنام
+kanay				:		کنایى
+kantal				:		کنتال
+kantr				:		کنتر
+bas					:		باس
+kontrast			:		کنتراست
+farayndha			:		فرآیندها
+nahmgam				:		ناهمگام
+kontes				:		کنتس
+kontovr				:		کنتور
+kant				:		کنتى
+kenj				:		کنج
+kanjav				:		کنجاو
+kandro				:		کندروى
+ghaltan				:		غلتانى
+kando				:		کندوى
+zanbo				:		زنبو
+kans				:		کنس
+konsrt				:		کنسرت
+konsrsioom			:		کنسرسیوم
+kansolgr			:		کنسولگرى
+kanan				:		کنعان
+kanan				:		کنعانى
+bangal				:		بنگالى
+konferans			:		کنفرانس
+makhfianeh			:		مخفیانه
+kangash				:		کنگاش
+kongor				:		کنگر
+emarat				:		عمارات
+kango				:		کنگو
+kangoy				:		کنگویى
+kanon				:		کنونى
+kania				:		کنیا
+kaniz				:		کنیز
+kanisah				:		کنیسه
+koniah				:		کنیه
+aiva				:		ایوا
+kankash				:		کنکاش
+kankashgah			:		کنکاشگاه
+kankashgr			:		کنکاشگر
+kankash				:		کنکاشى
+kahad				:		کهاد
+kehtar				:		کهتر
+kahrbasnj			:		کهرباسنج
+kahrba				:		کهرباى
+kahrbayab			:		کهربایاب
+kahzlzlh			:		کهزلزله
+kahmoj				:		کهموج
+kahnsal				:		کهنسال
+kahng				:		کهنگى
+kahnha				:		کهنهء
+kahor				:		کهور
+kahir				:		کهیر
+kehin				:		کهین
+kahkshnd			:		کهکشند
+kov					:		کو
+koart				:		کوارت
+koas				:		کواس
+kobalt				:		کوبالتى
+kobndh				:		کوبنده
+kobism				:		کوبیسم
+kopal				:		کوپال
+kovpon				:		کوپن
+koth				:		کوته
+kotolg				:		کوتولگى
+kochgr				:		کوچگر
+danan				:		دانان
+sazan				:		سازان
+kochidan			:		کوچیدن
+andam				:		اندامى
+kochktrin			:		کوچکترین
+marbat				:		مربعات
+mozarab				:		مضرب
+lagho				:		لغوى
+garafik				:		گرافیکى
+manitor				:		مانیتور
+chalghoz			:		چلغوزى
+kodeta				:		کودتا
+kodgiah				:		کودگیاهى
+kodn				:		کودنى
+kodakaneh			:		کودکانه
+kodakestan			:		کودکستان
+kodkstan			:		کودکستانى
+kodksh				:		کودکش
+kodkha				:		کودکها
+kodk				:		کودکى
+korab				:		کوراب
+kortizon			:		کورتیزون
+kormal				:		کورمالى
+sozannd				:		سوزانند
+pazkhanh			:		پزخانه
+korim				:		کوریم
+korkoranh			:		کورکورانه
+jalorftn			:		جلورفتن
+korkor				:		کورکورى
+kozl				:		کوزل
+garkhanh			:		گرخانه
+kozhdar				:		کوژدار
+kozh				:		کوژى
+kosha				:		کوشا
+koshab				:		کوشاب
+koshad				:		کوشاد
+madakhlat			:		مداخلات
+mazbohanh			:		مذبوحانه
+koshndg				:		کوشندگى
+koshndh				:		کوشنده
+koshk				:		کوشک
+ansaj				:		انساج
+koftah				:		کوفته
+kolab				:		کولاب
+kolak				:		کولاک
+koler				:		کولر
+koleh				:		کوله
+kolis				:		کولیس
+koml				:		کومل
+komeh				:		کومه
+kon					:		کونى
+almp				:		المپ
+kohpayah			:		کوهپایه
+kohmiz				:		کوهمیز
+kohmiz				:		کوهمیزى
+kohnord				:		کوهنورد
+kohah				:		کوهه
+koyt				:		کویت
+barodr				:		برودرى
+zigzag				:		زیگزاگ
+kavkab				:		کوکب
+koktil				:		کوکتیل
+kovknar				:		کوکنار
+kokoranh			:		کوکورانه
+kokosan				:		کوکوسان
+koko				:		کوکوى
+k					:		کى
+kiasat				:		کیاست
+kialk				:		کیالک
+kip					:		کیپ
+kir					:		کیرى
+kist				:		کیست
+hidatik				:		هیداتیک
+motavarem			:		متورم
+andaznd				:		اندازند
+maraslat			:		مراسلات
+tarshh				:		ترشحى
+dafa				:		دفعى
+kifr				:		کیفرى
+kifit				:		کیفیتى
+kayl				:		کیل
+kilo				:		کیلو
+kilos				:		کیلوسى
+kilolitr			:		کیلولیتر
+kilovat				:		کیلووات
+kimos				:		کیموس
+kimos				:		کیموسى
+kimovnov			:		کیمونو
+kimiashnas			:		کیمیاشناس
+kimiagar			:		کیمیاگر
+kimiagranh			:		کیمیاگرانه
+kimiai				:		کیمیایى
+kin					:		کین
+kingah				:		کینگاه
+toz					:		توزى
+kayhan				:		کیهان
+kihan				:		کیهانى
+kivsk				:		کیوسک
+kiv					:		کیوى
+kik					:		کیکى
+gazidg				:		گزیدگى
+gabardin			:		گاباردین
+gajrh				:		گاجره
+gadolinim			:		گادولینیم
+gar					:		گار
+garazhdar			:		گاراژدار
+garant				:		گارانتى
+garohard			:		گارد
+gardn				:		گاردن
+part				:		پارتى
+garsovn				:		گارسون
+gars				:		گارسى
+partkan				:		پرتکان
+karbonik			:		کربونیک
+pansman				:		پانسمان
+metan				:		متان
+batlaghha			:		باتلاقها
+helioom				:		هلیوم
+gazail				:		گازئیل
+gazashk				:		گازاشک
+gazanbor			:		گازانبر
+gazdar				:		گازدار
+gazor				:		گازر
+gazr				:		گازرى
 gazsnj				:		گازسنج
 gazsoz				:		گازسوز
 gazgir				:		گازگیر
@@ -18262,7 +18255,6 @@ goril				:		گوریل
 gorkan				:		گورکن
 gavz				:		گوز
 yaldar				:		یالدار
-گوزو
 gozidn				:		گوزیدن
 gos					:		گوس
 marinos				:		مرینوس
@@ -20033,436 +20025,436 @@ darghrn				:		درقرن
 hijdhm				:		هیجدهم
 danth				:		دانته
 mansoj				:		منسوج
-منسوجات
-منسوخه
-منسوخى
-منشارى
-منشور
-منشورى
-منصرف
-منصف
-منصفاً
-منصور
-منضمات
-جریانى
-ساختى
-سیلانى
-آرامگان
-منجمده
-وسیعى
-منظنى
-جبار
-النسق
-مرأه
-المسلسله
-منعقد
-منعم
-منعى
-یادر
-منفذدار
-منفرجه
-منفصل
-توانستن
-منقاردار
-منقارى
-منقد
-منقض
-منقضى
-منقلب
-منقوط
-منگنز
-دستخور
-منگوستن
-منم
-منهدم
-منهوت
-منوال
-منور
-منورالفکر
-منوط
-منیزى
-منیزیم
-منیع
-ادعایى
-منکسر
-منکوب
-غلیظى
-بخارهاى
-مهاجرتى
-مهاجم
-مهاد
-مهبل
-مهبلى
-مهتاب
-مهتر
-مهترى
-مهجور
-مهد
-مهراجه
-مهراز
-مهرازى
-مهرداد
-مهروى
-مهریشه
-مهریه
-مهلت
-مهلکى
-نوازانه
-مهمانسراى
-مهمترین
-مهملات
-مهملى
-مهمیزدار
-افزاز
-مهک
-موئین
-موئینه
-مواجب
-مواجهه
-درموجود
-پوسیدگى
-ازتى
-پیه
-فسفاتید
-سروبروزیدها
-سنگها
-کخ
-دردهانه
-هذیان
-موادى
-هیستامین
-موازات
-همز
-مواشى
-مواظب
-دونفرکه
-نزدشخص
-موافقم
-مواقعه
-موانع
-موبد
-موت
-موتلف
-موتمن
-پرتابى
-شارژ
-موتوریزه
-موتیف
-شکند
-خروشان
-الکترومغناطیسى
-سدخیلى
-کسینوسى
-پهلوها
-محرکات
-موجر
-سینهزن
-اجتماى
-همزى
-همزیستى
-مقاون
-هوازى
-همزیست
-کروموسم
-حدلزوم
-سفارشات
-نقدشو
-درجات
-موجودیت
-موچسب
-موچینى
-موحد
-مودار
-مودارى
-مودت
-موذن
-موذیانه
-موذیگرى
-مورتپه
-مورث
-هیمالیا
-مورخ
-تشر
-موز
-موزامبیک
-موزونى
-موزى
-موزیکال
-موستان
-موسس
-تهاترى
-موسفید
-موسقى
-موسم
-موسوم
-موسوى
-موسیر
-مارش
-یااثر
-موسیقیدان
-پنسیلوانى
-خرماى
-موشح
-موشها
-موصلین
-موصوف
-موصى
-شرافتى
-منازع
-موضوعیت
-موظف
-موعد
-موعظه
-موقرانه
-جولان
-صفرها
-موگه
-تیتانیوم
-مولداوى
-موله
-مولودى
-مولیبدن
-مولیبدنوم
-مولکل
-چکد
-مومیا
-مومیایى
-مونه
-مونو
-موهب
-موهبت
-موهومات
-موهومى
-ارایى
-تپق
-گوشها
-مویارا
-مویچه
-موید
-مویرگ
-مویز
-مویک
-موکارى
-موکداً
-موکلین
-خواره
-خواستم
-خواستند
-میانپوست
-میانجى
-میانجیگرى
-میانحال
-میانگیردار
-میانگیرى
-میانما
-میانوند
-میانوندى
-میانکوه
-میتنریم
-میتینگ
-میجو
-فوتبالیست
-ورزشکاران
-پرچى
-زیرپهن
-سرگنده
-میخائیل
-میخچه
-میخوارگى
-میخوش
-میخکوب
-جلوقلعه
-سوارکاران
-میدانها
-میراœ
-میرش
-پادیوارى
-پیشدستى
-جاکتابى
-چهارپایه
-یاارگ
-الحراره
-الهواء
-موالید
-میزانه
-میسلیوم
-میسیونر
-میشک
-میعاد
-میعادگاه
-میغ
-میغى
-میگرن
-پاروگیر
-شدیدبا
-جماع
-الصاقى
-ذرع
-آهخنى
-میلیارد
-میلیاردیم
-میلیونر
-میلیونرى
-میلیونیم
-برنئو
-سوماترا
-لمور
-میناى
-مینایى
-مینیاتورسازى
-مینک
-میهمان
-ناخوانده
-پرستانه
-میومیو
-تمشک
-نامند
-توتى
-نوبرانه
-ولیک
-ناشکوفا
-میکا
-میکادو
-میکاى
-میکایى
-رقاصخانه
-میکرو
-ویو
-میکروسکپ
-میکرومتر
-میکرون
-مکابیان
-مکاتب
-مکاتبات
-ادارات
-مکار
-مکارانه
-مکارى
-دراماتیک
-واگیر
-مکانیره
-افلاطونیون
-اگزیستانسیالیزم
-حروفیون
-تشبیهات
-رومانتیک
-مکتبى
-مکتشف
-مکتوم
-مکدر
-مکر
-مکرراً
-مکروه
-مکش
-مکعبى
-مکلس
-مکنون
-مکه
-معظمه
-مکى
-مکید
-مکیف
-نئوبیم
-نئودیمیم
-امنى
-امیدانه
-امیدى
-اندیشیدنى
-بسامدى
-پارسا
-پایدارى
-پراگن
-پرهیزگار
-پرهیزکارى
-توانى
-چار
-زیبندگى
-گذشتنى
-گواریده
-مربوطى
-مشخصى
-معلومى
-مناسبى
-پیمانى
-همراى
-هویدا
-کنشگر
-ناآرامى
-ناآشنا
-ناآشنایى
-ناآگاه
-ناآموخته
-نااستوار
-نااستوارى
-نااصل
-ناامن
-ناامنى
-ناامید
-ناامیدى
-ناایمان
-ناباب
-نابالغى
-نابجا
-نابخرد
-نابخردى
-نابرابر
-نابرادرى
-ناخواهرى
+mansojat			:		منسوجات
+mansokhh			:		منسوخه
+mansokh				:		منسوخى
+manshar				:		منشارى
+manshor				:		منشور
+manshor				:		منشورى
+monsaref			:		منصرف
+monsef				:		منصف
+mansfa				:		منصفاً
+mansor				:		منصور
+manzmat				:		منضمات
+jarian				:		جریانى
+sakht				:		ساختى
+silan				:		سیلانى
+aramgan				:		آرامگان
+manjmdh				:		منجمده
+vasi				:		وسیعى
+manzn				:		منظنى
+jabar				:		جبار
+alnsgh				:		النسق
+marh				:		مرأه
+almslslh			:		المسلسله
+monaghed			:		منعقد
+monam				:		منعم
+mana				:		منعى
+yadr				:		یادر
+manfzdar			:		منفذدار
+monfarejeh			:		منفرجه
+monfasl				:		منفصل
+tavanestan			:		توانستن
+manghardar			:		منقاردار
+manghar				:		منقارى
+manghd				:		منقد
+monaghaz			:		منقض
+manghz				:		منقضى
+monghaleb			:		منقلب
+manghot				:		منقوط
+manganez			:		منگنز
+dastkhor			:		دستخور
+mangostn			:		منگوستن
+manm				:		منم
+monhadem			:		منهدم
+manhot				:		منهوت
+menoal				:		منوال
+monavar				:		منور
+manoralfkr			:		منورالفکر
+manot				:		منوط
+maniz				:		منیزى
+manieziom			:		منیزیم
+mani				:		منیع
+adai				:		ادعایى
+monkasr				:		منکسر
+mankob				:		منکوب
+ghaliz				:		غلیظى
+bakharha			:		بخارهاى
+mahajrt				:		مهاجرتى
+mohajem				:		مهاجم
+mehad				:		مهاد
+mahbl				:		مهبل
+mahbl				:		مهبلى
+mahtab				:		مهتاب
+mehtar				:		مهتر
+mahtr				:		مهترى
+mahjor				:		مهجور
+mahd				:		مهد
+mahrajh				:		مهراجه
+mahraz				:		مهراز
+mahraz				:		مهرازى
+mahrdad				:		مهرداد
+mahro				:		مهروى
+mahrishh			:		مهریشه
+mahrioeh			:		مهریه
+mohlat				:		مهلت
+mahlk				:		مهلکى
+noazanh				:		نوازانه
+mahmansra			:		مهمانسراى
+mahmtrin			:		مهمترین
+mahmlat				:		مهملات
+mahml				:		مهملى
+mahmizdar			:		مهمیزدار
+afzaz				:		افزاز
+mahk				:		مهک
+moain				:		موئین
+moainh				:		موئینه
+mavajeb				:		مواجب
+movajahah			:		مواجهه
+darmojod			:		درموجود
+posidg				:		پوسیدگى
+azt					:		ازتى
+pieh				:		پیه
+fasfatid			:		فسفاتید
+sarobrozidha		:		سروبروزیدها
+sangha				:		سنگها
+kokh				:		کخ
+dardhanh			:		دردهانه
+hazian				:		هذیان
+moad				:		موادى
+histamin			:		هیستامین
+movazat				:		موازات
+hamz				:		همز
+moash				:		مواشى
+movazeb				:		مواظب
+donfrkh				:		دونفرکه
+nazdshkhs			:		نزدشخص
+moafghm				:		موافقم
+movaghah			:		مواقعه
+mavane				:		موانع
+mobad				:		موبد
+mavt				:		موت
+motlf				:		موتلف
+motmn				:		موتمن
+partab				:		پرتابى
+sharzh				:		شارژ
+motorizh			:		موتوریزه
+motif				:		موتیف
+shaknd				:		شکند
+kharoshan			:		خروشان
+alktromghnatis		:		الکترومغناطیسى
+sadkhil				:		سدخیلى
+kasinos				:		کسینوسى
+pahloha				:		پهلوها
+mahrkat				:		محرکات
+movjer				:		موجر
+sinhzn				:		سینهزن
+ajtma				:		اجتماى
+hamz				:		همزى
+hamzist				:		همزیستى
+maghavn				:		مقاون
+hoaz				:		هوازى
+hamzist				:		همزیست
+karomosm			:		کروموسم
+hadlzom				:		حدلزوم
+safarshat			:		سفارشات
+naghdsho			:		نقدشو
+darajat				:		درجات
+mojodit				:		موجودیت
+mochsb				:		موچسب
+mochin				:		موچینى
+movahed				:		موحد
+modar				:		مودار
+modar				:		مودارى
+mavadat				:		مودت
+mozn				:		موذن
+mozianh				:		موذیانه
+mozigr				:		موذیگرى
+mortph				:		مورتپه
+movares				:		مورث
+himalia				:		هیمالیا
+movarakh			:		مورخ
+tashar				:		تشر
+movz				:		موز
+mozambik			:		موزامبیک
+mozon				:		موزونى
+moz					:		موزى
+mozikal				:		موزیکال
+movestan			:		موستان
+moss				:		موسس
+tahatr				:		تهاترى
+mosfid				:		موسفید
+mosgh				:		موسقى
+mavsm				:		موسم
+movsom				:		موسوم
+moso				:		موسوى
+mosir				:		موسیر
+marsh				:		مارش
+yasr				:		یااثر
+mosighidan			:		موسیقیدان
+pansiloan			:		پنسیلوانى
+kharma				:		خرماى
+movashah			:		موشح
+moshha				:		موشها
+moslin				:		موصلین
+movsof				:		موصوف
+mos					:		موصى
+sharaft				:		شرافتى
+monaze				:		منازع
+mozoit				:		موضوعیت
+movzaf				:		موظف
+moved				:		موعد
+movezeh				:		موعظه
+moghranh			:		موقرانه
+jovlan				:		جولان
+safrha				:		صفرها
+mogh				:		موگه
+titanivm			:		تیتانیوم
+moldav				:		مولداوى
+movalah				:		موله
+molod				:		مولودى
+molibdn				:		مولیبدن
+molibdnom			:		مولیبدنوم
+molkl				:		مولکل
+chakd				:		چکد
+momia				:		مومیا
+momiai				:		مومیایى
+moneh				:		مونه
+mono				:		مونو
+mohab				:		موهب
+mavhbt				:		موهبت
+mohomat				:		موهومات
+mohom				:		موهومى
+aray				:		ارایى
+topogh				:		تپق
+goshha				:		گوشها
+moyara				:		مویارا
+moychh				:		مویچه
+moyd				:		موید
+moyrg				:		مویرگ
+maviz				:		مویز
+moyk				:		مویک
+mokar				:		موکارى
+mokda				:		موکداً
+moklin				:		موکلین
+khoarh				:		خواره
+khoastm				:		خواستم
+khoastnd			:		خواستند
+mianpost			:		میانپوست
+mianj				:		میانجى
+mianjigr			:		میانجیگرى
+mianhal				:		میانحال
+miangirdar			:		میانگیردار
+miangir				:		میانگیرى
+mianma				:		میانما
+mianond				:		میانوند
+mianond				:		میانوندى
+miankoh				:		میانکوه
+mitnrim				:		میتنریم
+mitjmoghtayngrohi	:		میتینگ
+mijo				:		میجو
+fotbalist			:		فوتبالیست
+varzshkaran			:		ورزشکاران
+parch				:		پرچى
+zirphn				:		زیرپهن
+sargndh				:		سرگنده
+mikhail				:		میخائیل
+mikhcheh			:		میخچه
+mikhoarg			:		میخوارگى
+mikhosh				:		میخوش
+mikhkob				:		میخکوب
+jaloghlah			:		جلوقلعه
+soarkaran			:		سوارکاران
+midanha				:		میدانها
+mira				:		میراœ
+mirsh				:		میرش
+padivar				:		پادیوارى
+pishdst				:		پیشدستى
+jaktab				:		جاکتابى
+cheharpayeh			:		چهارپایه
+yarg				:		یاارگ
+alhrarh				:		الحراره
+alhoa				:		الهواء
+mavalid				:		موالید
+mizanh				:		میزانه
+mislivm				:		میسلیوم
+misivner			:		میسیونر
+mishk				:		میشک
+miad				:		میعاد
+miadgah				:		میعادگاه
+migh				:		میغ
+migh				:		میغى
+migren				:		میگرن
+parogir				:		پاروگیر
+shadidba			:		شدیدبا
+jama				:		جماع
+alsagh				:		الصاقى
+zar					:		ذرع
+ahkhn				:		آهخنى
+miliard				:		میلیارد
+miliardim			:		میلیاردیم
+milivner			:		میلیونر
+milivnr				:		میلیونرى
+milivnim			:		میلیونیم
+barno				:		برنئو
+somatra				:		سوماترا
+lamor				:		لمور
+mina				:		میناى
+minay				:		مینایى
+miniatorsaz			:		مینیاتورسازى
+mink				:		مینک
+mihman				:		میهمان
+nakhavandh			:		ناخوانده
+parstanh			:		پرستانه
+mivmiv				:		میومیو
+tameshk				:		تمشک
+namnd				:		نامند
+tot					:		توتى
+nobranh				:		نوبرانه
+valik				:		ولیک
+nashkofa			:		ناشکوفا
+mika				:		میکا
+mikado				:		میکادو
+mika				:		میکاى
+mikay				:		میکایى
+raghaskhanh			:		رقاصخانه
+mikro				:		میکرو
+viv					:		ویو
+mikroskp			:		میکروسکپ
+mikromtr			:		میکرومتر
+mikrovn				:		میکرون
+makabian			:		مکابیان
+makateb				:		مکاتب
+makatbat			:		مکاتبات
+adarat				:		ادارات
+makar				:		مکار
+makaranh			:		مکارانه
+makar				:		مکارى
+deramatik			:		دراماتیک
+vagir				:		واگیر
+makanirh			:		مکانیره
+aflatonivn			:		افلاطونیون
+agzistansializm		:		اگزیستانسیالیزم
+harofivn			:		حروفیون
+tashbihat			:		تشبیهات
+romantik			:		رومانتیک
+maktb				:		مکتبى
+moktashf			:		مکتشف
+maktom				:		مکتوم
+mokadar				:		مکدر
+makr				:		مکر
+mokarara			:		مکرراً
+makroh				:		مکروه
+maksh				:		مکش
+makab				:		مکعبى
+mokalas				:		مکلس
+maknon				:		مکنون
+makh				:		مکه
+mazmh				:		معظمه
+mak					:		مکى
+makid				:		مکید
+mokayaf				:		مکیف
+nobim				:		نئوبیم
+nodimim				:		نئودیمیم
+amn					:		امنى
+amidanh				:		امیدانه
+amid				:		امیدى
+andishidn			:		اندیشیدنى
+basamd				:		بسامدى
+parsa				:		پارسا
+paydar				:		پایدارى
+paragn				:		پراگن
+parhizgar			:		پرهیزگار
+parhizkar			:		پرهیزکارى
+toan				:		توانى
+char				:		چار
+zibndg				:		زیبندگى
+gazshtn				:		گذشتنى
+goaridh				:		گواریده
+marbot				:		مربوطى
+mashkhs				:		مشخصى
+malom				:		معلومى
+manasb				:		مناسبى
+piman				:		پیمانى
+hamra				:		همراى
+hovayda				:		هویدا
+kanshgr				:		کنشگر
+naram				:		ناآرامى
+nashna				:		ناآشنا
+nashnay				:		ناآشنایى
+nagah				:		ناآگاه
+namokhth			:		ناآموخته
+nastoar				:		نااستوار
+nastoar				:		نااستوارى
+nasl				:		نااصل
+naamn				:		ناامن
+namn				:		ناامنى
+noamid				:		ناامید
+namid				:		ناامیدى
+naiman				:		ناایمان
+nabab				:		ناباب
+nabalgh				:		نابالغى
+nabja				:		نابجا
+nabkhrd				:		نابخرد
+nabkhrd				:		نابخردى
+nabrabr				:		نابرابر
+nabradr				:		نابرادرى
+nakhoahr			:		ناخواهرى
 bordbar				:		نابردبارى
-نابسامان
-نابسندگى
-نابسنده
+nabsaman			:		نابسامان
+nabsndg				:		نابسندگى
+nabsndh				:		نابسنده
 nabegheha			:		نابغه
-نابلد
-نابه
-نابهنگام
-نابهنگامى
-نابومى
-نابویایى
-نابینا
-نابکار
-نابکارى
-ناپایا
-ناپایدارى
-ناپاک
-ناپاکى
-ناپختگى
-ناپخته
-ناپدرى
-ناپرسیده
-ناپرهیزکار
-ناپرهیزکارى
-ناپژواک
-ناپسرى
-ناپسند
-ناپسندى
-ناپسندیده
-ناپشیمان
-ناپلئون
-ناپلئونى
-ناپى
-ناپیدا
-ناپیدار
+nabld				:		نابلد
+nabh				:		نابه
+nabhngam			:		نابهنگام
+nabhngam			:		نابهنگامى
+nabom				:		نابومى
+naboyay				:		نابویایى
+nabina				:		نابینا
+nabekar				:		نابکار
+nabkar				:		نابکارى
+napaya				:		ناپایا
+napaydar			:		ناپایدارى
+napak				:		ناپاک
+napak				:		ناپاکى
+napkhtg				:		ناپختگى
+napkhth				:		ناپخته
+napdr				:		ناپدرى
+naprsidh			:		ناپرسیده
+naprhizkar			:		ناپرهیزکار
+naprhizkar			:		ناپرهیزکارى
+napzhoak			:		ناپژواک
+napsr				:		ناپسرى
+napasand			:		ناپسند
+napsnd				:		ناپسندى
+napsndidh			:		ناپسندیده
+napshiman			:		ناپشیمان
+naplon				:		ناپلئون
+naplon				:		ناپلئونى
+nap					:		ناپى
+napida				:		ناپیدا
+napidar				:		ناپیدار
 napiday				:		ناپیدایى
-ناپیرو
-ناپیروى
-ناپیشه
-ناپیمودنى
-ناپیوستگى
-ناپیوسته
-ناتالى
-ناتراوایى
-ناتندرست
-ناتنک
-ناتو
-ناجنس
+napiro				:		ناپیرو
+napiro				:		ناپیروى
+napishh				:		ناپیشه
+napimodn			:		ناپیمودنى
+napivstg			:		ناپیوستگى
+napivsth			:		ناپیوسته
+natal				:		ناتالى
+natravay			:		ناتراوایى
+natndrst			:		ناتندرست
+natnk				:		ناتنک
+nato				:		ناتو
+najns				:		ناجنس
 najhndh				:		ناجهنده
 najor				:		ناجورى
 nachar				:		ناچار
 nachrkhh			:		ناچرخه
 nachgal				:		ناچگال
 nachiz				:		ناچیزى
-ناحساب
+nahsab				:		ناحساب
 nahagh				:		ناحق
 bargzar				:		برگذارى
 lap					:		لاپ
@@ -20476,7 +20468,7 @@ nakhshnod			:		ناخشنود
 nakhshnod			:		ناخشنودى
 nakhn				:		ناخنى
 nakhonak			:		ناخنک
-ناخواسته
+nakhavasteh			:		ناخواسته
 nakhoana			:		ناخوانا
 nakhod				:		ناخود
 agahanh				:		آگاهانه
@@ -20537,7 +20529,7 @@ nastodh				:		ناستوده
 naskh				:		ناسخ
 nasrsht				:		ناسرشت
 nasareh				:		ناسره
-ناسزاگو
+naszago				:		ناسزاگو
 naszagoy			:		ناسزاگویى
 naszavar			:		ناسزاوار
 naszavar			:		ناسزاوارى
@@ -20698,8 +20690,8 @@ orand				:		آورند
 navdis				:		ناودیس
 naviz				:		ناویز
 navih				:		ناویه
-نایاب
-نایابى
+nayab				:		نایاب
+nayab				:		نایابى
 nayaftn				:		نایافتنى
 nayafth				:		نایافته
 alhkomh				:		الحکومه
@@ -20882,43 +20874,43 @@ sazh				:		سازه
 nafakh				:		نفاخ
 nafta				:		نفتا
 naftl				:		نفتل
-نفخه
-نفرموده
-نفسانیت
-نفص
-نفهمى
-نفهمیدنى
-نفوذزنان
-نفیس
-نقو
-نقاد
-نقاره
-آبرنگى
-تذهیب
-پیکار
-کلیک
-نقال
-نقالى
-نقدا
-نقدگر
-نقدگرى
-نقده
-نقرس
-نقرسى
-فامى
-بازگیر
-النهارات
-تاشده
-کارنو
-خلقت
-خلقتى
-گراد
-اعتدالین
-ژول
-همگذرى
-ویرگول
-دارکتاب
-تابلو
+nafkheh				:		نفخه
+nafrmodh			:		نفرموده
+nafsanit			:		نفسانیت
+nafs				:		نفص
+nafhm				:		نفهمى
+nafhmidn			:		نفهمیدنى
+nafozznan			:		نفوذزنان
+nafis				:		نفیس
+nagho				:		نقو
+naghad				:		نقاد
+naghareh			:		نقاره
+abrng				:		آبرنگى
+tazhib				:		تذهیب
+paykar				:		پیکار
+kelik				:		کلیک
+naghal				:		نقال
+naghal				:		نقالى
+naghda				:		نقدا
+naghdgr				:		نقدگر
+naghdgr				:		نقدگرى
+naghdeh				:		نقده
+naghrs				:		نقرس
+naghrs				:		نقرسى
+fam					:		فامى
+bazgir				:		بازگیر
+alnharat			:		النهارات
+tashdh				:		تاشده
+karno				:		کارنو
+khelghat			:		خلقت
+khalght				:		خلقتى
+gerad				:		گراد
+atdalin				:		اعتدالین
+zhol				:		ژول
+hamgzr				:		همگذرى
+virgol				:		ویرگول
+darktab				:		دارکتاب
+tablov				:		تابلو
 naghish				:		نقیصه
 nagargr				:		نگارگر
 nagargr				:		نگارگرى
@@ -21048,301 +21040,301 @@ novbar				:		نوبر
 noblim				:		نوبلیم
 noprst				:		نوپرست
 notoan				:		نوتوان
-نوجوان
-نوجوانى
-نوچه
-نوحه
-نودار
-نوداماد
-نودچیز
-نودم
-نودمین
-چشمک
-نورافشان
-نورافشانى
-نورافکندن
-نورافکنى
-نورالژى
-نورخاست
-نوررسان
-نورزا
-نورزى
-نورسنجى
-نورگریز
-نورکره
-نورکم
-نوزا
-نوزادانى
-نوزادگاه
-نوزاده
-نوزایش
-نوزایى
-نوزدهمین
-نوسازى
-نوسانساز
-نوسانگر
-نوسنجى
-نوسنگى
-داریکه
-اغلب
-نوشند
-نوشانیدن
-نوشت
-نوشتارى
-نوشتگر
-نوشدارو
-نوشده
-نوشنده
-نوشید
-نوشیدنى
-نوشین
-نوظهور
-نوظهورى
-تالیکتروم
-نوعدوست
-نوعدوستانه
-نوعل
-پاستیل
-ابروسیا
-پلاسمودیدها
-اقاقیاى
-قندگیر
-انحرافات
-نشاند
-اورانیت
-یاخط
-راگبى
-باطاس
-بازیکنان
-بسازند
-یاچسب
-جهات
-خلنگ
-قازایاغى
-واگیردار
-پالان
-پرستو
-پرگار
-خانواه
-جنبانک
-پستاندار
-انوفل
-پودینگ
-تاتوى
-گالووى
-تاجریزى
-سگها
-درزنجیر
-یاصدف
-وحده
-بویان
-یانیم
-زرقون
-زرگون
-دوزبانه
-خالدار
-سمنه
-یاکرم
-چارترک
-گرماگرم
-دردهان
-فستوک
-عکریش
-ونیز
-همواره
-مخوص
-زیستگر
-طیور
-انگشتان
-مریضى
-معماکه
-بسازد
-بیاشد
-نابینایى
-رنگها
-یل
-کائولین
-جهاز
-یاجسم
-نوگرا
-نوگریزى
-نوگشتگى
-نومى
-نومید
-نومیدانه
-نومیدى
-نونه
-نونو
-نوه
-نوواژه
-نوید
-ناصادق
-سمبولیک
-آثارى
-پیکان
-پاشله
-یاسیخ
-نوکائین
-نوکدار
-روساى
-خدمتکاران
-نوکریا
-نوکیسه
-لبک
-نیابتا
-نیابتى
-نیازمند
-نیازمندى
+nojoan				:		نوجوان
+nojoan				:		نوجوانى
+novcheh				:		نوچه
+novheh				:		نوحه
+nodar				:		نودار
+navdamad			:		نوداماد
+nodchiz				:		نودچیز
+nodm				:		نودم
+nodomin				:		نودمین
+cheshmak			:		چشمک
+norafshan			:		نورافشان
+norafshan			:		نورافشانى
+norafkndn			:		نورافکندن
+norafkn				:		نورافکنى
+noralzh				:		نورالژى
+norkhast			:		نورخاست
+norrsan				:		نوررسان
+norza				:		نورزا
+norz				:		نورزى
+norsnj				:		نورسنجى
+norgriz				:		نورگریز
+norkrh				:		نورکره
+norkm				:		نورکم
+noza				:		نوزا
+nozadan				:		نوزادانى
+nozadgah			:		نوزادگاه
+nozadh				:		نوزاده
+nozaysh				:		نوزایش
+nozay				:		نوزایى
+nozdhmin			:		نوزدهمین
+nosaz				:		نوسازى
+nosansaz			:		نوسانساز
+nosangr				:		نوسانگر
+nosnj				:		نوسنجى
+nosng				:		نوسنگى
+darikh				:		داریکه
+aghlab				:		اغلب
+noshnd				:		نوشند
+noshanidan			:		نوشانیدن
+nevesht				:		نوشت
+noshtar				:		نوشتارى
+noshtgr				:		نوشتگر
+noshdaro			:		نوشدارو
+noshdh				:		نوشده
+noshndh				:		نوشنده
+noshid				:		نوشید
+noshidn				:		نوشیدنى
+noshin				:		نوشین
+nozhor				:		نوظهور
+nozhor				:		نوظهورى
+taliktrom			:		تالیکتروم
+nodost				:		نوعدوست
+nodostanh			:		نوعدوستانه
+nol					:		نوعل
+pastil				:		پاستیل
+abrosia				:		ابروسیا
+palasmodidha		:		پلاسمودیدها
+aghaghia			:		اقاقیاى
+ghandgir			:		قندگیر
+anhrafat			:		انحرافات
+nashand				:		نشاند
+oranit				:		اورانیت
+yakht				:		یاخط
+ragb				:		راگبى
+batas				:		باطاس
+baziknan			:		بازیکنان
+basaznd				:		بسازند
+yachsb				:		یاچسب
+jehat				:		جهات
+khalang				:		خلنگ
+ghazayagh			:		قازایاغى
+vagirdar			:		واگیردار
+palan				:		پالان
+parasto				:		پرستو
+pargar				:		پرگار
+khanoah				:		خانواه
+janbank				:		جنبانک
+pestandar			:		پستاندار
+anofl				:		انوفل
+poding				:		پودینگ
+tato				:		تاتوى
+galov				:		گالووى
+tajriz				:		تاجریزى
+sagha				:		سگها
+darznjir			:		درزنجیر
+yasdf				:		یاصدف
+vahdh				:		وحده
+boyan				:		بویان
+yanim				:		یانیم
+zarghon				:		زرقون
+zargon				:		زرگون
+dozbanh				:		دوزبانه
+khaldar				:		خالدار
+samnh				:		سمنه
+yakrm				:		یاکرم
+chartrk				:		چارترک
+garmagrm			:		گرماگرم
+dardhan				:		دردهان
+fastok				:		فستوک
+akrish				:		عکریش
+vaniz				:		ونیز
+hamoareh			:		همواره
+makhos				:		مخوص
+zistgr				:		زیستگر
+toyor				:		طیور
+angshtan			:		انگشتان
+mariz				:		مریضى
+mamakh				:		معماکه
+basazd				:		بسازد
+biashd				:		بیاشد
+nabinay				:		نابینایى
+rangha				:		رنگها
+yal					:		یل
+kolin				:		کائولین
+jahaz				:		جهاز
+yajsm				:		یاجسم
+nogra				:		نوگرا
+nogriz				:		نوگریزى
+nogshtg				:		نوگشتگى
+nom					:		نومى
+novmid				:		نومید
+nomidanh			:		نومیدانه
+nomid				:		نومیدى
+nonh				:		نونه
+nono				:		نونو
+naveh				:		نوه
+novazhh				:		نوواژه
+navid				:		نوید
+nasadgh				:		ناصادق
+sambolik			:		سمبولیک
+asar				:		آثارى
+peykan				:		پیکان
+pashlh				:		پاشله
+yasikh				:		یاسیخ
+nokain				:		نوکائین
+nokdar				:		نوکدار
+rosa				:		روساى
+khadmtkaran			:		خدمتکاران
+nokria				:		نوکریا
+novkish				:		نوکیسه
+labk				:		لبک
+niabta				:		نیابتا
+niabt				:		نیابتى
+niazmand			:		نیازمند
+niazmnd				:		نیازمندى
 niazha				:		نیازها
-نیاسین
-نیام
-نیامدن
+niasin				:		نیاسین
+niam				:		نیام
+niamdn				:		نیامدن
 niam				:		نیامى
-نیایشى
-نیتریت
-نیترید
-نیجریه
-نیچه
-نیرنگ
-نیرنک
-نیروبخش
-نیروسنج
-نیروگاه
-الکتریک
-ولت
-پیچشى
-عاطفى
-درقسمتى
-نیرویى
-نیستان
-نیستى
-وا
-نیشتر
-نیشگون
-نیشکرى
-استعدادها
-نیلگونى
-نیلوفر
-ژیلت
-چاقشورى
-گشادکه
-هفتگى
-نیمتاج
+niaish				:		نیایشى
+nitrit				:		نیتریت
+nitrid				:		نیترید
+nijrih				:		نیجریه
+nichh				:		نیچه
+neyrang				:		نیرنگ
+nirnk				:		نیرنک
+nirobkhsh			:		نیروبخش
+nirosnj				:		نیروسنج
+nirogah				:		نیروگاه
+alktrik				:		الکتریک
+volt				:		ولت
+pichsh				:		پیچشى
+atf					:		عاطفى
+darghsmt			:		درقسمتى
+niroy				:		نیرویى
+neystan				:		نیستان
+nist				:		نیستى
+va					:		وا
+nishtar				:		نیشتر
+nishgon				:		نیشگون
+nishkr				:		نیشکرى
+astadadha			:		استعدادها
+nilgon				:		نیلگونى
+nilofar				:		نیلوفر
+zhilet				:		ژیلت
+chaghshor			:		چاقشورى
+gashadkh			:		گشادکه
+haftg				:		هفتگى
+nimtaj				:		نیمتاج
 nimtnh				:		نیمتنه
-نیمروزه
-نیمساز
-نیمسال
-نیمسوز
-جاودان
-خودآگاه
-دیررس
-لگاریتمى
-هوشیار
-نینوا
-نیوترون
-نیوتن
-نیوزیلند
-نیکاراگوئه
-نیکدار
-نیکداشت
-نیکزاده
-نیکلى
-نیکنام
-نیکوتر
-نیکوتین
-نیکوکار
-نک
-نکات
-نکاحى
-نکبت
-نکبتى
-نکته
-نکن
-نکول
-نکوهشگر
-نکوهشى
-نکوهیده
-اردکى
-برجاى
-بفرار
-پائیز
-پائیزى
-پابپا
-پابرجا
-پابرجاى
-پابرهنه
-پابزمین
-پابزى
-پابمیان
-پابندان
-پیشواى
-کاتولیکها
-پاپا
-پاپایه
-پاپهن
-پاپیتال
-پاپیچ
-پاپیروس
-پاپیل
-پاپیون
-پات
-پاتابه
-پاتاگونیا
-پاتخته
-پاتوق
-پاتولوژى
-پاتیس
-پاتیل
-پاچنبرى
-پاچنگال
-پاخلان
-پاد
-پاداشى
-پاداوج
-پاداوجى
-پادبند
-پادراز
-پادرد
-پادرمیانى
-پادرى
-پادزا
-پادزنگ
-پادزهر
-بدبوى
-پادزى
-تسالى
-پادگانى
-پادگره
-پادگند
-پادگونه
-پادماده
-پادو
-فاشحه
-پادوى
-پادویى
-پارازیتى
-پاراسمپاتى
-پاراف
-هیدروکاربنى
-پاراگراف
-پاراگوئه
-پارالل
-پارامتر
-پارامترى
-پارانویا
-پارتنون
-پارتیزان
-پارچ
-حریر
-کراواتى
-ارگاندى
-برزنت
-سبزرنگ
-پیچازى
-خزنما
-خوابدار
-داکرون
-روبخارى
+nimrozh				:		نیمروزه
+nimsaz				:		نیمساز
+nimsal				:		نیمسال
+nimsoz				:		نیمسوز
+javedan				:		جاودان
+khodagah			:		خودآگاه
+dirrs				:		دیررس
+lagaritm			:		لگاریتمى
+hoshiar				:		هوشیار
+ninoa				:		نینوا
+nivtron				:		نیوترون
+nivtn				:		نیوتن
+nivzilnd			:		نیوزیلند
+nikaragoah			:		نیکاراگوئه
+nikdar				:		نیکدار
+nikdasht			:		نیکداشت
+nikzadh				:		نیکزاده
+nikl				:		نیکلى
+niknam				:		نیکنام
+nikotr				:		نیکوتر
+nikotin				:		نیکوتین
+nikokar				:		نیکوکار
+nak					:		نک
+nekat				:		نکات
+nakah				:		نکاحى
+nakbt				:		نکبت
+nakbt				:		نکبتى
+nokth				:		نکته
+nakn				:		نکن
+nokol				:		نکول
+nakohshgr			:		نکوهشگر
+nakohsh				:		نکوهشى
+nakohidh			:		نکوهیده
+ardk				:		اردکى
+barja				:		برجاى
+bafrar				:		بفرار
+paiz				:		پائیز
+paiz				:		پائیزى
+pabpa				:		پابپا
+pabarja				:		پابرجا
+pabrja				:		پابرجاى
+paberehneh			:		پابرهنه
+pabzmin				:		پابزمین
+pabz				:		پابزى
+pabmian				:		پابمیان
+pabndan				:		پابندان
+pishoa				:		پیشواى
+katolikha			:		کاتولیکها
+papa				:		پاپا
+papayh				:		پاپایه
+paphn				:		پاپهن
+papital				:		پاپیتال
+papich				:		پاپیچ
+papiros				:		پاپیروس
+papil				:		پاپیل
+papivn				:		پاپیون
+pat					:		پات
+patabeh				:		پاتابه
+patagonia			:		پاتاگونیا
+patkhth				:		پاتخته
+patovgh				:		پاتوق
+patolozh			:		پاتولوژى
+patis				:		پاتیس
+patil				:		پاتیل
+pachnbr				:		پاچنبرى
+pachngal			:		پاچنگال
+pakhlan				:		پاخلان
+pad					:		پاد
+padash				:		پاداشى
+padavj				:		پاداوج
+padavj				:		پاداوجى
+padbnd				:		پادبند
+paderaz				:		پادراز
+padrd				:		پادرد
+padrmian			:		پادرمیانى
+padr				:		پادرى
+padza				:		پادزا
+padzng				:		پادزنگ
+padzahr				:		پادزهر
+badbo				:		بدبوى
+padz				:		پادزى
+tasal				:		تسالى
+padgan				:		پادگانى
+padgrh				:		پادگره
+padgnd				:		پادگند
+padgonh				:		پادگونه
+padmadh				:		پادماده
+pado				:		پادو
+fashhh				:		فاشحه
+pado				:		پادوى
+padoy				:		پادویى
+parazit				:		پارازیتى
+parasmpat			:		پاراسمپاتى
+pamzakhtsamzariyraf	:		پاراف
+hidrokarbn			:		هیدروکاربنى
+paragraf			:		پاراگراف
+paragoah			:		پاراگوئه
+paralel				:		پارالل
+parametr			:		پارامتر
+paramtr				:		پارامترى
+paranoya			:		پارانویا
+partnon				:		پارتنون
+partizan			:		پارتیزان
+parch				:		پارچ
+harir				:		حریر
+karavat				:		کراواتى
+argand				:		ارگاندى
+berezent			:		برزنت
+sabzrng				:		سبزرنگ
+pichaz				:		پیچازى
+khaznma				:		خزنما
+khoabdar			:		خوابدار
+dakron				:		داکرون
+robkhar				:		روبخارى
 poplin				:		پوپلین
 sarghich			:		سرقیچى
 shornro				:		شورنرو
@@ -22110,7 +22102,6 @@ jargeh				:		جرگه
 jaza				:		جزا
 jensiat				:		جنسیت
 chalh				:		چله
-چوچوله
 hiroglif			:		هیروگلیفى
 haziz				:		حضیضى
 herasat				:		حراست
@@ -23489,113 +23480,113 @@ talotlokhor			:		تلوتلوخور
 talorm				:		تلورم
 talorid				:		تلورید
 talolo				:		تلولو
-تلون
-تلویحا
-تلویحى
-تلیله
-تلکسوپ
-تلکه
-تمارض
-تماسى
-تماشاچى
-تماشاگر
-تماشایى
-تماماً
-تمامى
-تمامیت
-بدوستى
-جسمانیت
-بیجهت
-تمبرى
-تمثیلى
-تمجمج
-تمحید
-تمدد
-تمرد
-درنقطه
-تمرکزى
-تمس
-تمسک
-تمنایى
-تمهید
-تموج
-تمول
-تمیزى
-تمکین
-دردادن
-دردهى
-کیلویى
-کردشناس
-تنابه
-تنازع
-تناسخى
-ناهمجنس
-تناظر
-تناهى
-تناوبگر
-تنباکوى
-جویدنى
-تنبور
-تنبیهى
-تنتور
-تنجیه
-تنخواه
-تندباد
-تندپا
-تندتند
-تندخو
-تندرا
-تندراه
-تندرست
-تندرگر
+talavon				:		تلون
+taloyha				:		تلویحا
+taloyh				:		تلویحى
+talilh				:		تلیله
+talksop				:		تلکسوپ
+talakeh				:		تلکه
+tamaroz				:		تمارض
+tamas				:		تماسى
+tamashach			:		تماشاچى
+tamashagr			:		تماشاگر
+tamashay			:		تماشایى
+tamama				:		تماماً
+tamam				:		تمامى
+tamamit				:		تمامیت
+badost				:		بدوستى
+jasmanit			:		جسمانیت
+bijht				:		بیجهت
+tambr				:		تمبرى
+tamsil				:		تمثیلى
+tamajmoj			:		تمجمج
+tamhid				:		تمحید
+tamadod				:		تمدد
+tamarod				:		تمرد
+darnghth			:		درنقطه
+tamrkz				:		تمرکزى
+tams				:		تمس
+tamasok				:		تمسک
+tamnay				:		تمنایى
+tamhid				:		تمهید
+tamavoj				:		تموج
+tamavol				:		تمول
+tamiz				:		تمیزى
+tamkin				:		تمکین
+dardadn				:		دردادن
+dardh				:		دردهى
+kiloy				:		کیلویى
+kardshnas			:		کردشناس
+tanabh				:		تنابه
+tanazo				:		تنازع
+tanaskh				:		تناسخى
+nahmjns				:		ناهمجنس
+tanazor				:		تناظر
+tanah				:		تناهى
+tanavbgr			:		تناوبگر
+tanbako				:		تنباکوى
+joydn				:		جویدنى
+tanbor				:		تنبور
+tanbih				:		تنبیهى
+tantor				:		تنتور
+tanjih				:		تنجیه
+tankhavah			:		تنخواه
+tandbad				:		تندباد
+tandpa				:		تندپا
+tandtnd				:		تندتند
+tandkho				:		تندخو
+tandra				:		تندرا
+tandrah				:		تندراه
+tandorost			:		تندرست
+tandrgr				:		تندرگر
 tandroar			:		تندروار
-تندروى
-تندگذر
-تندنویس
+tandro				:		تندروى
+tandgzr				:		تندگذر
+tandnoys			:		تندنویس
 tandis				:		تندیس
-تندیسى
-تندیسک
-تندکار
-تندکن
-تنزیب
-تنصیف
-تنسیق
-تنظیمى
-تنفیذ
-مجراهاى
-تنگدست
-تنگدل
-تنگدلى
-تنگراه
-تنگناترس
-خیبر
-داردانل
-تنندگان
-تنندویى
-تنوره
-تنوس
-تنومندى
-تنویر
-تنوین
-تنیدن
+tandis				:		تندیسى
+tandisk				:		تندیسک
+tandkar				:		تندکار
+tandkn				:		تندکن
+tanzib				:		تنزیب
+tansif				:		تنصیف
+tansigh				:		تنسیق
+tanzim				:		تنظیمى
+tanfiz				:		تنفیذ
+majraha				:		مجراهاى
+tangdst				:		تنگدست
+tangdl				:		تنگدل
+tangdl				:		تنگدلى
+tangrah				:		تنگراه
+tangnatrs			:		تنگناترس
+khibr				:		خیبر
+dardanl				:		داردانل
+tanndgan			:		تنندگان
+tanndoy				:		تنندویى
+tanoreh				:		تنوره
+tanos				:		تنوس
+tanomnd				:		تنومندى
+tanoyr				:		تنویر
+tanoyn				:		تنوین
+tanidan				:		تنیدن
 tanidn				:		تنیدنى
 tanideh				:		تنیده
-تنیزه
-تنک
-تنکار
-تنکردى
-یوش
-تنکى
-دانسان
-یاز
-تهاتر
-تهاجم
-تهاون
-تهذیبى
-تهم
+tanizah				:		تنیزه
+tonok				:		تنک
+tankar				:		تنکار
+tankrd				:		تنکردى
+yosh				:		یوش
+tank				:		تنکى
+dansan				:		دانسان
+yaz					:		یاز
+tahator				:		تهاتر
+tahajom				:		تهاجم
+tahavon				:		تهاون
+tahzib				:		تهذیبى
+toham				:		تهم
 tahamtan			:		تهمتن
-تهنیتى
-تهیدست
+tahnit				:		تهنیتى
+tohidast			:		تهیدست
 tahidst				:		تهیدستى
 ghaltk				:		غلتکى
 ghazatost			:		غذاتوسط
@@ -23674,8 +23665,8 @@ tolim				:		تولیم
 toma				:		توما
 tomnd				:		تومند
 ton					:		تون
-تونس
-تونگستن
+tons				:		تونس
+tongstn				:		تونگستن
 toniz				:		تونیز
 tohm				:		توهمى
 toka				:		توکا
@@ -23837,9 +23828,9 @@ jales				:		جالس
 jalot				:		جالوت
 jaliz				:		جالیز
 momnin				:		مومنین
-جامعیت
-بدوزند
-بندبازان
+jamayt				:		جامعیت
+badoznd				:		بدوزند
+bandbazan			:		بندبازان
 raghasan			:		رقاصان
 khazdar				:		خزدار
 janbdar				:		جانبدار
@@ -24047,7 +24038,7 @@ sarstr				:		سرسطر
 shar				:		شعارى
 dargftgo			:		درگفتگو
 hasr				:		حصرى
-جمنده
+jomondeh			:		جمنده
 jamhorikhoah		:		جمهوریخواه
 jamhorikhoah		:		جمهوریخواهى
 nash				:		نعشى
@@ -24068,7 +24059,6 @@ jantiana			:		جنتیانا
 jantiana			:		جنتیاناى
 jond				:		جند
 jandg				:		جندگى
-جنده
 gadaha				:		گداها
 bazaz				:		بزازى
 bahadar				:		بهادارى
@@ -24321,7 +24311,7 @@ chandgang			:		چندگانگى
 chandgan			:		چندگانى
 chandk				:		چندک
 kodksh				:		کودکشى
-چنگه
+changh				:		چنگه
 changok				:		چنگوک
 cheneh				:		چنه
 jagn				:		جگنى
@@ -24334,63 +24324,63 @@ chaharbkhsh			:		چهاربخشى
 chaharbit			:		چهاربیتى
 chaharpa			:		چهارپا
 chaharpaye			:		چهارپایى
-چهارپر
-چهارجانبه
-یاگارى
+chaharpr			:		چهارپر
+chaharjanbh			:		چهارجانبه
+yagar				:		یاگارى
 charchoob			:		چهارچوبى
-چهاردهمین
-چهاردیوارى
-چهارسویى
-چهارشانه
-چهارضربى
-چهارقلو
-چهارگام
-چهارلا
-چهارمین
-چهارک
-چهچه
-چهچهه
-چهلچراغ
-چهلمین
-الف
-انقلابیون
-خوشبویى
-چوبدستى
-سرکلفت
-دونفر
-چیزهایى
-چوبک
-چوبکارى
-گوسفندان
-چوپلمه
-چوروک
-پال
-چوگاندار
-چونکه
-چوکان
-چیپس
-موصلى
-چیتا
-چیدنى
-چیر
-چیرگى
+chahardhmin			:		چهاردهمین
+chahardivar			:		چهاردیوارى
+chaharsoy			:		چهارسویى
+chaharshanh			:		چهارشانه
+chaharzrb			:		چهارضربى
+chaharghlo			:		چهارقلو
+chahargam			:		چهارگام
+chaharla			:		چهارلا
+chaharmin			:		چهارمین
+chahark				:		چهارک
+chahchh				:		چهچه
+chahchaheh			:		چهچهه
+chahlchragh			:		چهلچراغ
+chahlmin			:		چهلمین
+alf					:		الف
+anghlabivn			:		انقلابیون
+khoshboy			:		خوشبویى
+chobdst				:		چوبدستى
+sarklft				:		سرکلفت
+donfr				:		دونفر
+chizhay				:		چیزهایى
+chobak				:		چوبک
+chobkar				:		چوبکارى
+gosfndan			:		گوسفندان
+choplmh				:		چوپلمه
+chorok				:		چوروک
+pal					:		پال
+chogandar			:		چوگاندار
+chonkh				:		چونکه
+chokan				:		چوکان
+chips				:		چیپس
+mosl				:		موصلى
+chita				:		چیتا
+chidn				:		چیدنى
+chir				:		چیر
+chirg				:		چیرگى
 pashidn				:		پاشیدنى
-شکفت
-قشنه
-چیزدار
-پرتوها
-گذرند
-بیاورد
-داراست
-بزداید
-پیچد
-لولد
+shakaft				:		شکفت
+ghashnh				:		قشنه
+chizdar				:		چیزدار
+partoha				:		پرتوها
+gazrnd				:		گذرند
+biord				:		بیاورد
+darast				:		داراست
+bazdayd				:		بزداید
+pichd				:		پیچد
+lold				:		لولد
 chistan				:		چیستان
 kalmat				:		کلماتى
-چیستى
-چیننده
-چکاچاک
-چکامه
+chist				:		چیستى
+chinndh				:		چیننده
+chakachak			:		چکاچاک
+chakameh			:		چکامه
 chakandan			:		چکاندن
 chakanandeh			:		چکاننده
 chakanidn			:		چکانیدن
@@ -24405,7 +24395,7 @@ lat					:		لت
 mavray				:		ماورایى
 hajt				:		حاجت
 tarkhan				:		طرخان
-حاده
+hadh				:		حاده
 had					:		حادى
 hazegh				:		حاذق
 hasha				:		حاشا
@@ -24465,8 +24455,8 @@ hajralnor			:		حجرالنور
 hejleh				:		حجله
 hajim				:		حجیم
 hakhsasit			:		حخساسیت
-اعلاى
-حداعلاى
+ala					:		اعلاى
+hadala				:		حداعلاى
 hadal				:		حداعلى
 majz				:		مجز
 hadbh				:		حدبه
@@ -24706,7 +24696,6 @@ loblia				:		لوبلیا
 parstan				:		پرستان
 makab				:		مکابى
 khavrnshin			:		خاورنشین
-خایه
 khayidan			:		خاییدن
 zargr				:		زرگرى
 yatph				:		یاتپه
@@ -24837,7 +24826,7 @@ kharkar				:		خرکارى
 kharknndh			:		خرکننده
 khazposh			:		خزپوش
 khazdoz				:		خزدوز
-خزدوزى
+khazdoz				:		خزدوزى
 khazsh				:		خزش
 khazgan				:		خزگان
 khazok				:		خزوک
@@ -24955,7 +24944,7 @@ khoabandh			:		خوابانده
 khavabanidan		:		خوابانیدن
 khoabgrd			:		خوابگرد
 khoabgrd			:		خوابگردى
-خوابیدگى
+khoabidg			:		خوابیدگى
 khoabk				:		خوابکى
 khavajeh			:		خواجه
 khavastar			:		خواستار

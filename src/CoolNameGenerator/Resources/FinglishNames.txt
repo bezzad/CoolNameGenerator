@@ -1,4 +1,4 @@
-﻿abazar				:		اباذر
+abazar				:		اباذر
 abalfzl				:		ابالفضل
 ebtesam				:		ابتسام
 ebtehaj				:		ابتهاج
