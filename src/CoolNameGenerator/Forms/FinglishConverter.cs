@@ -134,7 +134,7 @@ namespace CoolNameGenerator.Forms
 
             var row = 1;
             foreach (var name in persianNames.SelectMany(x =>
-                new string(x.Where(w => w != '\t' && w != ' ').ToArray()).Split(ChromosomeWord.NotIgnoreChars)).Distinct())
+                new string(x.Where(w => w != '\t' && w != ' ').ToArray()).Split(ChromosomeWord.NotIgnoreChars.Concat(ChromosomeWord.NumericLetters).ToArray())).Distinct())
             {
                 var isFinglishedWord = name.Contains(':');
                 var persian = isFinglishedWord ? name.Substring(name.IndexOf(':') + 1) : name;

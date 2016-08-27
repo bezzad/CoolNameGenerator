@@ -179,10 +179,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\Resources.dist.all.last.stripped" />
-    <None Include="Resources\Resources.dist.female.first.stripped" />
-    <None Include="Resources\Resources.dist.male.first.stripped" />
-    <None Include="Resources\Resources.places2k.txt.stripped" />
+    <Content Include="Resources\EnglishNames.txt" />
+    <Content Include="Resources\EnglishFemaleNames.txt" />
+    <Content Include="Resources\EnglishMaleNames.txt" />
+    <Content Include="Resources\EnglishPlaces.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -198,6 +198,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VersionUpdater.tt</DependentUpon>
     </Content>
+    <Content Include="Resources\EnglishWords.txt" />
+    <Content Include="Resources\PersianWords.txt" />
     <Content Include="Resources\FinglishNames.txt" />
   </ItemGroup>
   <ItemGroup>
