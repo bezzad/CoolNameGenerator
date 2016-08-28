@@ -139,7 +139,9 @@
     <Compile Include="Forms\FinglishConverter.Designer.cs">
       <DependentUpon>FinglishConverter.cs</DependentUpon>
     </Compile>
-    <Compile Include="GA\Chromosomes\ChromosomeWord.cs" />
+    <Compile Include="GeneticWordProcessing\IGeneticAlgoritmController.cs" />
+    <Compile Include="GeneticWordProcessing\GeneticControllerBase.cs" />
+    <Compile Include="GeneticWordProcessing\WordChromosome.cs" />
     <Compile Include="GA\Chromosomes\ChromosomeBase.cs" />
     <Compile Include="GA\Chromosomes\ChromosomeExtensions.cs" />
     <Compile Include="GA\Chromosomes\IChromosome.cs" />
@@ -203,6 +205,8 @@
     <Compile Include="GA\Terminations\TerminationBase.cs" />
     <Compile Include="GA\Terminations\TerminationService.cs" />
     <Compile Include="GA\Terminations\TimeEvolvingTermination.cs" />
+    <Compile Include="GeneticWordProcessing\WordFitness.cs" />
+    <Compile Include="GeneticWordProcessing\WordGaController.cs" />
     <Compile Include="Graphics\WordLabel.cs">
       <SubType>Component</SubType>
     </Compile>
