@@ -47,9 +47,9 @@ namespace CoolNameGenerator.GA.Reinsertions
         /// <param name="parents">The parents.</param>
         public IList<IChromosome> SelectChromosomes(IPopulation population, IList<IChromosome> offspring, IList<IChromosome> parents)
         {
-            if (population == null) throw new ArgumentNullException(nameof(population), Localization.ArgumentNullException.With("population"));
-            if (offspring == null) throw new ArgumentNullException(nameof(offspring), Localization.ArgumentNullException.With("offspring"));
-            if (parents == null) throw new ArgumentNullException(nameof(parents), Localization.ArgumentNullException.With("parents"));
+            if (population == null) throw new ArgumentNullException(nameof(population));
+            if (offspring == null) throw new ArgumentNullException(nameof(offspring));
+            if (parents == null) throw new ArgumentNullException(nameof(parents));
 
             if (!CanExpand && offspring.Count < population.MinSize)
             {

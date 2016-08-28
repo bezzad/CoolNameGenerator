@@ -57,7 +57,7 @@ namespace CoolNameGenerator.GA.Terminations
         /// <param name="termination">The termination.</param>
         public void AddTermination(ITermination termination)
         {
-            if (termination == null) throw new ArgumentNullException(nameof(termination), Localization.ArgumentNullException.With("termination"));
+            if (termination == null) throw new ArgumentNullException(nameof(termination));
 
             Terminations.Add(termination);
         }
@@ -71,7 +71,7 @@ namespace CoolNameGenerator.GA.Terminations
         /// </returns>
         public bool HasReached(IGeneticAlgorithm geneticAlgorithm)
         {
-            if (geneticAlgorithm == null) throw new ArgumentNullException(nameof(geneticAlgorithm), Localization.ArgumentNullException.With("geneticAlgorithm"));
+            if (geneticAlgorithm == null) throw new ArgumentNullException(nameof(geneticAlgorithm));
 
             if (Terminations.Count < _mMinOperands)
             {

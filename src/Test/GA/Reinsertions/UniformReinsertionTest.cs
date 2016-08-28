@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GA.Populations;
+using CoolNameGenerator.GA.Randomizations;
 using CoolNameGenerator.GA.Reinsertions;
 using NUnit.Framework;
 using Rhino.Mocks;
@@ -51,6 +52,10 @@ namespace Test.GA.Reinsertions
                 MockRepository.GenerateStub<ChromosomeBase> (7),
                 MockRepository.GenerateStub<ChromosomeBase> (8)
             };
+
+            var rnd = MockRepository.GenerateMock<IRandomization>();
+            rnd.Expect(r => r.GetInt(0, 4)).Return(1);
+            rnd.Expect(r => r.GetInt(0, 5)).Return(3);
 
             var selected = target.SelectChromosomes(population, offspring, parents);
             Assert.AreEqual(6, selected.Count);

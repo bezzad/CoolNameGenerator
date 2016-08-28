@@ -25,7 +25,9 @@ namespace CoolNameGenerator.Helper.Reflection
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
             var selectedAssemblies = assemblies.Where(
-                a => a.FullName.StartsWith("GeneticSharp.", StringComparison.OrdinalIgnoreCase));
+                a => a.FullName.Equals(Assembly.GetExecutingAssembly().FullName, StringComparison.OrdinalIgnoreCase));
+                //a => a.FullName.StartsWith("GeneticSharp.", StringComparison.OrdinalIgnoreCase));
+
 
             var types = selectedAssemblies.SelectMany(a => a.GetTypes())
                     .Where(t => t.GetInterfaces().Any(i => i == interfaceType) && !t.IsAbstract)

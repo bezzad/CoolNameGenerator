@@ -106,12 +106,12 @@ namespace Test.GA.Chromosomes
         {
             var target = MockRepository.GenerateStub<ChromosomeBase>(2);
 
-            ExceptionAssert.IsThrowing(new ArgumentOutOfRangeException("index", "There is no Gene on index 2 to be replaced."), () =>
+            ExceptionAssert.IsThrowing(new ArgumentOutOfRangeException("startIndex", "There is no Gene on index 2 to be replaced."), () =>
             {
                 target.ReplaceGenes(2, new Gene[] { new Gene() });
             });
 
-            ExceptionAssert.IsThrowing(new ArgumentOutOfRangeException("index", "There is no Gene on index 3 to be replaced."), () =>
+            ExceptionAssert.IsThrowing(new ArgumentOutOfRangeException("startIndex", "There is no Gene on index 3 to be replaced."), () =>
             {
                 target.ReplaceGenes(3, new Gene[] { new Gene() });
             });

@@ -31,7 +31,7 @@ namespace CoolNameGenerator.GA.Populations
                 throw new ArgumentOutOfRangeException(nameof(maxSize), Localization.maximum_size_for_a_population_should_be_equal_or_greater_than_minimum_size);
             }
 
-            if (adamChromosome == null) throw new ArgumentNullException(nameof(adamChromosome), Localization.ArgumentNullException.With("adamChromosome"));
+            if (adamChromosome == null) throw new ArgumentNullException(nameof(adamChromosome));
 
             CreationDate = DateTime.Now;
             MinSize = minSize;
@@ -143,7 +143,7 @@ namespace CoolNameGenerator.GA.Populations
         /// <param name="chromosomes">The chromosomes for new generation.</param>
         public virtual void CreateNewGeneration(IList<IChromosome> chromosomes)
         {
-            if (chromosomes == null) throw new ArgumentNullException(nameof(chromosomes), Localization.ArgumentNullException.With("chromosomes"));
+            if (chromosomes == null) throw new ArgumentNullException(nameof(chromosomes));
 
             chromosomes.ValidateGenes();
 

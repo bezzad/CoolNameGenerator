@@ -41,7 +41,7 @@ namespace CoolNameGenerator.GA.Selections
                 throw new ArgumentOutOfRangeException(nameof(number), "The number of selected chromosomes should be at least {0}.".With(_mMinNumberChromosomes));
             }
 
-            if (generation == null) throw new ArgumentNullException(nameof(generation), Localization.ArgumentNullException.With("generation"));
+            if (generation == null) throw new ArgumentNullException(nameof(generation));
             
             return PerformSelectChromosomes(number, generation);
         }

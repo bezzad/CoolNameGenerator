@@ -97,11 +97,11 @@ namespace CoolNameGenerator.GA
                           ICrossover crossover,
                           IMutation mutation)
         {
-            if (population == null) throw new ArgumentNullException(nameof(population), Localization.ArgumentNullException.With("population"));
-            if (fitness == null) throw new ArgumentNullException(nameof(fitness), Localization.ArgumentNullException.With("fitness"));
-            if (selection == null) throw new ArgumentNullException(nameof(selection), Localization.ArgumentNullException.With("selection"));
-            if (crossover == null) throw new ArgumentNullException(nameof(crossover), Localization.ArgumentNullException.With("crossover"));
-            if (mutation == null) throw new ArgumentNullException(nameof(mutation), Localization.ArgumentNullException.With("mutation"));
+            if (population == null) throw new ArgumentNullException(nameof(population));
+            if (fitness == null) throw new ArgumentNullException(nameof(fitness));
+            if (selection == null) throw new ArgumentNullException(nameof(selection));
+            if (crossover == null) throw new ArgumentNullException(nameof(crossover));
+            if (mutation == null) throw new ArgumentNullException(nameof(mutation));
 
             Population = population;
             Fitness = fitness;

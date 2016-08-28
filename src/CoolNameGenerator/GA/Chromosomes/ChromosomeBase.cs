@@ -1,20 +1,21 @@
 ﻿using System;
-using System.Linq;
+using System.Diagnostics;
+using CoolNameGenerator.Helper;
+using CoolNameGenerator.Properties;
 
 namespace CoolNameGenerator.GA.Chromosomes
 {
     /// <summary>
     /// A base class for chromosomes.
     /// </summary>
+    [DebuggerDisplay("Fitness:{Fitness}, Genes:{Length}")]
     public abstract class ChromosomeBase : IChromosome
     {
         #region Fields
         private Gene[] _mGenes;
-
         #endregion
 
-        #region Constructors     
-
+        #region Constructors        
         /// <summary>
         /// Initializes a new instance of the <see cref="ChromosomeBase"/> class.
         /// </summary>
@@ -26,11 +27,9 @@ namespace CoolNameGenerator.GA.Chromosomes
             Length = length;
             _mGenes = new Gene[length];
         }
-
         #endregion
 
         #region Properties
-
         /// <summary>
         /// Gets or sets the fitness of the chromosome in the current problem.
         /// </summary>
@@ -44,13 +43,6 @@ namespace CoolNameGenerator.GA.Chromosomes
         #endregion
 
         #region Methods
-
-        public Gene this[int index]
-        {
-            get { return GetGene(index); }
-            set { ReplaceGene(index, value); }
-        }
-
         /// <summary>
         /// Implements the operator ==.
         /// </summary>
@@ -101,13 +93,11 @@ namespace CoolNameGenerator.GA.Chromosomes
             {
                 return false;
             }
-
-            if ((object)first == null)
+            else if ((object)first == null)
             {
                 return true;
             }
-
-            if ((object)second == null)
+            else if ((object)second == null)
             {
                 return false;
             }
@@ -164,7 +154,7 @@ namespace CoolNameGenerator.GA.Chromosomes
         {
             if (index < 0 || index >= Length)
             {
-                throw new ArgumentOutOfRangeException(nameof(index), $"There is no Gene on index {index} to be replaced.");
+                throw new ArgumentOutOfRangeException(nameof(index), "There is no Gene on index {0} to be replaced.".With(index));
             }
 
             _mGenes[index] = gene;
@@ -181,14 +171,13 @@ namespace CoolNameGenerator.GA.Chromosomes
         /// </remarks>
         public void ReplaceGenes(int startIndex, Gene[] genes)
         {
-            if (genes == null)
-                throw new ArgumentException("Argument can't be empty.", nameof(genes));
-
+            if (genes == null) throw new ArgumentNullException(nameof(genes));
+            
             if (genes.Length > 0)
             {
                 if (startIndex < 0 || startIndex >= Length)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(startIndex), $"There is no Gene on index {startIndex} to be replaced.");
+                    throw new ArgumentOutOfRangeException(nameof(startIndex), "There is no Gene on index {0} to be replaced.".With(startIndex));
                 }
 
                 var genesToBeReplacedLength = genes.Length;
@@ -197,7 +186,7 @@ namespace CoolNameGenerator.GA.Chromosomes
 
                 if (genesToBeReplacedLength > availableSpaceLength)
                 {
-                    throw new ArgumentException($"The number of genes to be replaced is greater than available space, there is {availableSpaceLength} genes between the index {startIndex} and the end of chromosome, but there is {genesToBeReplacedLength} genes to be replaced.", nameof(genes));
+                    throw new ArgumentException(nameof(genes), "The number of genes to be replaced is greater than available space, there is {0} genes between the index {1} and the end of chromosome, but there is {2} genes to be replaced.".With(availableSpaceLength, startIndex, genesToBeReplacedLength));
                 }
 
                 Array.Copy(genes, 0, _mGenes, startIndex, genes.Length);
@@ -320,7 +309,7 @@ namespace CoolNameGenerator.GA.Chromosomes
         /// </summary>        
         protected virtual void CreateGenes()
         {
-            for (var i = 0; i < Length; i++)
+            for (int i = 0; i < Length; i++)
             {
                 ReplaceGene(i, GenerateGene(i));
             }
@@ -338,12 +327,6 @@ namespace CoolNameGenerator.GA.Chromosomes
                 throw new ArgumentException("The minimum length for a chromosome is 2 genes.");
             }
         }
-        
-        public override string ToString()
-        {
-            return _mGenes.Aggregate("", (current, gene) => current + gene.ToString());
-        }
-
         #endregion      
     }
 }

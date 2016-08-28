@@ -25,7 +25,7 @@ namespace CoolNameGenerator.GA.Mutations
         /// <param name="probability">The probability to mutate each chromosome.</param>
         public void Mutate(IChromosome chromosome, float probability)
         {
-            if(chromosome == null) throw new ArgumentNullException(nameof(chromosome), Localization.ArgumentNullException.With("chromosome"));
+            if(chromosome == null) throw new ArgumentNullException(nameof(chromosome));
             
             PerformMutate(chromosome, probability);
         }

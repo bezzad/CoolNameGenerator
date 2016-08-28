@@ -21,7 +21,7 @@ namespace CoolNameGenerator.GA.Terminations
         /// <param name="geneticAlgorithm">The genetic algorithm.</param>
         public bool HasReached(IGeneticAlgorithm geneticAlgorithm)
         {
-            if (geneticAlgorithm == null) throw new ArgumentNullException(nameof(geneticAlgorithm), Localization.ArgumentNullException.With("geneticAlgorithm"));
+            if (geneticAlgorithm == null) throw new ArgumentNullException(nameof(geneticAlgorithm));
 
             _mHasReached = PerformHasReached(geneticAlgorithm);
 

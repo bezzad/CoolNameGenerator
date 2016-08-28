@@ -49,7 +49,7 @@ namespace CoolNameGenerator.GA.Populations
         /// <param name="population">The population where the new generation has been created.</param>
         public void RegisterNewGeneration(IPopulation population)
         {
-            if (population == null) throw new ArgumentNullException(nameof(population), Localization.ArgumentNullException.With("population"));
+            if (population == null) throw new ArgumentNullException(nameof(population));
 
             if (population.Generations.Count > GenerationsNumber)
             {

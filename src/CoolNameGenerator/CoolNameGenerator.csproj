@@ -176,6 +176,7 @@
     <Compile Include="GA\Populations\Population.cs" />
     <Compile Include="GA\Populations\PopulationService.cs" />
     <Compile Include="GA\Populations\TrackingGenerationStrategy.cs" />
+    <Compile Include="GA\Randomizations\IRandomization.cs" />
     <Compile Include="GA\Reinsertions\ElitistReinsertion.cs" />
     <Compile Include="GA\Reinsertions\FitnessBasedReinsertion.cs" />
     <Compile Include="GA\Reinsertions\IReinsertion.cs" />

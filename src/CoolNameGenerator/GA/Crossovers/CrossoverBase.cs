@@ -73,7 +73,7 @@ namespace CoolNameGenerator.GA.Crossovers
         /// </returns>
         public IList<IChromosome> Cross(IList<IChromosome> parents)
         {
-            if(parents == null) throw new ArgumentNullException(nameof(parents), Localization.ArgumentNullException.With("parents"));
+            if(parents == null) throw new ArgumentNullException(nameof(parents));
             
             if (parents.Count != ParentsNumber)
             {

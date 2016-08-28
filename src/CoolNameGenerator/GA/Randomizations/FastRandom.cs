@@ -6,7 +6,7 @@ using CoolNameGenerator.Properties;
 
 namespace CoolNameGenerator.GA.Randomizations
 {
-    public static class FastRandom
+    public class FastRandom : IRandomization
     {
         public static int Next(int minValue, int maxValue)
         {
@@ -44,6 +44,13 @@ namespace CoolNameGenerator.GA.Randomizations
             return floatingGuid;
         }
 
+        /// <summary>
+        /// Gets an integer array with unique values between minimum value (inclusive) and maximum value (exclusive).
+        /// </summary>
+        /// <returns>The integer array.</returns>
+        /// <param name="count">The array length</param>
+        /// <param name="minValue">Minimum value (inclusive).</param>
+        /// <param name="maxValue">Maximum value (exclusive).</param>
         public static int[] GetUniqueInts(int count, int minValue, int maxValue)
         {
             if (count > maxValue - minValue)
@@ -61,6 +68,13 @@ namespace CoolNameGenerator.GA.Randomizations
             return result.ToArray();
         }
 
+        /// <summary>
+        /// Gets an integer array with values between minimum value (inclusive) and maximum value (exclusive).
+        /// </summary>
+        /// <returns>The integer array.</returns>
+        /// <param name="count">The array length</param>
+        /// <param name="minValue">Minimum value (inclusive).</param>
+        /// <param name="maxValue">Maximum value (exclusive).</param>
         public static int[] GetInts(int count, int minValue, int maxValue)
         {
             var result = new List<int>();
@@ -74,5 +88,49 @@ namespace CoolNameGenerator.GA.Randomizations
 
             return result.ToArray();
         }
+
+        #region Implement IRandomization
+
+        int[] IRandomization.GetInts(int length, int min, int max)
+        {
+            return FastRandom.GetInts(length, min, max);
+        }
+
+        int[] IRandomization.GetUniqueInts(int length, int min, int max)
+        {
+            return FastRandom.GetUniqueInts(length, min, max);
+        }
+
+        public float GetFloat()
+        {
+            return (float)Next();
+        }
+
+        public float GetFloat(float min, float max)
+        {
+            return (float)GetDouble(min, max);
+        }
+
+        public double GetDouble()
+        {
+            return Next();
+        }
+
+        public double GetDouble(double min, double max)
+        {
+            if (min > max)
+            {
+                throw new ArgumentOutOfRangeException(nameof(min), Localization.Argument_MinMaxValue);
+            }
+
+            return Next() * (max - min) + min;
+        }
+
+        public int GetInt(int min, int max)
+        {
+            return Next(min, max);
+        }
+
+        #endregion
     }
 }
