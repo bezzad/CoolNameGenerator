@@ -70,6 +70,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The {0} parameter is null!.
+        /// </summary>
+        public static string ArgumentNullException {
+            get {
+                return ResourceManager.GetString("ArgumentNullException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Argument out Of range and must be positive.
         /// </summary>
         public static string ArgumentOutOfRange_MustBePositive {
@@ -205,6 +214,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The {0} index must be less than {1} values.
+        /// </summary>
+        public static string OutOfRangeException_indexMustLessThan {
+            get {
+                return ResourceManager.GetString("OutOfRangeException_indexMustLessThan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Parallel Process.
         /// </summary>
         public static string ParallelProcess {
@@ -291,15 +309,6 @@ namespace CoolNameGenerator.Properties {
         public static string Start {
             get {
                 return ResourceManager.GetString("Start", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        public static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

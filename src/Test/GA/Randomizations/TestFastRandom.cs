@@ -80,7 +80,19 @@ namespace Test.GA.Randomizations
                 Assert.AreEqual(aryLen, result.Length);
                 Assert.AreEqual(aryLen, result.Distinct().Count());
             }
+        }
 
+        [TestMethod]
+        public void TestGetInts()
+        {
+            int minRand = 100, maxRand = 1000;
+
+            for (var i = 0; i < 1000; i++)
+            {
+                var aryLen = FastRandom.Next(minRand, maxRand - minRand - 1);
+                var result = FastRandom.GetInts(aryLen, minRand, maxRand);
+                Assert.AreEqual(aryLen, result.Length);
+            }
         }
     }
 }

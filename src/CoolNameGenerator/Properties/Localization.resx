@@ -201,13 +201,16 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
   <data name="WordProgressCounter" xml:space="preserve">
     <value>Word Progress Counter</value>
   </data>
   <data name="ParallelProcess" xml:space="preserve">
     <value>Parallel Process</value>
+  </data>
+  <data name="ArgumentNullException" xml:space="preserve">
+    <value>The {0} parameter is null!</value>
+  </data>
+  <data name="OutOfRangeException_indexMustLessThan" xml:space="preserve">
+    <value>The {0} index must be less than {1} values</value>
   </data>
 </root>

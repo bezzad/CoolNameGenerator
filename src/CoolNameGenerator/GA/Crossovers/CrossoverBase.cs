@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.Helper;
+using CoolNameGenerator.Properties;
 using GeneticSharp.Domain.Crossovers;
 
 namespace CoolNameGenerator.GA.Crossovers
@@ -73,8 +74,8 @@ namespace CoolNameGenerator.GA.Crossovers
         /// </returns>
         public IList<IChromosome> Cross(IList<IChromosome> parents)
         {
-            if(parents == null) throw new ArgumentNullException(nameof(parents), "The parents array is null");
-
+            if(parents == null) throw new ArgumentNullException(nameof(parents), Localization.ArgumentNullException.With("parents"));
+            
             if (parents.Count != ParentsNumber)
             {
                 throw new ArgumentOutOfRangeException(nameof(parents), "The number of parents should be the same of ParentsNumber.");

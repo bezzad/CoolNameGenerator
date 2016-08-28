@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CoolNameGenerator.Helper;
 using CoolNameGenerator.Properties;
 
 namespace CoolNameGenerator.GA.Randomizations
@@ -45,14 +46,30 @@ namespace CoolNameGenerator.GA.Randomizations
 
         public static int[] GetUniqueInts(int count, int minValue, int maxValue)
         {
-            if(count >= maxValue-minValue) throw new ArgumentOutOfRangeException(nameof(count), "The count of array index must be less than max - min values");
+            if (count >= maxValue - minValue)
+                throw new ArgumentOutOfRangeException(nameof(count), Localization.OutOfRangeException_indexMustLessThan.With("count of array", "max - min"));
 
             var result = new HashSet<int>();
-          
+
             var seq = Enumerable.Range(0, count).GetEnumerator();
             while (seq.MoveNext())
             {
-                while (!result.Add(Next(minValue, maxValue))) {};
+                while (!result.Add(Next(minValue, maxValue)))
+                {
+                };
+            }
+            return result.ToArray();
+        }
+
+        public static int[] GetInts(int count, int minValue, int maxValue)
+        {
+            var result = new List<int>();
+
+            var seq = Enumerable.Range(0, count).GetEnumerator();
+
+            while (seq.MoveNext())
+            {
+                result.Add(Next(minValue, maxValue));
             }
 
             return result.ToArray();

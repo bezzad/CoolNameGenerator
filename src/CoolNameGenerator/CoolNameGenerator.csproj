@@ -154,6 +154,15 @@
     <Compile Include="GA\Crossovers\ThreeParentCrossover.cs" />
     <Compile Include="GA\Crossovers\TwoPointCrossover.cs" />
     <Compile Include="GA\Crossovers\UniformCrossover.cs" />
+    <Compile Include="GA\Fitnesses\FitnessException.cs" />
+    <Compile Include="GA\Fitnesses\IFitness.cs" />
+    <Compile Include="GA\Mutations\IMutation.cs" />
+    <Compile Include="GA\Mutations\MutationBase.cs" />
+    <Compile Include="GA\Mutations\MutationException.cs" />
+    <Compile Include="GA\Mutations\MutationService.cs" />
+    <Compile Include="GA\Mutations\ReverseSequenceMutation.cs" />
+    <Compile Include="GA\Mutations\TworsMutation.cs" />
+    <Compile Include="GA\Mutations\UniformMutation.cs" />
     <Compile Include="Graphics\WordLabel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -185,6 +194,7 @@
     <EmbeddedResource Include="Properties\Localization.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
