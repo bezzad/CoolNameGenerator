@@ -140,6 +140,20 @@
     <Compile Include="GA\Chromosomes\ChromosomeExtensions.cs" />
     <Compile Include="GA\Chromosomes\IChromosome.cs" />
     <Compile Include="GA\Chromosomes\IChromosomeOperator.cs" />
+    <Compile Include="GA\Crossovers\CrossoverBase.cs" />
+    <Compile Include="GA\Crossovers\CrossoverException.cs" />
+    <Compile Include="GA\Crossovers\CrossoverService.cs" />
+    <Compile Include="GA\Crossovers\CutAndSpliceCrossover.cs" />
+    <Compile Include="GA\Crossovers\CycleCrossover.cs" />
+    <Compile Include="GA\Crossovers\ICrossover.cs" />
+    <Compile Include="GA\Crossovers\OnePointCrossover.cs" />
+    <Compile Include="GA\Crossovers\OrderBasedCrossover.cs" />
+    <Compile Include="GA\Crossovers\OrderedCrossover.cs" />
+    <Compile Include="GA\Crossovers\PartiallyMappedCrossover.cs" />
+    <Compile Include="GA\Crossovers\PositionBasedCrossover.cs" />
+    <Compile Include="GA\Crossovers\ThreeParentCrossover.cs" />
+    <Compile Include="GA\Crossovers\TwoPointCrossover.cs" />
+    <Compile Include="GA\Crossovers\UniformCrossover.cs" />
     <Compile Include="Graphics\WordLabel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -152,6 +166,7 @@
     <Compile Include="GA\Randomizations\FastRandom.cs" />
     <Compile Include="GA\Chromosomes\Gene.cs" />
     <Compile Include="Helper\StringExtensions.cs" />
+    <Compile Include="Helper\TypeHelper.cs" />
     <Compile Include="Helper\Words.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

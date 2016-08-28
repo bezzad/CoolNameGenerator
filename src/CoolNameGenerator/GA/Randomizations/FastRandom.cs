@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using CoolNameGenerator.Properties;
 
 namespace CoolNameGenerator.GA.Randomizations
@@ -39,6 +41,21 @@ namespace CoolNameGenerator.GA.Randomizations
             var guid = Guid.NewGuid().GetHashCode();
             var floatingGuid = Math.Abs((double)guid / (int.MaxValue));
             return floatingGuid;
+        }
+
+        public static int[] GetUniqueInts(int count, int minValue, int maxValue)
+        {
+            if(count >= maxValue-minValue) throw new ArgumentOutOfRangeException(nameof(count), "The count of array index must be less than max - min values");
+
+            var result = new HashSet<int>();
+          
+            var seq = Enumerable.Range(0, count).GetEnumerator();
+            while (seq.MoveNext())
+            {
+                while (!result.Add(Next(minValue, maxValue))) {};
+            }
+
+            return result.ToArray();
         }
     }
 }

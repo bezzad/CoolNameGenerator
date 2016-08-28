@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using CoolNameGenerator.GA.Randomizations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -65,6 +66,21 @@ namespace Test.GA.Randomizations
                 Assert.AreNotEqual(buffer[i], 0, $"Number {i} is Zero duplicate!");
                 Assert.AreNotEqual(buffer[i] <= 50, true, $"Number {i} is less than 50 duplicate!");
             }
+        }
+
+        [TestMethod]
+        public void TestGetUniqueInts()
+        {
+            int minRand = 100, maxRand = 1000;
+
+            for (var i = 0; i < 1000; i++)
+            {
+                var aryLen = FastRandom.Next(minRand, maxRand - minRand - 1);
+                var result = FastRandom.GetUniqueInts(aryLen, minRand, maxRand);
+                Assert.AreEqual(aryLen, result.Length);
+                Assert.AreEqual(aryLen, result.Distinct().Count());
+            }
+
         }
     }
 }
