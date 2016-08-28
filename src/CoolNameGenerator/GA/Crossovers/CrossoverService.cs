@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using CoolNameGenerator.Helper;
+using CoolNameGenerator.Helper.Reflection;
 
 namespace CoolNameGenerator.GA.Crossovers
 {

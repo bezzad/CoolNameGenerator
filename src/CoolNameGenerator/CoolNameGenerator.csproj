@@ -156,6 +156,8 @@
     <Compile Include="GA\Crossovers\UniformCrossover.cs" />
     <Compile Include="GA\Fitnesses\FitnessException.cs" />
     <Compile Include="GA\Fitnesses\IFitness.cs" />
+    <Compile Include="GA\GeneticAlgorithm.cs" />
+    <Compile Include="GA\IGeneticAlgorithm.cs" />
     <Compile Include="GA\Mutations\IMutation.cs" />
     <Compile Include="GA\Mutations\MutationBase.cs" />
     <Compile Include="GA\Mutations\MutationException.cs" />
@@ -178,6 +180,24 @@
     <Compile Include="GA\Reinsertions\ReinsertionException.cs" />
     <Compile Include="GA\Reinsertions\ReinsertionService.cs" />
     <Compile Include="GA\Reinsertions\UniformReinsertion.cs" />
+    <Compile Include="GA\Selections\EliteSelection.cs" />
+    <Compile Include="GA\Selections\ISelection.cs" />
+    <Compile Include="GA\Selections\RouletteWheelSelection.cs" />
+    <Compile Include="GA\Selections\SelectionBase.cs" />
+    <Compile Include="GA\Selections\SelectionException.cs" />
+    <Compile Include="GA\Selections\SelectionService.cs" />
+    <Compile Include="GA\Selections\StochasticUniversalSamplingSelection.cs" />
+    <Compile Include="GA\Selections\TournamentSelection.cs" />
+    <Compile Include="GA\Terminations\AndTermination.cs" />
+    <Compile Include="GA\Terminations\FitnessStagnationTermination.cs" />
+    <Compile Include="GA\Terminations\FitnessThresholdTermination.cs" />
+    <Compile Include="GA\Terminations\GenerationNumberTermination.cs" />
+    <Compile Include="GA\Terminations\ITermination.cs" />
+    <Compile Include="GA\Terminations\LogicalOperatorTerminationBase.cs" />
+    <Compile Include="GA\Terminations\OrTermination.cs" />
+    <Compile Include="GA\Terminations\TerminationBase.cs" />
+    <Compile Include="GA\Terminations\TerminationService.cs" />
+    <Compile Include="GA\Terminations\TimeEvolvingTermination.cs" />
     <Compile Include="Graphics\WordLabel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -190,7 +210,10 @@
     <Compile Include="GA\Randomizations\FastRandom.cs" />
     <Compile Include="GA\Chromosomes\Gene.cs" />
     <Compile Include="Helper\StringExtensions.cs" />
-    <Compile Include="Helper\TypeHelper.cs" />
+    <Compile Include="Helper\Reflection\TypeHelper.cs" />
+    <Compile Include="Helper\Threading\ITaskExecutor.cs" />
+    <Compile Include="Helper\Threading\LinearTaskExecutor.cs" />
+    <Compile Include="Helper\Threading\TaskExecutorBase.cs" />
     <Compile Include="Helper\Words.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

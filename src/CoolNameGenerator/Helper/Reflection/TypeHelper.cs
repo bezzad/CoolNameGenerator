@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 
-namespace CoolNameGenerator.Helper
+namespace CoolNameGenerator.Helper.Reflection
 {
     /// <summary>
     /// Type helper.
