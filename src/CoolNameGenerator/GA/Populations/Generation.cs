@@ -60,7 +60,7 @@ namespace CoolNameGenerator.GA.Populations
         /// Gets the best chromosome.
         /// </summary>
         /// <value>The best chromosome.</value>
-        public IChromosome BestChromosome { get; internal set; }
+        public IChromosome BestChromosome { get; set; }
         #endregion
 
         #region Methods

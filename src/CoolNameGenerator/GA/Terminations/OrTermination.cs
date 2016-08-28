@@ -1,9 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Linq;
-using CoolNameGenerator.GA;
-using CoolNameGenerator.GA.Terminations;
 
-namespace GeneticSharp.Domain.Terminations
+namespace CoolNameGenerator.GA.Terminations
 {
     /// <summary>
     /// An termination where you can combine others ITerminations with a OR logical operator.

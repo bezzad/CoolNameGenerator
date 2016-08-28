@@ -56,7 +56,23 @@
     <OutputPath>bin\x64\Release 64x\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ionic.Utils.Zip, Version=1.4.0.1, Culture=neutral, PublicKeyToken=c551e179877da246, processorArchitecture=MSIL">
+      <HintPath>..\packages\TestSharp.1.0.3\lib\net40\Ionic.Utils.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.4.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.4.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="TestSharp, Version=0.0.6.0, Culture=neutral, PublicKeyToken=76c905e92dbc6707, processorArchitecture=MSIL">
+      <HintPath>..\packages\TestSharp.1.0.3\lib\net40\TestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -71,7 +87,58 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="GA\Chromosomes\ChromosomeBaseTest.cs" />
+    <Compile Include="GA\Chromosomes\ChromosomeExtensionsTest.cs" />
+    <Compile Include="GA\Chromosomes\FitnessExceptionTest.cs" />
     <Compile Include="GA\Chromosomes\GeneTest.cs" />
+    <Compile Include="GA\Crossovers\CrossoverBaseTest.cs" />
+    <Compile Include="GA\Crossovers\CrossoverExceptionTest.cs" />
+    <Compile Include="GA\Crossovers\CrossoverServiceTest.cs" />
+    <Compile Include="GA\Crossovers\CutAndSpliceCrossoverTest.cs" />
+    <Compile Include="GA\Crossovers\CycleCrossoverTest.cs" />
+    <Compile Include="GA\Crossovers\OnePointCrossoverTest.cs" />
+    <Compile Include="GA\Crossovers\OrderBasedCrossoverTest.cs" />
+    <Compile Include="GA\Crossovers\OrderedCrossoverTest.cs" />
+    <Compile Include="GA\Crossovers\PartiallyMappedCrossoverTest.cs" />
+    <Compile Include="GA\Crossovers\PositionBasedCrossoverTest.cs" />
+    <Compile Include="GA\Crossovers\ThreeParentCrossoverTest.cs" />
+    <Compile Include="GA\Crossovers\TwoPointCrossoverTest.cs" />
+    <Compile Include="GA\Crossovers\UniformCrossoverTest.cs" />
+    <Compile Include="GA\GeneticAlgorithmTest.cs" />
+    <Compile Include="GA\Mutations\MutationExceptionTest.cs" />
+    <Compile Include="GA\Mutations\MutationServiceTest.cs" />
+    <Compile Include="GA\Mutations\ReverseSequenceMutationTest.cs" />
+    <Compile Include="GA\Mutations\TworsMutationTest.cs" />
+    <Compile Include="GA\Mutations\UniformMutationTest.cs" />
+    <Compile Include="GA\Populations\ChromosomeStub.cs" />
+    <Compile Include="GA\Populations\FitnessStub.cs" />
+    <Compile Include="GA\Populations\GenerationTest.cs" />
+    <Compile Include="GA\Populations\OrderedChromosomeStub.cs" />
+    <Compile Include="GA\Populations\PerformanceGenerationStrategyTest.cs" />
+    <Compile Include="GA\Populations\PopulationServiceTest.cs" />
+    <Compile Include="GA\Populations\PopulationTest.cs" />
+    <Compile Include="GA\Populations\TrackingGenerationStrategyTest.cs" />
+    <Compile Include="GA\Reinsertions\ElitistReinsertionTest.cs" />
+    <Compile Include="GA\Reinsertions\FitnessBasedReinsertionTest.cs" />
+    <Compile Include="GA\Reinsertions\PureReinsertionTest.cs" />
+    <Compile Include="GA\Reinsertions\ReinsertionBaseTest.cs" />
+    <Compile Include="GA\Reinsertions\ReinsertionExceptionTest.cs" />
+    <Compile Include="GA\Reinsertions\ReinsertionServiceTest.cs" />
+    <Compile Include="GA\Reinsertions\UniformReinsertionTest.cs" />
+    <Compile Include="GA\Selections\EliteSelectionTest.cs" />
+    <Compile Include="GA\Selections\RouletteWheelSelectionTest.cs" />
+    <Compile Include="GA\Selections\SelectionExceptionTest.cs" />
+    <Compile Include="GA\Selections\SelectionServiceTest.cs" />
+    <Compile Include="GA\Selections\StochasticUniversalSamplingSelectionTest.cs" />
+    <Compile Include="GA\Selections\TournamentSelectionTest.cs" />
+    <Compile Include="GA\Terminations\AndTerminationTest.cs" />
+    <Compile Include="GA\Terminations\FitnessStagnationTerminationTest.cs" />
+    <Compile Include="GA\Terminations\FitnessThresholdTerminationTest.cs" />
+    <Compile Include="GA\Terminations\GenerationNumberTerminationTest.cs" />
+    <Compile Include="GA\Terminations\OrTerminationTest.cs" />
+    <Compile Include="GA\Terminations\TerminationBaseTest.cs" />
+    <Compile Include="GA\Terminations\TerminationServiceTest.cs" />
+    <Compile Include="GA\Terminations\TimeEvolvingTerminationTest.cs" />
     <Compile Include="Other\TestExtensions.cs" />
     <Compile Include="GA\Randomizations\TestFastRandom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,6 +148,9 @@
       <Project>{17f71102-8547-49ea-9b7c-3dbcef50a6a3}</Project>
       <Name>CoolNameGenerator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Choose>

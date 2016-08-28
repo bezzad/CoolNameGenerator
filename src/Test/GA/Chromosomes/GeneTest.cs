@@ -1,14 +1,13 @@
-﻿using System.ComponentModel;
 using CoolNameGenerator.GA.Chromosomes;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Test.GA.Chromosomes
 {
-    [TestClass]
+    [TestFixture]
     [Category("Chromosomes")]
     public class GeneTest
     {
-        [TestMethod]
+        [Test]
         public void ToString_NoArgs_Value()
         {
             var target = new Gene();
@@ -18,7 +17,7 @@ namespace Test.GA.Chromosomes
             Assert.AreEqual("1", target.ToString());
         }
 
-        [TestMethod]
+        [Test]
         public void Equals_OtherNotGene_False()
         {
             var target = new Gene(1);
@@ -26,15 +25,15 @@ namespace Test.GA.Chromosomes
             Assert.IsFalse(target.Equals(other));
         }
 
-        [TestMethod]
+        [Test]
         public void Equals_OtherAsObjectOtherValue_False()
         {
             var target = new Gene(1);
             var other = new Gene(2); ;
-            Assert.IsFalse(target.Equals((object) other));
+            Assert.IsFalse(target.Equals(other as object));
         }
 
-        [TestMethod]
+        [Test]
         public void Equals_OtherAsObjectSameValue_True()
         {
             var target = new Gene(1);
@@ -42,7 +41,7 @@ namespace Test.GA.Chromosomes
             Assert.IsTrue(target.Equals(other as object));
         }
 
-        [TestMethod]
+        [Test]
         public void Equals_OtherValue_False()
         {
             var target = new Gene(1);
@@ -50,7 +49,7 @@ namespace Test.GA.Chromosomes
             Assert.IsFalse(target.Equals(other));
         }
 
-        [TestMethod]
+        [Test]
         public void Equals_SameValue_True()
         {
             var target = new Gene(1);
@@ -58,14 +57,14 @@ namespace Test.GA.Chromosomes
             Assert.IsTrue(target.Equals(other));
         }
 
-        [TestMethod]
+        [Test]
         public void GetHashCode_NoValue_Zero()
         {
             var target = new Gene();
             Assert.AreEqual(0, target.GetHashCode());
         }
 
-        [TestMethod]
+        [Test]
         public void OperatorEquals_SameValue_True()
         {
             var target = new Gene(1);
@@ -73,7 +72,7 @@ namespace Test.GA.Chromosomes
             Assert.IsTrue(target == other);
         }
 
-        [TestMethod]
+        [Test]
         public void OperatorEquals_DiffValue_False()
         {
             var target = new Gene(1);
@@ -81,11 +80,11 @@ namespace Test.GA.Chromosomes
             Assert.IsFalse(target == other);
         }
 
-        [TestMethod]
+        [Test]
         public void OperatorDiff_Diff_True()
         {
-            var target = new Gene('1');
-            var other = new Gene('2');
+            var target = new Gene(1);
+            var other = new Gene(2);
             Assert.IsTrue(target != other);
         }
     }

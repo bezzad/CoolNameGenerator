@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using CoolNameGenerator.GA.Chromosomes;
-using CoolNameGenerator.GA.Crossovers;
 using CoolNameGenerator.GA.Randomizations;
 
-namespace GeneticSharp.Domain.Crossovers
+namespace CoolNameGenerator.GA.Crossovers
 {
     /// <summary>
     /// The Uniform Crossover uses a fixed mixing ratio between two parents. 
@@ -19,7 +18,7 @@ namespace GeneticSharp.Domain.Crossovers
     {
         #region Constructors
         /// <summary>
-        /// Initializes a new instance of the <see cref="GeneticSharp.Domain.Crossovers.UniformCrossover"/> class.
+        /// Initializes a new instance of the <see cref="UniformCrossover"/> class.
         /// </summary>
         /// <param name="mixProbability">The mix probability. he default mix probability is 0.5.</param>
         public UniformCrossover(float mixProbability)
@@ -29,7 +28,7 @@ namespace GeneticSharp.Domain.Crossovers
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GeneticSharp.Domain.Crossovers.UniformCrossover"/> class.
+        /// Initializes a new instance of the <see cref="UniformCrossover"/> class.
         /// <remarks>
         /// The default mix probability is 0.5.
         /// </remarks>

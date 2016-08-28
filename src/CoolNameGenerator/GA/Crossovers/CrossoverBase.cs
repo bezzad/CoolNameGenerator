@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.Helper;
 using CoolNameGenerator.Properties;
-using GeneticSharp.Domain.Crossovers;
 
 namespace CoolNameGenerator.GA.Crossovers
 {
