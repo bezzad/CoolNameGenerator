@@ -213,4 +213,13 @@
   <data name="OutOfRangeException_indexMustLessThan" xml:space="preserve">
     <value>The {0} index must be less than {1} values</value>
   </data>
+  <data name="generation_should_have_at_least_2_chromosomes" xml:space="preserve">
+    <value>A generation should have at least 2 chromosomes.</value>
+  </data>
+  <data name="minimum_size_for_a_population_is_2_chromosomes" xml:space="preserve">
+    <value>The minimum size for a population is 2 chromosomes.</value>
+  </data>
+  <data name="maximum_size_for_a_population_should_be_equal_or_greater_than_minimum_size" xml:space="preserve">
+    <value>The maximum size for a population should be equal or greater than minimum size.</value>
+  </data>
 </root>

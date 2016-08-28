@@ -160,6 +160,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A generation should have at least 2 chromosomes..
+        /// </summary>
+        public static string generation_should_have_at_least_2_chromosomes {
+            get {
+                return ResourceManager.GetString("generation_should_have_at_least_2_chromosomes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GetFinglish Exception!.
         /// </summary>
         public static string GetFinglish_Exception {
@@ -192,6 +201,24 @@ namespace CoolNameGenerator.Properties {
         public static string ImportPersianWords {
             get {
                 return ResourceManager.GetString("ImportPersianWords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The maximum size for a population should be equal or greater than minimum size..
+        /// </summary>
+        public static string maximum_size_for_a_population_should_be_equal_or_greater_than_minimum_size {
+            get {
+                return ResourceManager.GetString("maximum_size_for_a_population_should_be_equal_or_greater_than_minimum_size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The minimum size for a population is 2 chromosomes..
+        /// </summary>
+        public static string minimum_size_for_a_population_is_2_chromosomes {
+            get {
+                return ResourceManager.GetString("minimum_size_for_a_population_is_2_chromosomes", resourceCulture);
             }
         }
         

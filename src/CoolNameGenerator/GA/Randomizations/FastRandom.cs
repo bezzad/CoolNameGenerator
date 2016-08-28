@@ -46,7 +46,7 @@ namespace CoolNameGenerator.GA.Randomizations
 
         public static int[] GetUniqueInts(int count, int minValue, int maxValue)
         {
-            if (count >= maxValue - minValue)
+            if (count > maxValue - minValue)
                 throw new ArgumentOutOfRangeException(nameof(count), Localization.OutOfRangeException_indexMustLessThan.With("count of array", "max - min"));
 
             var result = new HashSet<int>();

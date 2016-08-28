@@ -163,6 +163,21 @@
     <Compile Include="GA\Mutations\ReverseSequenceMutation.cs" />
     <Compile Include="GA\Mutations\TworsMutation.cs" />
     <Compile Include="GA\Mutations\UniformMutation.cs" />
+    <Compile Include="GA\Populations\Generation.cs" />
+    <Compile Include="GA\Populations\IGenerationStrategy.cs" />
+    <Compile Include="GA\Populations\IPopulation.cs" />
+    <Compile Include="GA\Populations\PerformanceGenerationStrategy.cs" />
+    <Compile Include="GA\Populations\Population.cs" />
+    <Compile Include="GA\Populations\PopulationService.cs" />
+    <Compile Include="GA\Populations\TrackingGenerationStrategy.cs" />
+    <Compile Include="GA\Reinsertions\ElitistReinsertion.cs" />
+    <Compile Include="GA\Reinsertions\FitnessBasedReinsertion.cs" />
+    <Compile Include="GA\Reinsertions\IReinsertion.cs" />
+    <Compile Include="GA\Reinsertions\PureReinsertion.cs" />
+    <Compile Include="GA\Reinsertions\ReinsertionBase.cs" />
+    <Compile Include="GA\Reinsertions\ReinsertionException.cs" />
+    <Compile Include="GA\Reinsertions\ReinsertionService.cs" />
+    <Compile Include="GA\Reinsertions\UniformReinsertion.cs" />
     <Compile Include="Graphics\WordLabel.cs">
       <SubType>Component</SubType>
     </Compile>
