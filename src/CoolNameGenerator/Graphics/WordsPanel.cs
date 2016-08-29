@@ -7,9 +7,10 @@ namespace CoolNameGenerator.Graphics
 {
     public sealed class WordsPanel : FlowLayoutPanel
     {
-        public Control[] WordsLabels;
-        public int Count { get; private set; }
+        public WordLabel[] WordsLabels { get; set; }
 
+        public int Count { get; private set; }
+        
         public WordsPanel(int wordsCount) : this()
         {
             SetWordsCount(wordsCount);
@@ -25,13 +26,14 @@ namespace CoolNameGenerator.Graphics
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             Dock = System.Windows.Forms.DockStyle.Fill;
         }
+        
 
         public void SetWordsCount(int count)
         {
             Count = count;
             Controls.Clear();
 
-            WordsLabels = new Control[count];
+            WordsLabels = new WordLabel[count];
             for (var i = 0; i < count; i++)
             {
                 WordsLabels[i] = new WordLabel();
@@ -50,6 +52,8 @@ namespace CoolNameGenerator.Graphics
             {
                 WordsLabels[i].Text = words[i];
             }
+
+            ((WordLabel)WordsLabels[0]).IsElit();
         }
 
         public void SetWords(IList<IChromosome> chromosomes)
@@ -61,6 +65,7 @@ namespace CoolNameGenerator.Graphics
 
             for (var i = 0; i < Count; i++)
             {
+                WordsLabels[i].Fitness = chromosomes[i].Fitness;
                 WordsLabels[i].Text = chromosomes[i].ToString();
             }
         }

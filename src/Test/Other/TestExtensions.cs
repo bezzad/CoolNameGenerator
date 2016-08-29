@@ -28,7 +28,7 @@ namespace Test.Other
                 // split on groups with each chunkSize items
                 var arys = items.ChunkArray(chunkCount);
 
-                Assert.AreEqual(items.Length, aryLength, "items array lenght not equal by artLenght variable");
+                Assert.AreEqual(items.Length, aryLength, "items array length not equal by aryLength variable");
 
                 Assert.AreEqual(arys.Length, chunkCount, "Splited arrays count not equal by chunkSize variable");
 
