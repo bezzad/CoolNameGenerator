@@ -38,16 +38,25 @@
             this.chkHasNumeric = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblWordMaxLen = new System.Windows.Forms.Label();
-            this.numWordMaxLen = new System.Windows.Forms.NumericUpDown();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblWordMinLen = new System.Windows.Forms.Label();
-            this.numWordMinLen = new System.Windows.Forms.NumericUpDown();
+            this.numWordLen = new System.Windows.Forms.NumericUpDown();
             this.chkDisplayRealtime = new System.Windows.Forms.CheckBox();
             this.panelGAToolbox = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.numPopulationSize = new System.Windows.Forms.NumericUpDown();
             this.btnStart = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblFitness = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblGeneration = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lblTimeEvolving = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lblBestChromosome = new System.Windows.Forms.Label();
+            this.lblBestChromosomeT = new System.Windows.Forms.Label();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,34 +79,20 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblFitness = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lblGeneration = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.lblTimeEvolving = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.lblBestChromosome = new System.Windows.Forms.Label();
-            this.lblBestChromosomeT = new System.Windows.Forms.Label();
             this.gbResult.SuspendLayout();
             this.gbGAToolbox.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelWordToolbox.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numWordMaxLen)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numWordMinLen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numWordLen)).BeginInit();
             this.panelGAToolbox.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPopulationSize)).BeginInit();
-            this.menuStrip.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbResult
@@ -158,7 +153,6 @@
             this.panelWordToolbox.Controls.Add(this.chkHasHyphen);
             this.panelWordToolbox.Controls.Add(this.chkHasNumeric);
             this.panelWordToolbox.Controls.Add(this.panel2);
-            this.panelWordToolbox.Controls.Add(this.panel1);
             this.panelWordToolbox.Controls.Add(this.chkDisplayRealtime);
             this.panelWordToolbox.Location = new System.Drawing.Point(8, 8);
             this.panelWordToolbox.Name = "panelWordToolbox";
@@ -188,7 +182,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.lblWordMaxLen);
-            this.panel2.Controls.Add(this.numWordMaxLen);
+            this.panel2.Controls.Add(this.numWordLen);
             this.panel2.Location = new System.Drawing.Point(3, 30);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(231, 29);
@@ -199,68 +193,28 @@
             this.lblWordMaxLen.AutoSize = true;
             this.lblWordMaxLen.Location = new System.Drawing.Point(3, 6);
             this.lblWordMaxLen.Name = "lblWordMaxLen";
-            this.lblWordMaxLen.Size = new System.Drawing.Size(91, 17);
+            this.lblWordMaxLen.Size = new System.Drawing.Size(66, 17);
             this.lblWordMaxLen.TabIndex = 4;
-            this.lblWordMaxLen.Text = "WordMaxLen";
+            this.lblWordMaxLen.Text = "WordLen";
             // 
-            // numWordMaxLen
+            // numWordLen
             // 
-            this.numWordMaxLen.Location = new System.Drawing.Point(155, 4);
-            this.numWordMaxLen.Maximum = new decimal(new int[] {
+            this.numWordLen.Location = new System.Drawing.Point(155, 4);
+            this.numWordLen.Maximum = new decimal(new int[] {
             67,
             0,
             0,
             0});
-            this.numWordMaxLen.Minimum = new decimal(new int[] {
+            this.numWordLen.Minimum = new decimal(new int[] {
             2,
             0,
             0,
             0});
-            this.numWordMaxLen.Name = "numWordMaxLen";
-            this.numWordMaxLen.Size = new System.Drawing.Size(74, 22);
-            this.numWordMaxLen.TabIndex = 3;
-            this.numWordMaxLen.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblWordMinLen);
-            this.panel1.Controls.Add(this.numWordMinLen);
-            this.panel1.Location = new System.Drawing.Point(3, 65);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(231, 29);
-            this.panel1.TabIndex = 4;
-            // 
-            // lblWordMinLen
-            // 
-            this.lblWordMinLen.AutoSize = true;
-            this.lblWordMinLen.Location = new System.Drawing.Point(3, 6);
-            this.lblWordMinLen.Name = "lblWordMinLen";
-            this.lblWordMinLen.Size = new System.Drawing.Size(88, 17);
-            this.lblWordMinLen.TabIndex = 4;
-            this.lblWordMinLen.Text = "WordMinLen";
-            // 
-            // numWordMinLen
-            // 
-            this.numWordMinLen.Location = new System.Drawing.Point(155, 4);
-            this.numWordMinLen.Maximum = new decimal(new int[] {
-            67,
-            0,
-            0,
-            0});
-            this.numWordMinLen.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.numWordMinLen.Name = "numWordMinLen";
-            this.numWordMinLen.Size = new System.Drawing.Size(74, 22);
-            this.numWordMinLen.TabIndex = 3;
-            this.numWordMinLen.Value = new decimal(new int[] {
-            6,
+            this.numWordLen.Name = "numWordLen";
+            this.numWordLen.Size = new System.Drawing.Size(74, 22);
+            this.numWordLen.TabIndex = 3;
+            this.numWordLen.Value = new decimal(new int[] {
+            8,
             0,
             0,
             0});
@@ -268,7 +222,9 @@
             // chkDisplayRealtime
             // 
             this.chkDisplayRealtime.AutoSize = true;
-            this.chkDisplayRealtime.Location = new System.Drawing.Point(3, 100);
+            this.chkDisplayRealtime.Checked = true;
+            this.chkDisplayRealtime.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkDisplayRealtime.Location = new System.Drawing.Point(3, 65);
             this.chkDisplayRealtime.Name = "chkDisplayRealtime";
             this.chkDisplayRealtime.Size = new System.Drawing.Size(131, 21);
             this.chkDisplayRealtime.TabIndex = 6;
@@ -318,7 +274,7 @@
             this.numPopulationSize.Size = new System.Drawing.Size(99, 22);
             this.numPopulationSize.TabIndex = 3;
             this.numPopulationSize.Value = new decimal(new int[] {
-            10,
+            100,
             0,
             0,
             0});
@@ -335,6 +291,118 @@
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.lblFitness);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Location = new System.Drawing.Point(649, 54);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(361, 32);
+            this.panel4.TabIndex = 10;
+            // 
+            // lblFitness
+            // 
+            this.lblFitness.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFitness.Location = new System.Drawing.Point(147, 6);
+            this.lblFitness.Name = "lblFitness";
+            this.lblFitness.Size = new System.Drawing.Size(208, 17);
+            this.lblFitness.TabIndex = 10;
+            this.lblFitness.Text = "Fitness No";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Fitness";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.lblGeneration);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Location = new System.Drawing.Point(649, 92);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(361, 32);
+            this.panel5.TabIndex = 11;
+            // 
+            // lblGeneration
+            // 
+            this.lblGeneration.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblGeneration.Location = new System.Drawing.Point(147, 6);
+            this.lblGeneration.Name = "lblGeneration";
+            this.lblGeneration.Size = new System.Drawing.Size(208, 17);
+            this.lblGeneration.TabIndex = 10;
+            this.lblGeneration.Text = "Generation No";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Generation";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.lblTimeEvolving);
+            this.panel6.Controls.Add(this.label6);
+            this.panel6.Location = new System.Drawing.Point(649, 130);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(361, 32);
+            this.panel6.TabIndex = 11;
+            // 
+            // lblTimeEvolving
+            // 
+            this.lblTimeEvolving.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTimeEvolving.Location = new System.Drawing.Point(150, 6);
+            this.lblTimeEvolving.Name = "lblTimeEvolving";
+            this.lblTimeEvolving.Size = new System.Drawing.Size(205, 17);
+            this.lblTimeEvolving.TabIndex = 10;
+            this.lblTimeEvolving.Text = "TimeEvolving";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 17);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "TimeEvolving";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.lblBestChromosome);
+            this.panel7.Controls.Add(this.lblBestChromosomeT);
+            this.panel7.Location = new System.Drawing.Point(649, 168);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(361, 32);
+            this.panel7.TabIndex = 11;
+            // 
+            // lblBestChromosome
+            // 
+            this.lblBestChromosome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBestChromosome.Location = new System.Drawing.Point(150, 6);
+            this.lblBestChromosome.Name = "lblBestChromosome";
+            this.lblBestChromosome.Size = new System.Drawing.Size(205, 17);
+            this.lblBestChromosome.TabIndex = 10;
+            this.lblBestChromosome.Text = "BestChromosome";
+            // 
+            // lblBestChromosomeT
+            // 
+            this.lblBestChromosomeT.AutoSize = true;
+            this.lblBestChromosomeT.Location = new System.Drawing.Point(3, 6);
+            this.lblBestChromosomeT.Name = "lblBestChromosomeT";
+            this.lblBestChromosomeT.Size = new System.Drawing.Size(123, 17);
+            this.lblBestChromosomeT.TabIndex = 9;
+            this.lblBestChromosomeT.Text = "Best Chromosome";
             // 
             // menuStrip
             // 
@@ -510,118 +578,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Fitness";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.lblFitness);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(649, 54);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(361, 32);
-            this.panel4.TabIndex = 10;
-            // 
-            // lblFitness
-            // 
-            this.lblFitness.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFitness.Location = new System.Drawing.Point(150, 6);
-            this.lblFitness.Name = "lblFitness";
-            this.lblFitness.Size = new System.Drawing.Size(208, 17);
-            this.lblFitness.TabIndex = 10;
-            this.lblFitness.Text = "Fitness No";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.lblGeneration);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(649, 92);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(361, 32);
-            this.panel5.TabIndex = 11;
-            // 
-            // lblGeneration
-            // 
-            this.lblGeneration.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblGeneration.Location = new System.Drawing.Point(147, 6);
-            this.lblGeneration.Name = "lblGeneration";
-            this.lblGeneration.Size = new System.Drawing.Size(211, 17);
-            this.lblGeneration.TabIndex = 10;
-            this.lblGeneration.Text = "Generation No";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 17);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Generation";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.lblTimeEvolving);
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Location = new System.Drawing.Point(649, 130);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(361, 32);
-            this.panel6.TabIndex = 11;
-            // 
-            // lblTimeEvolving
-            // 
-            this.lblTimeEvolving.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTimeEvolving.Location = new System.Drawing.Point(150, 6);
-            this.lblTimeEvolving.Name = "lblTimeEvolving";
-            this.lblTimeEvolving.Size = new System.Drawing.Size(205, 17);
-            this.lblTimeEvolving.TabIndex = 10;
-            this.lblTimeEvolving.Text = "TimeEvolving";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 17);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "TimeEvolving";
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.lblBestChromosome);
-            this.panel7.Controls.Add(this.lblBestChromosomeT);
-            this.panel7.Location = new System.Drawing.Point(649, 168);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(361, 32);
-            this.panel7.TabIndex = 11;
-            // 
-            // lblBestChromosome
-            // 
-            this.lblBestChromosome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBestChromosome.Location = new System.Drawing.Point(147, 6);
-            this.lblBestChromosome.Name = "lblBestChromosome";
-            this.lblBestChromosome.Size = new System.Drawing.Size(211, 17);
-            this.lblBestChromosome.TabIndex = 10;
-            this.lblBestChromosome.Text = "BestChromosome";
-            // 
-            // lblBestChromosomeT
-            // 
-            this.lblBestChromosomeT.AutoSize = true;
-            this.lblBestChromosomeT.Location = new System.Drawing.Point(3, 6);
-            this.lblBestChromosomeT.Name = "lblBestChromosomeT";
-            this.lblBestChromosomeT.Size = new System.Drawing.Size(123, 17);
-            this.lblBestChromosomeT.TabIndex = 9;
-            this.lblBestChromosomeT.Text = "Best Chromosome";
-            // 
             // CoolNameResultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -641,16 +597,11 @@
             this.panelWordToolbox.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numWordMaxLen)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numWordMinLen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numWordLen)).EndInit();
             this.panelGAToolbox.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPopulationSize)).EndInit();
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -659,6 +610,8 @@
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -672,12 +625,9 @@
         private System.Windows.Forms.CheckBox chkHasHyphen;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.CheckBox chkHasNumeric;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblWordMinLen;
-        private System.Windows.Forms.NumericUpDown numWordMinLen;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblWordMaxLen;
-        private System.Windows.Forms.NumericUpDown numWordMaxLen;
+        private System.Windows.Forms.NumericUpDown numWordLen;
         private System.Windows.Forms.CheckBox chkDisplayRealtime;
         private System.Windows.Forms.FlowLayoutPanel panelWordToolbox;
         private System.Windows.Forms.FlowLayoutPanel panelGAToolbox;

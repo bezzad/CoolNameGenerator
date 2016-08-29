@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,11 +26,6 @@ namespace CoolNameGenerator.Forms
             Run();
         }
 
-        //private void Controller_BestWordFound(string bestResult)
-        //{
-        //    wpResults.WordsLabels[0].Text = bestResult;
-        //}
-
         private void finglishConverterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FinglishConverter().ShowDialog();
@@ -40,32 +36,27 @@ namespace CoolNameGenerator.Forms
         {
             await Task.Run(() =>
             {
-                var controller = new WordGaController(() => new WordChromosome((int)numWordMinLen.Value, (int)numWordMaxLen.Value, chkHasNumeric.Checked, chkHasHyphen.Checked));
-                //controller.BestWordFound += Controller_BestWordFound;
-                var selection = controller.CreateSelection();
-                var crossover = controller.CreateCrossover();
-                var mutation = controller.CreateMutation();
-                var fitness = controller.CreateFitness();
-                var population = new Population((int)numPopulationSize.Value, 2000, controller.CreateChromosome());
-                population.GenerationStrategy = new PerformanceGenerationStrategy();
-
-                var ga = new GeneticAlgorithm(population, fitness, selection, crossover, mutation);
-                ga.Termination = controller.CreateTermination();
-
-                ga.GenerationRan += delegate
-                {
-                    var bestChromosome = ga.Population.BestChromosome;
-                    lblFitness.InvokeIfRequired(() => lblFitness.Text = bestChromosome.Fitness.ToString());
-                    lblBestChromosome.InvokeIfRequired(() => lblBestChromosome.Text = bestChromosome.ToString());
-                    lblGeneration.InvokeIfRequired(() => lblGeneration.Text = ga.Population.GenerationsNumber.ToString());
-                    lblTimeEvolving.InvokeIfRequired(() => lblTimeEvolving.Text = ga.TimeEvolving.ToString());
-                    controller.Draw(bestChromosome);
-                    wpResults.SetWords(ga.Population.CurrentGeneration.Chromosomes);
-                };
-
                 try
                 {
-                    controller.ConfigGa(ga);
+                    var ctrl = new WordGaController(() => new WordChromosome((int)numWordLen.Value, chkHasNumeric.Checked, chkHasHyphen.Checked), DrawChromosomes);
+
+                    var population = new Population((int)numPopulationSize.Value, 2000, ctrl.CreateChromosome(), new PerformanceGenerationStrategy(10));
+
+                    var ga = new GeneticAlgorithm(population, ctrl.CreateFitness(), ctrl.CreateSelection(),
+                        ctrl.CreateCrossover(), ctrl.CreateMutation(), ctrl.CreateTermination());
+
+                    ga.GenerationRan += delegate
+                    {
+                        var bestChromosome = ga.Population.BestChromosome;
+                        lblFitness.InvokeIfRequired(() => lblFitness.Text = bestChromosome.Fitness.ToString());
+                        lblBestChromosome.InvokeIfRequired(() => lblBestChromosome.Text = bestChromosome.ToString());
+                        lblGeneration.InvokeIfRequired(() => lblGeneration.Text = ga.Population.GenerationsNumber.ToString());
+                        lblTimeEvolving.InvokeIfRequired(() => lblTimeEvolving.Text = ga.TimeEvolving.ToString());
+                        ctrl.Draw(bestChromosome);
+                        ctrl.DrawAllAction(ga.Population.CurrentGeneration.Chromosomes);
+                    };
+                    
+                    ctrl.ConfigGa(ga);
                     ga.Start();
                 }
                 catch (Exception ex)
@@ -74,6 +65,14 @@ namespace CoolNameGenerator.Forms
                     return;
                 }
             });
+        }
+
+        private void DrawChromosomes(IList<IChromosome> chromosomes)
+        {
+            if (chkDisplayRealtime.Checked)
+            {
+                wpResults.SetWords(chromosomes);
+            }
         }
     }
 }

@@ -77,7 +77,7 @@ namespace CoolNameGenerator.GA
 
         #region Fields
         private bool _mStopRequested;
-        private readonly object _mLock = new object();
+        private readonly object _syncLock = new object();
         private GeneticAlgorithmState _mState;
         #endregion              
 
@@ -111,6 +111,41 @@ namespace CoolNameGenerator.GA
 
             Reinsertion = new ElitistReinsertion();
             Termination = new GenerationNumberTermination(1);
+
+            CrossoverProbability = DefaultCrossoverProbability;
+            MutationProbability = DefaultMutationProbability;
+            TimeEvolving = TimeSpan.Zero;
+            State = GeneticAlgorithmState.NotStarted;
+            TaskExecutor = new LinearTaskExecutor();
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GeneticAlgorithm"/> class.
+        /// </summary>
+        /// <param name="population">The chromosomes population.</param>
+        /// <param name="fitness">The fitness evaluation function.</param>
+        /// <param name="selection">The selection operator.</param>
+        /// <param name="crossover">The crossover operator.</param>
+        /// <param name="mutation">The mutation operator.</param>
+        /// <param name="termination">The termination operator.</param>
+        public GeneticAlgorithm(IPopulation population,IFitness fitness,ISelection selection,
+                          ICrossover crossover, IMutation mutation, ITermination termination)
+        {
+            if (population == null) throw new ArgumentNullException(nameof(population));
+            if (fitness == null) throw new ArgumentNullException(nameof(fitness));
+            if (selection == null) throw new ArgumentNullException(nameof(selection));
+            if (crossover == null) throw new ArgumentNullException(nameof(crossover));
+            if (mutation == null) throw new ArgumentNullException(nameof(mutation));
+            if (termination == null) throw new ArgumentNullException(nameof(termination));
+
+            Population = population;
+            Fitness = fitness;
+            Selection = selection;
+            Crossover = crossover;
+            Mutation = mutation;
+            Termination = termination;
+
+            Reinsertion = new ElitistReinsertion();
 
             CrossoverProbability = DefaultCrossoverProbability;
             MutationProbability = DefaultMutationProbability;
@@ -245,7 +280,7 @@ namespace CoolNameGenerator.GA
         /// </summary>
         public void Start()
         {
-            lock (_mLock)
+            lock (_syncLock)
             {
                 State = GeneticAlgorithmState.Started;
                 var startDateTime = DateTime.Now;
@@ -266,7 +301,7 @@ namespace CoolNameGenerator.GA
         {
             try
             {
-                lock (_mLock)
+                lock (_syncLock)
                 {
                     _mStopRequested = false;
                 }
@@ -321,7 +356,7 @@ namespace CoolNameGenerator.GA
                 throw new InvalidOperationException("Attempt to stop a genetic algorithm which was not yet started.");
             }
 
-            lock (_mLock)
+            lock (_syncLock)
             {
                 _mStopRequested = true;
             }

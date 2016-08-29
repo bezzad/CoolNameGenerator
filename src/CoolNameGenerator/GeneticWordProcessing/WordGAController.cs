@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using CoolNameGenerator.GA;
 using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GA.Crossovers;
@@ -13,10 +14,13 @@ namespace CoolNameGenerator.GeneticWordProcessing
     public class WordGaController : GeneticControllerBase
     {
         public Func<IChromosome> ChromosomeFactory;
+        public Action<IList<IChromosome>> DrawAllAction;
+        public Action<IChromosome> DrawAction;
 
-        public WordGaController(Func<IChromosome>  chromosomeFactory)
+        public WordGaController(Func<IChromosome>  chromosomeFactory, Action<IList<IChromosome>> drawAllAction)
         {
             ChromosomeFactory = chromosomeFactory;
+            DrawAllAction = drawAllAction;
         }
 
         public WordGaController()
@@ -80,7 +84,12 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public override void Draw(IChromosome bestChromosome)
         {
-            //OnBestWordFound(bestChromosome.ToString());
+            DrawAction?.Invoke(bestChromosome);
+        }
+
+        public void DrawAll(IList<IChromosome> chromosomes)
+        {
+            DrawAllAction?.Invoke(chromosomes);
         }
 
         public override ITermination CreateTermination()

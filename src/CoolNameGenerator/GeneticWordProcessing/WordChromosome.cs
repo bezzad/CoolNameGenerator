@@ -13,29 +13,21 @@ namespace CoolNameGenerator.GeneticWordProcessing
         public const int MaxHyphenUsage = 4;
         public bool HasNumeric { get; set; }
         public bool HasHyphen { get; set; }
-        public int MinLength { get; set; }
-        public int MaxLength { get; set; }
-        
         #endregion
 
         #region Constructors  
 
-        public WordChromosome(int minLength, int maxLength, bool hasNumeric, bool hasHyphen) : base(FastRandom.Next(minLength, maxLength))
+        public WordChromosome(int length, bool hasNumeric, bool hasHyphen) : base(length)
         {
             HasNumeric = hasNumeric;
             HasHyphen = hasHyphen;
-            MinLength = minLength;
-            MaxLength = maxLength;
             ReplaceGenes(0, GenerateGens(Length, hasNumeric, hasHyphen));
         }
-
-        public WordChromosome(int length, bool hasNumeric, bool hasHyphen) : this(length, length, hasNumeric, hasHyphen)
-        { }
 
         public WordChromosome(bool hasNumeric, bool hasHyphen) : this(FastRandom.Next(3, 8), hasNumeric, hasHyphen)
         { }
 
-        public WordChromosome() : this(3, 8, false, false)
+        public WordChromosome() : this(FastRandom.Next(3, 8), false, false)
         { }
 
         #endregion
@@ -91,7 +83,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// </returns>
         public override IChromosome CreateNew()
         {
-            return new WordChromosome(FastRandom.Next(MinLength, MaxLength), HasNumeric, HasHyphen);
+            return new WordChromosome(Length, HasNumeric, HasHyphen);
         }
 
         public override string ToString()

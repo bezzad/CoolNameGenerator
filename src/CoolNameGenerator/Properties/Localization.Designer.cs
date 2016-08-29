@@ -385,6 +385,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Word Length.
+        /// </summary>
+        public static string WordLen {
+            get {
+                return ResourceManager.GetString("WordLen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Word maximum length.
         /// </summary>
         public static string WordMaxLen {

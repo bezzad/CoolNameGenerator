@@ -234,4 +234,7 @@
   <data name="TimeEvolving" xml:space="preserve">
     <value>Time Evolving</value>
   </data>
+  <data name="WordLen" xml:space="preserve">
+    <value>Word Length</value>
+  </data>
 </root>

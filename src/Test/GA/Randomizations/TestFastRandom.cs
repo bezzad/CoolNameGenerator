@@ -94,5 +94,27 @@ namespace Test.GA.Randomizations
                 Assert.AreEqual(aryLen, result.Length);
             }
         }
+
+        [TestMethod]
+        public void TestEqualMinMaxResult()
+        {
+            int minRand, maxRand;
+
+            minRand = maxRand = new Random().Next(0, 100000);
+
+            for (var i = 0; i < 10000; i++)
+            {
+                var res = FastRandom.Next(minRand, maxRand);
+                Assert.AreEqual(res, minRand);
+                Assert.AreEqual(res, maxRand);
+
+                var rands = FastRandom.GetInts(1000, minRand, maxRand);
+                Assert.AreEqual(1000, rands.Length);
+
+                var duplicateRands = rands.Where(r => r.Equals(rands[0])).Count();
+
+                Assert.AreEqual(duplicateRands, rands.Length);
+            }
+        }
     }
 }

@@ -40,6 +40,36 @@ namespace CoolNameGenerator.GA.Populations
             Generations = new List<Generation>();
             GenerationStrategy = new PerformanceGenerationStrategy(10);
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Population"/> class.
+        /// </summary>
+        /// <param name="minSize">The minimum size (chromosomes).</param>
+        /// <param name="maxSize">The maximum size (chromosomes).</param>
+        /// <param name="adamChromosome">The original chromosome of all population ;).</param>
+        /// <param name="generationStrategy">Generation strategy to some key points of generation behavior inside a population.</param>
+        public Population(int minSize, int maxSize, IChromosome adamChromosome, IGenerationStrategy generationStrategy)
+        {
+            if (minSize < 2)
+            {
+                throw new ArgumentOutOfRangeException(nameof(minSize), Localization.minimum_size_for_a_population_is_2_chromosomes);
+            }
+
+            if (maxSize < minSize)
+            {
+                throw new ArgumentOutOfRangeException(nameof(maxSize), Localization.maximum_size_for_a_population_should_be_equal_or_greater_than_minimum_size);
+            }
+
+            if (adamChromosome == null) throw new ArgumentNullException(nameof(adamChromosome));
+            if (generationStrategy == null) { throw new ArgumentNullException(nameof(generationStrategy)); }
+
+            CreationDate = DateTime.Now;
+            MinSize = minSize;
+            MaxSize = maxSize;
+            AdamChromosome = adamChromosome;
+            Generations = new List<Generation>();
+            GenerationStrategy = generationStrategy;
+        }
         #endregion
 
         #region Events
