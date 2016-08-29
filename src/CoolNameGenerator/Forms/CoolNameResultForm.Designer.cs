@@ -70,6 +70,18 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblFitness = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblGeneration = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lblTimeEvolving = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lblBestChromosome = new System.Windows.Forms.Label();
+            this.lblBestChromosomeT = new System.Windows.Forms.Label();
             this.gbResult.SuspendLayout();
             this.gbGAToolbox.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -82,6 +94,10 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPopulationSize)).BeginInit();
             this.menuStrip.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbResult
@@ -92,7 +108,7 @@
             this.gbResult.Controls.Add(this.wpResults);
             this.gbResult.Location = new System.Drawing.Point(12, 276);
             this.gbResult.Name = "gbResult";
-            this.gbResult.Size = new System.Drawing.Size(837, 363);
+            this.gbResult.Size = new System.Drawing.Size(1025, 363);
             this.gbResult.TabIndex = 0;
             this.gbResult.TabStop = false;
             this.gbResult.Text = "Result";
@@ -105,7 +121,7 @@
             this.wpResults.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wpResults.Location = new System.Drawing.Point(3, 18);
             this.wpResults.Name = "wpResults";
-            this.wpResults.Size = new System.Drawing.Size(831, 342);
+            this.wpResults.Size = new System.Drawing.Size(1019, 342);
             this.wpResults.TabIndex = 0;
             // 
             // gbGAToolbox
@@ -115,7 +131,7 @@
             this.gbGAToolbox.Controls.Add(this.flowLayoutPanel1);
             this.gbGAToolbox.Location = new System.Drawing.Point(12, 31);
             this.gbGAToolbox.Name = "gbGAToolbox";
-            this.gbGAToolbox.Size = new System.Drawing.Size(837, 239);
+            this.gbGAToolbox.Size = new System.Drawing.Size(1025, 239);
             this.gbGAToolbox.TabIndex = 1;
             this.gbGAToolbox.TabStop = false;
             this.gbGAToolbox.Text = "PGAToolbox";
@@ -125,12 +141,16 @@
             this.flowLayoutPanel1.Controls.Add(this.panelWordToolbox);
             this.flowLayoutPanel1.Controls.Add(this.panelGAToolbox);
             this.flowLayoutPanel1.Controls.Add(this.btnStart);
+            this.flowLayoutPanel1.Controls.Add(this.panel4);
+            this.flowLayoutPanel1.Controls.Add(this.panel5);
+            this.flowLayoutPanel1.Controls.Add(this.panel6);
+            this.flowLayoutPanel1.Controls.Add(this.panel7);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 18);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(831, 218);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1019, 218);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // panelWordToolbox
@@ -310,7 +330,7 @@
             this.btnStart.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.Location = new System.Drawing.Point(649, 8);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(177, 50);
+            this.btnStart.Size = new System.Drawing.Size(361, 40);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -325,7 +345,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(861, 28);
+            this.menuStrip.Size = new System.Drawing.Size(1049, 28);
             this.menuStrip.TabIndex = 2;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -456,7 +476,7 @@
             this.toolStripMenuItem2,
             this.persianToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
             this.toolStripMenuItem1.Text = "Language";
             // 
             // toolStripMenuItem2
@@ -464,37 +484,149 @@
             this.toolStripMenuItem2.Checked = true;
             this.toolStripMenuItem2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(131, 26);
             this.toolStripMenuItem2.Text = "English";
             // 
             // persianToolStripMenuItem
             // 
             this.persianToolStripMenuItem.Name = "persianToolStripMenuItem";
-            this.persianToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.persianToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
             this.persianToolStripMenuItem.Text = "Persian";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(178, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(146, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.aboutToolStripMenuItem.Text = "&About...";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Fitness";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.lblFitness);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Location = new System.Drawing.Point(649, 54);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(361, 32);
+            this.panel4.TabIndex = 10;
+            // 
+            // lblFitness
+            // 
+            this.lblFitness.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFitness.Location = new System.Drawing.Point(150, 6);
+            this.lblFitness.Name = "lblFitness";
+            this.lblFitness.Size = new System.Drawing.Size(208, 17);
+            this.lblFitness.TabIndex = 10;
+            this.lblFitness.Text = "Fitness No";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.lblGeneration);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Location = new System.Drawing.Point(649, 92);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(361, 32);
+            this.panel5.TabIndex = 11;
+            // 
+            // lblGeneration
+            // 
+            this.lblGeneration.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblGeneration.Location = new System.Drawing.Point(147, 6);
+            this.lblGeneration.Name = "lblGeneration";
+            this.lblGeneration.Size = new System.Drawing.Size(211, 17);
+            this.lblGeneration.TabIndex = 10;
+            this.lblGeneration.Text = "Generation No";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Generation";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.lblTimeEvolving);
+            this.panel6.Controls.Add(this.label6);
+            this.panel6.Location = new System.Drawing.Point(649, 130);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(361, 32);
+            this.panel6.TabIndex = 11;
+            // 
+            // lblTimeEvolving
+            // 
+            this.lblTimeEvolving.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTimeEvolving.Location = new System.Drawing.Point(150, 6);
+            this.lblTimeEvolving.Name = "lblTimeEvolving";
+            this.lblTimeEvolving.Size = new System.Drawing.Size(205, 17);
+            this.lblTimeEvolving.TabIndex = 10;
+            this.lblTimeEvolving.Text = "TimeEvolving";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 17);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "TimeEvolving";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.lblBestChromosome);
+            this.panel7.Controls.Add(this.lblBestChromosomeT);
+            this.panel7.Location = new System.Drawing.Point(649, 168);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(361, 32);
+            this.panel7.TabIndex = 11;
+            // 
+            // lblBestChromosome
+            // 
+            this.lblBestChromosome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBestChromosome.Location = new System.Drawing.Point(147, 6);
+            this.lblBestChromosome.Name = "lblBestChromosome";
+            this.lblBestChromosome.Size = new System.Drawing.Size(211, 17);
+            this.lblBestChromosome.TabIndex = 10;
+            this.lblBestChromosome.Text = "BestChromosome";
+            // 
+            // lblBestChromosomeT
+            // 
+            this.lblBestChromosomeT.AutoSize = true;
+            this.lblBestChromosomeT.Location = new System.Drawing.Point(3, 6);
+            this.lblBestChromosomeT.Name = "lblBestChromosomeT";
+            this.lblBestChromosomeT.Size = new System.Drawing.Size(123, 17);
+            this.lblBestChromosomeT.TabIndex = 9;
+            this.lblBestChromosomeT.Text = "Best Chromosome";
             // 
             // CoolNameResultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 651);
+            this.ClientSize = new System.Drawing.Size(1049, 651);
             this.Controls.Add(this.gbGAToolbox);
             this.Controls.Add(this.gbResult);
             this.Controls.Add(this.menuStrip);
@@ -519,6 +651,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.numPopulationSize)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -567,6 +707,18 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem persianToolStripMenuItem;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblFitness;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label lblGeneration;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label lblTimeEvolving;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label lblBestChromosome;
+        private System.Windows.Forms.Label lblBestChromosomeT;
     }
 }
 

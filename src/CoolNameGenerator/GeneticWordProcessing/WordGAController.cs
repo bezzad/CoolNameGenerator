@@ -12,11 +12,16 @@ namespace CoolNameGenerator.GeneticWordProcessing
 {
     public class WordGaController : GeneticControllerBase
     {
-        public delegate void BestWordFoundEventHandler(string bestResult);
-        public event BestWordFoundEventHandler BestWordFound = delegate { };
-        protected virtual void OnBestWordFound(string bestResult)
+        public Func<IChromosome> ChromosomeFactory;
+
+        public WordGaController(Func<IChromosome>  chromosomeFactory)
         {
-            BestWordFound?.Invoke(bestResult);
+            ChromosomeFactory = chromosomeFactory;
+        }
+
+        public WordGaController()
+        {
+            ChromosomeFactory = () => new WordChromosome();
         }
 
         public override void ConfigGa(GeneticAlgorithm ga)
@@ -31,42 +36,42 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public override IChromosome CreateChromosome()
         {
-            return new WordChromosome();
+            return ChromosomeFactory();
         }
 
         public override IFitness CreateFitness()
         {
-            var f = new WordFitness();
-
-            f.EvaluateFunc = (text) =>
+            var f = new WordFitness
             {
-                switch (text.Length)
+                EvaluateFunc = (text) =>
                 {
-                    case 2:
-                        return 0.1;
-                    case 3:
-                        return 0.15;
-                    case 4:
-                        return 0.2;
-                    case 5:
-                        return 0.25;
-                    case 6:
-                        return 0.3;
-                    case 7:
-                        return 0.25;
-                    case 8:
-                        return 0.2;
-                    case 9:
-                        return 0.15;
-                    case 10:
-                        return 0.1;
-                    case 11:
-                        return 0.05;
-                    case 12:
-                        return 0.025;
-                    default:
-                        return 0;
-
+                    switch (text.Length)
+                    {
+                        case 2:
+                            return 0.1;
+                        case 3:
+                            return 0.15;
+                        case 4:
+                            return 0.2;
+                        case 5:
+                            return 0.25;
+                        case 6:
+                            return 0.3;
+                        case 7:
+                            return 0.25;
+                        case 8:
+                            return 0.2;
+                        case 9:
+                            return 0.15;
+                        case 10:
+                            return 0.1;
+                        case 11:
+                            return 0.05;
+                        case 12:
+                            return 0.025;
+                        default:
+                            return 0;
+                    }
                 }
             };
 
@@ -75,29 +80,22 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public override void Draw(IChromosome bestChromosome)
         {
-            OnBestWordFound(bestChromosome.ToString());
+            //OnBestWordFound(bestChromosome.ToString());
         }
 
-        //public override ITermination CreateTermination()
-        //{
-        //    return new OrTermination(new TimeEvolvingTermination(TimeSpan.FromMinutes(1)), new FitnessStagnationTermination(500));
-        //}
+        public override ITermination CreateTermination()
+        {
+            return new OrTermination(new TimeEvolvingTermination(TimeSpan.FromHours(1)), new FitnessThresholdTermination(0.9));
+        }
 
         //public override ICrossover CreateCrossover()
         //{
         //    return new OrderedCrossover();
         //}
-
         //public override IMutation CreateMutation()
         //{
         //    return new ReverseSequenceMutation();
         //}
-
-
-        ///// <summary>
-        ///// Creates the selection.
-        ///// </summary>
-        ///// <returns>The selection.</returns>
         //public override ISelection CreateSelection()
         //{
         //    return new EliteSelection();

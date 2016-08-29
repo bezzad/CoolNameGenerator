@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using CoolNameGenerator.GA.Chromosomes;
 
 namespace CoolNameGenerator.Graphics
 {
     public sealed class WordsPanel : FlowLayoutPanel
     {
         public Control[] WordsLabels;
+        public int Count { get; private set; }
 
         public WordsPanel(int wordsCount) : this()
         {
@@ -25,6 +28,7 @@ namespace CoolNameGenerator.Graphics
 
         public void SetWordsCount(int count)
         {
+            Count = count;
             Controls.Clear();
 
             WordsLabels = new Control[count];
@@ -34,6 +38,31 @@ namespace CoolNameGenerator.Graphics
             }
 
             Controls.AddRange(WordsLabels);
+        }
+
+        public void SetWords(IList<string> words)
+        {
+            if (words.Count > Count)
+            {
+                throw new ArgumentOutOfRangeException(nameof(words));
+            }
+            for (var i = 0; i < Count; i++)
+            {
+                WordsLabels[i].Text = words[i];
+            }
+        }
+
+        public void SetWords(IList<IChromosome> chromosomes)
+        {
+            if (chromosomes.Count > Count)
+            {
+                throw new ArgumentOutOfRangeException(nameof(chromosomes));
+            }
+
+            for (var i = 0; i < Count; i++)
+            {
+                WordsLabels[i].Text = chromosomes[i].ToString();
+            }
         }
     }
 }

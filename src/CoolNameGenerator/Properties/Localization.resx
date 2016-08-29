@@ -222,4 +222,16 @@
   <data name="maximum_size_for_a_population_should_be_equal_or_greater_than_minimum_size" xml:space="preserve">
     <value>The maximum size for a population should be equal or greater than minimum size.</value>
   </data>
+  <data name="BestChromosome" xml:space="preserve">
+    <value>Best Chromosome</value>
+  </data>
+  <data name="Fitness" xml:space="preserve">
+    <value>Fitness</value>
+  </data>
+  <data name="Generation" xml:space="preserve">
+    <value>Generation</value>
+  </data>
+  <data name="TimeEvolving" xml:space="preserve">
+    <value>Time Evolving</value>
+  </data>
 </root>

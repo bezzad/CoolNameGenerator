@@ -88,6 +88,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Best Chromosome.
+        /// </summary>
+        public static string BestChromosome {
+            get {
+                return ResourceManager.GetString("BestChromosome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
@@ -156,6 +165,24 @@ namespace CoolNameGenerator.Properties {
         public static string FinglishName {
             get {
                 return ResourceManager.GetString("FinglishName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fitness.
+        /// </summary>
+        public static string Fitness {
+            get {
+                return ResourceManager.GetString("Fitness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generation.
+        /// </summary>
+        public static string Generation {
+            get {
+                return ResourceManager.GetString("Generation", resourceCulture);
             }
         }
         
@@ -336,6 +363,15 @@ namespace CoolNameGenerator.Properties {
         public static string Start {
             get {
                 return ResourceManager.GetString("Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time Evolving.
+        /// </summary>
+        public static string TimeEvolving {
+            get {
+                return ResourceManager.GetString("TimeEvolving", resourceCulture);
             }
         }
         
