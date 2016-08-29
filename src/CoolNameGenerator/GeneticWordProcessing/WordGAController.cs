@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using CoolNameGenerator.GA;
 using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GA.Crossovers;
@@ -45,41 +46,19 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public override IFitness CreateFitness()
         {
-            var f = new WordFitness
+            var fitness = new WordFitness();
+
+            fitness.EvaluateFunc = word =>
             {
-                EvaluateFunc = (text) =>
+                var scores = new Dictionary<string, int>
                 {
-                    switch (text.Length)
-                    {
-                        case 2:
-                            return 0.1;
-                        case 3:
-                            return 0.15;
-                        case 4:
-                            return 0.2;
-                        case 5:
-                            return 0.25;
-                        case 6:
-                            return 0.3;
-                        case 7:
-                            return 0.25;
-                        case 8:
-                            return 0.2;
-                        case 9:
-                            return 0.15;
-                        case 10:
-                            return 0.1;
-                        case 11:
-                            return 0.05;
-                        case 12:
-                            return 0.025;
-                        default:
-                            return 0;
-                    }
-                }
+                    ["lengthEvaluationScore"] = fitness.EvaluateLength(word.Length)
+                };
+
+                return scores.Sum(s => s.Value).EvaluateScoreByIntVal();
             };
 
-            return f;
+            return fitness;
         }
 
         public override void Draw(IChromosome bestChromosome)

@@ -139,6 +139,7 @@
     <Compile Include="Forms\FinglishConverter.Designer.cs">
       <DependentUpon>FinglishConverter.cs</DependentUpon>
     </Compile>
+    <Compile Include="GA\Fitnesses\FitnessExtensions.cs" />
     <Compile Include="GeneticWordProcessing\IGeneticAlgoritmController.cs" />
     <Compile Include="GeneticWordProcessing\GeneticControllerBase.cs" />
     <Compile Include="GeneticWordProcessing\WordChromosome.cs" />
