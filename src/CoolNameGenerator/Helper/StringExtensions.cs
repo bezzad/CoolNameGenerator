@@ -250,8 +250,8 @@ namespace CoolNameGenerator.Helper
 
             var pairWords = res.Select(x => new
             {
-                persian = x.Contains(':') ? x.Substring(x.IndexOf(':') + 1) : x,
-                finglish = x.Contains(':') ? x.Substring(0, x.IndexOf(':')) : null
+                persian = x.Contains(':') ? x.Substring(x.IndexOf(':') + 1).ToLower() : x.ToLower(),
+                finglish = x.Contains(':') ? x.Substring(0, x.IndexOf(':')).ToLower() : null
             });
 
             var uniqueWords = pairWords.Distinct((a, b) => a.persian == b.persian, c => c.persian.GetHashCode()).ToDictionary(p => p.persian, p => p.finglish);
@@ -265,7 +265,7 @@ namespace CoolNameGenerator.Helper
                 .Split(Words.NotIgnoreChars.Concat(Words.NumericLetters)
                     .ToArray())).Where(word => word.Length > 1).Distinct();
 
-            var pairWords = res.Select(x => x.Contains(':') ? x.Substring(0, x.IndexOf(':')) : x);
+            var pairWords = res.Select(x => x.Contains(':') ? x.Substring(0, x.IndexOf(':')).ToLower() : x.ToLower());
 
             var uniqueWords = new HashSet<string>(pairWords.Distinct());
 
@@ -303,6 +303,52 @@ namespace CoolNameGenerator.Helper
             }
 
             return subWords;
+        }
+
+        public static int CountOverlap(this string word, HashSet<string> matchableWords)
+        {
+            var overlapCount = 0;
+            //
+            //          01234567
+            // word:    abookeye
+            // [book]:   1234
+            // [okey]:     3456
+            // [eye]:        567
+            //
+            // [book] overlapped by [okey] 
+            // [okey] overlapped by [eye]
+            //
+            // overlapCount: 2
+            //
+
+            for (var i = 0; i < matchableWords.Count; i++)
+            {
+                var match = matchableWords.ElementAt(i);
+                var i1 = word.IndexOf(match, StringComparison.Ordinal);
+                var i2 = i1 + match.Length - 1;
+
+                for (var j = i + 1; j < matchableWords.Count; j++)
+                {
+                    var oMatch = matchableWords.ElementAt(j);
+                    var j1 = word.IndexOf(oMatch, StringComparison.Ordinal);
+                    var j2 = j1 + oMatch.Length - 1;
+
+                    //
+                    //    j1------j2  
+                    //        i1--------i2
+                    //             j1------j2
+                    //    j1------------------j2
+                    //           j1---j2
+                    //
+                    if ((i1 <= j1 && i2 >= j1) ||
+                        (i1 >= j1 && i1 <= j2))
+                    {
+                        overlapCount++;
+                    }
+                }
+            }
+
+            return overlapCount;
         }
     }
 }

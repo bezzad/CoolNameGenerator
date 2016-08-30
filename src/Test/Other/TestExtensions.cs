@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -51,6 +52,27 @@ namespace Test.Other
                 {
                     Assert.IsTrue(word.Contains(subWord));
                 }
+            }
+        }
+
+        [TestMethod]
+        public void TestCountOverlap()
+        {
+            var overlappingWords = new Dictionary<string, int>()
+            {
+                { "abookeye", 2},
+                { "waterminate", 7 }
+            };
+
+            var matchWords = new Dictionary<string, HashSet<string>>()
+            {
+                { "abookeye", new HashSet<string>() {"book", "okey", "eye"} },
+                { "waterminate", new HashSet<string>() {"water", "term", "terminate", "min", "nate"} }
+            };
+
+            foreach (var matchWord in matchWords)
+            {
+                Assert.AreEqual(matchWord.Key.CountOverlap(matchWord.Value), overlappingWords[matchWord.Key]);
             }
         }
     }

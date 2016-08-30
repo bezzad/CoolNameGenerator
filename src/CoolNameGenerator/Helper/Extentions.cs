@@ -51,5 +51,11 @@ namespace CoolNameGenerator.Helper
         {
             return items.Distinct(new DelegateComparer<T>(equals, null));
         }
+
+        public static T Index<T>(this HashSet<T> hashSet, T containObj) where T : IEquatable<T>
+        {
+            return hashSet.First(x => ((IEquatable<T>)x).Equals(containObj));
+        }
+        
     }
 }

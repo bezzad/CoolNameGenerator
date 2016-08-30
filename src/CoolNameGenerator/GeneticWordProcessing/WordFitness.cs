@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GA.Fitnesses;
 using CoolNameGenerator.Helper;
+using Enumerable = System.Linq.Enumerable;
 
 namespace CoolNameGenerator.GeneticWordProcessing
 {
@@ -51,22 +53,67 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// Evaluates the matching english character words.
         /// </summary>
         /// <param name="word">The chromosome word.</param>
+        /// <param name="englishWords">English words library.</param>
+        /// <param name="englishNames">English names library.</param>
+        /// <param name="finglishWords">Persian words library converted to english characters (Finglish).</param>
+        /// <param name="finglishNames">Persian names library converted to english characters (Finglish).</param>
         /// <returns>Score of matching word.</returns>
-        public virtual int EvaluateMatchingEnglishCharWords(string word, IEnumerable<string> englishWords,
-            IEnumerable<string> englishNames, IEnumerable<string> finglishWords, IEnumerable<string> finglishNames)
+        public virtual int EvaluateMatchingEnglishCharWords(string word, HashSet<string> englishWords,
+            HashSet<string> englishNames, HashSet<string> finglishWords, HashSet<string> finglishNames)
         {
             var score = 0;
+            var countOfNatrualWords = 0;
+            var matchWords = new HashSet<string>();
 
             var subWords = word.GetSubWords();
 
             foreach (var subWord in subWords)
             {
-                for (int i = 0; i < subWord.Length; i++)
+                if (englishWords.Contains(subWord))
                 {
-                    if (subWord[i] == 'a') score+=2;
-                    if (subWord[i] == 'b') score--;
+                    var matchWord = englishWords.Index(subWord);
+                    if (matchWords.Add(matchWord)) score += 3;
+                    else score -= 1; // duplicate natural word
+                    countOfNatrualWords++;
+                }
+                if (englishNames.Contains(subWord))
+                {
+                    var matchWord = englishNames.Index(subWord);
+                    if (matchWords.Add(matchWord)) score += 2;
+                    else score -= 1; // duplicate natural word
+                    countOfNatrualWords++;
+                }
+                if (finglishWords.Contains(subWord))
+                {
+                    var matchWord = finglishWords.Index(subWord);
+                    if (matchWords.Add(matchWord)) score += 1;
+                    else score -= 1; // duplicate natural word
+                    countOfNatrualWords++;
+                }
+                if (finglishNames.Contains(subWord))
+                {
+                    var matchWord = finglishNames.Index(subWord);
+                    if (matchWords.Add(matchWord)) score += 4;
+                    else score -= 1; // duplicate natural word
+                    countOfNatrualWords++;
                 }
             }
+            //
+            // Check overlapping natural words
+            //
+            if (countOfNatrualWords > 1)
+            {
+                var overlapCont = word.CountOverlap(matchWords);
+                if (overlapCont == 0) score += 2;
+                else if (overlapCont == 1 && countOfNatrualWords == 2) score++;
+                else score--;
+            }
+            //
+            // Check Matching Natural Words Count Score
+            //
+            if (countOfNatrualWords < 3) score += countOfNatrualWords / 2; // good word
+            else if (countOfNatrualWords == 3) score = 0; // not good or bad word
+            else if (countOfNatrualWords > 3) score = (countOfNatrualWords - 3) * -1; // bad word
 
             return score;
         }
