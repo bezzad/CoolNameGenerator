@@ -34,11 +34,12 @@ namespace CoolNameGenerator.Forms
 
         private async void Run()
         {
-            await Task.Run(() =>
+            await Task.Run(async () =>
             {
                 try
                 {
                     var ctrl = new WordGaController(() => new WordChromosome((int)numWordLen.Value, chkHasNumeric.Checked, chkHasHyphen.Checked), DrawChromosomes);
+                    await ctrl.LoadWordFiles();
 
                     var population = new Population((int)numPopulationSize.Value, 2000, ctrl.CreateChromosome(), new PerformanceGenerationStrategy(10));
 

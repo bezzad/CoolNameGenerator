@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GA.Fitnesses;
+using CoolNameGenerator.Helper;
 
 namespace CoolNameGenerator.GeneticWordProcessing
 {
@@ -45,6 +47,28 @@ namespace CoolNameGenerator.GeneticWordProcessing
             return -1 * Math.Abs(len - 19);
         }
 
-        
+        /// <summary>
+        /// Evaluates the matching english character words.
+        /// </summary>
+        /// <param name="word">The chromosome word.</param>
+        /// <returns>Score of matching word.</returns>
+        public virtual int EvaluateMatchingEnglishCharWords(string word, IEnumerable<string> englishWords,
+            IEnumerable<string> englishNames, IEnumerable<string> finglishWords, IEnumerable<string> finglishNames)
+        {
+            var score = 0;
+
+            var subWords = word.GetSubWords();
+
+            foreach (var subWord in subWords)
+            {
+                for (int i = 0; i < subWord.Length; i++)
+                {
+                    if (subWord[i] == 'a') score+=2;
+                    if (subWord[i] == 'b') score--;
+                }
+            }
+
+            return score;
+        }
     }
 }

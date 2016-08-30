@@ -220,6 +220,7 @@
     <Compile Include="Helper\Extentions.cs" />
     <Compile Include="GA\Randomizations\FastRandom.cs" />
     <Compile Include="GA\Chromosomes\Gene.cs" />
+    <Compile Include="Helper\FileExtensions.cs" />
     <Compile Include="Helper\StringExtensions.cs" />
     <Compile Include="Helper\Reflection\TypeHelper.cs" />
     <Compile Include="Helper\Threading\ITaskExecutor.cs" />
@@ -256,7 +257,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Content Include="Resources\EnglishNames.txt" />
+    <Content Include="Resources\EnglishNames.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -272,9 +275,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VersionUpdater.tt</DependentUpon>
     </Content>
-    <Content Include="Resources\EnglishWords.txt" />
-    <Content Include="Resources\FinglishWords.txt" />
-    <Content Include="Resources\FinglishNames.txt" />
+    <Content Include="Resources\EnglishWords.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\FinglishWords.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\FinglishNames.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

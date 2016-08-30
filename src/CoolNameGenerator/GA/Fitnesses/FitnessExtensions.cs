@@ -10,6 +10,8 @@ namespace CoolNameGenerator.GA.Fitnesses
     {
         public static double EvaluateScoreByIntVal(this int totalFitness)
         {
+            if (totalFitness <= 0) return 0;
+
             return 1 - ((double) 1/totalFitness);
         }
     }

@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using CoolNameGenerator.GA.Chromosomes;
 
 namespace CoolNameGenerator.Helper
@@ -12,8 +15,8 @@ namespace CoolNameGenerator.Helper
     /// <summary>String extensions.</summary>
     public static class StringExtensions
     {
-        private static Regex s_insertUnderscoreBeforeUppercase = new Regex("(?<!_|^)([A-Z])", RegexOptions.Compiled);
-        private static Regex s_capitalizeRegex = new Regex("((\\s|^)\\S)(\\S+)", RegexOptions.Compiled);
+        private static readonly Regex SInsertUnderscoreBeforeUppercase = new Regex("(?<!_|^)([A-Z])", RegexOptions.Compiled);
+        private static readonly Regex SCapitalizeRegex = new Regex("((\\s|^)\\S)(\\S+)", RegexOptions.Compiled);
 
         /// <summary>Gets the word in the specified index.</summary>
         /// <returns>The word from index.</returns>
@@ -196,7 +199,7 @@ namespace CoolNameGenerator.Helper
         {
             if (string.IsNullOrEmpty(input))
                 return input;
-            return StringExtensions.s_insertUnderscoreBeforeUppercase.Replace(input, "_$1");
+            return StringExtensions.SInsertUnderscoreBeforeUppercase.Replace(input, "_$1");
         }
 
         /// <summary>
@@ -217,7 +220,7 @@ namespace CoolNameGenerator.Helper
         [SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase")]
         public static string Capitalize(this string source, int ignoreWordsLowerThanChars = 3)
         {
-            return StringExtensions.s_capitalizeRegex.Replace(source.ToLowerInvariant(), (MatchEvaluator)(m =>
+            return StringExtensions.SCapitalizeRegex.Replace(source.ToLowerInvariant(), (MatchEvaluator)(m =>
             {
                 if (m.Value.Trim().Length < ignoreWordsLowerThanChars)
                     return m.Value;
@@ -251,9 +254,55 @@ namespace CoolNameGenerator.Helper
                 finglish = x.Contains(':') ? x.Substring(0, x.IndexOf(':')) : null
             });
 
-            var uniqueWords = pairWords.Distinct((a,b) => a.persian == b.persian, c=> c.persian.GetHashCode()).ToDictionary(p => p.persian, p => p.finglish);
+            var uniqueWords = pairWords.Distinct((a, b) => a.persian == b.persian, c => c.persian.GetHashCode()).ToDictionary(p => p.persian, p => p.finglish);
 
             return uniqueWords;
+        }
+
+        public static HashSet<string> GetUniqueWords(this IEnumerable<string> source)
+        {
+            var res = source.SelectMany(x => new string(x.Where(w => w != '\t' && w != ' ').ToArray())
+                .Split(Words.NotIgnoreChars.Concat(Words.NumericLetters)
+                    .ToArray())).Where(word => word.Length > 1).Distinct();
+
+            var pairWords = res.Select(x => x.Contains(':') ? x.Substring(0, x.IndexOf(':')) : x);
+
+            var uniqueWords = new HashSet<string>(pairWords.Distinct());
+
+            return uniqueWords;
+        }
+
+        /// <summary>
+        /// Gets the sub words.
+        /// </summary>
+        /// <param name="word">The word.</param>
+        /// <returns>Sub words.</returns>
+        public static IList<string> GetSubWords(this string word)
+        {
+            // word:    a b c d
+            //          0 1 2 3
+            //
+            // sub words:        
+            //          a b , a b c , a b c d
+            //          0 1   0 1 2   0 1 2 3   
+            //
+            //          b c , b c d
+            //          1 2   1 2 3
+            //
+            //          c d
+            //          2 3
+            //
+            var subWords = new List<string>();
+
+            for (var i = 0; i < word.Length - 1; i++)
+            {
+                for (var j = 2; j <= word.Length - i; j++)
+                {
+                    subWords.Add(word.Substring(i, j));
+                }
+            }
+
+            return subWords;
         }
     }
 }
