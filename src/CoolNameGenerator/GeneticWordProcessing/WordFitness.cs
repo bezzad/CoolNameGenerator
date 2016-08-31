@@ -71,29 +71,25 @@ namespace CoolNameGenerator.GeneticWordProcessing
             {
                 if (englishWords.Contains(subWord))
                 {
-                    var matchWord = englishWords.Index(subWord);
-                    if (matchWords.Add(matchWord)) score += 3;
+                    if (matchWords.Add(subWord)) score += 3;
                     else score -= 1; // duplicate natural word
                     countOfNatrualWords++;
                 }
                 if (englishNames.Contains(subWord))
                 {
-                    var matchWord = englishNames.Index(subWord);
-                    if (matchWords.Add(matchWord)) score += 2;
+                    if (matchWords.Add(subWord)) score += 2;
                     else score -= 1; // duplicate natural word
                     countOfNatrualWords++;
                 }
                 if (finglishWords.Contains(subWord))
                 {
-                    var matchWord = finglishWords.Index(subWord);
-                    if (matchWords.Add(matchWord)) score += 1;
+                    if (matchWords.Add(subWord)) score += 1;
                     else score -= 1; // duplicate natural word
                     countOfNatrualWords++;
                 }
                 if (finglishNames.Contains(subWord))
                 {
-                    var matchWord = finglishNames.Index(subWord);
-                    if (matchWords.Add(matchWord)) score += 4;
+                    if (matchWords.Add(subWord)) score += 4;
                     else score -= 1; // duplicate natural word
                     countOfNatrualWords++;
                 }
@@ -114,6 +110,30 @@ namespace CoolNameGenerator.GeneticWordProcessing
             if (countOfNatrualWords < 3) score += countOfNatrualWords / 2; // good word
             else if (countOfNatrualWords == 3) score = 0; // not good or bad word
             else if (countOfNatrualWords > 3) score = (countOfNatrualWords - 3) * -1; // bad word
+
+            return score;
+        }
+
+        public virtual int EvaluateDuplicatChar(string word)
+        {
+            var score = 0;
+
+            var previewPairCharDuplicated = false;
+
+            for (var i = 0; i < word.Length - 1; i++)
+            {
+                if (word[i] == word[i + 1])
+                {
+                    score -= previewPairCharDuplicated ? 2 : 1;
+                    previewPairCharDuplicated = true;
+                }
+                else
+                {
+                    previewPairCharDuplicated = false;
+                }
+            }
+
+            if (!previewPairCharDuplicated && score >= 0) score++;
 
             return score;
         }

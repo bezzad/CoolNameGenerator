@@ -27,7 +27,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         public Action<IList<IChromosome>> DrawAllAction;
         public Action<IChromosome> DrawAction;
 
-        public WordGaController(Func<IChromosome>  chromosomeFactory, Action<IList<IChromosome>> drawAllAction)
+        public WordGaController(Func<IChromosome> chromosomeFactory, Action<IList<IChromosome>> drawAllAction)
         {
             ChromosomeFactory = chromosomeFactory;
             DrawAllAction = drawAllAction;
@@ -59,13 +59,14 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
             fitness.EvaluateFunc = word =>
             {
-                var scores = new Dictionary<string, int>
+                var scores = new List<int>()
                 {
-                    ["lengthEvaluationScore"] = fitness.EvaluateLength(word.Length),
-                    ["EvaluateMatchingEnglishCharWords"] = fitness.EvaluateMatchingEnglishCharWords(word, EnglishWords, EnglishNames, FinglishWords, FinglishNames)
+                    fitness.EvaluateLength(word.Length),
+                    fitness.EvaluateMatchingEnglishCharWords(word, EnglishWords, EnglishNames, FinglishWords, FinglishNames),
+                    fitness.EvaluateDuplicatChar(word)
                 };
 
-                return scores.Sum(s => s.Value).EvaluateScoreByIntVal();
+                return scores.Sum().EvaluateScoreByIntVal();
             };
 
             return fitness;
@@ -92,21 +93,48 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public override ITermination CreateTermination()
         {
-            return new OrTermination(new TimeEvolvingTermination(TimeSpan.FromHours(1)), new FitnessThresholdTermination(0.998));
+            return new OrTermination(new TimeEvolvingTermination(TimeSpan.FromHours(2)),
+                new FitnessThresholdTermination(0.998));
         }
 
-        
-        //public override ICrossover CreateCrossover()
-        //{
-        //    return new OrderedCrossover();
-        //}
-        //public override IMutation CreateMutation()
-        //{
-        //    return new ReverseSequenceMutation();
-        //}
-        //public override ISelection CreateSelection()
-        //{
-        //    return new EliteSelection();
-        //}
+
+        public override ICrossover CreateCrossover()
+        {
+            return new UniformCrossover();
+        }
+
+        public ICrossover[] CreateCrossovers()
+        {
+            return new ICrossover[]
+            {
+                new UniformCrossover(),
+                new TwoPointCrossover(),
+                new ThreeParentCrossover(),
+                new OnePointCrossover()
+            };
+        }
+
+
+        public override IMutation CreateMutation()
+        {
+            return new ReverseSequenceMutation();
+        }
+
+        public IMutation[] CreateMutations()
+        {
+            return new IMutation[]
+            {
+                new UniformMutation(),
+                new ReverseSequenceMutation()
+            };
+        }
+
+        public override ISelection CreateSelection()
+        {
+            //return new RouletteWheelSelection();
+            //return new StochasticUniversalSamplingSelection();
+            // new TournamentSelection();
+            return new EliteSelection(10);
+        }
     }
 }

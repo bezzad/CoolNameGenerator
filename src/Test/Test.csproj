@@ -82,7 +82,9 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
@@ -139,6 +141,7 @@
     <Compile Include="GA\Terminations\TerminationBaseTest.cs" />
     <Compile Include="GA\Terminations\TerminationServiceTest.cs" />
     <Compile Include="GA\Terminations\TimeEvolvingTerminationTest.cs" />
+    <Compile Include="GeneticWordProcessing\TestWordFitness.cs" />
     <Compile Include="Other\TestExtensions.cs" />
     <Compile Include="GA\Randomizations\TestFastRandom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

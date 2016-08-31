@@ -19,9 +19,14 @@ namespace CoolNameGenerator.GA.Selections
         /// <summary>
         /// Initializes a new instance of the <see cref="EliteSelection"/> class.
         /// </summary>
-        public EliteSelection() : base(2)
-        {
-        }
+        public EliteSelection() : this(2)
+        { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EliteSelection"/> class.
+        /// </summary>
+        public EliteSelection(int minNumberChromosomes) : base(minNumberChromosomes)
+        { }
         #endregion
 
         #region ISelection implementation
