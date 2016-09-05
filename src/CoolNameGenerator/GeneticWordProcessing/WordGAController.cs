@@ -62,7 +62,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
                 var scores = new List<int>()
                 {
                     fitness.EvaluateLength(word.Length),
-                    fitness.EvaluateMatchingEnglishCharWords(word, EnglishWords, EnglishNames, FinglishWords, FinglishNames),
+                    fitness.EvaluateMatchingEnglishWords(word, EnglishWords, EnglishNames, FinglishWords, FinglishNames),
                     fitness.EvaluateDuplicatChar(word)
                 };
 
@@ -101,6 +101,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         public override ICrossover CreateCrossover()
         {
             return new UniformCrossover();
+            //return new TwoPointCrossover();
         }
 
         public ICrossover[] CreateCrossovers()
@@ -117,7 +118,8 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public override IMutation CreateMutation()
         {
-            return new ReverseSequenceMutation();
+            return new UniformMutation();
+            //return new ReverseSequenceMutation();
         }
 
         public IMutation[] CreateMutations()
@@ -134,7 +136,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
             //return new RouletteWheelSelection();
             //return new StochasticUniversalSamplingSelection();
             // new TournamentSelection();
-            return new EliteSelection(10);
+            return new EliteSelection(50);
         }
     }
 }

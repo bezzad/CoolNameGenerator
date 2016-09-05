@@ -4,6 +4,7 @@ using System.Linq;
 using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GA.Fitnesses;
 using CoolNameGenerator.Helper;
+using CoolNameGenerator.Properties;
 using Enumerable = System.Linq.Enumerable;
 
 namespace CoolNameGenerator.GeneticWordProcessing
@@ -38,6 +39,16 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// <returns>Score between -10 ~ 10</returns>
         public virtual int EvaluateLength(int len)
         {
+            if (len < 2)
+            {
+                throw new ArgumentOutOfRangeException(nameof(len),
+                    Localization.The_argument_must_be_have_more_than_2_length);
+            }
+            //          +0                  +10                  +20
+            // Length:   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9  0 1 2 3 ...
+            //           - - - - - - - - - - - - - - - - - - - -  - - - - ...
+            // Fitness:  × × 0 1 3 9 _10 9 8 7 3 3 1 0 0 0 0 0 0 -1-2-3-4 ...  
+            //
             if (len == 6 || len == 7) return 10;
             if (len == 5 || len == 8) return 9;
             if (len == 9) return 8;
@@ -58,38 +69,69 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// <param name="finglishWords">Persian words library converted to english characters (Finglish).</param>
         /// <param name="finglishNames">Persian names library converted to english characters (Finglish).</param>
         /// <returns>Score of matching word.</returns>
-        public virtual int EvaluateMatchingEnglishCharWords(string word, HashSet<string> englishWords,
-            HashSet<string> englishNames, HashSet<string> finglishWords, HashSet<string> finglishNames)
+        public virtual int EvaluateMatchingEnglishWords(
+            string word,
+            HashSet<string> englishWords,
+            HashSet<string> englishNames,
+            HashSet<string> finglishWords,
+            HashSet<string> finglishNames)
         {
+            if (word == null)
+            {
+                throw new ArgumentNullException(nameof(word));
+            }
+
+            if (word.Length < 2)
+            {
+                throw new ArgumentOutOfRangeException(nameof(word), Localization.The_argument_must_be_have_more_than_2_length);
+            }
+
             var score = 0;
             var countOfNatrualWords = 0;
-            var matchWords = new HashSet<string>();
+            var englishMatchingWords = new HashSet<string>();
+            var finglishMatchingWords = new HashSet<string>();
 
             var subWords = word.GetSubWords();
 
             foreach (var subWord in subWords)
             {
-                if (englishWords.Contains(subWord))
+                if (englishWords?.Contains(subWord) == true)
                 {
-                    if (matchWords.Add(subWord)) score += 3;
+                    if (englishMatchingWords.Add(subWord))
+                    {
+                        score += 3;
+                        if (finglishMatchingWords.Contains(subWord)) score += 4;
+                    }
                     else score -= 1; // duplicate natural word
                     countOfNatrualWords++;
                 }
-                if (englishNames.Contains(subWord))
+                if (englishNames?.Contains(subWord) == true)
                 {
-                    if (matchWords.Add(subWord)) score += 2;
+                    if (englishMatchingWords.Add(subWord))
+                    {
+                        score += 2;
+                        if (finglishMatchingWords.Contains(subWord)) score += 4;
+                    }
                     else score -= 1; // duplicate natural word
                     countOfNatrualWords++;
                 }
-                if (finglishWords.Contains(subWord))
+                if (finglishWords?.Contains(subWord) == true)
                 {
-                    if (matchWords.Add(subWord)) score += 1;
+                    if (finglishMatchingWords.Add(subWord))
+                    {
+                        score += 1;
+                        if (englishMatchingWords.Contains(subWord)) score += 4;
+                    }
                     else score -= 1; // duplicate natural word
                     countOfNatrualWords++;
                 }
-                if (finglishNames.Contains(subWord))
+                if (finglishNames?.Contains(subWord) == true)
                 {
-                    if (matchWords.Add(subWord)) score += 4;
+                    if (finglishMatchingWords.Add(subWord))
+                    {
+                        score += 4;
+                        if (englishMatchingWords.Contains(subWord)) score += 4;
+                    }
                     else score -= 1; // duplicate natural word
                     countOfNatrualWords++;
                 }
@@ -99,11 +141,12 @@ namespace CoolNameGenerator.GeneticWordProcessing
             //
             if (countOfNatrualWords > 1)
             {
-                var overlapCont = word.CountOverlap(matchWords);
-                if (overlapCont == 0) score += 2;
-                else if (overlapCont == 1 && countOfNatrualWords == 2) score++;
+                var overlapCount = word.CountOverlap(englishMatchingWords.Concat(finglishMatchingWords));
+                if (overlapCount == 0) score += 2;
+                else if (overlapCount == 1 && countOfNatrualWords == 2) score++;
                 else score--;
             }
+            else if (countOfNatrualWords == 1) score++;
             //
             // Check Matching Natural Words Count Score
             //
@@ -112,6 +155,11 @@ namespace CoolNameGenerator.GeneticWordProcessing
             else if (countOfNatrualWords > 3) score = (countOfNatrualWords - 3) * -1; // bad word
 
             return score;
+
+            //return word.Contains("book")
+            //    ? 10
+            //    : word.Contains("boo") ? 5 : word.Contains("bo") ? 2 : word.Contains("b") ? 0 : -10;
+
         }
 
         public virtual int EvaluateDuplicatChar(string word)

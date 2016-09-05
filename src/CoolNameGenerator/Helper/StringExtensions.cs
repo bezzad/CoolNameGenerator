@@ -305,7 +305,7 @@ namespace CoolNameGenerator.Helper
             return subWords;
         }
 
-        public static int CountOverlap(this string word, HashSet<string> matchableWords)
+        public static int CountOverlap(this string word, IEnumerable<string> matchableWords)
         {
             var overlapCount = 0;
             //
@@ -321,13 +321,13 @@ namespace CoolNameGenerator.Helper
             // overlapCount: 2
             //
 
-            for (var i = 0; i < matchableWords.Count; i++)
+            for (var i = 0; i < matchableWords.Count(); i++)
             {
                 var match = matchableWords.ElementAt(i);
                 var i1 = word.IndexOf(match, StringComparison.Ordinal);
                 var i2 = i1 + match.Length - 1;
 
-                for (var j = i + 1; j < matchableWords.Count; j++)
+                for (var j = i + 1; j < matchableWords.Count(); j++)
                 {
                     var oMatch = matchableWords.ElementAt(j);
                     var j1 = word.IndexOf(oMatch, StringComparison.Ordinal);

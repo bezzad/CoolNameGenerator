@@ -367,6 +367,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The argument must be have more than 2 length..
+        /// </summary>
+        public static string The_argument_must_be_have_more_than_2_length {
+            get {
+                return ResourceManager.GetString("The_argument_must_be_have_more_than_2_length", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Time Evolving.
         /// </summary>
         public static string TimeEvolving {
