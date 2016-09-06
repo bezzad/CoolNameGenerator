@@ -208,6 +208,7 @@
     <Compile Include="GA\Terminations\TimeEvolvingTermination.cs" />
     <Compile Include="GeneticWordProcessing\WordFitness.cs" />
     <Compile Include="GeneticWordProcessing\WordGaController.cs" />
+    <Compile Include="GeneticWordProcessing\UniqueWords.cs" />
     <Compile Include="Graphics\WordLabel.cs">
       <SubType>Component</SubType>
     </Compile>

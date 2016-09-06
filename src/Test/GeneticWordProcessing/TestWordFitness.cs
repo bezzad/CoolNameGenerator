@@ -94,7 +94,7 @@ namespace Test.GeneticWordProcessing
         {
             var fitness = new WordFitness();
 
-            var englishWords = new HashSet<string>()
+            var englishWords = new UniqueWords("EnglishWords")
             {
                 "book",
                 "keeper",
@@ -104,8 +104,11 @@ namespace Test.GeneticWordProcessing
                 "hotel",
                 "okey"
             };
+            englishWords.DuplicateMatchingFitness = -2;
+            englishWords.MatchingFitness = 3;
+            englishWords.UnMatchingFitness = -1;
 
-            var englishNames = new HashSet<string>()
+            var englishNames = new UniqueWords("EnglishNames")
             {
                 "davis",
                 "miller",
@@ -119,8 +122,11 @@ namespace Test.GeneticWordProcessing
                 "harris",
                 "martin"
             };
+            englishNames.DuplicateMatchingFitness = -2;
+            englishNames.MatchingFitness = 2;
+            englishNames.UnMatchingFitness = 0;
 
-            var finglishWords = new HashSet<string>()
+            var finglishWords = new UniqueWords("FinglishWords")
             {
                 "taxi",
                 "hotel",
@@ -130,8 +136,13 @@ namespace Test.GeneticWordProcessing
                 "mahi",
                 "harris"
             };
+            finglishWords.DuplicateMatchingFitness = -3;
+            finglishWords.FriendWordList = new List<UniqueWords>() { englishWords, englishNames };
+            finglishWords.MatchingFitness = 2;
+            finglishWords.MatchingFriendsFitness = 2;
+            finglishWords.UnMatchingFitness = 0;
 
-            var finglishNames = new HashSet<string>()
+            var finglishNames = new UniqueWords("FinglishNames")
             {
                 "arezoo",
                 "behzad",
@@ -140,7 +151,11 @@ namespace Test.GeneticWordProcessing
                 "homaiun",
                 "ande"
             };
-
+            finglishNames.DuplicateMatchingFitness = -2;
+            finglishNames.FriendWordList = new List<UniqueWords>() { englishWords, englishNames, finglishWords };
+            finglishNames.MatchingFitness = 4;
+            finglishNames.MatchingFriendsFitness = 4;
+            finglishNames.UnMatchingFitness = -1;
 
 
             var words = new Dictionary<string, int>()
@@ -172,7 +187,7 @@ namespace Test.GeneticWordProcessing
 
             foreach (var word in words)
             {
-                Assert.AreEqual(fitness.EvaluateMatchingEnglishWords(word.Key, null, null, null, null), word.Value,
+                Assert.AreEqual(fitness.EvaluateMatchingEnglishWords(word.Key, englishNames, englishWords, finglishNames, finglishWords), word.Value,
                     $"The {word.Key} fitness is not equal by: {word.Value}");
             }
         }

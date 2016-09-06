@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GA.Fitnesses;
@@ -60,107 +62,6 @@ namespace CoolNameGenerator.GeneticWordProcessing
             return -1 * Math.Abs(len - 19);
         }
 
-        /// <summary>
-        /// Evaluates the matching english character words.
-        /// </summary>
-        /// <param name="word">The chromosome word.</param>
-        /// <param name="englishWords">English words library.</param>
-        /// <param name="englishNames">English names library.</param>
-        /// <param name="finglishWords">Persian words library converted to english characters (Finglish).</param>
-        /// <param name="finglishNames">Persian names library converted to english characters (Finglish).</param>
-        /// <returns>Score of matching word.</returns>
-        public virtual int EvaluateMatchingEnglishWords(
-            string word,
-            HashSet<string> englishWords,
-            HashSet<string> englishNames,
-            HashSet<string> finglishWords,
-            HashSet<string> finglishNames)
-        {
-            if (word == null)
-            {
-                throw new ArgumentNullException(nameof(word));
-            }
-
-            if (word.Length < 2)
-            {
-                throw new ArgumentOutOfRangeException(nameof(word), Localization.The_argument_must_be_have_more_than_2_length);
-            }
-
-            var score = 0;
-            var countOfNatrualWords = 0;
-            var englishMatchingWords = new HashSet<string>();
-            var finglishMatchingWords = new HashSet<string>();
-
-            var subWords = word.GetSubWords();
-
-            foreach (var subWord in subWords)
-            {
-                if (englishWords?.Contains(subWord) == true)
-                {
-                    if (englishMatchingWords.Add(subWord))
-                    {
-                        score += 3;
-                        if (finglishMatchingWords.Contains(subWord)) score += 4;
-                    }
-                    else score -= 1; // duplicate natural word
-                    countOfNatrualWords++;
-                }
-                if (englishNames?.Contains(subWord) == true)
-                {
-                    if (englishMatchingWords.Add(subWord))
-                    {
-                        score += 2;
-                        if (finglishMatchingWords.Contains(subWord)) score += 4;
-                    }
-                    else score -= 1; // duplicate natural word
-                    countOfNatrualWords++;
-                }
-                if (finglishWords?.Contains(subWord) == true)
-                {
-                    if (finglishMatchingWords.Add(subWord))
-                    {
-                        score += 1;
-                        if (englishMatchingWords.Contains(subWord)) score += 4;
-                    }
-                    else score -= 1; // duplicate natural word
-                    countOfNatrualWords++;
-                }
-                if (finglishNames?.Contains(subWord) == true)
-                {
-                    if (finglishMatchingWords.Add(subWord))
-                    {
-                        score += 4;
-                        if (englishMatchingWords.Contains(subWord)) score += 4;
-                    }
-                    else score -= 1; // duplicate natural word
-                    countOfNatrualWords++;
-                }
-            }
-            //
-            // Check overlapping natural words
-            //
-            if (countOfNatrualWords > 1)
-            {
-                var overlapCount = word.CountOverlap(englishMatchingWords.Concat(finglishMatchingWords));
-                if (overlapCount == 0) score += 2;
-                else if (overlapCount == 1 && countOfNatrualWords == 2) score++;
-                else score--;
-            }
-            else if (countOfNatrualWords == 1) score++;
-            //
-            // Check Matching Natural Words Count Score
-            //
-            if (countOfNatrualWords < 3) score += countOfNatrualWords / 2; // good word
-            else if (countOfNatrualWords == 3) score = 0; // not good or bad word
-            else if (countOfNatrualWords > 3) score = (countOfNatrualWords - 3) * -1; // bad word
-
-            return score;
-
-            //return word.Contains("book")
-            //    ? 10
-            //    : word.Contains("boo") ? 5 : word.Contains("bo") ? 2 : word.Contains("b") ? 0 : -10;
-
-        }
 
         public virtual int EvaluateDuplicatChar(string word)
         {
@@ -182,6 +83,84 @@ namespace CoolNameGenerator.GeneticWordProcessing
             }
 
             if (!previewPairCharDuplicated && score >= 0) score++;
+
+            return score;
+        }
+
+
+        /// <summary>
+        /// Evaluates the matching English character words.
+        /// </summary>
+        /// <param name="word">The chromosome word.</param>
+        /// <param name="wordsLists">The list of words to matching by them.</param>
+        /// <returns>Score of matching word.</returns>
+        public virtual int EvaluateMatchingEnglishWords(string word, params UniqueWords[] wordsLists)
+        {
+            if (word == null)
+            {
+                throw new ArgumentNullException(nameof(word));
+            }
+
+            if (word.Length < 2)
+            {
+                throw new ArgumentOutOfRangeException(nameof(word), Localization.The_argument_must_be_have_more_than_2_length);
+            }
+
+            if (!wordsLists.Any())
+            {
+                throw new EvaluateException("The matching words list is empty.");
+            }
+
+            var score = 0;
+            var countOfNatrualWords = 0;
+            var matchedWords = new Dictionary<string, HashSet<string>>(wordsLists.Length);
+            foreach (var lstWords in wordsLists)
+            {
+                matchedWords[lstWords.Name] = new HashSet<string>();
+            }
+
+            var subWords = word.GetSubWords();
+
+            foreach (var subWord in subWords) // Get all sub words of the word
+            {
+                foreach (var lstWords in wordsLists) // read and matching by all words list
+                {
+                    if (lstWords?.Contains(subWord) == true) // Is Matched Word!?
+                    {
+                        if (matchedWords[lstWords.Name].Add(subWord)) // Able to add matched subWord (or Not if duplicate match)?
+                        {
+                            score += lstWords.MatchingFitness; // Add match fitness of this list
+                            foreach (var friends in lstWords.FriendWordList) // check this list friends words list
+                            {
+                                if (friends.Contains(subWord)) score += lstWords.MatchingFriendsFitness; // match by friend list then add that score
+                            }
+                        }
+                        else score += lstWords.DuplicateMatchingFitness; // duplicate match word
+                        countOfNatrualWords++; // increase match count
+                    }
+                    else // No Match Word!
+                    {
+                        score += lstWords?.UnMatchingFitness ?? 0; // increase or decrease no match fitness according by this list 
+                    }
+                }
+            }
+            //
+            // Check overlapping natural words
+            //
+            if (countOfNatrualWords > 1)
+            {
+                var overlapCount = word.CountOverlap(matchedWords.SelectMany(x => x.Value));
+                if (overlapCount == 0) score += 2;
+                else if (overlapCount == 1 && countOfNatrualWords == 2) score++;
+                else score--;
+            }
+            else if (countOfNatrualWords == 1) score++;
+            //
+            // Check Matching Natural Words Count Score
+            //
+            if (countOfNatrualWords < 3) score += countOfNatrualWords / 2; // good word
+            else if (countOfNatrualWords == 3) score = 0; // not good or bad word
+            else if (countOfNatrualWords > 3) score = (countOfNatrualWords - 3) * -1; // bad word
 
             return score;
         }

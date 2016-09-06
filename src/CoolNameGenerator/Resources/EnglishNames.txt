@@ -14604,7 +14604,6 @@ Harvill
 Harewood
 Hanselman
 Hanning
-Gwyn
 Gustavson
 Grounds
 Grizzard
@@ -91903,7 +91902,6 @@ Arlie
 Luigi
 Keneth
 Edmundo
-Sid
 Jeramy
 Lynwood
 Jere

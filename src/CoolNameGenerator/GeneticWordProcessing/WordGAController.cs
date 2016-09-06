@@ -18,10 +18,10 @@ namespace CoolNameGenerator.GeneticWordProcessing
 {
     public class WordGaController : GeneticControllerBase
     {
-        public static volatile HashSet<string> EnglishWords;
-        public static volatile HashSet<string> EnglishNames;
-        public static volatile HashSet<string> FinglishWords;
-        public static volatile HashSet<string> FinglishNames;
+        public static volatile UniqueWords EnglishWords;
+        public static volatile UniqueWords EnglishNames;
+        public static volatile UniqueWords FinglishWords;
+        public static volatile UniqueWords FinglishNames;
 
         public Func<IChromosome> ChromosomeFactory;
         public Action<IList<IChromosome>> DrawAllAction;
@@ -43,7 +43,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
             base.ConfigGa(ga);
             ga.TaskExecutor = new SmartThreadPoolTaskExecutor()
             {
-                MinThreads = 25,
+                MinThreads = 30,
                 MaxThreads = 50
             };
         }
@@ -84,25 +84,54 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public async Task LoadWordFiles()
         {
-            EnglishWords = await FileExtensions.ReadWordFileAsync("EnglishWords");
-            EnglishNames = await FileExtensions.ReadWordFileAsync("EnglishNames");
-            FinglishWords = await FileExtensions.ReadWordFileAsync("FinglishWords");
-            FinglishNames = await FileExtensions.ReadWordFileAsync("FinglishNames");
-        }
+            EnglishWords = new UniqueWords("EnglishWords", await FileExtensions.ReadWordFileAsync("EnglishWords"))
+            {
+                DuplicateMatchingFitness = -2,
+                MatchingFitness = 3,
+                UnMatchingFitness = -2
+            };
 
+            EnglishNames = new UniqueWords("EnglishNames", await FileExtensions.ReadWordFileAsync("EnglishNames"))
+            {
+                DuplicateMatchingFitness = -2,
+                MatchingFitness = 2,
+                UnMatchingFitness = 0
+            };
+
+            FinglishWords = new UniqueWords("FinglishWords", await FileExtensions.ReadWordFileAsync("FinglishWords"))
+            {
+                DuplicateMatchingFitness = -3,
+                FriendWordList = new List<UniqueWords>() { EnglishWords, EnglishNames },
+                MatchingFitness = 2,
+                MatchingFriendsFitness = 2,
+                UnMatchingFitness = 0
+            };
+
+
+            FinglishNames = new UniqueWords("FinglishNames", await FileExtensions.ReadWordFileAsync("FinglishNames"))
+            {
+                DuplicateMatchingFitness = -2,
+                FriendWordList = new List<UniqueWords>() { EnglishWords, EnglishNames, FinglishWords },
+                MatchingFitness = 4,
+                MatchingFriendsFitness = 4,
+                UnMatchingFitness = -2
+            };
+        }
 
         public override ITermination CreateTermination()
         {
-            return new OrTermination(new TimeEvolvingTermination(TimeSpan.FromHours(2)),
-                new FitnessThresholdTermination(0.998));
+            return new OrTermination(new TimeEvolvingTermination(TimeSpan.FromHours(2)), new FitnessThresholdTermination(0.998));
         }
-
-
         public override ICrossover CreateCrossover()
         {
             return new UniformCrossover();
-            //return new TwoPointCrossover();
         }
+        public override IMutation CreateMutation()
+        {
+            return new UniformMutation();
+        }
+
+
 
         public ICrossover[] CreateCrossovers()
         {
@@ -114,14 +143,6 @@ namespace CoolNameGenerator.GeneticWordProcessing
                 new OnePointCrossover()
             };
         }
-
-
-        public override IMutation CreateMutation()
-        {
-            return new UniformMutation();
-            //return new ReverseSequenceMutation();
-        }
-
         public IMutation[] CreateMutations()
         {
             return new IMutation[]
@@ -136,7 +157,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
             //return new RouletteWheelSelection();
             //return new StochasticUniversalSamplingSelection();
             // new TournamentSelection();
-            return new EliteSelection(50);
+            return new EliteSelection(20);
         }
     }
 }
