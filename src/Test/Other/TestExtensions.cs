@@ -56,6 +56,43 @@ namespace Test.Other
         }
 
         [TestMethod]
+        public void TestGetSubWordsByCoveragePercent()
+        {
+            for (int i = 2; i < 100; i++)
+            {
+                var word = new WordChromosome(i * FastRandom.Next(1, 10), false, false).ToString();
+                var subWords = word.GetSubWordsByCoveragePercent();
+                // if n=word.Length  then  subWords.Count = n*(n-1)/2
+                var n = word.Length;
+                var count = n * (n - 1) / 2;
+                Assert.AreEqual(count, subWords.Count);
+
+                foreach (var subWord in subWords)
+                {
+                    Assert.IsTrue(word.Contains(subWord.Key));
+                }
+            }
+
+            var words = new Dictionary<string, Dictionary<string, double>>
+            {
+                ["test"] = "test".GetSubWordsByCoveragePercent(),
+                ["behzad"] = "behzad".GetSubWordsByCoveragePercent(),
+                ["ahmed"] = "ahmed".GetSubWordsByCoveragePercent()
+            };
+
+            Assert.AreEqual(words["test"].Count, 6);
+            Assert.AreEqual(words["test"]["test"], 100);
+            Assert.AreEqual(words["test"]["tes"], 75);
+            Assert.AreEqual(words["test"]["te"], 50);
+            Assert.AreEqual(words["test"]["es"], 50);
+            Assert.AreEqual(words["test"]["st"], 50);
+            Assert.AreEqual(words["test"]["est"], 75);
+
+
+            Assert.AreEqual(words["behzad"].Count, 15);
+        }
+
+        [TestMethod]
         public void TestCountOverlap()
         {
             var overlappingWords = new Dictionary<string, int>()

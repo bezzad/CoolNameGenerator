@@ -305,6 +305,48 @@ namespace CoolNameGenerator.Helper
             return subWords;
         }
 
+        /// <summary>
+        /// Gets the sub words.
+        /// </summary>
+        /// <param name="word">The word.</param>
+        /// <returns>Sub words.</returns>
+        public static Dictionary<string, double> GetSubWordsByCoveragePercent(this string word)
+        {
+            // word:    a b c d
+            //          0 1 2 3
+            //          
+            // sub words:        
+            //          a b ,    a b c ,     a b c d
+            //          0 1      0 1 2       0 1 2 3   
+            //          50%      75%         100%
+            //
+            //          b c ,    b c d
+            //          1 2      1 2 3
+            //          50%      75%
+            //
+            //          c d
+            //          2 3
+            //          50%
+            //
+            var subWords = new Dictionary<string, double>();
+            var len = word.Length;
+            for (var i = 0; i < len - 1; i++)
+            {
+                for (var j = 2; j <= len - i; j++)
+                {
+                    subWords[word.Substring(i, j)] = ((double)(j - i + 1) / len) * 100;
+                }
+            }
+
+            return subWords;
+        }
+
+        public static Dictionary<string, Dictionary<string, double>> GetWordsBySubWordsCoveragePercent(
+            this IEnumerable<string> words)
+        {
+            
+        }
+
         public static int CountOverlap(this string word, IEnumerable<string> matchableWords)
         {
             var overlapCount = 0;

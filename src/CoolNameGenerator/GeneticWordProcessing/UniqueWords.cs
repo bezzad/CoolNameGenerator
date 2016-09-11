@@ -1,13 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CoolNameGenerator.Helper;
 
 namespace CoolNameGenerator.GeneticWordProcessing
 {
-    public class UniqueWords : HashSet<string>, IEquatable<UniqueWords>
+    public class UniqueWords : Dictionary<string, Dictionary<string, double>>, IEquatable<UniqueWords>
     {
         #region Properties
 
@@ -53,7 +52,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// </value>
         public List<UniqueWords> FriendWordList { get; set; } = new List<UniqueWords>();
 
-        public string this[int index] => this.ElementAt(index);
+        public string this[int index] => this.ElementAt(index).Key;
 
         #endregion
 
@@ -64,7 +63,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
             Name = name;
         }
 
-        public UniqueWords(string name, IEnumerable<string> words) : base(words)
+        public UniqueWords(string name, IEnumerable<string> words) : base(words.GetWordsBySubWordsCoveragePercent())
         {
             Name = name;
         }
