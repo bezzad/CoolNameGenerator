@@ -94,7 +94,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// <param name="word">The chromosome word.</param>
         /// <param name="wordsLists">The list of words to matching by them.</param>
         /// <returns>Score of matching word.</returns>
-        public virtual int EvaluateMatchingEnglishWords(string word, params UniqueWords[] wordsLists)
+        public virtual double EvaluateMatchingEnglishWords(string word, params UniqueWords[] wordsLists)
         {
             if (word == null)
             {
@@ -111,7 +111,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
                 throw new EvaluateException("The matching words list is empty.");
             }
 
-            var score = 0;
+            double score = 0;
             var countOfNatrualWords = 0;
             var matchedWords = new Dictionary<string, HashSet<string>>(wordsLists.Length);
             foreach (var lstWords in wordsLists)
@@ -120,19 +120,19 @@ namespace CoolNameGenerator.GeneticWordProcessing
             }
 
             var subWords = word.GetSubWords();
-
+            double sumCoveragePercent = 0;
             foreach (var subWord in subWords) // Get all sub words of the word
             {
                 foreach (var lstWords in wordsLists) // read and matching by all words list
                 {
-                    if (lstWords?.Contains(subWord) == true) // Is Matched Word!?
+                    if (lstWords?.ContainsKey(subWord) == true) // Is Matched Word!?
                     {
                         if (matchedWords[lstWords.Name].Add(subWord)) // Able to add matched subWord (or Not if duplicate match)?
                         {
                             score += lstWords.MatchingFitness; // Add match fitness of this list
                             foreach (var friends in lstWords.FriendWordList) // check this list friends words list
                             {
-                                if (friends.Contains(subWord)) score += lstWords.MatchingFriendsFitness; // match by friend list then add that score
+                                if (friends.ContainsKey(subWord)) score += lstWords.MatchingFriendsFitness; // match by friend list then add that score
                             }
                         }
                         else score += lstWords.DuplicateMatchingFitness; // duplicate match word
@@ -142,6 +142,9 @@ namespace CoolNameGenerator.GeneticWordProcessing
                     {
                         score += lstWords?.UnMatchingFitness ?? 0; // increase or decrease no match fitness according by this list 
                     }
+
+                    // Check this sub word in all sub words of all words by coverage percentage for any matched sub word by sub word
+                    sumCoveragePercent += lstWords?.CheckWordsCoveragePercentageFor(subWord) ?? 0;
                 }
             }
             //
@@ -158,11 +161,11 @@ namespace CoolNameGenerator.GeneticWordProcessing
             //
             // Check Matching Natural Words Count Score
             //
-            if (countOfNatrualWords < 3) score += countOfNatrualWords / 2; // good word
+            if (countOfNatrualWords < 3) score += (double)countOfNatrualWords / 2; // good word
             else if (countOfNatrualWords == 3) score = 0; // not good or bad word
             else if (countOfNatrualWords > 3) score = (countOfNatrualWords - 3) * -1; // bad word
 
-            return score;
+            return (score * 100) + sumCoveragePercent;
         }
     }
 }

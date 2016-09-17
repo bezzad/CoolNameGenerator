@@ -3,9 +3,8 @@ ahzab				:		احزاب
 dast				:		دست
 chap				:		چپى
 mianeh				:		میانه
-ro					:		رو
 chand				:		چند
-sharkat				:		شرکت
+sherkat				:		شرکت
 ba					:		با
 ham					:		هم
 bara				:		براى

@@ -334,17 +334,23 @@ namespace CoolNameGenerator.Helper
             {
                 for (var j = 2; j <= len - i; j++)
                 {
-                    subWords[word.Substring(i, j)] = ((double)(j - i + 1) / len) * 100;
+                    var wordBuffer = word.Substring(i, j);
+                    subWords[wordBuffer] = ((double)wordBuffer.Length / len) * 100;
                 }
             }
 
             return subWords;
         }
 
-        public static Dictionary<string, Dictionary<string, double>> GetWordsBySubWordsCoveragePercent(
-            this IEnumerable<string> words)
+        public static Dictionary<string, Dictionary<string, double>> GetWordsBySubWordsCoveragePercent(this IEnumerable<string> words)
         {
-            
+            var result = new Dictionary<string, Dictionary<string, double>>();
+            foreach (var word in words)
+            {
+                result[word] = word.GetSubWordsByCoveragePercent();
+            }
+
+            return result;
         }
 
         public static int CountOverlap(this string word, IEnumerable<string> matchableWords)

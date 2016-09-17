@@ -121,5 +121,10 @@ namespace CoolNameGenerator.GeneticWordProcessing
         }
 
         #endregion
+
+        public double CheckWordsCoveragePercentageFor(string subWord)
+        {
+            return Values.Where(subWordsCoverage => subWordsCoverage.ContainsKey(subWord)).Sum(subWordsCoverage => subWordsCoverage[subWord]);
+        }
     }
 }

@@ -240,4 +240,7 @@
   <data name="The_argument_must_be_have_more_than_2_length" xml:space="preserve">
     <value>The argument must be have more than 2 length.</value>
   </data>
+  <data name="AlgorithmTerminatedSuccessful" xml:space="preserve">
+    <value>Algorithm Terminated Successful !</value>
+  </data>
 </root>

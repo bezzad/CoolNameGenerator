@@ -61,6 +61,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Algorithm Terminated Successful !.
+        /// </summary>
+        public static string AlgorithmTerminatedSuccessful {
+            get {
+                return ResourceManager.GetString("AlgorithmTerminatedSuccessful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Argument MinValue must be less than MaxValue.
         /// </summary>
         public static string Argument_MinMaxValue {

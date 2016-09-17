@@ -9,6 +9,7 @@ using CoolNameGenerator.GA.Populations;
 using CoolNameGenerator.GA.Randomizations;
 using CoolNameGenerator.GeneticWordProcessing;
 using CoolNameGenerator.Helper;
+using CoolNameGenerator.Properties;
 
 namespace CoolNameGenerator.Forms
 {
@@ -56,7 +57,9 @@ namespace CoolNameGenerator.Forms
                         ctrl.Draw(bestChromosome);
                         ctrl.DrawAllAction(ga.Population.CurrentGeneration.Chromosomes);
                     };
-                    
+
+                    ga.TerminationReached += GaTerminationReached;
+
                     ctrl.ConfigGa(ga);
                     ga.Start();
                 }
@@ -66,6 +69,11 @@ namespace CoolNameGenerator.Forms
                     return;
                 }
             });
+        }
+
+        private void GaTerminationReached(object sender, EventArgs e)
+        {
+            MessageBox.Show(Localization.AlgorithmTerminatedSuccessful);
         }
 
         private void DrawChromosomes(IList<IChromosome> chromosomes)

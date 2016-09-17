@@ -62,7 +62,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
                 var scores = new List<int>()
                 {
                     fitness.EvaluateLength(word.Length),
-                    fitness.EvaluateMatchingEnglishWords(word, EnglishWords, EnglishNames, FinglishWords, FinglishNames),
+                    (int)fitness.EvaluateMatchingEnglishWords(word, EnglishWords, EnglishNames, FinglishWords, FinglishNames),
                     fitness.EvaluateDuplicatChar(word)
                 };
 
@@ -120,11 +120,13 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public override ITermination CreateTermination()
         {
-            return new OrTermination(new TimeEvolvingTermination(TimeSpan.FromHours(2)), new FitnessThresholdTermination(0.998));
+            //return new OrTermination(new TimeEvolvingTermination(TimeSpan.FromHours(2)), new FitnessThresholdTermination(0.99999995));
+            return new TimeEvolvingTermination(TimeSpan.FromHours(2));
         }
         public override ICrossover CreateCrossover()
         {
-            return new UniformCrossover();
+            //return new UniformCrossover();
+            return new TwoPointCrossover();
         }
         public override IMutation CreateMutation()
         {
@@ -157,7 +159,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
             //return new RouletteWheelSelection();
             //return new StochasticUniversalSamplingSelection();
             // new TournamentSelection();
-            return new EliteSelection(20);
+            return new EliteSelection(40);
         }
     }
 }
