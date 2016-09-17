@@ -63,7 +63,10 @@ namespace CoolNameGenerator.GeneticWordProcessing
             Name = name;
         }
 
-        public UniqueWords(string name, IEnumerable<string> words) : base(words.GetWordsBySubWordsCoveragePercent())
+        public UniqueWords(string name, IEnumerable<string> words) : this(name, words, false)
+        { }
+
+        public UniqueWords(string name, IEnumerable<string> words, bool includeMiddleSubWords) : base(words.GetWordsBySubWordsCoverage(includeMiddleSubWords))
         {
             Name = name;
         }

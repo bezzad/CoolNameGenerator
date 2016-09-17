@@ -43,7 +43,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
             base.ConfigGa(ga);
             ga.TaskExecutor = new SmartThreadPoolTaskExecutor()
             {
-                MinThreads = 30,
+                MinThreads = 25,
                 MaxThreads = 50
             };
         }
@@ -125,8 +125,8 @@ namespace CoolNameGenerator.GeneticWordProcessing
         }
         public override ICrossover CreateCrossover()
         {
-            //return new UniformCrossover();
-            return new TwoPointCrossover();
+            return new UniformCrossover();
+            //return new TwoPointCrossover();
         }
         public override IMutation CreateMutation()
         {
@@ -159,7 +159,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
             //return new RouletteWheelSelection();
             //return new StochasticUniversalSamplingSelection();
             // new TournamentSelection();
-            return new EliteSelection(40);
+            return new EliteSelection(30);
         }
     }
 }

@@ -61,7 +61,7 @@ namespace Test.Other
             for (int i = 2; i < 100; i++)
             {
                 var word = new WordChromosome(i * FastRandom.Next(1, 10), false, false).ToString();
-                var subWords = word.GetSubWordsByCoveragePercent();
+                var subWords = word.GetSubWordsByCoverage();
                 // if n=word.Length  then  subWords.Count = n*(n-1)/2
                 var n = word.Length;
                 //var count = n * (n - 1) / 2;
@@ -75,9 +75,9 @@ namespace Test.Other
 
             var words = new Dictionary<string, Dictionary<string, double>>
             {
-                ["test"] = "test".GetSubWordsByCoveragePercent(),
-                ["behzad"] = "behzad".GetSubWordsByCoveragePercent(),
-                ["ahmed"] = "ahmed".GetSubWordsByCoveragePercent()
+                ["test"] = "test".GetSubWordsByCoverage(),
+                ["behzad"] = "behzad".GetSubWordsByCoverage(),
+                ["ahmed"] = "ahmed".GetSubWordsByCoverage()
             };
 
             Assert.AreEqual(words["test"].Count, 6);

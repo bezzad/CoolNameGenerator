@@ -276,8 +276,9 @@ namespace CoolNameGenerator.Helper
         /// Gets the sub words.
         /// </summary>
         /// <param name="word">The word.</param>
+        /// <param name="includeMiddleSubWords">include middle sub words? by default is true.</param>
         /// <returns>Sub words.</returns>
-        public static IList<string> GetSubWords(this string word)
+        public static IList<string> GetSubWords(this string word, bool includeMiddleSubWords = true)
         {
             // word:    a b c d
             //          0 1 2 3
@@ -300,6 +301,8 @@ namespace CoolNameGenerator.Helper
                 {
                     subWords.Add(word.Substring(i, j));
                 }
+
+                if (!includeMiddleSubWords) break; // just sub words which stated by the original word, first chars
             }
 
             return subWords;
@@ -309,8 +312,9 @@ namespace CoolNameGenerator.Helper
         /// Gets the sub words.
         /// </summary>
         /// <param name="word">The word.</param>
+        /// <param name="includeMiddleSubWords">include middle sub words? by default is true.</param>
         /// <returns>Sub words.</returns>
-        public static Dictionary<string, double> GetSubWordsByCoveragePercent(this string word)
+        public static Dictionary<string, double> GetSubWordsByCoverage(this string word, bool includeMiddleSubWords = true)
         {
             // word:    a b c d
             //          0 1 2 3
@@ -335,19 +339,21 @@ namespace CoolNameGenerator.Helper
                 for (var j = 2; j <= len - i; j++)
                 {
                     var wordBuffer = word.Substring(i, j);
-                    subWords[wordBuffer] = ((double)wordBuffer.Length / len) * 100;
+                    subWords[wordBuffer] = ((double)wordBuffer.Length / len);
                 }
+
+                if (!includeMiddleSubWords) break; // just sub words which stated by the original word, first chars
             }
 
             return subWords;
         }
 
-        public static Dictionary<string, Dictionary<string, double>> GetWordsBySubWordsCoveragePercent(this IEnumerable<string> words)
+        public static Dictionary<string, Dictionary<string, double>> GetWordsBySubWordsCoverage(this IEnumerable<string> words, bool includeMiddleSubWords = true)
         {
             var result = new Dictionary<string, Dictionary<string, double>>();
             foreach (var word in words)
             {
-                result[word] = word.GetSubWordsByCoveragePercent();
+                result[word] = word.GetSubWordsByCoverage(includeMiddleSubWords);
             }
 
             return result;
