@@ -72,7 +72,7 @@ namespace CoolNameGenerator.GA
         /// <summary>
         /// The default mutation probability.
         /// </summary>
-        public const float DefaultMutationProbability = 0.1f;
+        public const float DefaultMutationProbability = 0.2f;
         #endregion
 
         #region Fields

@@ -45,7 +45,7 @@ namespace CoolNameGenerator.Forms
                     var population = new Population((int)numPopulationSize.Value, 2000, ctrl.CreateChromosome(), new PerformanceGenerationStrategy(10));
 
                     var ga = new GeneticAlgorithm(population, ctrl.CreateFitness(), ctrl.CreateSelection(),
-                        ctrl.CreateCrossover(), ctrl.CreateMutation(), ctrl.CreateTermination());
+                        ctrl.CreateCrossover(population), ctrl.CreateMutation(), ctrl.CreateTermination());
 
                     ga.GenerationRan += delegate
                     {

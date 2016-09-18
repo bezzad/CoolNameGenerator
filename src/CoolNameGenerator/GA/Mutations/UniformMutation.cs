@@ -66,14 +66,9 @@ namespace CoolNameGenerator.GA.Mutations
 
             if (_mMutableGenesIndexes == null || _mMutableGenesIndexes.Length == 0)
             {
-                if (_mAllGenesMutable)
-                {
-                    _mMutableGenesIndexes = Enumerable.Range(0, genesLength).ToArray();
-                }
-                else
-                {
-                    _mMutableGenesIndexes = FastRandom.GetInts(1, 0, genesLength);
-                }
+                _mMutableGenesIndexes = _mAllGenesMutable 
+                    ? Enumerable.Range(0, genesLength).ToArray() 
+                    : FastRandom.GetInts(1, 0, genesLength);
             }
 
             foreach (var i in _mMutableGenesIndexes)

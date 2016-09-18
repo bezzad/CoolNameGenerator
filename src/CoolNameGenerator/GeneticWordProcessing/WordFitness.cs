@@ -125,19 +125,11 @@ namespace CoolNameGenerator.GeneticWordProcessing
             {
                 foreach (var lstWords in wordsLists) // read and matching by all words list
                 {
-                    if (lstWords?.ContainsKey(subWords[c]) == true) // Is Matched Word!?
+                    if (lstWords?.Contains(subWords[c]) == true) // Is Matched Word!?
                     {
                         if (matchedWords[lstWords.Name].Add(subWords[c])) // Able to add matched subWord (or Not if duplicate match)?
                         {
                             score += lstWords.MatchingFitness; // Add match fitness of this list
-
-                            ////foreach (var friends in lstWords.FriendWordList) // check this list friends words list
-                            ////{
-                            ////    if (friends.ContainsKey(subWord)) score += lstWords.MatchingFriendsFitness; // match by friend list then add that score
-                            ////}
-                            ////or
-                            //score += lstWords.FriendWordList.Where(friends => friends.ContainsKey(subWord))
-                            //            .Aggregate(score, (current, friends) => current + lstWords.MatchingFriendsFitness);
                         }
                         else score += lstWords.DuplicateMatchingFitness; // duplicate match word
                         countOfNatrualWords++; // increase match count
@@ -156,7 +148,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
                 for (var cc = c + 1; cc < subWords.Count; cc++)
                 {
                     if (subWords[cc] == subWords[c])
-                        score -= 10;
+                        score -= 5;
                 }
             }
             //
@@ -165,20 +157,20 @@ namespace CoolNameGenerator.GeneticWordProcessing
             if (countOfNatrualWords > 1)
             {
                 var overlapCount = word.CountOverlap(matchedWords.SelectMany(x => x.Value));
-                if (overlapCount == 0) score += 5;
-                else if (overlapCount == 1) score += 20;
-                else if (countOfNatrualWords == 2) score += 15;
-                else score -= overlapCount * 10;
+                if (overlapCount == 0) score += 3;
+                else if (overlapCount == 1) score += 10;
+                else if (countOfNatrualWords == 2) score += 7;
+                else score -= overlapCount * 5;
             }
             else if (countOfNatrualWords == 1) score += 10;
             //
             // Check Matching Natural Words Count Score
             //
-            if (countOfNatrualWords < 3) score += (double)countOfNatrualWords * 10 / 2; // good word
+            if (countOfNatrualWords < 3) score += (double)countOfNatrualWords * 5 / 2; // good word
             else if (countOfNatrualWords == 3) score += 0; // not good or bad word
-            else if (countOfNatrualWords > 3) score += (countOfNatrualWords - 3) * -10; // bad word
+            else if (countOfNatrualWords > 3) score += (countOfNatrualWords - 3) * -5; // bad word
 
-            return (score * 10) + sumCoveragePercent;
+            return (score) + sumCoveragePercent;
         }
     }
 }

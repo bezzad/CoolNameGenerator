@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using CoolNameGenerator.GA;
 using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GA.Crossovers;
 using CoolNameGenerator.GA.Fitnesses;
 using CoolNameGenerator.GA.Mutations;
+using CoolNameGenerator.GA.Populations;
 using CoolNameGenerator.GA.Selections;
 using CoolNameGenerator.GA.Terminations;
 using CoolNameGenerator.Helper;
@@ -18,10 +17,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
 {
     public class WordGaController : GeneticControllerBase
     {
-        public static volatile UniqueWords EnglishWords;
-        public static volatile UniqueWords EnglishNames;
-        public static volatile UniqueWords FinglishWords;
-        public static volatile UniqueWords FinglishNames;
+        public static volatile List<UniqueWords> WordsDic = new List<UniqueWords>();
 
         public Func<IChromosome> ChromosomeFactory;
         public Action<IList<IChromosome>> DrawAllAction;
@@ -46,6 +42,9 @@ namespace CoolNameGenerator.GeneticWordProcessing
                 MinThreads = 25,
                 MaxThreads = 50
             };
+
+            ga.MutationProbability = 0.7f;
+            ga.CrossoverProbability = 0.7f;
         }
 
         public override IChromosome CreateChromosome()
@@ -62,7 +61,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
                 var scores = new List<int>()
                 {
                     fitness.EvaluateLength(word.Length),
-                    (int)fitness.EvaluateMatchingEnglishWords(word, EnglishWords, EnglishNames, FinglishWords, FinglishNames),
+                    (int)fitness.EvaluateMatchingEnglishWords(word, WordsDic.ToArray()),
                     fitness.EvaluateDuplicatChar(word)
                 };
 
@@ -84,38 +83,41 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public async Task LoadWordFiles()
         {
-            EnglishWords = new UniqueWords("EnglishWords", await FileExtensions.ReadWordFileAsync("EnglishWords"))
+            //WordsDic.Add(new UniqueWords("EnglishWords", await FileExtensions.ReadWordFileAsync("EnglishWords"), false, Math.Log)
+            //{
+            //    DuplicateMatchingFitness = -4,
+            //    MatchingFitness = 5,
+            //    UnMatchingFitness = -3
+            //});
+
+            //WordsDic.Add(new UniqueWords("EnglishNames", await FileExtensions.ReadWordFileAsync("EnglishNames"), false, Math.Log)
+            //{
+            //    DuplicateMatchingFitness = -4,
+            //    MatchingFitness = 4,
+            //    UnMatchingFitness = -1
+            //});
+
+            //WordsDic.Add(new UniqueWords("FinglishWords", await FileExtensions.ReadWordFileAsync("FinglishWords"), false, Math.Log)
+            //{
+            //    DuplicateMatchingFitness = -5,
+            //    MatchingFitness = 4,
+            //    UnMatchingFitness = -1
+            //});
+
+
+            //WordsDic.Add(new UniqueWords("FinglishNames", await FileExtensions.ReadWordFileAsync("FinglishNames"), false, Math.Log)
+            //{
+            //    DuplicateMatchingFitness = -2,
+            //    MatchingFitness = 6,
+            //    UnMatchingFitness = -4
+            //});
+
+            WordsDic.Add(new UniqueWords("FinglishNames", await FileExtensions.ReadWordFileAsync("FinglishNames"), false)
             {
                 DuplicateMatchingFitness = -2,
-                MatchingFitness = 3,
-                UnMatchingFitness = -2
-            };
-
-            EnglishNames = new UniqueWords("EnglishNames", await FileExtensions.ReadWordFileAsync("EnglishNames"))
-            {
-                DuplicateMatchingFitness = -2,
-                MatchingFitness = 2,
-                UnMatchingFitness = 0
-            };
-
-            FinglishWords = new UniqueWords("FinglishWords", await FileExtensions.ReadWordFileAsync("FinglishWords"))
-            {
-                DuplicateMatchingFitness = -3,
-                FriendWordList = new List<UniqueWords>() { EnglishWords, EnglishNames },
-                MatchingFitness = 2,
-                MatchingFriendsFitness = 2,
-                UnMatchingFitness = 0
-            };
-
-
-            FinglishNames = new UniqueWords("FinglishNames", await FileExtensions.ReadWordFileAsync("FinglishNames"))
-            {
-                DuplicateMatchingFitness = -2,
-                FriendWordList = new List<UniqueWords>() { EnglishWords, EnglishNames, FinglishWords },
-                MatchingFitness = 4,
-                MatchingFriendsFitness = 4,
-                UnMatchingFitness = -2
-            };
+                MatchingFitness = 6,
+                UnMatchingFitness = -4
+            });
         }
 
         public override ITermination CreateTermination()
@@ -125,12 +127,27 @@ namespace CoolNameGenerator.GeneticWordProcessing
         }
         public override ICrossover CreateCrossover()
         {
-            return new UniformCrossover();
+            //return new UniqueCrossover();
+            return new UniformCrossover(0.5f);
             //return new TwoPointCrossover();
+            //return new ThreeParentCrossover();
+            //return new OnePointCrossover();
         }
+
+        public ICrossover CreateCrossover(Population pop)
+        {
+            //return new UniqueCrossover(pop);
+            return new UniformCrossover(0.5f);
+            //return new TwoPointCrossover();
+            //return new ThreeParentCrossover();
+            //return new OnePointCrossover();
+        }
+
         public override IMutation CreateMutation()
         {
-            return new UniformMutation();
+             return new UniformMutation(true);
+
+            //return new ReverseSequenceMutation();
         }
 
 

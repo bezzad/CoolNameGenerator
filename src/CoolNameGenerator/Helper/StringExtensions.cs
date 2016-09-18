@@ -359,6 +359,29 @@ namespace CoolNameGenerator.Helper
             return result;
         }
 
+        public static Dictionary<string, double> GetUniqueSubWordsCoverage(this HashSet<string> words,
+            bool includeMiddleSubWords = true)
+        {
+            var result = new Dictionary<string, double>();
+
+            foreach (var word in words)
+            {
+                foreach (var subwordsCoverage in word.GetSubWordsByCoverage(includeMiddleSubWords))
+                {
+                    if (result.ContainsKey(subwordsCoverage.Key))
+                    {
+                        result[subwordsCoverage.Key] += subwordsCoverage.Value;
+                    }
+                    else
+                    {
+                        result[subwordsCoverage.Key] = subwordsCoverage.Value;
+                    }
+                }
+            }
+
+            return result;
+        }
+
         public static int CountOverlap(this string word, IEnumerable<string> matchableWords)
         {
             var overlapCount = 0;

@@ -6,7 +6,7 @@ using CoolNameGenerator.Helper;
 
 namespace CoolNameGenerator.GeneticWordProcessing
 {
-    public class UniqueWords : Dictionary<string, Dictionary<string, double>>, IEquatable<UniqueWords>
+    public class UniqueWords : HashSet<string>, IEquatable<UniqueWords>
     {
         #region Properties
 
@@ -36,23 +36,12 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// </value>
         public int DuplicateMatchingFitness { get; set; }
 
-        /// <summary>
-        /// Gets or sets the fitness value for assign to a word when it find again at this friend lists.
-        /// </summary>
-        /// <value>
-        /// The matching friends fitness.
-        /// </value>
-        public int MatchingFriendsFitness { get; set; }
+        public string this[int index] => this.ElementAt(index);
 
         /// <summary>
-        /// Gets or sets the friend word list. If find the word in both of this and friend list then have positive score.
+        /// Sum of the all sub words by unique overall coverage 
         /// </summary>
-        /// <value>
-        /// The friend word list.
-        /// </value>
-        public List<UniqueWords> FriendWordList { get; set; } = new List<UniqueWords>();
-
-        public string this[int index] => this.ElementAt(index).Key;
+        public Dictionary<string, double> SubWordsCoverage { get; set; }
 
         #endregion
 
@@ -63,12 +52,21 @@ namespace CoolNameGenerator.GeneticWordProcessing
             Name = name;
         }
 
-        public UniqueWords(string name, IEnumerable<string> words) : this(name, words, false)
+        public UniqueWords(string name, IEnumerable<string> words) : this(name, words, false, null)
         { }
 
-        public UniqueWords(string name, IEnumerable<string> words, bool includeMiddleSubWords) : base(words.GetWordsBySubWordsCoverage(includeMiddleSubWords))
+        public UniqueWords(string name, IEnumerable<string> words, bool includeMiddleSubWords) : this(name, words, includeMiddleSubWords, null)
+        { }
+
+        public UniqueWords(string name, IEnumerable<string> words, bool includeMiddleSubWords, Func<double, double> applySubWordsCoverage) : base(words)
         {
             Name = name;
+            SubWordsCoverage = this.GetUniqueSubWordsCoverage(includeMiddleSubWords);
+
+            if (applySubWordsCoverage != null)
+            {
+                SubWordsCoverage = SubWordsCoverage.ToDictionary(kv => kv.Key, kv => applySubWordsCoverage(kv.Value));
+            }
         }
 
         #endregion
@@ -97,8 +95,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
             {
                 var hashCode = Name?.GetHashCode() ?? 0;
                 hashCode = (hashCode * 397) ^ MatchingFitness;
-                hashCode = (hashCode * 397) ^ UnMatchingFitness;
-                hashCode = (hashCode * 397) ^ (FriendWordList?.GetHashCode() ?? 0);
+                hashCode = (hashCode*397) ^ UnMatchingFitness;
                 return hashCode;
             }
         }
@@ -127,7 +124,8 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public double CheckWordsCoveragePercentageFor(string subWord)
         {
-            return Values.Where(subWordsCoverage => subWordsCoverage.ContainsKey(subWord)).Sum(subWordsCoverage => subWordsCoverage[subWord]);
+
+            return SubWordsCoverage.ContainsKey(subWord) ? SubWordsCoverage[subWord] : 0;
         }
     }
 }
