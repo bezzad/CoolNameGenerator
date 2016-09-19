@@ -376,6 +376,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stop.
+        /// </summary>
+        public static string Stop {
+            get {
+                return ResourceManager.GetString("Stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The argument must be have more than 2 length..
         /// </summary>
         public static string The_argument_must_be_have_more_than_2_length {

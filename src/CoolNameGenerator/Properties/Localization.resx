@@ -243,4 +243,7 @@
   <data name="AlgorithmTerminatedSuccessful" xml:space="preserve">
     <value>Algorithm Terminated Successful !</value>
   </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
 </root>

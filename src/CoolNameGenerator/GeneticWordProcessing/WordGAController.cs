@@ -122,7 +122,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
             //    UnMatchingFitness = -4
             //});
 
-            WordsDic.Add(new UniqueWords("FinglishNames", await FileExtensions.ReadWordFileAsync("FinglishNames"), false)
+            WordsDic.Add(new UniqueWords("FinglishNames", await FileExtensions.ReadWordFileAsync("FinglishNames"), false, Math.Log)
             {
                 DuplicateMatchingFitness = -2,
                 MatchingFitness = 6,

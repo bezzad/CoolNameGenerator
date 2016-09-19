@@ -15,5 +15,10 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         #endregion
 
+        public WordChromosomeInfo()
+        {
+            MatchedUniqueWords = new HashSet<string>();
+            MatchedUniqueSubWords = new HashSet<string>();
+        }
     }
 }

@@ -132,6 +132,8 @@ namespace CoolNameGenerator.GeneticWordProcessing
                 {
                     if (lstWords?.Contains(subWords[c]) == true) // Is Matched Word!?
                     {
+                        word.Info.MatchedUniqueWords.Add(subWords[c]); // add found sub word to chromosome info
+
                         if (matchedWords[lstWords.Name].Add(subWords[c])) // Able to add matched subWord (or Not if duplicate match)?
                         {
                             score += lstWords.MatchingFitness; // Add match fitness of this list
@@ -145,7 +147,9 @@ namespace CoolNameGenerator.GeneticWordProcessing
                     }
 
                     // Check this sub word in all sub words of all words by coverage percentage for any matched sub word by sub word
-                    sumCoveragePercent += lstWords?.CheckWordsCoveragePercentageFor(subWords[c]) ?? 0;
+                    var coverageOfSubWord = lstWords?.CheckWordsCoveragePercentageFor(subWords[c]) ?? 0;
+                    sumCoveragePercent += coverageOfSubWord;
+                    if (coverageOfSubWord > 0) word.Info.MatchedUniqueSubWords.Add(subWords[c]); // add found sub word to chromosome info
                 }
 
                 //

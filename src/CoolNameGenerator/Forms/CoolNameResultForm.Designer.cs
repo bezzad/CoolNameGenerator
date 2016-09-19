@@ -38,8 +38,6 @@
             this.lblFitness = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.lblBestChromosomeT = new System.Windows.Forms.Label();
-            this.bestChromosomeWord = new CoolNameGenerator.Graphics.WordLabel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblTimeEvolving = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -85,6 +83,7 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bestChromosomeWord = new CoolNameGenerator.Graphics.WordLabel();
             this.gbResult.SuspendLayout();
             this.gbGAToolbox.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -203,36 +202,11 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.lblBestChromosomeT);
             this.panel7.Controls.Add(this.bestChromosomeWord);
             this.panel7.Location = new System.Drawing.Point(8, 92);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(402, 74);
             this.panel7.TabIndex = 11;
-            // 
-            // lblBestChromosomeT
-            // 
-            this.lblBestChromosomeT.AutoSize = true;
-            this.lblBestChromosomeT.Location = new System.Drawing.Point(3, 6);
-            this.lblBestChromosomeT.Name = "lblBestChromosomeT";
-            this.lblBestChromosomeT.Size = new System.Drawing.Size(123, 17);
-            this.lblBestChromosomeT.TabIndex = 9;
-            this.lblBestChromosomeT.Text = "Best Chromosome";
-            // 
-            // bestChromosomeWord
-            // 
-            this.bestChromosomeWord.AutoEllipsis = true;
-            this.bestChromosomeWord.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bestChromosomeWord.Fitness = null;
-            this.bestChromosomeWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bestChromosomeWord.Font = new System.Drawing.Font("Segoe UI Symbol", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bestChromosomeWord.Location = new System.Drawing.Point(153, 6);
-            this.bestChromosomeWord.Name = "bestChromosomeWord";
-            this.bestChromosomeWord.Padding = new System.Windows.Forms.Padding(10);
-            this.bestChromosomeWord.Size = new System.Drawing.Size(243, 59);
-            this.bestChromosomeWord.TabIndex = 8;
-            this.bestChromosomeWord.Text = "Best Chromosome";
-            this.bestChromosomeWord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel6
             // 
@@ -657,6 +631,20 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
+            // bestChromosomeWord
+            // 
+            this.bestChromosomeWord.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bestChromosomeWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bestChromosomeWord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bestChromosomeWord.Fitness = null;
+            this.bestChromosomeWord.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bestChromosomeWord.Location = new System.Drawing.Point(0, 0);
+            this.bestChromosomeWord.Name = "bestChromosomeWord";
+            this.bestChromosomeWord.ReadOnly = true;
+            this.bestChromosomeWord.Size = new System.Drawing.Size(402, 74);
+            this.bestChromosomeWord.TabIndex = 0;
+            this.bestChromosomeWord.Text = "";
+            // 
             // CoolNameResultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -675,7 +663,6 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -735,7 +722,6 @@
         private System.Windows.Forms.Label lblFitness;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label lblBestChromosomeT;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lblTimeEvolving;
         private System.Windows.Forms.Label label6;

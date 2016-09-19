@@ -15,6 +15,8 @@ namespace CoolNameGenerator.Forms
 {
     public partial class CoolNameResultForm : BaseForm
     {
+        private GeneticAlgorithm _ga;
+
         public CoolNameResultForm()
         {
             InitializeComponent();
@@ -22,9 +24,20 @@ namespace CoolNameGenerator.Forms
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            wpResults.SetWordsCount((int)numPopulationSize.Value);
+            if (btnStart.Text == Localization.Start)
+            {
+                btnStart.Text = Localization.Stop;
 
-            Run();
+                wpResults.SetWordsCount((int)numPopulationSize.Value);
+
+                Run();
+            }
+            else
+            {
+                btnStart.Text = Localization.Start;
+                _ga?.Stop();
+            }
+
         }
 
         private void finglishConverterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -46,33 +59,31 @@ namespace CoolNameGenerator.Forms
 
                     var population = new Population((int)numPopulationSize.Value, 2000, ctrl.CreateChromosome(), new PerformanceGenerationStrategy(10));
 
-                    var ga = new GeneticAlgorithm(population, ctrl.CreateFitness(), ctrl.CreateSelection(),
+                    _ga = new GeneticAlgorithm(population, ctrl.CreateFitness(), ctrl.CreateSelection(),
                         ctrl.CreateCrossover(population), ctrl.CreateMutation(), ctrl.CreateTermination());
 
-                    ga.GenerationRan += delegate
+                    _ga.GenerationRan += delegate
                     {
-                        var bestChromosome = ga.Population.BestChromosome;
+                        var bestChromosome = _ga.Population.BestChromosome;
                         lblFitness.InvokeIfRequired(() => lblFitness.Text = bestChromosome.Fitness.ToString());
                         bestChromosomeWord.InvokeIfRequired(() =>
                         {
-                            bestChromosomeWord.Fitness = bestChromosome.Fitness;
-                            bestChromosomeWord.Text = bestChromosome.ToString();
+                            bestChromosomeWord.SetChromosome((WordChromosome)bestChromosome);
                         });
-                        lblGeneration.InvokeIfRequired(() => lblGeneration.Text = ga.Population.GenerationsNumber.ToString());
-                        lblTimeEvolving.InvokeIfRequired(() => lblTimeEvolving.Text = ga.TimeEvolving.ToString());
+                        lblGeneration.InvokeIfRequired(() => lblGeneration.Text = _ga.Population.GenerationsNumber.ToString());
+                        lblTimeEvolving.InvokeIfRequired(() => lblTimeEvolving.Text = _ga.TimeEvolving.ToString());
                         ctrl.Draw(bestChromosome);
-                        ctrl.DrawAllAction(ga.Population.CurrentGeneration.Chromosomes);
+                        ctrl.DrawAllAction(_ga.Population.CurrentGeneration.Chromosomes);
                     };
 
-                    ga.TerminationReached += GaTerminationReached;
+                    _ga.TerminationReached += GaTerminationReached;
 
-                    ctrl.ConfigGa(ga);
-                    ga.Start();
+                    ctrl.ConfigGa(_ga);
+                    _ga.Start();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    return;
                 }
             });
         }

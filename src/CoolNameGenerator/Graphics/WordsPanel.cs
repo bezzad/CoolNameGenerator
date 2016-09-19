@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using CoolNameGenerator.GA.Chromosomes;
+using CoolNameGenerator.GeneticWordProcessing;
 
 namespace CoolNameGenerator.Graphics
 {
@@ -10,7 +11,7 @@ namespace CoolNameGenerator.Graphics
         public WordLabel[] WordsLabels { get; set; }
 
         public int Count { get; private set; }
-        
+
         public WordsPanel(int wordsCount) : this()
         {
             SetWordsCount(wordsCount);
@@ -26,7 +27,7 @@ namespace CoolNameGenerator.Graphics
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             Dock = System.Windows.Forms.DockStyle.Fill;
         }
-        
+
 
         public void SetWordsCount(int count)
         {
@@ -42,20 +43,6 @@ namespace CoolNameGenerator.Graphics
             Controls.AddRange(WordsLabels);
         }
 
-        public void SetWords(IList<string> words)
-        {
-            if (words.Count > Count)
-            {
-                throw new ArgumentOutOfRangeException(nameof(words));
-            }
-            for (var i = 0; i < Count; i++)
-            {
-                WordsLabels[i].Text = words[i];
-            }
-
-            ((WordLabel)WordsLabels[0]).IsElit();
-        }
-
         public void SetWords(IList<IChromosome> chromosomes)
         {
             if (chromosomes.Count > Count)
@@ -65,8 +52,7 @@ namespace CoolNameGenerator.Graphics
 
             for (var i = 0; i < Count; i++)
             {
-                WordsLabels[i].Fitness = chromosomes[i].Fitness;
-                WordsLabels[i].Text = chromosomes[i].ToString();
+                WordsLabels[i].SetChromosome((WordChromosome)chromosomes[i]);
             }
         }
     }
