@@ -143,6 +143,7 @@
     <Compile Include="GeneticWordProcessing\IGeneticAlgoritmController.cs" />
     <Compile Include="GeneticWordProcessing\GeneticControllerBase.cs" />
     <Compile Include="GeneticWordProcessing\UniqueCrossover.cs" />
+    <Compile Include="GeneticWordProcessing\WordChromosomeInfo.cs" />
     <Compile Include="GeneticWordProcessing\WordChromosome.cs" />
     <Compile Include="GA\Chromosomes\ChromosomeBase.cs" />
     <Compile Include="GA\Chromosomes\ChromosomeExtensions.cs" />

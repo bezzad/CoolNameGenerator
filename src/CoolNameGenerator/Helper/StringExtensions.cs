@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using CoolNameGenerator.GA.Chromosomes;
+using CoolNameGenerator.GeneticWordProcessing;
 
 namespace CoolNameGenerator.Helper
 {
@@ -314,6 +315,17 @@ namespace CoolNameGenerator.Helper
         /// <param name="word">The word.</param>
         /// <param name="includeMiddleSubWords">include middle sub words? by default is true.</param>
         /// <returns>Sub words.</returns>
+        public static IList<string> GetSubWords(this WordChromosome word, bool includeMiddleSubWords = true)
+        {
+            return word.ToString().GetSubWords();
+        }
+
+        /// <summary>
+        /// Gets the sub words.
+        /// </summary>
+        /// <param name="word">The word.</param>
+        /// <param name="includeMiddleSubWords">include middle sub words? by default is true.</param>
+        /// <returns>Sub words.</returns>
         public static Dictionary<string, double> GetSubWordsByCoverage(this string word, bool includeMiddleSubWords = true)
         {
             // word:    a b c d
@@ -426,6 +438,11 @@ namespace CoolNameGenerator.Helper
             }
 
             return overlapCount;
+        }
+
+        public static int CountOverlap(this WordChromosome word, IEnumerable<string> matchableWords)
+        {
+            return word.ToString().CountOverlap(matchableWords);
         }
     }
 }

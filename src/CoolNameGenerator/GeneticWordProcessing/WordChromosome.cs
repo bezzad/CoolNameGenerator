@@ -8,11 +8,15 @@ namespace CoolNameGenerator.GeneticWordProcessing
 {
     public class WordChromosome : ChromosomeBase
     {
-        #region Properties      
+        #region Properties     
+         
         public const int MaxCharactersLong = 67;
         public const int MaxHyphenUsage = 4;
         public bool HasNumeric { get; set; }
         public bool HasHyphen { get; set; }
+
+        public WordChromosomeInfo Info { get; set; }
+
         #endregion
 
         #region Constructors  
@@ -21,6 +25,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         {
             HasNumeric = hasNumeric;
             HasHyphen = hasHyphen;
+            Info = new WordChromosomeInfo();
             ReplaceGenes(0, GenerateGens(Length, hasNumeric, hasHyphen));
         }
 
@@ -89,6 +94,14 @@ namespace CoolNameGenerator.GeneticWordProcessing
         public override string ToString()
         {
             return string.Join("", GetGenes().Select(g => g.Value.ToString()).ToArray());
+        }
+
+        public static WordChromosome Factory(string word)
+        {
+            var wch = new WordChromosome(word.Length, word.Any(char.IsDigit), word.Contains(Words.HyphenChar));
+            wch.ReplaceGenes(0, word.Select(ch => new Gene(ch)).ToArray());
+
+            return wch;
         }
 
         #endregion

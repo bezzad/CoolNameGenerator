@@ -124,7 +124,6 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public double CheckWordsCoveragePercentageFor(string subWord)
         {
-
             return SubWordsCoverage.ContainsKey(subWord) ? SubWordsCoverage[subWord] : 0;
         }
     }

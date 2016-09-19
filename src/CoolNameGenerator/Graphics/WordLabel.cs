@@ -35,6 +35,7 @@ namespace CoolNameGenerator.Graphics
             // Initialize Control
             // 
             AutoEllipsis = true;
+            this.AutoSize = false;
             BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             Font = new System.Drawing.Font("Segoe UI Symbol", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -19,6 +19,16 @@ namespace CoolNameGenerator.GeneticWordProcessing
     {
         public static volatile List<UniqueWords> WordsDic = new List<UniqueWords>();
 
+        /// <summary>
+        /// Gets or sets the mutation probability.
+        /// </summary>
+        public float MutationProbability { get; set; } = 0.7f;
+
+        /// <summary>
+        /// Gets or sets the crossover probability.
+        /// </summary>
+        public float CrossoverProbability { get; set; } = 0.7f;
+
         public Func<IChromosome> ChromosomeFactory;
         public Action<IList<IChromosome>> DrawAllAction;
         public Action<IChromosome> DrawAction;
@@ -43,8 +53,8 @@ namespace CoolNameGenerator.GeneticWordProcessing
                 MaxThreads = 50
             };
 
-            ga.MutationProbability = 0.7f;
-            ga.CrossoverProbability = 0.7f;
+            ga.MutationProbability = MutationProbability;
+            ga.CrossoverProbability = CrossoverProbability;
         }
 
         public override IChromosome CreateChromosome()
@@ -62,7 +72,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
                 {
                     fitness.EvaluateLength(word.Length),
                     (int)fitness.EvaluateMatchingEnglishWords(word, WordsDic.ToArray()),
-                    fitness.EvaluateDuplicatChar(word)
+                    fitness.EvaluateDuplicatChar(word.ToString())
                 };
 
                 return scores.Sum().EvaluateScoreByIntVal();
@@ -145,7 +155,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public override IMutation CreateMutation()
         {
-             return new UniformMutation(true);
+            return new UniformMutation(true);
 
             //return new ReverseSequenceMutation();
         }

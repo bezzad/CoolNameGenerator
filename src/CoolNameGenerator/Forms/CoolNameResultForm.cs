@@ -41,6 +41,8 @@ namespace CoolNameGenerator.Forms
                 {
                     var ctrl = new WordGaController(() => new WordChromosome((int)numWordLen.Value, chkHasNumeric.Checked, chkHasHyphen.Checked), DrawChromosomes);
                     await ctrl.LoadWordFiles();
+                    ctrl.CrossoverProbability = (float)numCrossoverProbability.Value / 100;
+                    ctrl.MutationProbability = (float)numMutationProbability.Value / 100;
 
                     var population = new Population((int)numPopulationSize.Value, 2000, ctrl.CreateChromosome(), new PerformanceGenerationStrategy(10));
 
@@ -51,7 +53,11 @@ namespace CoolNameGenerator.Forms
                     {
                         var bestChromosome = ga.Population.BestChromosome;
                         lblFitness.InvokeIfRequired(() => lblFitness.Text = bestChromosome.Fitness.ToString());
-                        lblBestChromosome.InvokeIfRequired(() => lblBestChromosome.Text = bestChromosome.ToString());
+                        bestChromosomeWord.InvokeIfRequired(() =>
+                        {
+                            bestChromosomeWord.Fitness = bestChromosome.Fitness;
+                            bestChromosomeWord.Text = bestChromosome.ToString();
+                        });
                         lblGeneration.InvokeIfRequired(() => lblGeneration.Text = ga.Population.GenerationsNumber.ToString());
                         lblTimeEvolving.InvokeIfRequired(() => lblTimeEvolving.Text = ga.TimeEvolving.ToString());
                         ctrl.Draw(bestChromosome);

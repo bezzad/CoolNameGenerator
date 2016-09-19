@@ -94,108 +94,107 @@ namespace Test.GeneticWordProcessing
         {
             var fitness = new WordFitness();
 
-            var englishWords = new UniqueWords("EnglishWords", new[]
+            var dic = new List<UniqueWords>
             {
-                "book",
-                "keeper",
-                "eye",
-                "name",
-                "taxi",
-                "hotel",
-                "okey"
-            })
-            {
-                DuplicateMatchingFitness = -2,
-                MatchingFitness = 3,
-                UnMatchingFitness = -1
-            };
-
-            var englishNames = new UniqueWords("EnglishNames", new[]
-            {
-                "davis",
-                "miller",
-                "wilson",
-                "moore",
-                "taylor",
-                "anderson",
-                "thoma",
-                "jackson",
-                "white",
-                "harris",
-                "martin"
-            })
-            {
-                DuplicateMatchingFitness = -2,
-                MatchingFitness = 2,
-                UnMatchingFitness = 0
-            };
-
-            var finglishWords = new UniqueWords("FinglishWords", new[]
-            {
-                "taxi",
-                "hotel",
-                "raftan",
-                "ketabdar",
-                "esfand",
-                "mahi",
-                "harris"
-            })
-            {
-                DuplicateMatchingFitness = -3,
-                FriendWordList = new List<UniqueWords>() {englishWords, englishNames},
-                MatchingFitness = 2,
-                MatchingFriendsFitness = 2,
-                UnMatchingFitness = 0
-            };
-
-            var finglishNames = new UniqueWords("FinglishNames", new[]
-            {
-                "arezoo",
-                "behzad",
-                "ahmad",
-                "reza",
-                "homaiun",
-                "ande"
-            })
-            {
-                DuplicateMatchingFitness = -2,
-                FriendWordList = new List<UniqueWords>() {englishWords, englishNames, finglishWords},
-                MatchingFitness = 4,
-                MatchingFriendsFitness = 4,
-                UnMatchingFitness = -1
+                new UniqueWords("EnglishWords", new[]
+                {
+                    "book",
+                    "keeper",
+                    "eye",
+                    "name",
+                    "taxi",
+                    "hotel",
+                    "okey"
+                })
+                {
+                    DuplicateMatchingFitness = -2,
+                    MatchingFitness = 3,
+                    UnMatchingFitness = -1
+                },
+                new UniqueWords("EnglishNames", new[]
+                {
+                    "davis",
+                    "miller",
+                    "wilson",
+                    "moore",
+                    "taylor",
+                    "anderson",
+                    "thoma",
+                    "jackson",
+                    "white",
+                    "harris",
+                    "martin"
+                })
+                {
+                    DuplicateMatchingFitness = -2,
+                    MatchingFitness = 2,
+                    UnMatchingFitness = 0
+                },
+                new UniqueWords("FinglishWords", new[]
+                {
+                    "taxi",
+                    "hotel",
+                    "raftan",
+                    "ketabdar",
+                    "esfand",
+                    "mahi",
+                    "harris"
+                })
+                {
+                    DuplicateMatchingFitness = -3,
+                    MatchingFitness = 2,
+                    UnMatchingFitness = 0
+                },
+                new UniqueWords("FinglishNames", new[]
+                {
+                    "arezoo",
+                    "behzad",
+                    "ahmad",
+                    "reza",
+                    "homaiun",
+                    "ande"
+                })
+                {
+                    DuplicateMatchingFitness = -2,
+                    MatchingFitness = 4,
+                    UnMatchingFitness = -1
+                }
             };
 
 
-            var words = new Dictionary<string, int>()
+
+
+
+            var words = new Dictionary<WordChromosome, int>()
             {
-                {"bookeye", +8},
-                {"hotelmoore", +8},
-                {"1esfand8", +2},
-                {"ataxi", +11},
-                {"abook", -3},
-                {"harris", -1},
-                {"anderson", 1},
-                {"thomaiun", 1},
-                {"white", -2},
-                {"abcde", -6},
-                {"abcdefgh", 1},
-                {"khizzdn", -1},
-                {"khizdar", 1},
-                {"matter", -1},
-                {"system", 1},
-                {"esttar", -1},
-                {"behzad", 1},
-                {"ahmedbehzadahmedbehzadahmed", 1},
-                {"ahmedbehzadahmed", 1},
-                {"ahmadahmedavis", 1},
-                {"ahmadavisande", 1},
-                {"ahmadahmedahmedahmed", 1},
-                {"ahmadahmed", 1},
+                {WordChromosome.Factory("bookeye"), +8},
+                {WordChromosome.Factory("hotelmoore"), +8},
+                {WordChromosome.Factory("1esfand8"), +2},
+                {WordChromosome.Factory("ataxi"), +11},
+                {WordChromosome.Factory("abook"), -3},
+                {WordChromosome.Factory("harris"), -1},
+                {WordChromosome.Factory("anderson"), 1},
+                {WordChromosome.Factory("thomaiun"), 1},
+                {WordChromosome.Factory("white"), -2},
+                {WordChromosome.Factory("abcde"), -6},
+                {WordChromosome.Factory("abcdefgh"), 1},
+                {WordChromosome.Factory("khizzdn"), -1},
+                {WordChromosome.Factory("khizdar"), 1},
+                {WordChromosome.Factory("matter"), -1},
+                {WordChromosome.Factory("system"), 1},
+                {WordChromosome.Factory("esttar"), -1},
+                {WordChromosome.Factory("behzad"), 1},
+                {WordChromosome.Factory("ahmedbehzadahmedbehzadahmed"), 1},
+                {WordChromosome.Factory("ahmedbehzadahmed"), 1},
+                {WordChromosome.Factory("ahmadahmedavis"), 1},
+                {WordChromosome.Factory("ahmadavisande"), 1},
+                {WordChromosome.Factory("ahmadahmedahmedahmed"), 1},
+                {WordChromosome.Factory("ahmadahmed"), 1},
             };
 
             foreach (var word in words)
             {
-                Assert.AreEqual(fitness.EvaluateMatchingEnglishWords(word.Key, englishNames, englishWords, finglishNames, finglishWords), word.Value,
+                Assert.AreEqual(fitness.EvaluateMatchingEnglishWords(word.Key, dic.ToArray()), word.Value,
                     $"The {word.Key} fitness is not equal by: {word.Value}");
             }
         }

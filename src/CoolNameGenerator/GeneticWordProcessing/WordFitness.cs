@@ -22,7 +22,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// Gets or sets the evaluate function.
         /// </summary>
         /// <value>The evaluate function.</value>
-        public Func<string, double> EvaluateFunc { get; set; }
+        public Func<WordChromosome, double> EvaluateFunc { get; set; }
 
         /// <summary>
         /// Evaluates the specified chromosome.
@@ -31,7 +31,12 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// <returns>The chromosome fitness.</returns>
         public double Evaluate(IChromosome chromosome)
         {
-            return EvaluateFunc(chromosome.ToString());
+            if (chromosome.GetType() != typeof(WordChromosome))
+            {
+                throw new ArgumentException("Argument must be type of 'WordChromosome'.", nameof(chromosome));
+            }
+
+            return EvaluateFunc(chromosome as WordChromosome);
         }
 
         /// <summary>
@@ -94,7 +99,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// <param name="word">The chromosome word.</param>
         /// <param name="wordsLists">The list of words to matching by them.</param>
         /// <returns>Score of matching word.</returns>
-        public virtual double EvaluateMatchingEnglishWords(string word, params UniqueWords[] wordsLists)
+        public virtual double EvaluateMatchingEnglishWords(WordChromosome word, params UniqueWords[] wordsLists)
         {
             if (word == null)
             {
