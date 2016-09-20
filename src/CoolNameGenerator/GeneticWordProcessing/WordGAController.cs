@@ -68,6 +68,8 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
             fitness.EvaluateFunc = word =>
             {
+                word.EvaluateInfo.Reset();
+
                 var scores = new List<int>()
                 {
                     fitness.EvaluateLength(word.Length),

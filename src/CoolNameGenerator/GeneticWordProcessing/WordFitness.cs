@@ -128,34 +128,34 @@ namespace CoolNameGenerator.GeneticWordProcessing
             double sumCoveragePercent = 0;
             for (var c = 0; c < subWords.Count; c++) // Get all sub words of the word
             {
-                foreach (var lstWords in wordsLists) // read and matching by all words list
+                foreach (var lst in wordsLists) // read and matching by all words list
                 {
-                    if (lstWords?.Contains(subWords[c]) == true) // Is Matched Word!?
+                    if (lst?.Contains(subWords[c]) == true) // Is Matched Word!?
                     {
-                        word.Info.MatchedUniqueWords.Add(Tuple.Create(subWords[c], lstWords.Name)); // add found sub word to chromosome info
+                        word.EvaluateInfo.MatchedUniqueWords.Add(Tuple.Create(subWords[c], lst.Name)); // add found sub word to chromosome info
 
-                        if (matchedWords[lstWords.Name].Add(subWords[c])) // Able to add matched subWord (or Not if duplicate match)?
+                        if (matchedWords[lst.Name].Add(subWords[c])) // Able to add matched subWord (or Not if duplicate match)?
                         {
-                            score += lstWords.MatchingFitness; // Add match fitness of this list
+                            score += lst.MatchingFitness; // Add match fitness of this list
                         }
-                        else score += lstWords.DuplicateMatchingFitness; // duplicate match word
+                        else score += lst.DuplicateMatchingFitness; // duplicate match word
                         countOfNatrualWords++; // increase match count
                     }
                     else // No Match Word!
                     {
-                        score += lstWords?.UnMatchingFitness ?? 0; // increase or decrease no match fitness according by this list 
+                        score += lst?.UnMatchingFitness ?? 0; // increase or decrease no match fitness according by this list 
                     }
                 }
                 //
                 // Check this sub word in all sub words of all words by coverage percentage for any matched sub word by sub word
                 var coverageOfSubWord = UniqueWords.CheckWordsCoveragePercentageFor(subWords[c]);
                 sumCoveragePercent += coverageOfSubWord;
-                if (coverageOfSubWord > 0) word.Info.MatchedUniqueSubWords.Add(subWords[c]); // add found sub word to chromosome info
+                if (coverageOfSubWord > 0) word.EvaluateInfo.MatchedUniqueSubWords.Add(subWords[c]); // add found sub word to chromosome info
                 //
                 // decrease score if exist duplicate sub words in a word
-                for (var cc = c + 1; cc < subWords.Count; cc++)
+                for (var i = c + 1; i < subWords.Count; i++)
                 {
-                    if (subWords[cc] == subWords[c])
+                    if (subWords[i] == subWords[c])
                         score -= 5;
                 }
             }

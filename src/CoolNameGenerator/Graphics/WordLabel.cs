@@ -67,8 +67,8 @@ namespace CoolNameGenerator.Graphics
                 var wordLine = $"Word: {Text}";
                 var fitnessLine = chromosome.Fitness != null ? $"Fitness: {chromosome.Fitness}" : "";
                 var lenLine = $"Length: {Text.Length}";
-                var matchedWordsLine = $"Matched Words:{Environment.NewLine}{string.Join(Environment.NewLine, chromosome.Info.MatchedUniqueWords.Select(m => $"[{m.Item2}:\t{m.Item1}]"))}";
-                var matchedSubWordsLine = $"Matched SubWords:{Environment.NewLine}{string.Join(Environment.NewLine, chromosome.Info.MatchedUniqueSubWords)}";
+                var matchedWordsLine = $"Matched Words:{Environment.NewLine}{string.Join(Environment.NewLine, chromosome.EvaluateInfo.MatchedUniqueWords.Select(m => $"[{m.Item2}:\t{m.Item1}]"))}";
+                var matchedSubWordsLine = $"Matched SubWords:{Environment.NewLine}{string.Join(Environment.NewLine, chromosome.EvaluateInfo.MatchedUniqueSubWords)}";
 
 
                 var tooltipContent = $"{wordLine}" +
@@ -96,7 +96,7 @@ namespace CoolNameGenerator.Graphics
             {
                 this.Select(0, Text.Length);
                 SelectionBackColor = Color.WhiteSmoke;
-                foreach (var matchedWord in word.Info.MatchedUniqueWords)
+                foreach (var matchedWord in word.EvaluateInfo.MatchedUniqueWords)
                 {
                     var indexOfWord = wordText.IndexOf(matchedWord.Item1, StringComparison.Ordinal);
                     Select(indexOfWord, matchedWord.Item1.Length);

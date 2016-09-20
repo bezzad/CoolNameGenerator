@@ -15,7 +15,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         public bool HasNumeric { get; set; }
         public bool HasHyphen { get; set; }
 
-        public WordChromosomeInfo Info { get; set; }
+        public WordChromosomeInfo EvaluateInfo { get; set; }
 
         #endregion
 
@@ -25,7 +25,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         {
             HasNumeric = hasNumeric;
             HasHyphen = hasHyphen;
-            Info = new WordChromosomeInfo();
+            EvaluateInfo = new WordChromosomeInfo();
             ReplaceGenes(0, GenerateGens(Length, hasNumeric, hasHyphen));
         }
 

@@ -14,6 +14,11 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public WordChromosomeInfo()
         {
+            Reset();
+        }
+
+        public void Reset()
+        {
             MatchedUniqueWords = new List<Tuple<string, string>>();
             MatchedUniqueSubWords = new List<string>();
         }
