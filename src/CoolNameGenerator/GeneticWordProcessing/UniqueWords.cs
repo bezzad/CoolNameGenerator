@@ -36,12 +36,14 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// </value>
         public int DuplicateMatchingFitness { get; set; }
 
+        public static Func<double, double> ApplySubWordsCoverageValueFunc { get; set; }
+
         public string this[int index] => this.ElementAt(index);
 
         /// <summary>
         /// Sum of the all sub words by unique overall coverage 
         /// </summary>
-        public Dictionary<string, double> SubWordsCoverage { get; set; }
+        public static Dictionary<string, double> SubWordsCoverage { get; set; } = new Dictionary<string, double>();
 
         #endregion
 
@@ -52,20 +54,23 @@ namespace CoolNameGenerator.GeneticWordProcessing
             Name = name;
         }
 
-        public UniqueWords(string name, IEnumerable<string> words) : this(name, words, false, null)
+        public UniqueWords(string name, IEnumerable<string> words) : this(name, words, false)
         { }
 
-        public UniqueWords(string name, IEnumerable<string> words, bool includeMiddleSubWords) : this(name, words, includeMiddleSubWords, null)
-        { }
-
-        public UniqueWords(string name, IEnumerable<string> words, bool includeMiddleSubWords, Func<double, double> applySubWordsCoverage) : base(words)
+        public UniqueWords(string name, IEnumerable<string> words, bool includeMiddleSubWords) : base(words)
         {
             Name = name;
-            SubWordsCoverage = this.GetUniqueSubWordsCoverage(includeMiddleSubWords);
 
-            if (applySubWordsCoverage != null)
+            foreach (var wordCoverage in this.GetUniqueSubWordsCoverage(includeMiddleSubWords))
             {
-                SubWordsCoverage = SubWordsCoverage.ToDictionary(kv => kv.Key, kv => applySubWordsCoverage(kv.Value));
+                if (SubWordsCoverage.ContainsKey(wordCoverage.Key))
+                {
+                    SubWordsCoverage[wordCoverage.Key] += wordCoverage.Value;
+                }
+                else
+                {
+                    SubWordsCoverage[wordCoverage.Key] = wordCoverage.Value;
+                }
             }
         }
 
@@ -95,7 +100,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
             {
                 var hashCode = Name?.GetHashCode() ?? 0;
                 hashCode = (hashCode * 397) ^ MatchingFitness;
-                hashCode = (hashCode*397) ^ UnMatchingFitness;
+                hashCode = (hashCode * 397) ^ UnMatchingFitness;
                 return hashCode;
             }
         }
@@ -122,9 +127,14 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         #endregion
 
-        public double CheckWordsCoveragePercentageFor(string subWord)
+        public static double CheckWordsCoveragePercentageFor(string subWord)
         {
-            return SubWordsCoverage.ContainsKey(subWord) ? SubWordsCoverage[subWord] : 0;
+            if (SubWordsCoverage.ContainsKey(subWord))
+            {
+                return ApplySubWordsCoverageValueFunc?.Invoke(SubWordsCoverage[subWord]) ?? SubWordsCoverage[subWord];
+            }
+
+            return 0;
         }
     }
 }

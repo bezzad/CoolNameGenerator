@@ -1,6 +1,7 @@
 ﻿using System;
 using CoolNameGenerator.Helper;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GA.Randomizations;
@@ -12,18 +13,13 @@ namespace CoolNameGenerator.Graphics
     {
         private readonly ToolTip _toolTip;
 
-        public double? Fitness { get; set; }
-
-
         public WordLabel(WordChromosome word) : this(word.ToString(), word.Fitness ?? 0)
         {
             SetChromosome(word);
         }
 
         public WordLabel(string text, double fitness) : this(text)
-        {
-            Fitness = fitness;
-        }
+        { }
 
         public WordLabel(string text) : this()
         {
@@ -68,13 +64,16 @@ namespace CoolNameGenerator.Graphics
         {
             this.InvokeIfRequired(() =>
             {
-                var fitnessLine = Fitness != null ? $"Fitness: {Fitness}" : "";
+                var wordLine = $"Word: {Text}";
+                var fitnessLine = chromosome.Fitness != null ? $"Fitness: {chromosome.Fitness}" : "";
                 var lenLine = $"Length: {Text.Length}";
-                var matchedWordsLine = $"Matched Words:{Environment.NewLine}{string.Join(Environment.NewLine, chromosome.Info.MatchedUniqueWords)}";
+                var matchedWordsLine = $"Matched Words:{Environment.NewLine}{string.Join(Environment.NewLine, chromosome.Info.MatchedUniqueWords.Select(m => $"[{m.Item2}:\t{m.Item1}]"))}";
                 var matchedSubWordsLine = $"Matched SubWords:{Environment.NewLine}{string.Join(Environment.NewLine, chromosome.Info.MatchedUniqueSubWords)}";
 
 
-                var tooltipContent = $"{fitnessLine}" +
+                var tooltipContent = $"{wordLine}" +
+                                     $"{Environment.NewLine}========================" +
+                                     $"{Environment.NewLine}{fitnessLine}" +
                                      $"{Environment.NewLine}{lenLine}" +
                                      $"{Environment.NewLine}------------------------" +
                                      $"{Environment.NewLine}{matchedWordsLine}" +
@@ -86,22 +85,10 @@ namespace CoolNameGenerator.Graphics
             });
         }
 
-        private void SetTooltip()
-        {
-            var fitnessLine = Fitness != null ? $"Fitness: {Fitness}" : "";
-            var lenLine = $"Length: {Text.Length}";
-
-
-            var tooltipContent = $"{fitnessLine}{Environment.NewLine}{lenLine}";
-
-            _toolTip.SetToolTip(this, tooltipContent);
-        }
-
         public void SetChromosome(WordChromosome word)
         {
             var wordText = word.ToString();
 
-            Fitness = word.Fitness;
             Text = wordText;
             SetTooltip(word);
 
@@ -111,10 +98,10 @@ namespace CoolNameGenerator.Graphics
                 SelectionBackColor = Color.WhiteSmoke;
                 foreach (var matchedWord in word.Info.MatchedUniqueWords)
                 {
-                    var indexOfWord = wordText.IndexOf(matchedWord, StringComparison.Ordinal);
-                    this.Select(indexOfWord, matchedWord.Length);
-                    
-                    this.SelectionBackColor = matchedWord.ToColor();
+                    var indexOfWord = wordText.IndexOf(matchedWord.Item1, StringComparison.Ordinal);
+                    Select(indexOfWord, matchedWord.Item1.Length);
+
+                    SelectionBackColor = matchedWord.Item1.ToColor();
                 }
             });
         }

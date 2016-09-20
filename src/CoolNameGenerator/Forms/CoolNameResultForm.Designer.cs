@@ -636,7 +636,6 @@
             this.bestChromosomeWord.BackColor = System.Drawing.Color.WhiteSmoke;
             this.bestChromosomeWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bestChromosomeWord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bestChromosomeWord.Fitness = null;
             this.bestChromosomeWord.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bestChromosomeWord.Location = new System.Drawing.Point(0, 0);
             this.bestChromosomeWord.Name = "bestChromosomeWord";

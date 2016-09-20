@@ -5,7 +5,6 @@ chap				:		چپى
 mianeh				:		میانه
 chand				:		چند
 sherkat				:		شرکت
-ba					:		با
 ham					:		هم
 bara				:		براى
 anjam				:		انجام
@@ -27,10 +26,8 @@ abtla				:		ابتلا
 bah					:		به
 bimar				:		بیمارى
 haslh				:		حاصله
-az					:		از
 mikrovb				:		میکروب
 aspirokt			:		اسپیروکت
-ha					:		هاى
 viros				:		ویروسى
 porovstat			:		پروستات
 morfin				:		مرفین
@@ -80,7 +77,6 @@ shahrah				:		شاهراه
 seghah				:		صاعقه
 tofan				:		طوفانى
 komolos				:		کومولوس
-ya					:		یا
 komoloastratos		:		کومولواستراتوس
 ghadrt				:		قدرت
 gostardeh			:		گسترده
@@ -89,7 +85,6 @@ bazmin				:		بزمین
 lastik				:		لاستیکى
 layeh				:		لایه
 motarakem			:		متراکم
-ro					:		روى
 anbashteh			:		انباشته
 mard				:		مرد
 niro				:		نیرو
@@ -115,7 +110,6 @@ abrbin				:		ابربین
 abrsnj				:		ابرسنج
 abrash				:		ابرش
 abrtrh				:		ابرطره
-a					:		اى
 abrnoakhtran		:		ابرنواختران
 abrniro				:		ابرنیرو
 abrnik				:		ابرنیک
@@ -174,7 +168,6 @@ shakaf				:		شکاف
 takhteh				:		تخته
 aloar				:		الوار
 bar					:		بار
-m					:		مى
 rod					:		رود
 ebtal				:		ابطال
 pazir				:		پذیر
@@ -214,10 +207,8 @@ mofarah				:		مفرح
 apsilon				:		اپسیلون
 epol				:		اپل
 apostrof			:		اپوستروف
-ap					:		اپى
 galot				:		گلوت
 apika				:		اپیکا
-at					:		ات
 otagh				:		اتاق
 atshkhanh			:		آتشخانه
 kasht				:		کشتى
@@ -297,7 +288,6 @@ dod					:		دود
 dadn				:		دادن
 mah					:		ماهى
 amsal				:		امثال
-an					:		آن
 marizkhanh			:		مریضخانه
 mariz				:		مریض
 gird				:		گیرد
@@ -347,7 +337,6 @@ naghban				:		نگهبانى
 kopeh				:		کوپه
 nafr				:		نفرى
 etehad				:		اتحاد
-do					:		دو
 harf				:		حرف
 savt				:		صوت
 yachnd				:		یاچند
@@ -476,7 +465,6 @@ polis				:		پلیس
 mojahaz				:		مجهز
 ferestandeh			:		فرستنده
 torbin				:		توربین
-ra					:		را
 benzin				:		بنزین
 park				:		پارک
 randan				:		راندن
@@ -537,11 +525,9 @@ kas					:		کسى
 estedlal			:		استدلال
 madrak				:		مدرک
 bignah				:		بیگناهى
-na					:		نا
 chiz				:		چیزى
 kanndh				:		کننده
 asbat				:		اثباتى
-ab					:		آب
 bar					:		بر
 post				:		پوست
 adb					:		ادبى
@@ -553,9 +539,7 @@ mandeh				:		مانده
 baghimandh			:		باقیمانده
 bad					:		بعدى
 davar				:		داور
-pa					:		پا
 gozardan			:		گذاردن
-pa					:		پاى
 fosil				:		فسیل
 tarikh				:		تاریخى
 tarazhd				:		تراژدى
@@ -578,7 +562,6 @@ giahan				:		گیاهان
 zokhm				:		زخم
 gozashtan			:		گذاشتن
 zian				:		زیان
-or					:		آور
 sath				:		سطحى
 sokhtg				:		سوختگى
 seyl				:		سیل
@@ -615,7 +598,6 @@ ashia				:		اشیاء
 nashih				:		ناشیه
 asria				:		اثریا
 neveshteh			:		نوشته
-b					:		بى
 ahamiat				:		اهمیت
 asrknndh			:		اثرکننده
 asno				:		اثنوى
@@ -659,7 +641,6 @@ tivldar				:		تیولدار
 joza				:		جزء
 sahb				:		صاحب
 toyovl				:		تیول
-ja					:		جا
 khovrak				:		خوراک
 sader				:		صادر
 nadadn				:		ندادن
@@ -726,7 +707,6 @@ hokm				:		حکم
 edam				:		اعدام
 mojazat				:		مجازات
 mortad				:		مرتد
-ra					:		راى
 atraf				:		اطراف
 shamshir			:		شمشیر
 ajray				:		اجرایى
@@ -785,7 +765,6 @@ haml				:		حمل
 naghl				:		نقل
 ajnb				:		اجنبى
 parst				:		پرست
-aj					:		اجى
 maj					:		مجى
 ajir				:		اجیر
 achalid				:		اچالید
@@ -890,7 +869,6 @@ khorak				:		خوراکى
 margh				:		مرغ
 khang				:		خانگى
 ghirh				:		غیره
-da					:		درآوردن
 amaa				:		امعاء
 ahsham				:		احشام
 labniat				:		لبنیاتى
@@ -958,7 +936,6 @@ akhtsas				:		اختصاصى
 akhtfa				:		اختفا
 ekhtefa				:		اختفاء
 lebas				:		لباس
-oz					:		عوضى
 akhtfa				:		اختفاى
 nezhad				:		نژاد
 digr				:		دیگرى
@@ -1197,7 +1174,6 @@ alhmar				:		الحمار
 ezan				:		اذعان
 ezn					:		اذن
 aziat				:		اذیت
-ar					:		ارœ
 ereh				:		ارائه
 esnad				:		اسناد
 madarek				:		مدارک
@@ -1461,7 +1437,6 @@ andakhtan			:		انداختن
 akhar				:		آخر
 bardashtan			:		برداشتن
 aghaz				:		آغاز
-ta					:		تا
 antha				:		انتها
 mobara				:		مبرا
 khabar				:		خبر
@@ -1479,7 +1454,6 @@ mahrom				:		محروم
 kastan				:		کاستن
 asart				:		اسارت
 piadeh				:		پیاده
-pe					:		پرت
 asalat				:		اصالت
 sadg				:		سادگى
 ato					:		اطو
@@ -1495,7 +1469,6 @@ bazrgtr				:		بزرگتر
 avol				:		اول
 ain					:		این
 payin				:		پایین
-so					:		سو
 sohrkt				:		سوحرکت
 tarf				:		طرف
 gozashteh			:		گذشته
@@ -1548,7 +1521,6 @@ bak					:		بک
 daramadan			:		درآمدن
 daramdh				:		درآمده
 mati				:		مطیع
-da					:		درآمد
 darniamdh			:		درنیامده
 tarin				:		ترین
 padr				:		پدر
@@ -1591,13 +1563,11 @@ tors				:		ترس
 dolashdn			:		دولاشدن
 tamalok				:		تملک
 tangna				:		تنگنا
-ja					:		جاى
 barik				:		باریکى
 gozashtan			:		گذشتن
 tanovr				:		تنور
 tohmat				:		تهمت
 tabrah				:		تبرئه
-to					:		توى
 savsn				:		سوسن
 zanbagh				:		زنبق
 parandan			:		پراندن
@@ -1831,7 +1801,6 @@ meyl				:		میل
 makro				:		مکرو
 neshat				:		نشاط
 harzg				:		هرزگى
-ho					:		هوى
 havas				:		هوس
 vafadar				:		وفادارى
 yaghin				:		یقین
@@ -1854,7 +1823,6 @@ zirkhak				:		زیرخاک
 azem				:		عازم
 piro				:		پیروى
 girandeh			:		گیرنده
-no					:		نو
 sarbaz				:		سرباز
 sarshb				:		سرشب
 bamdad				:		بامداد
@@ -1883,7 +1851,6 @@ shiftg				:		شیفتگى
 shakast				:		شکست
 hadeseh				:		حادثه
 shakl				:		شکل
-g					:		گى
 andaz				:		اندازى
 saf					:		صافى
 gozarandan			:		گذراندن
@@ -1902,7 +1869,6 @@ ozoyat				:		عضویت
 atieh				:		عطیه
 elat				:		علت
 malol				:		معلول
-p					:		پى
 alaf				:		علف
 harzeh				:		هرزه
 pak					:		پاک
@@ -1955,7 +1921,6 @@ goshh				:		گوشه
 gir					:		گیر
 giria				:		گیریا
 goridg				:		گوریدگى
-la					:		لاى
 zargh				:		زرق
 lehaz				:		لحاظ
 tasd				:		تصدى
@@ -1969,7 +1934,6 @@ lovla				:		لولا
 levlh				:		لوله
 sifon				:		سیفون
 layt				:		لیت
-ma					:		ما
 bahtran				:		بهتران
 bakereh				:		باکره
 madr				:		مادرى
@@ -2003,7 +1967,6 @@ movaghe				:		موقع
 barndashtn			:		برنداشتنى
 narftn				:		نرفتنى
 meydan				:		میدان
-da					:		دررفتن
 razm				:		رزم
 ariai				:		آریایى
 anglosakson			:		آنگلوساکسون
@@ -2073,7 +2036,6 @@ motanaghez			:		متناقض
 pahn				:		پهن
 mohadab				:		محدب
 moghar				:		مقعر
-so					:		سوى
 solb				:		صلب
 mosath				:		مسطح
 zarf				:		ظرف
@@ -2135,7 +2097,6 @@ darkhon				:		درخون
 movjeb				:		موجب
 ghand				:		قند
 gardd				:		گردد
-ad					:		عادى
 khatrat				:		خاطرات
 maye				:		مایع
 ghazh				:		غذه
@@ -2146,7 +2107,6 @@ azgil				:		ازگیل
 azmir				:		ازمیر
 azmir				:		ازمیرى
 ozon				:		ازن
-az					:		ازى
 aziris				:		ازیریس
 azimot				:		ازیموت
 azhd				:		اژد
@@ -2161,7 +2121,6 @@ khavar				:		خوار
 askandinav			:		اسکاندیناوى
 azhdhay				:		اژدهایى
 azhh				:		اژه
-os					:		اس
 asas				:		اساس
 asasa				:		اساسا
 asasnamh			:		اساسنامه
@@ -2170,7 +2129,6 @@ asatir				:		اساطیر
 shanas				:		شناس
 asatir				:		اساطیرى
 esans				:		اسانس
-ab					:		آبى
 amokhteh			:		آموخته
 aspanivl			:		اسپانیولى
 arb					:		عربى
@@ -2181,7 +2139,6 @@ tahamol				:		تحمل
 pir					:		پیر
 vamandh				:		وامانده
 takhm				:		تخمى
-to					:		تندرو
 tak					:		تک
 chapar				:		چاپارى
 chamosh				:		چموش
@@ -2216,7 +2173,6 @@ adam				:		آدم
 khafeh				:		خفه
 avza				:		اوضاع
 fizik				:		فیزیکى
-jo					:		جوى
 mavara				:		ماوراء
 jav					:		جو
 mayat				:		مایعات
@@ -2436,7 +2392,6 @@ lam					:		لامى
 lagan				:		لگن
 khasreh				:		خاصره
 nazok				:		نازک
-n					:		نى
 nav					:		ناوى
 nakhod				:		نخودى
 narm				:		نرمى
@@ -2453,7 +2408,6 @@ astkhoanpzshk		:		استخوانپزشک
 astkhoanpzshk		:		استخوانپزشکى
 astkhoan			:		استخوانى
 esteda				:		استدعا
-da					:		درخواست
 falsf				:		فلسفى
 aflaton				:		افلاطونى
 nazr				:		نظرى
@@ -2505,7 +2459,6 @@ taghiyr				:		تغییر
 tabdil				:		تبدیل
 moghavemat			:		مقاومت
 nahan				:		نهانى
-or					:		آورى
 hanrpishg			:		هنرپیشگى
 hanrha				:		هنرهاى
 ziba				:		زیبا
@@ -2531,7 +2484,6 @@ loghat				:		لغات
 loghat				:		لغت
 biganeh				:		بیگانه
 mofaret				:		مفرط
-ha					:		ها
 ebarat				:		عبارات
 estelah				:		اصطلاح
 jadid				:		جدید
@@ -2573,7 +2525,6 @@ gholam				:		غلام
 karha				:		کارهاى
 miangir				:		میانگیر
 banam				:		بانام
-ch					:		چى
 alm					:		علمى
 darman				:		درمان
 bimariha			:		بیماریها
@@ -2719,7 +2670,6 @@ mons				:		مونث
 khanoadg			:		خانوادگى
 zat					:		ذات
 shab				:		شب
-am					:		عام
 farz				:		فرضى
 mostar				:		مستعار
 noysndgan			:		نویسندگان
@@ -2924,7 +2874,6 @@ atigheh				:		عتیقه
 ashk				:		اشک
 temsah				:		تمساح
 darogh				:		دروغى
-za					:		زا
 eshkaf				:		اشکاف
 ganjeh				:		گنجه
 tarash				:		تراشى
@@ -2995,7 +2944,6 @@ zandg				:		زندگى
 laghah				:		لقاح
 nazhad				:		نژادى
 paroaresh			:		پرورش
-t					:		طى
 tarmim				:		ترمیم
 oyob				:		عیوب
 vetr				:		وتر
@@ -3166,7 +3114,6 @@ sharab				:		شراب
 asha				:		عشاى
 masihian			:		مسیحیان
 hengam				:		هنگام
-is					:		عیسى
 bargzidgan			:		برگزیدگان
 moyasar				:		میسر
 nik					:		نیکى
@@ -3203,7 +3150,6 @@ niakan				:		نیاکانى
 porotestan			:		پروتستان
 git					:		گیتى
 ghader				:		قادر
-al					:		على
 alatlagh			:		الاطلاق
 amliat				:		عملیات
 had					:		حاد
@@ -3281,7 +3227,6 @@ nasb				:		نصب
 agh					:		آگهى
 alanat				:		اعلانات
 alan				:		اعلانى
-al					:		اعلى
 alihzrt				:		اعلیحضرت
 alihzrta			:		اعلیحضرتا
 amad				:		اعماد
@@ -3317,7 +3262,6 @@ aghma				:		اغماء
 eghmaz				:		اغماض
 aghoa				:		اغوا
 eghoa				:		اغواء
-of					:		اف
 efadeh				:		افاده
 afar				:		افار
 efazh				:		افاضه
@@ -3409,7 +3353,6 @@ satad				:		ستاد
 sarbaz				:		سربازى
 sarprst				:		سرپرست
 saf					:		صفى
-al					:		عالى
 farmandh			:		فرمانده
 ghasr				:		قصر
 mamor				:		مامور
@@ -3533,14 +3476,11 @@ ala					:		الا
 kolang				:		کلنگ
 zamn				:		ضامنى
 kalng				:		کلنگى
-t					:		تى
 alachigh			:		الاچیق
 olagh				:		الاغ
 alaklng				:		الاکلنگ
-ar					:		آر
 paya				:		پایا
 alamat				:		علامت
-d					:		دى
 alaklnh				:		الاکلنه
 albagh				:		الباقى
 albateh				:		البته
@@ -3639,7 +3579,6 @@ aloarkar			:		الوارکارى
 aloat				:		الواط
 aloat				:		الواطى
 olovhiat			:		الوهیت
-al					:		الى
 darkht				:		درخت
 panbeh				:		پنبه
 pashm				:		پشم
@@ -3694,7 +3633,6 @@ mamol				:		معمولى
 alkl				:		الکلى
 alkan				:		الکن
 alk					:		الکى
-om					:		ام
 aldmagh				:		الدماغ
 alrghigh			:		الرقیق
 ama					:		اما
@@ -3817,7 +3755,6 @@ banahih				:		بناحیه
 yabkhsh				:		یابخش
 kalisay				:		کلیسایى
 amolsivn			:		امولسیون
-am					:		امى
 amial				:		امیال
 arezo				:		آرزو
 pasndanh			:		پسندانه
@@ -3835,7 +3772,6 @@ napzir				:		ناپذیرى
 nazdik				:		نزدیکى
 amkanat				:		امکانات
 ayb					:		عیب
-en					:		ان
 demagh				:		دماغ
 anajil				:		اناجیل
 anar				:		انار
@@ -4207,7 +4143,6 @@ khatem				:		خاتم
 angshtr				:		انگشترى
 angsht				:		انگشتى
 angol				:		انگل
-z					:		زى
 janevar				:		جانور
 malaria				:		مالاریا
 aam					:		اعم
@@ -4248,7 +4183,6 @@ angikhtan			:		انگیختن
 angizesh			:		انگیزش
 angizndh			:		انگیزنده
 angizeh				:		انگیزه
-an					:		آنى
 enhedam				:		انهدام
 baktr				:		باکترى
 anoa				:		انواع
@@ -4314,13 +4248,11 @@ mashrobat			:		مشروبات
 mahto				:		محتوى
 shokr				:		شکر
 naft				:		نفتى
-po					:		پرپشت
 havij				:		هویج
 milad				:		میلاد
 kasn				:		کاسنى
 salad				:		سالاد
 gard				:		گرد
-an					:		انى
 ghedr				:		قدر
 anidrid				:		انیدرید
 solforo				:		سولفورو
@@ -4330,7 +4262,6 @@ mozaf				:		مضاعف
 anksarsnj			:		انکسارسنج
 anksarsnj			:		انکسارسنجى
 anksar				:		انکسارى
-ah					:		اه
 pif					:		پیف
 ahal				:		اهالى
 ehanat				:		اهانت
@@ -4492,7 +4423,6 @@ avj					:		اوج
 paroaz				:		پرواز
 khovsh				:		خوش
 lazat				:		لذت
-oj					:		اوجى
 bahadar				:		بهادار
 orangotan			:		اورانگوتان
 oranim				:		اورانیم
@@ -4505,7 +4435,6 @@ avzan				:		اوزان
 maghiasat			:		مقیاسات
 avesta				:		اوستا
 ogh					:		اوغ
-of					:		اوف
 avghat				:		اوقات
 talkh				:		تلخى
 oganda				:		اوگاندا
@@ -4518,7 +4447,6 @@ amo					:		عمو
 mahsol				:		محصول
 ols					:		اولس
 oloyt				:		اولویت
-ol					:		اولى
 avlia				:		اولیاء
 olisz				:		اولیسز
 ghahraman			:		قهرمان
@@ -4535,7 +4463,6 @@ eyd					:		عید
 olks				:		اولکس
 ovns				:		اونس
 ovnifovrm			:		اونیفورم
-oh					:		اوه
 avham				:		اوهام
 ovl					:		اوول
 okado				:		اوکادو
@@ -4543,7 +4470,6 @@ okaliptos			:		اوکالیپتوس
 okr					:		اوکر
 okrayn				:		اوکراین
 vallah				:		والله
-va					:		واى
 kashb				:		کاش
 aialat				:		ایالات
 olsitr				:		اولسیتر
@@ -4611,7 +4537,6 @@ javaneh				:		جوانه
 movlod				:		مولود
 notfeh				:		نطفه
 hamzman				:		همزمانى
-al					:		آلى
 vakonesh			:		واکنش
 vasayel				:		وسایل
 vaghfeh				:		وقفه
@@ -4629,7 +4554,6 @@ aidolozh			:		ایدئولوژى
 aida				:		ایدا
 ariza				:		آریزا
 aideh				:		ایده
-al					:		آل
 alist				:		آلیست
 aiza				:		ایذاء
 airad				:		ایراد
@@ -4755,7 +4679,6 @@ akid				:		اکید
 akida				:		اکیدا
 aort				:		آئورت
 bedrod				:		بدرود
-da					:		دعاى
 khayr				:		خیر
 dinan				:		دینان
 masihkh				:		مسیحخى
@@ -5076,7 +4999,6 @@ badkho				:		بدخو
 baddhn				:		بددهن
 majrajo				:		ماجراجو
 badnam				:		بدنام
-bo					:		بزدل
 sharir				:		شریر
 ghad				:		قد
 bati				:		بطیى
@@ -5121,7 +5043,6 @@ kah					:		کاهى
 polk				:		پولکى
 peyro				:		پیرو
 tabayd				:		تبعیدى
-ta					:		تردست
 tarso				:		ترسو
 tarshro				:		ترشرو
 lash				:		لش
@@ -5239,7 +5160,6 @@ tas					:		طاس
 zarfiat				:		ظرفیت
 atel				:		عاطل
 batel				:		باطل
-am					:		عامى
 ajol				:		عجول
 manzo				:		منزوى
 asban				:		عصبانى
@@ -5351,7 +5271,6 @@ admkhoar			:		آدمخوارى
 admkhoranh			:		آدمخورانه
 admshksh			:		آدمشکش
 adm					:		آدمى
-ma					:		میخانه
 barod				:		برود
 bahbod				:		بهبودى
 baraysh				:		برایش
@@ -5409,7 +5328,6 @@ zananh				:		زنانه
 santor				:		سنتورى
 shash				:		شش
 shiar				:		شیارى
-mo					:		موى
 zanan				:		زنان
 form				:		فرم
 nagin				:		نگینى
@@ -5455,10 +5373,8 @@ rast				:		راستى
 parandeh			:		پرنده
 arovgh				:		آروغ
 aroein				:		آروین
-ar					:		آرى
 nazhadan			:		نژادان
 ghafghaz			:		قفقاز
-az					:		آز
 khorafat			:		خرافات
 ghoyod				:		قیود
 sazndh				:		سازنده
@@ -5517,7 +5433,6 @@ masafrt				:		مسافرتى
 kariab				:		کاریابى
 azhang				:		آژنگ
 azhir				:		آژیر
-as					:		آس
 asan				:		آسان
 dardsr				:		دردسر
 asansorch			:		آسانسورچى
@@ -5790,7 +5705,6 @@ shamah				:		شامه
 pasham				:		پاشام
 poshsh				:		پوشش
 zari				:		ضریع
-na					:		ناى
 poshsh				:		پوششى
 malpigh				:		مالپیقى
 zamaymh				:		ضمیمه
@@ -5910,7 +5824,6 @@ anonhgzim			:		آنونهگزیم
 anononim			:		آنونونیم
 anonoktim			:		آنونوکتیم
 anonkoadim			:		آنونکوادیم
-ah					:		آه
 ahar				:		آهار
 farobr				:		فروبرى
 ahardar				:		آهاردار
@@ -5935,7 +5848,6 @@ tonokeh				:		تنکه
 khish				:		خیش
 raba				:		رباى
 rabay				:		ربایى
-sa					:		ساى
 mashbk				:		مشبکى
 nabsh				:		نبشى
 kob					:		کوب
@@ -5967,7 +5879,6 @@ ahnkr				:		آهنکر
 ahobrh				:		آهوبره
 aho					:		آهوى
 ahk					:		آهکى
-oa					:		آوا
 shanod				:		شنودى
 oar					:		آوار
 oarg				:		آوارگى
@@ -6031,7 +5942,6 @@ sapkolom			:		سپکولوم
 aieh				:		آیه
 masal				:		مثالى
 motazamen			:		متضمن
-ai					:		آیى
 akadm				:		آکادمى
 akton				:		آکتئون
 nam					:		نام
@@ -6047,7 +5957,6 @@ akandeh				:		آکنده
 akordon				:		آکوردئون
 pianov				:		پیانو
 akovlad				:		آکولاد
-da					:		داء
 alsalb				:		الثعلب
 aljo				:		الجوع
 alrghs				:		الرقص
@@ -6122,7 +6031,6 @@ aktinivm			:		آکتینیوم
 rad					:		رعد
 motaded				:		متعدد
 taskin				:		تسکین
-f					:		فى
 nafsh				:		نفسه
 halal				:		هلالى
 bacheganeh			:		بچگانه
@@ -6176,8 +6084,6 @@ salikat				:		سلیکات
 alominivm			:		آلومینیومى
 khirat				:		خیراتى
 bonieh				:		بنیه
-bo					:		بو
-bo					:		بوى
 gandab				:		گنداب
 vahleh				:		وهله
 sam					:		سم
@@ -6274,7 +6180,6 @@ chashman			:		چشمان
 baramdh				:		برآمده
 ghaltndh			:		غلتنده
 faro				:		فرو
-gh					:		قى
 khirh				:		خیره
 cheshmha			:		چشمها
 khal				:		خال
@@ -6485,7 +6390,6 @@ safat				:		صفاتى
 sort				:		صورتى
 khamir				:		خمیر
 zarib				:		ضریب
-ba					:		باء
 taravat				:		طراوت
 tala				:		طلاى
 palasideh			:		پلاسیده
@@ -6748,7 +6652,6 @@ dasghalh			:		داسقاله
 dash				:		داسه
 das					:		داسى
 dashbord			:		داشبورد
-da					:		داعى
 nang				:		ننگ
 derafsh				:		درفش
 pazhmordeh			:		پژمرده
@@ -6864,7 +6767,6 @@ paroar				:		پروار
 monfared			:		منفرد
 vagha				:		واقع
 zel					:		ظل
-oz					:		عوض
 gheybat				:		غیبت
 feragh				:		فراق
 mihan				:		میهن
@@ -7113,7 +7015,6 @@ taht				:		تحت
 darkhak				:		درخاک
 danhadn				:		دنهادن
 doandh				:		دوانده
-at					:		آت
 aray				:		آرایى
 arghavan			:		ارغوان
 ashng				:		اشنگ
@@ -7245,7 +7146,6 @@ darkhoastgr			:		درخواستگر
 darkhoast			:		درخواستى
 darkhod				:		درخود
 farorftn			:		فرورفتن
-da					:		درخور
 bachg				:		بچگى
 dazdan				:		دزدان
 zadgan				:		زادگان
@@ -7256,7 +7156,6 @@ namayeshgah			:		نمایشگاه
 karan				:		کاران
 kashishan			:		کشیشان
 darkhorbodn			:		درخوربودن
-da					:		درخورد
 tanbl				:		تنبلى
 darkhormrdm			:		درخورمردم
 darkhormlkh			:		درخورملکه
@@ -7286,7 +7185,6 @@ dard				:		دردى
 dardiasozsh			:		دردیاسوزش
 dardig				:		دردیگ
 zodpz				:		زودپز
-do					:		دردکش
 darzkhirh			:		درذخیره
 darzhn				:		درذهن
 darrah				:		درراه
@@ -7390,8 +7288,6 @@ dargasht			:		درگاشت
 dargah				:		درگاه
 tamin				:		تامین
 tadarkat			:		تدارکاتى
-da					:		درگذشت
-da					:		درگذشتن
 dargzshth			:		درگذشته
 marhom				:		مرحوم
 dargldan			:		درگلدان
@@ -7446,7 +7342,6 @@ darnghshh			:		درنقشه
 khianat				:		خیانت
 derang				:		درنگ
 darnhmin			:		درنهمین
-da					:		درنوردیدن
 darno				:		درنوع
 darhrja				:		درهرجا
 barhm				:		برهمى
@@ -7538,7 +7433,6 @@ kenal				:		کانال
 mathrk				:		متحرکى
 motamem				:		متمم
 nabrabr				:		نابرابرى
-ya					:		یاى
 riv					:		ریوى
 daridg				:		دریدگى
 derigh				:		دریغ
@@ -7552,7 +7446,6 @@ darktab				:		درکتاب
 darkjaha			:		درکجاها
 darksh				:		درکش
 darksh				:		درکشى
-da					:		درکشیدن
 darkfn				:		درکفن
 darklah				:		درکلاه
 khimh				:		خیمه
@@ -7636,7 +7529,6 @@ oaj					:		اواج
 pishamd				:		پیشامد
 tofan				:		طوفان
 tad					:		تعدى
-da					:		دسترس
 dastrs				:		دسترسى
 majal				:		مجال
 magharbt			:		مقاربت
@@ -7843,7 +7735,6 @@ sobh				:		صبح
 sarashib			:		سراشیب
 silab				:		سیلابى
 alfzar				:		علفزار
-go					:		گلسنگ
 dashtan				:		دشتان
 dashkhor			:		دشخورى
 dasham				:		دشدمى
@@ -7879,7 +7770,6 @@ asam				:		اسامى
 batlh				:		باطله
 takalif				:		تکالیف
 dars				:		درسى
-do					:		دعاوى
 mamlat				:		معاملات
 tabah				:		تبه
 rozaneh				:		روزانه
@@ -8020,7 +7910,6 @@ borhan				:		برهان
 dalilh				:		دلیله
 mashogheh			:		معشوقه
 samson				:		سامسون
-de					:		دلکش
 chideh				:		چیده
 pashmalo			:		پشمالوى
 badm				:		بدم
@@ -8038,7 +7927,6 @@ damabin				:		دمابین
 damapa				:		دماپاى
 damapoya			:		دماپویا
 damadost			:		دمادوست
-da					:		دماسنج
 damasnj				:		دماسنجى
 damagheh			:		دماغه
 makhrot				:		مخروطى
@@ -8103,7 +7991,6 @@ aniab				:		انیاب
 pishin				:		پیشین
 daravr				:		درآورى
 shir				:		شیرى
-aj					:		عاج
 fil					:		فیل
 gharachah			:		قرچه
 gharochh			:		قروچه
@@ -8697,7 +8584,6 @@ zoznghh				:		ذوذنقه
 zozanagheh			:		ذوزنقه
 zosntaria			:		ذوسنطاریا
 zogh				:		ذوقى
-z					:		ذى
 zihgh				:		ذیحق
 zilaghh				:		ذیعلاقه
 zifn				:		ذیفن
@@ -9035,7 +8921,6 @@ soal				:		سئوال
 tashrifat			:		تشریفاتى
 rasan				:		رسن
 mahigir				:		ماهیگیرى
-la					:		لا
 yabnd				:		یابند
 raso				:		رسو
 rosoa				:		رسوا
@@ -9206,7 +9091,6 @@ badbo				:		بدبو
 ramanidan			:		رمانیدن
 ramad				:		رمد
 baziab				:		بازیابى
-ba					:		برگردان
 bargrdandn			:		برگرداندن
 tasad				:		تصاعدى
 harof				:		حروفى
@@ -9379,7 +9263,6 @@ jabjapzir			:		جابجاپذیر
 khadmat				:		خدماتى
 fasl				:		فاصل
 mobsr				:		مبصر
-ke					:		کتابخانه
 pezhohsh			:		پژوهش
 tanay				:		تنایى
 zayesh				:		زایش
@@ -9582,7 +9465,6 @@ rovnagh				:		رونق
 ronama				:		رونما
 ronevesht			:		رونوشت
 bardar				:		بردار
-in					:		عینى
 goah				:		گواهى
 karbn				:		کاربنى
 ronoys				:		رونویس
@@ -9702,7 +9584,6 @@ man					:		منى
 akhrm				:		اخرمى
 zar					:		زائر
 almghds				:		المقدس
-zo					:		زائو
 zaidn				:		زائیدن
 zaidh				:		زائیده
 zab					:		زاب
@@ -9757,7 +9638,6 @@ zayndh				:		زاینده
 zobaleh				:		زباله
 rob					:		روب
 rob					:		روبى
-j					:		جى
 asnobol				:		اسنوبول
 algol				:		الگول
 dabliv				:		دبلیو
@@ -9773,7 +9653,6 @@ sasanian			:		ساسانیان
 paskal				:		پاسکال
 partghal			:		پرتقالى
 panjab				:		پنجابى
-al					:		ال
 van					:		وان
 tatar				:		تاتارى
 taz					:		تازى
@@ -9867,16 +9746,13 @@ tahbih				:		تهبیه
 zarat				:		زراعتى
 zarafeh				:		زرافه
 zaranday			:		زراندایى
-za					:		زراندود
 zarandodkar			:		زراندودکارى
 zaravnd				:		زراوند
-za					:		زربفت
 zarprst				:		زرپرست
 zarprst				:		زرپرستى
 zarpor				:		زرپور
 zartsht				:		زرتشت
 zartsht				:		زرتشتى
-za					:		زرخرید
 zarkhiz				:		زرخیز
 ahoy				:		آهویى
 baghhoh				:		بقهوه
@@ -10467,7 +10343,6 @@ shamath				:		شماطه
 garinoych			:		گرینویچ
 sat					:		ساعتى
 sed					:		ساعد
-sa					:		ساعى
 saianh				:		ساعیانه
 saghar				:		ساغر
 badigr				:		بدیگرى
@@ -10765,7 +10640,6 @@ sakhnor				:		سخنور
 bagoynd				:		بگویند
 sakh				:		سخى
 balabr				:		بالابر
-jo					:		جوع
 sadab				:		سداب
 sadbnd				:		سدبندى
 sadrah				:		سدراه
@@ -10810,12 +10684,10 @@ sarasimeh			:		سراسیمه
 sarashib			:		سراشیبى
 soragh				:		سراغ
 saraf				:		سراف
-sa					:		سرافراز
 sarafraz			:		سرافرازى
 sarafkndg			:		سرافکندگى
 sarafkndh			:		سرافکنده
 saranjam			:		سرانجام
-sa					:		سرانداز
 sorandan			:		سراندن
 saransan			:		سرانسان
 sarangsht			:		سرانگشت
@@ -10910,7 +10782,6 @@ sarkht				:		سرخت
 sorkhejeh			:		سرخجه
 sarkhchh			:		سرخچه
 sarkhdar			:		سرخدار
-sa					:		سرخر
 sarkhrg				:		سرخرگ
 sarkhrgchh			:		سرخرگچه
 sarakhs				:		سرخس
@@ -10928,7 +10799,6 @@ sardab				:		سرداب
 sardabh				:		سردابه
 sardar				:		سردار
 sardavr				:		سرداور
-sa					:		سردبیر
 sardkhanh			:		سردخانه
 sardr				:		سردر
 sardrd				:		سردرد
@@ -10940,7 +10810,6 @@ sardrhm				:		سردرهم
 sardsth				:		سردسته
 sardst				:		سردستى
 sardshdn			:		سردشدن
-sa					:		سردفتر
 sardmagh			:		سردماغ
 sardah				:		سرده
 sardhndh			:		سردهنده
@@ -10974,7 +10843,6 @@ sarsbz				:		سرسبز
 sarsbz				:		سرسبزى
 sarsbk				:		سرسبک
 sarsprdg			:		سرسپردگى
-sa					:		سرسپردن
 sarston				:		سرستون
 sarskht				:		سرسختى
 daraghidh			:		درعقیده
@@ -11010,7 +10878,6 @@ sarfsl				:		سرفصل
 azim				:		عظیم
 maslhanh			:		مسلحانه
 sarghlm				:		سرقلم
-sa					:		سرگذشت
 sargrdan			:		سرگردانى
 hadf				:		هدفى
 sargrm				:		سرگرم
@@ -11024,7 +10891,6 @@ sargshtg			:		سرگشتگى
 sargshth			:		سرگشته
 sargijh				:		سرگیجه
 sargin				:		سرگین
-sa					:		سرلشکر
 sarlshkr			:		سرلشکرى
 sarlohh				:		سرلوحه
 sarlolh				:		سرلوله
@@ -11043,8 +10909,6 @@ aman				:		امانى
 sarmth				:		سرمته
 sarmhor				:		سرمحور
 sarmad				:		سرمد
-sa					:		سرمست
-sa					:		سرمشق
 sarmghalh			:		سرمقاله
 sormah				:		سرمه
 sorna				:		سرنا
@@ -11054,11 +10918,8 @@ sarnkh				:		سرنخ
 sarand				:		سرند
 sorang				:		سرنگ
 tazrighat			:		تزریقات
-sa					:		سرنگون
 sarngon				:		سرنگونى
 sarnoys				:		سرنویس
-sa					:		سرنیزه
-sa					:		سرهنگ
 sarhng				:		سرهنگى
 tahlil				:		تهلیلى
 chopan				:		چوپانى
@@ -11110,11 +10971,9 @@ sarkar				:		سرکار
 sarkargr			:		سرکارگر
 sarkrdg				:		سرکردگى
 sarkrdh				:		سرکرده
-sa					:		سرکش
 sarksht				:		سرکشتى
 sarksh				:		سرکشى
 sarkshid			:		سرکشید
-sa					:		سرکشیدن
 sarkshish			:		سرکشیش
 sarklmh				:		سرکلمه
 sarkob				:		سرکوب
@@ -11154,7 +11013,6 @@ sad					:		سعد
 kof					:		کوفى
 safh				:		سعفه
 shahdih				:		شهدیه
-sa					:		سعى
 baligh				:		بلیغ
 koshsh				:		کوشش
 said				:		سعید
@@ -11171,7 +11029,6 @@ safak				:		سفاک
 baftha				:		بافتها
 saftn				:		سفتن
 softah				:		سفته
-ba					:		باى
 tasnieh				:		تثنیه
 siaht				:		سیاحتى
 joanan				:		جوانان
@@ -11463,7 +11320,6 @@ zala				:		ضلعى
 gang				:		گانگى
 galbrg				:		گلبرگى
 gosh				:		گوشى
-lo					:		لو
 mabnay				:		مبنایى
 vatd				:		وتدى
 yazdan				:		یزدان
@@ -11712,7 +11568,6 @@ nazol				:		نزولى
 bizar				:		بیزار
 sirat				:		سیرت
 sirmjaz				:		سیرمجاز
-go					:		گوى
 sirnshdh			:		سیرنشده
 sir					:		سیرى
 siz					:		سیز
@@ -12061,7 +11916,6 @@ bor					:		بور
 bikhoab				:		بیخواب
 pazirofteh			:		پذیرفته
 paranrzh			:		پرانرژى
-po					:		پرخور
 pirchshm			:		پیرچشم
 tizbin				:		تیزبین
 jaban				:		جبان
@@ -12449,7 +12303,6 @@ shoka				:		شوکا
 shovkaran			:		شوکران
 shokolat			:		شوکولات
 shokolat			:		شوکولاتى
-sh					:		شى
 shiat				:		شیئت
 shayad				:		شیاد
 shiadanh			:		شیادانه
@@ -12824,7 +12677,6 @@ sahivn				:		صهیون
 sahivnist			:		صهیونیست
 savabdid			:		صوابدید
 aiat				:		آیاتى
-ba					:		بدحساب
 barbat				:		بربط
 hayah				:		حیه
 sarhan				:		سرحان
@@ -13909,7 +13761,6 @@ badrikht			:		بدریختى
 badzban				:		بدزبانى
 badzdn				:		بدزدن
 badsrsht			:		بدسرشت
-ba					:		بدسگال
 badsgal				:		بدسگالى
 badshans			:		بدشانس
 badshdn				:		بدشدن
@@ -13976,7 +13827,6 @@ bado				:		بدوى
 badaviat			:		بدویت
 govaresh			:		گوارش
 ameh				:		عامه
-ba					:		بدیمن
 badin				:		بدین
 badinsan			:		بدینسان
 badinso				:		بدینسو
@@ -14113,7 +13963,6 @@ toyl				:		طویلى
 naf					:		ناف
 darjoahr			:		درجواهر
 berjis				:		برجیس
-ba					:		برچسب
 barchidn			:		برچیدن
 barchidn			:		برچیدنى
 barchinndh			:		برچیننده
@@ -14145,7 +13994,6 @@ sarriz				:		سرریزى
 barz				:		برز
 barzakh				:		برزخ
 barzkh				:		برزخى
-ba					:		برزدن
 barzg				:		برزگ
 barzgr				:		برزگرى
 falakat				:		فلاکت
@@ -14207,7 +14055,6 @@ bargrdndh			:		برگردنده
 bargzar				:		برگزارى
 bargzid				:		برگزید
 bargzidg			:		برگزیدگى
-ba					:		برگزیدن
 montakhab			:		منتخب
 bargzinndh			:		برگزیننده
 bargzin				:		برگزینى
@@ -14429,7 +14276,6 @@ rakaml				:		رکامل
 bat					:		بطى
 bazahr				:		بظاهر
 bazr				:		بظر
-ba					:		بع
 babart				:		بعبارت
 bajlh				:		بعجله
 gham				:		قائم
@@ -14784,7 +14630,6 @@ mokatabah			:		مکاتبه
 kolon				:		کلون
 yaghma				:		یغما
 yovn				:		یون
-no					:		نوعى
 matk				:		متکى
 gamar				:		گمارى
 andazndh			:		اندازنده
@@ -14985,7 +14830,6 @@ esmat				:		عصمت
 efaf				:		عفاف
 aft					:		عفتى
 tabadol				:		تبادل
-ib					:		عیبى
 gharzanh			:		غرضانه
 ghel				:		غل
 ghalt				:		غلطى
@@ -15240,27 +15084,22 @@ abed				:		عابد
 aber				:		عابر
 ajel				:		عاجل
 ajlanh				:		عاجلانه
-aj					:		عاجى
-ad					:		عاد
 bakhordn			:		بخوردن
 mahianh				:		ماهیانه
 adta				:		عادتا
 adt					:		عادتى
 adel				:		عادل
 adh					:		عاده
-ar					:		عار
 arez				:		عارض
 arezh				:		عارضه
 arz					:		عارضى
 aref				:		عارف
 bahghaygh			:		بحقایق
-ar					:		عارى
 tator				:		تطور
 jazbeh				:		جذبه
 faribndg			:		فریبندگى
 matanat				:		متانت
 arieh				:		عاریه
-as					:		عاصى
 agh					:		عاق
 aghbat				:		عاقبت
 nindish				:		نیندیشى
@@ -15614,7 +15453,6 @@ eliat				:		علیت
 alihdh				:		علیحده
 aleygh				:		علیق
 alil				:		علیل
-am					:		عم
 vashingtn			:		واشینگتن
 emeamh				:		عمامه
 aman				:		عمان
@@ -15660,7 +15498,6 @@ amodit				:		عمودیت
 omom				:		عموم
 amoma				:		عموماً
 amigha				:		عمیقا
-an					:		عن
 anabian				:		عنابیان
 enan				:		عنان
 anbar				:		عنبر
@@ -15702,9 +15539,7 @@ odalbrgh			:		عودالبرق
 ovdat				:		عودت
 odzn				:		عودزن
 odsoz				:		عودسوز
-oo					:		عوعو
 ookn				:		عوعوکن
-om					:		عوم
 eyadt				:		عیادت
 iadt				:		عیادتى
 iarsnj				:		عیارسنج
@@ -15724,7 +15559,6 @@ fesh				:		فصح
 fetr				:		فطر
 fatir				:		فطیر
 idfsh				:		عیدفصح
-id					:		عیدى
 iso					:		عیسوى
 mosalman			:		مسلمان
 ish					:		عیشى
@@ -15997,7 +15831,6 @@ gheyz				:		غیض
 gheyz				:		غیظ
 feovdal				:		فئودال
 feovdalism			:		فئودالیسم
-fa					:		فا
 fateh				:		فاتح
 fatehaneh			:		فاتحانه
 fajr				:		فاجر
@@ -16371,7 +16204,6 @@ fazait				:		فضائیت
 fazahat				:		فضاحت
 fazadar				:		فضادار
 fazal				:		فضال
-fa					:		فضانورد
 fazanor				:		فضانورى
 darchap				:		درچاپ
 davayer				:		دوایر
@@ -16417,7 +16249,6 @@ falavanon			:		فلاوانون
 falavn				:		فلاون
 safel				:		سافل
 falj				:		فلجى
-ai					:		ایى
 takntivm			:		تکنتیوم
 barioom				:		باریوم
 manizivm			:		منیزیوم
@@ -16474,7 +16305,6 @@ maysh				:		مایش
 hoapimay			:		هواپیمایى
 dastanha			:		داستانها
 fana				:		فنا
-fa					:		فناپذیر
 fananapzir			:		فناناپذیر
 fandghh				:		فندقه
 yasim				:		یاسیم
@@ -16706,7 +16536,6 @@ dodsth				:		دودسته
 manzelat			:		منزلت
 paroardegar			:		پروردگار
 badaro				:		بدارو
-za					:		زاى
 ghadrdan			:		قدردان
 ghadrdan			:		قدردانى
 ghadrshnas			:		قدرشناس
@@ -17145,7 +16974,6 @@ janayat				:		جنایات
 majholat			:		مجهولات
 kashah				:		کاشه
 kashkl				:		کاشکل
-ta					:		تاى
 paran				:		پرانى
 tornesol			:		تورنسل
 chasban				:		چسبانى
@@ -17263,7 +17091,6 @@ marajat				:		مراجعات
 mashkok				:		مشکوکى
 makashfat			:		مکاشفات
 yohna				:		یوحنا
-ne					:		نظامنامه
 adayeh				:		ادعیه
 hosha				:		هوشع
 pavrgh				:		پاورقى
@@ -17983,7 +17810,6 @@ garmadh				:		گرماده
 garmadost			:		گرمادوست
 garmaza				:		گرمازا
 garmazdg			:		گرمازدگى
-ga					:		گرمازده
 khodkmar			:		خودکمار
 garmagra			:		گرماگراى
 garmagir			:		گرماگیر
@@ -17993,7 +17819,6 @@ garmanma			:		گرمانما
 garmayab			:		گرمایاب
 garmay				:		گرمایى
 garmtr				:		گرمتر
-ga					:		گرمخانه
 garmsir				:		گرمسیر
 garmak				:		گرمک
 khaft				:		خفتى
@@ -18824,7 +18649,6 @@ manzomh				:		منظومه
 mahsosat			:		محسوسات
 makshof				:		مکشوف
 magholat			:		مقولات
-ma					:		ماى
 mayahtaj			:		مایحتاج
 aldaid				:		آلدئیدى
 hidro				:		هیدرو
@@ -19709,8 +19533,6 @@ mazlom				:		مظلوم
 mazenah				:		مظنه
 tanzil				:		تنزیل
 maznon				:		مظنون
-ma					:		مع
-ma					:		معا
 mea					:		معاء
 doghagh				:		دقاق
 sam					:		صائم
@@ -21207,7 +21029,6 @@ darghsmt			:		درقسمتى
 niroy				:		نیرویى
 neystan				:		نیستان
 nist				:		نیستى
-va					:		وا
 nishtar				:		نیشتر
 nishgon				:		نیشگون
 nishkr				:		نیشکرى
@@ -21503,7 +21324,6 @@ parbha				:		پربها
 parbhrh				:		پربهره
 parboth				:		پربوته
 parpa				:		پرپا
-po					:		پرپر
 parpsht				:		پرپشتى
 parpshtkar			:		پرپشتکار
 parpshm				:		پرپشم
@@ -21567,7 +21387,6 @@ pardrkht			:		پردرخت
 pardrdsr			:		پردردسر
 parda				:		پردعا
 pardghdghh			:		پردغدغه
-po					:		پردل
 pardl				:		پردلى
 pardm				:		پردمى
 pardiz				:		پردیز
@@ -21720,7 +21539,6 @@ parikardit			:		پریکاردیت
 perk				:		پرک
 parkar				:		پرکارى
 parkromosom			:		پرکروموسوم
-pa					:		پرکنده
 parknndh			:		پرکننده
 parkn				:		پرکنى
 asthfaz				:		استحفاظى
@@ -22014,7 +21832,6 @@ pishoai				:		پیشوایى
 afrighay			:		افریقایى
 pishroha			:		پیشروها
 torbin				:		توربینى
-ta					:		تائى
 soghor				:		ثغور
 arjah				:		ارجح
 mani				:		معنی
@@ -22064,7 +21881,6 @@ alihza				:		علیهذا
 vabaftn				:		وابافتن
 vabafth				:		وابافته
 vabran				:		وابران
-at					:		آتى
 alfrd				:		آلفرد
 tanisan				:		تنیسان
 alagh				:		علائق
@@ -22463,7 +22279,6 @@ yaklh				:		یاکله
 taghahr				:		تغاهر
 shaliteh			:		شلیته
 dambil				:		دمبیل
-do					:		دوى
 rozaz				:		روزاز
 koyan				:		کیان
 mahrzn				:		مهرزنى
@@ -22708,7 +22523,6 @@ hoakhor				:		هواخورى
 hoadar				:		هوادار
 hoazist				:		هوازیستى
 hoasan				:		هواسان
-ha					:		هواسنج
 hoashnas			:		هواشناس
 hoanamh				:		هوانامه
 hoah				:		هواه
@@ -22799,7 +22613,6 @@ yaray				:		یارایى
 yaro				:		یارو
 yazdhmin			:		یازدهمین
 yasm				:		یاسم
-yo					:		یاعو
 yafa				:		یافا
 yafs				:		یافث
 yalan				:		یالان
@@ -24474,7 +24287,6 @@ harb				:		حرب
 harba				:		حرباء
 harba				:		حربع
 harbeh				:		حربه
-zo					:		ذو
 laf					:		لفى
 shano				:		شنو
 shano				:		شنوى

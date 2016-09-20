@@ -253,7 +253,7 @@ namespace CoolNameGenerator.Helper
             {
                 persian = x.Contains(':') ? x.Substring(x.IndexOf(':') + 1).ToLower() : x.ToLower(),
                 finglish = x.Contains(':') ? x.Substring(0, x.IndexOf(':')).ToLower() : null
-            });
+            }).SkipWhile(x => x.finglish?.Length < 3 || x.persian?.Length < 3);
 
             var uniqueWords = pairWords.Distinct((a, b) => a.persian == b.persian, c => c.persian.GetHashCode()).ToDictionary(p => p.persian, p => p.finglish);
 

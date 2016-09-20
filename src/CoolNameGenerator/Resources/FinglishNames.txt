@@ -15,16 +15,14 @@ aproand				:		اَپروَند
 aparviz				:		اپرویز
 aproaizh			:		اَپروَیژ
 apivh				:		اَپیوه
-atb					:		اتبك
 atrs				:		اَترس
-atr					:		اترك
+atrak				:		اترك
 atrin				:		اترین
 asir				:		اثیر
 ehteram				:		احترام
 ehtesham			:		احتشام
-ahd					:		احد
+ahad				:		احد
 ehsan				:		احسان
-ahsanallh			:		احسانالله
 ehlam				:		احلام
 ahmad				:		احمد
 ahmdrza				:		احمدرضا
@@ -35,7 +33,6 @@ akhshad				:		اخشاد
 ekhshid				:		اخشید
 akhgr				:		اخـگر
 akhgr				:		اخگر
-adr					:		اَدرك
 adris				:		ادریس
 adrina				:		ادرینا
 adlia				:		ادلیا

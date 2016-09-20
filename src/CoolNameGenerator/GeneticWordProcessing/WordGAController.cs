@@ -93,47 +93,41 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public async Task LoadWordFiles()
         {
-            //WordsDic.Add(new UniqueWords("EnglishWords", await FileExtensions.ReadWordFileAsync("EnglishWords"), false, Math.Log)
-            //{
-            //    DuplicateMatchingFitness = -4,
-            //    MatchingFitness = 5,
-            //    UnMatchingFitness = -3
-            //});
+            UniqueWords.ApplySubWordsCoverageValueFunc = Math.Log;
 
-            //WordsDic.Add(new UniqueWords("EnglishNames", await FileExtensions.ReadWordFileAsync("EnglishNames"), false, Math.Log)
-            //{
-            //    DuplicateMatchingFitness = -4,
-            //    MatchingFitness = 4,
-            //    UnMatchingFitness = -1
-            //});
-
-            //WordsDic.Add(new UniqueWords("FinglishWords", await FileExtensions.ReadWordFileAsync("FinglishWords"), false, Math.Log)
-            //{
-            //    DuplicateMatchingFitness = -5,
-            //    MatchingFitness = 4,
-            //    UnMatchingFitness = -1
-            //});
-
-
-            //WordsDic.Add(new UniqueWords("FinglishNames", await FileExtensions.ReadWordFileAsync("FinglishNames"), false, Math.Log)
-            //{
-            //    DuplicateMatchingFitness = -2,
-            //    MatchingFitness = 6,
-            //    UnMatchingFitness = -4
-            //});
-
-            WordsDic.Add(new UniqueWords("FinglishNames", await FileExtensions.ReadWordFileAsync("FinglishNames"), false, Math.Log)
+            WordsDic.Add(new UniqueWords("EnglishWords", await FileExtensions.ReadWordFileAsync("EnglishWords"), false)
             {
-                DuplicateMatchingFitness = -2,
+                DuplicateMatchingFitness = -4,
                 MatchingFitness = 6,
-                UnMatchingFitness = -4
+                UnMatchingFitness = -1
+            });
+
+            WordsDic.Add(new UniqueWords("EnglishNames", await FileExtensions.ReadWordFileAsync("EnglishNames"), false)
+            {
+                DuplicateMatchingFitness = -20,
+                MatchingFitness = 4,
+                UnMatchingFitness = 0
+            });
+
+            WordsDic.Add(new UniqueWords("FinglishWords", await FileExtensions.ReadWordFileAsync("FinglishWords"), false)
+            {
+                DuplicateMatchingFitness = -10,
+                MatchingFitness = 4,
+                UnMatchingFitness = 0
+            });
+
+
+            WordsDic.Add(new UniqueWords("FinglishNames", await FileExtensions.ReadWordFileAsync("FinglishNames"), false)
+            {
+                DuplicateMatchingFitness = -4,
+                MatchingFitness = 10,
+                UnMatchingFitness = -2
             });
         }
 
         public override ITermination CreateTermination()
         {
-            //return new OrTermination(new TimeEvolvingTermination(TimeSpan.FromHours(2)), new FitnessThresholdTermination(0.99999995));
-            return new TimeEvolvingTermination(TimeSpan.FromHours(2));
+            return new OrTermination(new TimeEvolvingTermination(TimeSpan.FromHours(2)), new FitnessThresholdTermination(0.99999995));
         }
         public override ICrossover CreateCrossover()
         {
