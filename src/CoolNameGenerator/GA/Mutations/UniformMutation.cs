@@ -47,12 +47,13 @@ namespace CoolNameGenerator.GA.Mutations
         /// Initializes a new instance of the <see cref="UniformMutation"/> class.
         /// </summary>
         /// <remarks>Creates an instance of UniformMutation where some random genes will be mutated.</remarks>
-        public UniformMutation() : this(false)
+        public UniformMutation() : this(true)
         {
         }
         #endregion
 
         #region Methods
+
         /// <summary>
         /// Mutate the specified chromosome.
         /// </summary>
@@ -84,6 +85,7 @@ namespace CoolNameGenerator.GA.Mutations
                 }
             }
         }
+
         #endregion
     }
 }

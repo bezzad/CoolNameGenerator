@@ -106,6 +106,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Best Chromosomes.
+        /// </summary>
+        public static string BestChromosomes {
+            get {
+                return ResourceManager.GetString("BestChromosomes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
@@ -142,11 +151,29 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Crossover Probability.
+        /// </summary>
+        public static string CrossoverProbability {
+            get {
+                return ResourceManager.GetString("CrossoverProbability", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Display result realtime.
         /// </summary>
         public static string DisplayRealtime {
             get {
                 return ResourceManager.GetString("DisplayRealtime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Elite Selection Percent.
+        /// </summary>
+        public static string EliteSelectionPercent {
+            get {
+                return ResourceManager.GetString("EliteSelectionPercent", resourceCulture);
             }
         }
         
@@ -201,6 +228,15 @@ namespace CoolNameGenerator.Properties {
         public static string generation_should_have_at_least_2_chromosomes {
             get {
                 return ResourceManager.GetString("generation_should_have_at_least_2_chromosomes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generation Keeping Number.
+        /// </summary>
+        public static string GenerationKeepingNumber {
+            get {
+                return ResourceManager.GetString("GenerationKeepingNumber", resourceCulture);
             }
         }
         
@@ -264,6 +300,15 @@ namespace CoolNameGenerator.Properties {
         public static string Mutation {
             get {
                 return ResourceManager.GetString("Mutation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mutation Probability.
+        /// </summary>
+        public static string MutationProbability {
+            get {
+                return ResourceManager.GetString("MutationProbability", resourceCulture);
             }
         }
         
@@ -408,6 +453,15 @@ namespace CoolNameGenerator.Properties {
         public static string Toolbox {
             get {
                 return ResourceManager.GetString("Toolbox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Word Dictionaries.
+        /// </summary>
+        public static string WordDictionaries {
+            get {
+                return ResourceManager.GetString("WordDictionaries", resourceCulture);
             }
         }
         

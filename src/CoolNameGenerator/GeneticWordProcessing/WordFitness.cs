@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GA.Fitnesses;
 using CoolNameGenerator.Helper;
 using CoolNameGenerator.Properties;
-using Enumerable = System.Linq.Enumerable;
 
 namespace CoolNameGenerator.GeneticWordProcessing
 {

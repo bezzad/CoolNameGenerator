@@ -8,7 +8,7 @@ namespace CoolNameGenerator.Graphics
 {
     public sealed class WordsPanel : FlowLayoutPanel
     {
-        public WordLabel[] WordsLabels { get; set; }
+        public List<WordLabel> WordsLabels { get; set; }
 
         public int Count { get; private set; }
 
@@ -34,13 +34,13 @@ namespace CoolNameGenerator.Graphics
             Count = count;
             Controls.Clear();
 
-            WordsLabels = new WordLabel[count];
+            WordsLabels = new List<WordLabel>();
             for (var i = 0; i < count; i++)
             {
-                WordsLabels[i] = new WordLabel();
+                WordsLabels.Add(new WordLabel());
             }
 
-            Controls.AddRange(WordsLabels);
+            Controls.AddRange(WordsLabels.ToArray());
         }
 
         public void SetWords(IList<IChromosome> chromosomes)

@@ -7,7 +7,6 @@ using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GA.Crossovers;
 using CoolNameGenerator.GA.Fitnesses;
 using CoolNameGenerator.GA.Mutations;
-using CoolNameGenerator.GA.Populations;
 using CoolNameGenerator.GA.Selections;
 using CoolNameGenerator.GA.Terminations;
 using CoolNameGenerator.Helper;
@@ -29,16 +28,23 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// </summary>
         public float CrossoverProbability { get; set; } = 0.7f;
 
-        public Func<IChromosome> ChromosomeFactory;
-        public Action<IList<IChromosome>> DrawAllAction;
-        public Action<IChromosome> DrawAction;
+        /// <summary>
+        /// Minimum number chromosomes support to be selected.
+        /// </summary>
+        public int EliteSelectionNumber { get; set; } = 30;
 
-        public WordGaController(Func<IChromosome> chromosomeFactory, Action<IList<IChromosome>> drawAllAction)
+        /// <summary>
+        /// The number of generations to keep in the population
+        /// </summary>
+        public int GenerationsNumber { get; set; } = 10;
+
+        public Func<IChromosome> ChromosomeFactory { get; set; }
+        public Action<IChromosome> DrawAction { get; set; }
+
+        public WordGaController(Func<IChromosome> chromosomeFactory)
         {
             ChromosomeFactory = chromosomeFactory;
-            DrawAllAction = drawAllAction;
         }
-
         public WordGaController()
         {
             ChromosomeFactory = () => new WordChromosome();
@@ -61,7 +67,6 @@ namespace CoolNameGenerator.GeneticWordProcessing
         {
             return ChromosomeFactory();
         }
-
         public override IFitness CreateFitness()
         {
             var fitness = new WordFitness();
@@ -82,15 +87,9 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
             return fitness;
         }
-
         public override void Draw(IChromosome bestChromosome)
         {
             DrawAction?.Invoke(bestChromosome);
-        }
-
-        public void DrawAll(IList<IChromosome> chromosomes)
-        {
-            DrawAllAction?.Invoke(chromosomes);
         }
 
         public async Task LoadWordFiles()
@@ -133,56 +132,15 @@ namespace CoolNameGenerator.GeneticWordProcessing
         }
         public override ICrossover CreateCrossover()
         {
-            //return new UniqueCrossover();
-            return new UniformCrossover(0.5f);
-            //return new TwoPointCrossover();
-            //return new ThreeParentCrossover();
-            //return new OnePointCrossover();
+            return new UniformCrossover();
         }
-
-        public ICrossover CreateCrossover(Population pop)
-        {
-            //return new UniqueCrossover(pop);
-            return new UniformCrossover(0.5f);
-            //return new TwoPointCrossover();
-            //return new ThreeParentCrossover();
-            //return new OnePointCrossover();
-        }
-
         public override IMutation CreateMutation()
         {
             return new UniformMutation(true);
-
-            //return new ReverseSequenceMutation();
         }
-
-
-
-        public ICrossover[] CreateCrossovers()
-        {
-            return new ICrossover[]
-            {
-                new UniformCrossover(),
-                new TwoPointCrossover(),
-                new ThreeParentCrossover(),
-                new OnePointCrossover()
-            };
-        }
-        public IMutation[] CreateMutations()
-        {
-            return new IMutation[]
-            {
-                new UniformMutation(),
-                new ReverseSequenceMutation()
-            };
-        }
-
         public override ISelection CreateSelection()
         {
-            //return new RouletteWheelSelection();
-            //return new StochasticUniversalSamplingSelection();
-            // new TournamentSelection();
-            return new EliteSelection(30);
+            return new EliteSelection(EliteSelectionNumber);
         }
     }
 }

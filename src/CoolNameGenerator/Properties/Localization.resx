@@ -246,4 +246,22 @@
   <data name="Stop" xml:space="preserve">
     <value>Stop</value>
   </data>
+  <data name="CrossoverProbability" xml:space="preserve">
+    <value>Crossover Probability</value>
+  </data>
+  <data name="EliteSelectionPercent" xml:space="preserve">
+    <value>Elite Selection Percent</value>
+  </data>
+  <data name="GenerationKeepingNumber" xml:space="preserve">
+    <value>Generation Keeping Number</value>
+  </data>
+  <data name="MutationProbability" xml:space="preserve">
+    <value>Mutation Probability</value>
+  </data>
+  <data name="BestChromosomes" xml:space="preserve">
+    <value>Best Chromosomes</value>
+  </data>
+  <data name="WordDictionaries" xml:space="preserve">
+    <value>Word Dictionaries</value>
+  </data>
 </root>

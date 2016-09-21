@@ -31,6 +31,7 @@ namespace CoolNameGenerator.GA.Chromosomes
         #endregion
 
         #region Methods
+
         /// <summary>
         /// Generates the gene for the specified index.
         /// </summary>
