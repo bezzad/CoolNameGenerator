@@ -264,4 +264,7 @@
   <data name="WordDictionaries" xml:space="preserve">
     <value>Word Dictionaries</value>
   </data>
+  <data name="BestResults" xml:space="preserve">
+    <value>Best Results</value>
+  </data>
 </root>

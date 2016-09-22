@@ -115,6 +115,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Best Results.
+        /// </summary>
+        public static string BestResults {
+            get {
+                return ResourceManager.GetString("BestResults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
