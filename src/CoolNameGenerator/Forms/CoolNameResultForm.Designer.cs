@@ -53,9 +53,16 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabExtraTools = new System.Windows.Forms.TabControl();
-            this.tabDictionaries = new System.Windows.Forms.TabPage();
-            this.gbBestWords = new System.Windows.Forms.GroupBox();
             this.tabBestChromosomes = new System.Windows.Forms.TabPage();
+            this.gbBestWords = new System.Windows.Forms.GroupBox();
+            this.dgvBestResults = new System.Windows.Forms.DataGridView();
+            this.colWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFitness = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabWordDictionaries = new System.Windows.Forms.TabPage();
+            this.gbWordDic = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddWordDictionaries = new System.Windows.Forms.Button();
+            this.panelExtraWordsDic = new System.Windows.Forms.FlowLayoutPanel();
             this.containerMain = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.gbGAToolbox = new System.Windows.Forms.GroupBox();
@@ -100,11 +107,14 @@
             this.numEliteSelection = new System.Windows.Forms.NumericUpDown();
             this.gbResult = new System.Windows.Forms.GroupBox();
             this.wpResults = new CoolNameGenerator.Graphics.WordsPanel();
-            this.dgvBestResults = new System.Windows.Forms.DataGridView();
             this.menuStrip.SuspendLayout();
             this.tabExtraTools.SuspendLayout();
-            this.tabDictionaries.SuspendLayout();
+            this.tabBestChromosomes.SuspendLayout();
             this.gbBestWords.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBestResults)).BeginInit();
+            this.tabWordDictionaries.SuspendLayout();
+            this.gbWordDic.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.containerMain)).BeginInit();
             this.containerMain.Panel1.SuspendLayout();
             this.containerMain.Panel2.SuspendLayout();
@@ -134,7 +144,6 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEliteSelection)).BeginInit();
             this.gbResult.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBestResults)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -316,8 +325,8 @@
             // tabExtraTools
             // 
             this.tabExtraTools.Alignment = System.Windows.Forms.TabAlignment.Right;
-            this.tabExtraTools.Controls.Add(this.tabDictionaries);
             this.tabExtraTools.Controls.Add(this.tabBestChromosomes);
+            this.tabExtraTools.Controls.Add(this.tabWordDictionaries);
             this.tabExtraTools.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabExtraTools.HotTrack = true;
             this.tabExtraTools.Location = new System.Drawing.Point(0, 0);
@@ -326,21 +335,21 @@
             this.tabExtraTools.Name = "tabExtraTools";
             this.tabExtraTools.SelectedIndex = 0;
             this.tabExtraTools.ShowToolTips = true;
-            this.tabExtraTools.Size = new System.Drawing.Size(316, 686);
+            this.tabExtraTools.Size = new System.Drawing.Size(387, 686);
             this.tabExtraTools.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabExtraTools.TabIndex = 3;
             // 
-            // tabDictionaries
+            // tabBestChromosomes
             // 
-            this.tabDictionaries.Controls.Add(this.gbBestWords);
-            this.tabDictionaries.Location = new System.Drawing.Point(4, 4);
-            this.tabDictionaries.Margin = new System.Windows.Forms.Padding(4);
-            this.tabDictionaries.Name = "tabDictionaries";
-            this.tabDictionaries.Padding = new System.Windows.Forms.Padding(4);
-            this.tabDictionaries.Size = new System.Drawing.Size(287, 678);
-            this.tabDictionaries.TabIndex = 0;
-            this.tabDictionaries.Text = "WordDictionaries";
-            this.tabDictionaries.UseVisualStyleBackColor = true;
+            this.tabBestChromosomes.Controls.Add(this.gbBestWords);
+            this.tabBestChromosomes.Location = new System.Drawing.Point(4, 4);
+            this.tabBestChromosomes.Margin = new System.Windows.Forms.Padding(4);
+            this.tabBestChromosomes.Name = "tabBestChromosomes";
+            this.tabBestChromosomes.Padding = new System.Windows.Forms.Padding(4);
+            this.tabBestChromosomes.Size = new System.Drawing.Size(358, 678);
+            this.tabBestChromosomes.TabIndex = 0;
+            this.tabBestChromosomes.Text = "BestChromosomes";
+            this.tabBestChromosomes.UseVisualStyleBackColor = true;
             // 
             // gbBestWords
             // 
@@ -348,21 +357,105 @@
             this.gbBestWords.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbBestWords.Location = new System.Drawing.Point(4, 4);
             this.gbBestWords.Name = "gbBestWords";
-            this.gbBestWords.Size = new System.Drawing.Size(279, 670);
+            this.gbBestWords.Size = new System.Drawing.Size(350, 670);
             this.gbBestWords.TabIndex = 0;
             this.gbBestWords.TabStop = false;
             this.gbBestWords.Text = "BestResults";
             // 
-            // tabBestChromosomes
+            // dgvBestResults
             // 
-            this.tabBestChromosomes.Location = new System.Drawing.Point(4, 4);
-            this.tabBestChromosomes.Margin = new System.Windows.Forms.Padding(4);
-            this.tabBestChromosomes.Name = "tabBestChromosomes";
-            this.tabBestChromosomes.Padding = new System.Windows.Forms.Padding(4);
-            this.tabBestChromosomes.Size = new System.Drawing.Size(287, 678);
-            this.tabBestChromosomes.TabIndex = 1;
-            this.tabBestChromosomes.Text = "BestChromosomes";
-            this.tabBestChromosomes.UseVisualStyleBackColor = true;
+            this.dgvBestResults.AllowUserToAddRows = false;
+            this.dgvBestResults.AllowUserToDeleteRows = false;
+            this.dgvBestResults.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvBestResults.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvBestResults.ColumnHeadersHeight = 40;
+            this.dgvBestResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colWord,
+            this.colFitness});
+            this.dgvBestResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBestResults.Location = new System.Drawing.Point(3, 18);
+            this.dgvBestResults.Name = "dgvBestResults";
+            this.dgvBestResults.ReadOnly = true;
+            this.dgvBestResults.RowHeadersWidth = 15;
+            this.dgvBestResults.RowTemplate.Height = 24;
+            this.dgvBestResults.Size = new System.Drawing.Size(344, 649);
+            this.dgvBestResults.TabIndex = 0;
+            // 
+            // colWord
+            // 
+            this.colWord.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colWord.HeaderText = "Word";
+            this.colWord.Name = "colWord";
+            this.colWord.ReadOnly = true;
+            // 
+            // colFitness
+            // 
+            this.colFitness.FillWeight = 120F;
+            this.colFitness.HeaderText = "Fitness";
+            this.colFitness.Name = "colFitness";
+            this.colFitness.ReadOnly = true;
+            this.colFitness.Width = 120;
+            // 
+            // tabWordDictionaries
+            // 
+            this.tabWordDictionaries.Controls.Add(this.gbWordDic);
+            this.tabWordDictionaries.Location = new System.Drawing.Point(4, 4);
+            this.tabWordDictionaries.Margin = new System.Windows.Forms.Padding(4);
+            this.tabWordDictionaries.Name = "tabWordDictionaries";
+            this.tabWordDictionaries.Padding = new System.Windows.Forms.Padding(4);
+            this.tabWordDictionaries.Size = new System.Drawing.Size(375, 678);
+            this.tabWordDictionaries.TabIndex = 1;
+            this.tabWordDictionaries.Text = "WordDictionaries";
+            this.tabWordDictionaries.UseVisualStyleBackColor = true;
+            // 
+            // gbWordDic
+            // 
+            this.gbWordDic.Controls.Add(this.tableLayoutPanel1);
+            this.gbWordDic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbWordDic.Location = new System.Drawing.Point(4, 4);
+            this.gbWordDic.Name = "gbWordDic";
+            this.gbWordDic.Size = new System.Drawing.Size(367, 670);
+            this.gbWordDic.TabIndex = 0;
+            this.gbWordDic.TabStop = false;
+            this.gbWordDic.Text = "WordDictionaries";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.btnAddWordDictionaries, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panelExtraWordsDic, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 18);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.399076F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.60092F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(361, 649);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // btnAddWordDictionaries
+            // 
+            this.btnAddWordDictionaries.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddWordDictionaries.Location = new System.Drawing.Point(65, 3);
+            this.btnAddWordDictionaries.Name = "btnAddWordDictionaries";
+            this.btnAddWordDictionaries.Size = new System.Drawing.Size(231, 48);
+            this.btnAddWordDictionaries.TabIndex = 0;
+            this.btnAddWordDictionaries.Text = "AddWordDic";
+            this.btnAddWordDictionaries.UseVisualStyleBackColor = true;
+            this.btnAddWordDictionaries.Click += new System.EventHandler(this.btnAddWordDictionaries_Click);
+            // 
+            // panelExtraWordsDic
+            // 
+            this.panelExtraWordsDic.AutoScroll = true;
+            this.panelExtraWordsDic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelExtraWordsDic.Location = new System.Drawing.Point(3, 64);
+            this.panelExtraWordsDic.Name = "panelExtraWordsDic";
+            this.panelExtraWordsDic.Size = new System.Drawing.Size(355, 582);
+            this.panelExtraWordsDic.TabIndex = 1;
             // 
             // containerMain
             // 
@@ -379,7 +472,7 @@
             // 
             this.containerMain.Panel2.Controls.Add(this.tabExtraTools);
             this.containerMain.Size = new System.Drawing.Size(1455, 686);
-            this.containerMain.SplitterDistance = 1134;
+            this.containerMain.SplitterDistance = 1063;
             this.containerMain.SplitterWidth = 5;
             this.containerMain.TabIndex = 4;
             // 
@@ -398,7 +491,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.gbResult);
-            this.splitContainer2.Size = new System.Drawing.Size(1134, 686);
+            this.splitContainer2.Size = new System.Drawing.Size(1063, 686);
             this.splitContainer2.SplitterDistance = 298;
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
@@ -411,7 +504,7 @@
             this.gbGAToolbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbGAToolbox.Name = "gbGAToolbox";
             this.gbGAToolbox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGAToolbox.Size = new System.Drawing.Size(1134, 298);
+            this.gbGAToolbox.Size = new System.Drawing.Size(1063, 298);
             this.gbGAToolbox.TabIndex = 2;
             this.gbGAToolbox.TabStop = false;
             this.gbGAToolbox.Text = "PGAToolbox";
@@ -432,7 +525,7 @@
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1128, 279);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1057, 279);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // btnStart
@@ -884,7 +977,7 @@
             this.gbResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbResult.Name = "gbResult";
             this.gbResult.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbResult.Size = new System.Drawing.Size(1134, 383);
+            this.gbResult.Size = new System.Drawing.Size(1063, 383);
             this.gbResult.TabIndex = 1;
             this.gbResult.TabStop = false;
             this.gbResult.Text = "Result";
@@ -898,25 +991,9 @@
             this.wpResults.Location = new System.Drawing.Point(3, 17);
             this.wpResults.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.wpResults.Name = "wpResults";
-            this.wpResults.Size = new System.Drawing.Size(1128, 364);
+            this.wpResults.Size = new System.Drawing.Size(1057, 364);
             this.wpResults.TabIndex = 0;
             this.wpResults.WordsLabels = null;
-            // 
-            // dgvBestResults
-            // 
-            this.dgvBestResults.AllowUserToAddRows = false;
-            this.dgvBestResults.AllowUserToDeleteRows = false;
-            this.dgvBestResults.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dgvBestResults.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvBestResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBestResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBestResults.Location = new System.Drawing.Point(3, 18);
-            this.dgvBestResults.Name = "dgvBestResults";
-            this.dgvBestResults.ReadOnly = true;
-            this.dgvBestResults.RowTemplate.Height = 24;
-            this.dgvBestResults.Size = new System.Drawing.Size(273, 649);
-            this.dgvBestResults.TabIndex = 0;
             // 
             // CoolNameResultForm
             // 
@@ -932,8 +1009,12 @@
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.tabExtraTools.ResumeLayout(false);
-            this.tabDictionaries.ResumeLayout(false);
+            this.tabBestChromosomes.ResumeLayout(false);
             this.gbBestWords.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBestResults)).EndInit();
+            this.tabWordDictionaries.ResumeLayout(false);
+            this.gbWordDic.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.containerMain.Panel1.ResumeLayout(false);
             this.containerMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.containerMain)).EndInit();
@@ -974,7 +1055,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numEliteSelection)).EndInit();
             this.gbResult.ResumeLayout(false);
             this.gbResult.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBestResults)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1004,8 +1084,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem persianToolStripMenuItem;
         private System.Windows.Forms.TabControl tabExtraTools;
-        private System.Windows.Forms.TabPage tabDictionaries;
         private System.Windows.Forms.TabPage tabBestChromosomes;
+        private System.Windows.Forms.TabPage tabWordDictionaries;
         private System.Windows.Forms.SplitContainer containerMain;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.GroupBox gbResult;
@@ -1052,6 +1132,12 @@
         private System.Windows.Forms.NumericUpDown numEliteSelection;
         private System.Windows.Forms.GroupBox gbBestWords;
         private System.Windows.Forms.DataGridView dgvBestResults;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colWord;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFitness;
+        private System.Windows.Forms.GroupBox gbWordDic;
+        private System.Windows.Forms.Button btnAddWordDictionaries;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel panelExtraWordsDic;
     }
 }
 

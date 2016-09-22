@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoolNameGenerator.GA;
@@ -10,6 +11,7 @@ using CoolNameGenerator.GeneticWordProcessing;
 using CoolNameGenerator.Helper;
 using CoolNameGenerator.Properties;
 using System.Linq;
+using CoolNameGenerator.Graphics;
 
 namespace CoolNameGenerator.Forms
 {
@@ -107,8 +109,17 @@ namespace CoolNameGenerator.Forms
         {
             if (bestChromosome.GetType() != typeof(WordChromosome)) return;
 
-            _bestChromosomes[bestChromosome.ToString()] = (WordChromosome)bestChromosome;
-            //bestWordPanels.SetWords(_bestChromosomes.Values.ToList() as IList<IChromosome>);
+            var word = bestChromosome.ToString();
+            if (_bestChromosomes.ContainsKey(word)) return;
+
+            var wordCh = _bestChromosomes[word] = (WordChromosome)bestChromosome;
+            dgvBestResults.InvokeIfRequired(() => dgvBestResults.Rows.Add(word, wordCh.Fitness));
+            dgvBestResults.InvokeIfRequired(() => dgvBestResults.Sort(dgvBestResults.Columns["colFitness"], ListSortDirection.Descending));
+        }
+
+        private void btnAddWordDictionaries_Click(object sender, EventArgs e)
+        {
+            panelExtraWordsDic.Controls.Add(new WordsDictionary());
         }
     }
 }

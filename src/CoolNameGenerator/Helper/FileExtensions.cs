@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using CoolNameGenerator.Properties;
 
 namespace CoolNameGenerator.Helper
 {
@@ -34,6 +36,17 @@ namespace CoolNameGenerator.Helper
             }
 
             return lines.ToArray();
+        }
+
+        public static string GetFilePath()
+        {
+            using (var ofd = new OpenFileDialog())
+            {
+                ofd.Title = Localization.OpenPersianFileDialogTitle;
+                ofd.Filter = Localization.FilterWordFiles;
+                ofd.CheckFileExists = true;
+                return ofd.ShowDialog() == DialogResult.OK ? ofd.FileName : null;
+            }
         }
     }
 }

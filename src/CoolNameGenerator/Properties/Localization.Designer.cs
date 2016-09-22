@@ -61,6 +61,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to + Add Words Dictionaries.
+        /// </summary>
+        public static string AddWordDic {
+            get {
+                return ResourceManager.GetString("AddWordDic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Algorithm Terminated Successful !.
         /// </summary>
         public static string AlgorithmTerminatedSuccessful {
@@ -120,6 +129,15 @@ namespace CoolNameGenerator.Properties {
         public static string BestResults {
             get {
                 return ResourceManager.GetString("BestResults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browse.
+        /// </summary>
+        public static string Browse {
+            get {
+                return ResourceManager.GetString("Browse", resourceCulture);
             }
         }
         
@@ -282,6 +300,15 @@ namespace CoolNameGenerator.Properties {
         public static string ImportPersianWords {
             get {
                 return ResourceManager.GetString("ImportPersianWords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Match Score.
+        /// </summary>
+        public static string MatchScore {
+            get {
+                return ResourceManager.GetString("MatchScore", resourceCulture);
             }
         }
         

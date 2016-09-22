@@ -214,6 +214,12 @@
     <Compile Include="Graphics\WordLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Graphics\WordsDictionary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Graphics\WordsDictionary.Designer.cs">
+      <DependentUpon>WordsDictionary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Graphics\WordsPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FinglishConverter.resx">
       <DependentUpon>FinglishConverter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphics\WordsDictionary.resx">
+      <DependentUpon>WordsDictionary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localization.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

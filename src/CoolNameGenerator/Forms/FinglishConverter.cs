@@ -29,7 +29,7 @@ namespace CoolNameGenerator.Forms
 
         private void btnImportPersianWords_Click(object sender, EventArgs e)
         {
-            var path = GetPersianWordsFilePath();
+            var path = FileExtensions.GetFilePath();
             if (path != null)
             {
                 var data = File.ReadAllLines(path, Encoding.UTF8);
@@ -101,17 +101,6 @@ namespace CoolNameGenerator.Forms
                         dgvRow.DefaultCellStyle.BackColor = finglish == null ? Color.Brown : Color.Aquamarine;
                     });
                 }
-            }
-        }
-
-        private static string GetPersianWordsFilePath()
-        {
-            using (var ofd = new OpenFileDialog())
-            {
-                ofd.Title = Localization.OpenPersianFileDialogTitle;
-                ofd.Filter = Localization.FilterWordFiles;
-                ofd.CheckFileExists = true;
-                return ofd.ShowDialog() == DialogResult.OK ? ofd.FileName : null;
             }
         }
 
