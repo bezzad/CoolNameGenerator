@@ -19,7 +19,7 @@ namespace CoolNameGenerator.Forms
     public partial class CoolNameResultForm : BaseForm
     {
         private GeneticAlgorithm _ga;
-        private readonly Dictionary<string, WordChromosome> _bestChromosomes = new Dictionary<string, WordChromosome>();
+        private readonly Dictionary<string, double?> _bestChromosomes = new Dictionary<string, double?>();
 
         public CoolNameResultForm()
         {
@@ -33,6 +33,7 @@ namespace CoolNameGenerator.Forms
                 btnStart.Text = Localization.Stop;
 
                 wpResults.SetWordsCount((int)numPopulationSize.Value);
+                SetOnDoubleClickForWordsToAddInGrid(wpResults);
 
                 Run();
             }
@@ -110,12 +111,19 @@ namespace CoolNameGenerator.Forms
         {
             if (bestChromosome.GetType() != typeof(WordChromosome)) return;
 
-            var word = bestChromosome.ToString();
+            var ch = (WordChromosome)bestChromosome;
+
+            AddBestChromosomes(ch.ToString(), ch.Fitness);
+        }
+
+        private void AddBestChromosomes(string word, double? fitness)
+        {
             if (_bestChromosomes.ContainsKey(word)) return;
 
-            var wordCh = _bestChromosomes[word] = (WordChromosome)bestChromosome;
-            dgvBestResults.InvokeIfRequired(() => dgvBestResults.Rows.Add(word, wordCh.Fitness));
-            dgvBestResults.InvokeIfRequired(() => dgvBestResults.Sort(dgvBestResults.Columns["colFitness"], direction: ListSortDirection.Descending));
+            _bestChromosomes[word] = fitness;
+
+            dgvBestResults.InvokeIfRequired(() => dgvBestResults.Rows.Add(word, fitness));
+            dgvBestResults.InvokeIfRequired(() => dgvBestResults.Sort(dgvBestResults.Columns["colFitness"], ListSortDirection.Descending));
         }
 
         private void btnAddWordDictionaries_Click(object sender, EventArgs e)
@@ -168,6 +176,18 @@ namespace CoolNameGenerator.Forms
             return (from object ctrl in panelExtraWordsDic.Controls
                     where ctrl.GetType() == typeof(WordsDictionary) && ((WordsDictionary)ctrl).Enabled
                     select ((WordsDictionary)ctrl).Words);
+        }
+
+        private void SetOnDoubleClickForWordsToAddInGrid(WordsPanel wp)
+        {
+            foreach (var lblWord in wp.WordsLabels)
+            {
+                lblWord.DoubleClick += (s, e) =>
+                {
+                    var word = s as WordLabel;
+                    AddBestChromosomes(word?.Text, word?.Fitness);
+                };
+            }
         }
     }
 }

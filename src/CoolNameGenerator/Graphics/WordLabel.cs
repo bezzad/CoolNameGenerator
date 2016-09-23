@@ -13,13 +13,27 @@ namespace CoolNameGenerator.Graphics
     {
         private readonly ToolTip _toolTip;
 
+        public override string Text
+        {
+            get { return base.Text; }
+            set
+            {
+                this.InvokeIfRequired(() => base.Text = value);
+            }
+        }
+
+        public double Fitness { get; set; }
+
+
         public WordLabel(WordChromosome word) : this(word.ToString(), word.Fitness ?? 0)
         {
             SetChromosome(word);
         }
 
         public WordLabel(string text, double fitness) : this(text)
-        { }
+        {
+            Fitness = fitness;
+        }
 
         public WordLabel(string text) : this()
         {
@@ -51,14 +65,7 @@ namespace CoolNameGenerator.Graphics
             BackColor = Color.WhiteSmoke;
         }
 
-        public override string Text
-        {
-            get { return base.Text; }
-            set
-            {
-                this.InvokeIfRequired(() => base.Text = value);
-            }
-        }
+
 
         private void SetTooltip(WordChromosome chromosome)
         {
@@ -78,7 +85,8 @@ namespace CoolNameGenerator.Graphics
                                      $"{Environment.NewLine}------------------------" +
                                      $"{Environment.NewLine}{matchedWordsLine}" +
                                      $"{Environment.NewLine}------------------------" +
-                                     $"{Environment.NewLine}{matchedSubWordsLine}";
+                                     $"{Environment.NewLine}{matchedSubWordsLine}" +
+                                     $"{Environment.NewLine}{Environment.NewLine}Double click to add to list!";
 
 
                 _toolTip.SetToolTip(this, tooltipContent);
@@ -90,6 +98,7 @@ namespace CoolNameGenerator.Graphics
             var wordText = word.ToString();
 
             Text = wordText;
+            Fitness = word.Fitness ?? 0;
             SetTooltip(word);
 
             this.InvokeIfRequired(() =>
