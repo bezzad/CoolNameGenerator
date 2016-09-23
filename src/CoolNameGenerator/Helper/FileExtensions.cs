@@ -12,7 +12,7 @@ namespace CoolNameGenerator.Helper
     {
         public static async Task<HashSet<string>> ReadWordFileAsync(string fileName)
         {
-            var path = Path.Combine(Environment.CurrentDirectory, $"Resources\\{fileName}.txt");
+            var path = GetResourcePath(fileName, "txt");
 
             if (!File.Exists(path)) return null;
 
@@ -20,6 +20,13 @@ namespace CoolNameGenerator.Helper
             var uniqueWords = words.GetUniqueWords();
 
             return uniqueWords;
+        }
+
+        public static string GetResourcePath(string fileName, string extension)
+        {
+            var path = Path.Combine(Environment.CurrentDirectory, $"Resources\\{fileName}.{extension}");
+
+            return path;
         }
 
         public static async Task<string[]> ReadAllLinesAsync(this string path, Encoding encoding)

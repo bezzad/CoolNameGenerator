@@ -18,7 +18,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// <value>
         /// The matching fitness.
         /// </value>
-        public int MatchingFitness { get; set; } = 1;
+        public double MatchingFitness { get; set; } = 1;
 
         /// <summary>
         /// Gets or sets the fitness value for assign to a word when it NOT find at this list.
@@ -26,7 +26,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// <value>
         /// The no matching any word fitness.
         /// </value>
-        public int UnMatchingFitness { get; set; }
+        public double NoMatchingFitness { get; set; }
 
         /// <summary>
         /// Gets or sets the fitness value for assign to a word when it find again at this list.
@@ -34,7 +34,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// <value>
         /// The duplicate matching fitness.
         /// </value>
-        public int DuplicateMatchingFitness { get; set; }
+        public double DuplicateMatchingFitness { get; set; }
 
         public static Func<double, double> ApplySubWordsCoverageValueFunc { get; set; }
 
@@ -84,8 +84,8 @@ namespace CoolNameGenerator.GeneticWordProcessing
             if (other == null) return false;
 
             return other.Name == this.Name
-                   && other.MatchingFitness == this.MatchingFitness
-                   && other.UnMatchingFitness == this.UnMatchingFitness;
+                   && other.MatchingFitness == MatchingFitness
+                   && other.NoMatchingFitness == NoMatchingFitness;
         }
 
         public override bool Equals(object obj)
@@ -99,8 +99,9 @@ namespace CoolNameGenerator.GeneticWordProcessing
             unchecked
             {
                 var hashCode = Name?.GetHashCode() ?? 0;
-                hashCode = (hashCode * 397) ^ MatchingFitness;
-                hashCode = (hashCode * 397) ^ UnMatchingFitness;
+                hashCode = (hashCode * 397) ^ MatchingFitness.GetHashCode();
+                hashCode = (hashCode * 397) ^ NoMatchingFitness.GetHashCode();
+                hashCode = (hashCode * 397) ^ DuplicateMatchingFitness.GetHashCode();
                 return hashCode;
             }
         }

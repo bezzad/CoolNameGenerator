@@ -11,6 +11,7 @@ using CoolNameGenerator.GeneticWordProcessing;
 using CoolNameGenerator.Helper;
 using CoolNameGenerator.Properties;
 using System.Linq;
+using CoolNameGenerator.GA.Terminations;
 using CoolNameGenerator.Graphics;
 
 namespace CoolNameGenerator.Forms
@@ -51,13 +52,13 @@ namespace CoolNameGenerator.Forms
 
         private async void Run()
         {
-            await Task.Run(async () =>
+            await Task.Run(() =>
             {
                 try
                 {
                     var pop = (int)numPopulationSize.Value;
                     var ctrl = new WordGaController(() => new WordChromosome((int)numWordLen.Value, chkHasNumeric.Checked, chkHasHyphen.Checked));
-                    await ctrl.LoadWordFiles();
+                    ctrl.LoadWordFiles(GetWordsDictionaries().ToList(), null);
                     ctrl.CrossoverProbability = (float)numCrossoverProbability.Value / 100;
                     ctrl.MutationProbability = (float)numMutationProbability.Value / 100;
                     ctrl.EliteSelectionNumber = (int)numEliteSelection.Value * pop / 100;
@@ -114,12 +115,59 @@ namespace CoolNameGenerator.Forms
 
             var wordCh = _bestChromosomes[word] = (WordChromosome)bestChromosome;
             dgvBestResults.InvokeIfRequired(() => dgvBestResults.Rows.Add(word, wordCh.Fitness));
-            dgvBestResults.InvokeIfRequired(() => dgvBestResults.Sort(dgvBestResults.Columns["colFitness"], ListSortDirection.Descending));
+            dgvBestResults.InvokeIfRequired(() => dgvBestResults.Sort(dgvBestResults.Columns["colFitness"], direction: ListSortDirection.Descending));
         }
 
         private void btnAddWordDictionaries_Click(object sender, EventArgs e)
         {
-            panelExtraWordsDic.Controls.Add(new WordsDictionary());
+            AddWordsDic(new WordsDictionary());
+        }
+
+        private void AddWordsDic(WordsDictionary wordDic)
+        {
+            panelExtraWordsDic.Controls.Add(wordDic);
+        }
+
+        protected override async void LoadCompleted(object sender, EventArgs e)
+        {
+            base.LoadCompleted(sender, e);
+
+            var englishWordsDic = new WordsDictionary();
+            await englishWordsDic.LoadData(FileExtensions.GetResourcePath("EnglishWords", "txt"));
+            englishWordsDic.DuplicateMatchingFitness = -4;
+            englishWordsDic.MatchingFitness = 6;
+            englishWordsDic.NoMatchingFitness = -1;
+            AddWordsDic(englishWordsDic);
+
+            var englishNamesDic = new WordsDictionary();
+            await englishNamesDic.LoadData(FileExtensions.GetResourcePath("EnglishNames", "txt"));
+            englishNamesDic.DuplicateMatchingFitness = -20;
+            englishNamesDic.MatchingFitness = 4;
+            englishNamesDic.NoMatchingFitness = 0;
+            AddWordsDic(englishNamesDic);
+
+            var finglishNamesDic = new WordsDictionary();
+            await finglishNamesDic.LoadData(FileExtensions.GetResourcePath("FinglishNames", "txt"));
+            finglishNamesDic.DuplicateMatchingFitness = -4;
+            finglishNamesDic.MatchingFitness = 10;
+            finglishNamesDic.NoMatchingFitness = -2;
+            AddWordsDic(finglishNamesDic);
+
+
+            var finglishWordsDic = new WordsDictionary();
+            await finglishWordsDic.LoadData(FileExtensions.GetResourcePath("FinglishWords", "txt"));
+            finglishWordsDic.DuplicateMatchingFitness = -10;
+            finglishWordsDic.MatchingFitness = 4;
+            finglishWordsDic.NoMatchingFitness = 0;
+            AddWordsDic(finglishWordsDic);
+
+        }
+
+        private IEnumerable<UniqueWords> GetWordsDictionaries()
+        {
+            return (from object ctrl in panelExtraWordsDic.Controls
+                    where ctrl.GetType() == typeof(WordsDictionary) && ((WordsDictionary)ctrl).Enabled
+                    select ((WordsDictionary)ctrl).Words);
         }
     }
 }

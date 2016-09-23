@@ -16,7 +16,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
 {
     public class WordGaController : GeneticControllerBase
     {
-        public static volatile List<UniqueWords> WordsDic = new List<UniqueWords>();
+        public static volatile IList<UniqueWords> WordsDic;
 
         /// <summary>
         /// Gets or sets the mutation probability.
@@ -92,38 +92,11 @@ namespace CoolNameGenerator.GeneticWordProcessing
             DrawAction?.Invoke(bestChromosome);
         }
 
-        public async Task LoadWordFiles()
+        public void LoadWordFiles(IList<UniqueWords> dics, Func<double, double> applyOnSubWordsSumCoverageablityValueFunc)
         {
-            UniqueWords.ApplySubWordsCoverageValueFunc = Math.Log;
+            UniqueWords.ApplySubWordsCoverageValueFunc = applyOnSubWordsSumCoverageablityValueFunc ?? Math.Log;
 
-            WordsDic.Add(new UniqueWords("EnglishWords", await FileExtensions.ReadWordFileAsync("EnglishWords"), false)
-            {
-                DuplicateMatchingFitness = -4,
-                MatchingFitness = 6,
-                UnMatchingFitness = -1
-            });
-
-            WordsDic.Add(new UniqueWords("EnglishNames", await FileExtensions.ReadWordFileAsync("EnglishNames"), false)
-            {
-                DuplicateMatchingFitness = -20,
-                MatchingFitness = 4,
-                UnMatchingFitness = 0
-            });
-
-            WordsDic.Add(new UniqueWords("FinglishWords", await FileExtensions.ReadWordFileAsync("FinglishWords"), false)
-            {
-                DuplicateMatchingFitness = -10,
-                MatchingFitness = 4,
-                UnMatchingFitness = 0
-            });
-
-
-            WordsDic.Add(new UniqueWords("FinglishNames", await FileExtensions.ReadWordFileAsync("FinglishNames"), false)
-            {
-                DuplicateMatchingFitness = -4,
-                MatchingFitness = 10,
-                UnMatchingFitness = -2
-            });
+            WordsDic = dics;
         }
 
         public override ITermination CreateTermination()

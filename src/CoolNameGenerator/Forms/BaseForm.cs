@@ -13,8 +13,15 @@ namespace CoolNameGenerator.Forms
             InitializeComponent();
 
             Load += (s, e) => LocalizingControl(this);
+            Application.Idle += LoadCompleted;
         }
 
+        protected virtual void LoadCompleted(object sender, EventArgs e)
+        {
+            Application.Idle -= LoadCompleted;
+
+            // on loaded codes at child forms ...
+        }
 
         protected virtual void LocalizingControl(Control ctrl)
         {

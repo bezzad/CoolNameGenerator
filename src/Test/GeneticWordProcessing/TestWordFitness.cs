@@ -109,7 +109,7 @@ namespace Test.GeneticWordProcessing
                 {
                     DuplicateMatchingFitness = -2,
                     MatchingFitness = 3,
-                    UnMatchingFitness = -1
+                    NoMatchingFitness = -1
                 },
                 new UniqueWords("EnglishNames", new[]
                 {
@@ -128,7 +128,7 @@ namespace Test.GeneticWordProcessing
                 {
                     DuplicateMatchingFitness = -2,
                     MatchingFitness = 2,
-                    UnMatchingFitness = 0
+                    NoMatchingFitness = 0
                 },
                 new UniqueWords("FinglishWords", new[]
                 {
@@ -143,7 +143,7 @@ namespace Test.GeneticWordProcessing
                 {
                     DuplicateMatchingFitness = -3,
                     MatchingFitness = 2,
-                    UnMatchingFitness = 0
+                    NoMatchingFitness = 0
                 },
                 new UniqueWords("FinglishNames", new[]
                 {
@@ -157,7 +157,7 @@ namespace Test.GeneticWordProcessing
                 {
                     DuplicateMatchingFitness = -2,
                     MatchingFitness = 4,
-                    UnMatchingFitness = -1
+                    NoMatchingFitness = -1
                 }
             };
 

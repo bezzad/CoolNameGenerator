@@ -141,7 +141,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
                     }
                     else // No Match Word!
                     {
-                        score += lst?.UnMatchingFitness ?? 0; // increase or decrease no match fitness according by this list 
+                        score += lst?.NoMatchingFitness ?? 0; // increase or decrease no match fitness according by this list 
                     }
                 }
                 //
