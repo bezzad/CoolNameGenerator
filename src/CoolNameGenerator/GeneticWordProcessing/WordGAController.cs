@@ -21,7 +21,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// <summary>
         /// Gets or sets the mutation probability.
         /// </summary>
-        public float MutationProbability { get; set; } = 0.7f;
+        public float MutationProbability { get; set; } = 0.5f;
 
         /// <summary>
         /// Gets or sets the crossover probability.
@@ -37,6 +37,29 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// The number of generations to keep in the population
         /// </summary>
         public int GenerationsNumber { get; set; } = 10;
+
+        /// <summary>
+        /// Gets or sets the time evolving termination.
+        /// </summary>
+        public TimeSpan TimeEvolvingTermination { get; set; } = TimeSpan.FromHours(4);
+
+        /// <summary>
+        /// Gets or sets the fitness threshold termination.
+        /// </summary>
+        /// <value>
+        /// The fitness threshold termination.
+        /// </value>
+        public double FitnessThresholdTermination { get; set; } = 0.99999995;
+
+        /// <summary>
+        /// Gets or sets the minimum thread.
+        /// </summary>
+        public int MinimumThread { get; set; } = Environment.ProcessorCount;
+
+        /// <summary>
+        /// Gets or sets the maximum thread.
+        /// </summary>
+        public int MaximumThread { get; set; } = 50;
 
         public Func<IChromosome> ChromosomeFactory { get; set; }
         public Action<IChromosome> DrawAction { get; set; }
@@ -55,8 +78,8 @@ namespace CoolNameGenerator.GeneticWordProcessing
             base.ConfigGa(ga);
             ga.TaskExecutor = new SmartThreadPoolTaskExecutor()
             {
-                MinThreads = 25,
-                MaxThreads = 50
+                MinThreads = MinimumThread,
+                MaxThreads = MaximumThread
             };
 
             ga.MutationProbability = MutationProbability;
@@ -101,7 +124,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public override ITermination CreateTermination()
         {
-            return new OrTermination(new TimeEvolvingTermination(TimeSpan.FromHours(2)), new FitnessThresholdTermination(0.99999995));
+            return new OrTermination(new TimeEvolvingTermination(TimeEvolvingTermination), new FitnessThresholdTermination(FitnessThresholdTermination));
         }
         public override ICrossover CreateCrossover()
         {

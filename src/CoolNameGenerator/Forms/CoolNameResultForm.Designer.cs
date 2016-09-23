@@ -86,6 +86,14 @@
             this.lblWordMaxLen = new System.Windows.Forms.Label();
             this.numWordLen = new System.Windows.Forms.NumericUpDown();
             this.chkDisplayRealtime = new System.Windows.Forms.CheckBox();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.numMinimumThread = new System.Windows.Forms.NumericUpDown();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.numMaximumThread = new System.Windows.Forms.NumericUpDown();
             this.panelGAToolbox = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -105,6 +113,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.numEliteSelection = new System.Windows.Forms.NumericUpDown();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.numTimeEvolvingTermination = new System.Windows.Forms.NumericUpDown();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.numFitnessThresholdTermination = new System.Windows.Forms.NumericUpDown();
             this.gbResult = new System.Windows.Forms.GroupBox();
             this.wpResults = new CoolNameGenerator.Graphics.WordsPanel();
             this.menuStrip.SuspendLayout();
@@ -132,6 +148,10 @@
             this.panelWordToolbox.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numWordLen)).BeginInit();
+            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinimumThread)).BeginInit();
+            this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMaximumThread)).BeginInit();
             this.panelGAToolbox.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPopulationSize)).BeginInit();
@@ -143,6 +163,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numMutationProbability)).BeginInit();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEliteSelection)).BeginInit();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTimeEvolvingTermination)).BeginInit();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numFitnessThresholdTermination)).BeginInit();
             this.gbResult.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -404,7 +428,7 @@
             this.tabWordDictionaries.Margin = new System.Windows.Forms.Padding(4);
             this.tabWordDictionaries.Name = "tabWordDictionaries";
             this.tabWordDictionaries.Padding = new System.Windows.Forms.Padding(4);
-            this.tabWordDictionaries.Size = new System.Drawing.Size(375, 678);
+            this.tabWordDictionaries.Size = new System.Drawing.Size(358, 678);
             this.tabWordDictionaries.TabIndex = 1;
             this.tabWordDictionaries.Text = "WordDictionaries";
             this.tabWordDictionaries.UseVisualStyleBackColor = true;
@@ -415,7 +439,7 @@
             this.gbWordDic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbWordDic.Location = new System.Drawing.Point(4, 4);
             this.gbWordDic.Name = "gbWordDic";
-            this.gbWordDic.Size = new System.Drawing.Size(367, 670);
+            this.gbWordDic.Size = new System.Drawing.Size(350, 670);
             this.gbWordDic.TabIndex = 0;
             this.gbWordDic.TabStop = false;
             this.gbWordDic.Text = "WordDictionaries";
@@ -434,13 +458,13 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.399076F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.60092F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(361, 649);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(344, 649);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // btnAddWordDictionaries
             // 
             this.btnAddWordDictionaries.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAddWordDictionaries.Location = new System.Drawing.Point(65, 3);
+            this.btnAddWordDictionaries.Location = new System.Drawing.Point(56, 3);
             this.btnAddWordDictionaries.Name = "btnAddWordDictionaries";
             this.btnAddWordDictionaries.Size = new System.Drawing.Size(231, 48);
             this.btnAddWordDictionaries.TabIndex = 0;
@@ -454,7 +478,7 @@
             this.panelExtraWordsDic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelExtraWordsDic.Location = new System.Drawing.Point(3, 64);
             this.panelExtraWordsDic.Name = "panelExtraWordsDic";
-            this.panelExtraWordsDic.Size = new System.Drawing.Size(355, 582);
+            this.panelExtraWordsDic.Size = new System.Drawing.Size(338, 582);
             this.panelExtraWordsDic.TabIndex = 1;
             // 
             // containerMain
@@ -585,6 +609,7 @@
             this.bestChromosomeWord.BackColor = System.Drawing.Color.WhiteSmoke;
             this.bestChromosomeWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bestChromosomeWord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bestChromosomeWord.Fitness = 0D;
             this.bestChromosomeWord.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bestChromosomeWord.Location = new System.Drawing.Point(0, 0);
             this.bestChromosomeWord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -658,10 +683,12 @@
             this.panelWordToolbox.Controls.Add(this.chkHasNumeric);
             this.panelWordToolbox.Controls.Add(this.panel2);
             this.panelWordToolbox.Controls.Add(this.chkDisplayRealtime);
+            this.panelWordToolbox.Controls.Add(this.panel13);
+            this.panelWordToolbox.Controls.Add(this.panel14);
             this.panelWordToolbox.Location = new System.Drawing.Point(417, 7);
             this.panelWordToolbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelWordToolbox.Name = "panelWordToolbox";
-            this.panelWordToolbox.Size = new System.Drawing.Size(257, 188);
+            this.panelWordToolbox.Size = new System.Drawing.Size(276, 188);
             this.panelWordToolbox.TabIndex = 14;
             // 
             // chkHasHyphen
@@ -707,7 +734,7 @@
             // 
             // numWordLen
             // 
-            this.numWordLen.Location = new System.Drawing.Point(155, 4);
+            this.numWordLen.Location = new System.Drawing.Point(153, 4);
             this.numWordLen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numWordLen.Maximum = new decimal(new int[] {
             67,
@@ -741,6 +768,103 @@
             this.chkDisplayRealtime.Text = "DisplayRealtime";
             this.chkDisplayRealtime.UseVisualStyleBackColor = true;
             // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.label16);
+            this.panel13.Controls.Add(this.label17);
+            this.panel13.Controls.Add(this.numMinimumThread);
+            this.panel13.Location = new System.Drawing.Point(3, 86);
+            this.panel13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(231, 30);
+            this.panel13.TabIndex = 14;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(280, 6);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(0, 17);
+            this.label16.TabIndex = 6;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(3, 6);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(109, 17);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "MinimumThread";
+            // 
+            // numMinimumThread
+            // 
+            this.numMinimumThread.Location = new System.Drawing.Point(152, 4);
+            this.numMinimumThread.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numMinimumThread.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.numMinimumThread.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numMinimumThread.Name = "numMinimumThread";
+            this.numMinimumThread.Size = new System.Drawing.Size(76, 22);
+            this.numMinimumThread.TabIndex = 3;
+            this.numMinimumThread.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.label18);
+            this.panel14.Controls.Add(this.label19);
+            this.panel14.Controls.Add(this.numMaximumThread);
+            this.panel14.Location = new System.Drawing.Point(3, 120);
+            this.panel14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(231, 30);
+            this.panel14.TabIndex = 15;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(280, 6);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(0, 17);
+            this.label18.TabIndex = 6;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(3, 6);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(112, 17);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "MaximumThread";
+            // 
+            // numMaximumThread
+            // 
+            this.numMaximumThread.Location = new System.Drawing.Point(152, 4);
+            this.numMaximumThread.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numMaximumThread.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.numMaximumThread.Name = "numMaximumThread";
+            this.numMaximumThread.Size = new System.Drawing.Size(76, 22);
+            this.numMaximumThread.TabIndex = 3;
+            this.numMaximumThread.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            // 
             // panelGAToolbox
             // 
             this.panelGAToolbox.Controls.Add(this.panel3);
@@ -748,10 +872,12 @@
             this.panelGAToolbox.Controls.Add(this.panel1);
             this.panelGAToolbox.Controls.Add(this.panel8);
             this.panelGAToolbox.Controls.Add(this.panel9);
-            this.panelGAToolbox.Location = new System.Drawing.Point(680, 7);
+            this.panelGAToolbox.Controls.Add(this.panel11);
+            this.panelGAToolbox.Controls.Add(this.panel12);
+            this.panelGAToolbox.Location = new System.Drawing.Point(699, 7);
             this.panelGAToolbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelGAToolbox.Name = "panelGAToolbox";
-            this.panelGAToolbox.Size = new System.Drawing.Size(321, 188);
+            this.panelGAToolbox.Size = new System.Drawing.Size(321, 245);
             this.panelGAToolbox.TabIndex = 15;
             // 
             // panel3
@@ -761,7 +887,7 @@
             this.panel3.Location = new System.Drawing.Point(3, 2);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(307, 30);
+            this.panel3.Size = new System.Drawing.Size(318, 30);
             this.panel3.TabIndex = 6;
             // 
             // label1
@@ -775,7 +901,7 @@
             // 
             // numPopulationSize
             // 
-            this.numPopulationSize.Location = new System.Drawing.Point(199, 2);
+            this.numPopulationSize.Location = new System.Drawing.Point(205, 4);
             this.numPopulationSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numPopulationSize.Maximum = new decimal(new int[] {
             9999999,
@@ -803,7 +929,7 @@
             this.panel10.Location = new System.Drawing.Point(3, 36);
             this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(307, 30);
+            this.panel10.Size = new System.Drawing.Size(318, 30);
             this.panel10.TabIndex = 7;
             // 
             // label11
@@ -817,11 +943,11 @@
             // 
             // numGenerationKeepingNumber
             // 
-            this.numGenerationKeepingNumber.Location = new System.Drawing.Point(199, 2);
+            this.numGenerationKeepingNumber.Location = new System.Drawing.Point(205, 4);
             this.numGenerationKeepingNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numGenerationKeepingNumber.Maximum = new decimal(new int[] {
-            1000,
-            0,
+            1215752191,
+            23,
             0,
             0});
             this.numGenerationKeepingNumber.Minimum = new decimal(new int[] {
@@ -846,13 +972,13 @@
             this.panel1.Location = new System.Drawing.Point(3, 70);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(307, 30);
+            this.panel1.Size = new System.Drawing.Size(318, 30);
             this.panel1.TabIndex = 9;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(280, 6);
+            this.label8.Location = new System.Drawing.Point(286, 6);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(20, 17);
             this.label8.TabIndex = 5;
@@ -869,7 +995,8 @@
             // 
             // numCrossoverProbability
             // 
-            this.numCrossoverProbability.Location = new System.Drawing.Point(199, 2);
+            this.numCrossoverProbability.DecimalPlaces = 2;
+            this.numCrossoverProbability.Location = new System.Drawing.Point(205, 3);
             this.numCrossoverProbability.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numCrossoverProbability.Name = "numCrossoverProbability";
             this.numCrossoverProbability.Size = new System.Drawing.Size(80, 22);
@@ -888,13 +1015,13 @@
             this.panel8.Location = new System.Drawing.Point(3, 104);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(307, 30);
+            this.panel8.Size = new System.Drawing.Size(318, 30);
             this.panel8.TabIndex = 10;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(280, 6);
+            this.label9.Location = new System.Drawing.Point(286, 6);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(20, 17);
             this.label9.TabIndex = 6;
@@ -911,7 +1038,8 @@
             // 
             // numMutationProbability
             // 
-            this.numMutationProbability.Location = new System.Drawing.Point(199, 2);
+            this.numMutationProbability.DecimalPlaces = 2;
+            this.numMutationProbability.Location = new System.Drawing.Point(205, 3);
             this.numMutationProbability.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numMutationProbability.Name = "numMutationProbability";
             this.numMutationProbability.Size = new System.Drawing.Size(80, 22);
@@ -930,13 +1058,13 @@
             this.panel9.Location = new System.Drawing.Point(3, 138);
             this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(307, 30);
+            this.panel9.Size = new System.Drawing.Size(318, 30);
             this.panel9.TabIndex = 11;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(280, 6);
+            this.label10.Location = new System.Drawing.Point(286, 6);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(20, 17);
             this.label10.TabIndex = 6;
@@ -953,10 +1081,15 @@
             // 
             // numEliteSelection
             // 
-            this.numEliteSelection.Location = new System.Drawing.Point(199, 2);
+            this.numEliteSelection.Location = new System.Drawing.Point(205, 3);
             this.numEliteSelection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numEliteSelection.Maximum = new decimal(new int[] {
-            99,
+            276447231,
+            23283,
+            0,
+            0});
+            this.numEliteSelection.Minimum = new decimal(new int[] {
+            4,
             0,
             0,
             0});
@@ -964,10 +1097,119 @@
             this.numEliteSelection.Size = new System.Drawing.Size(80, 22);
             this.numEliteSelection.TabIndex = 3;
             this.numEliteSelection.Value = new decimal(new int[] {
-            30,
+            40,
             0,
             0,
             0});
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.label12);
+            this.panel11.Controls.Add(this.label13);
+            this.panel11.Controls.Add(this.numTimeEvolvingTermination);
+            this.panel11.Location = new System.Drawing.Point(3, 172);
+            this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(318, 30);
+            this.panel11.TabIndex = 12;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(286, 6);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(30, 17);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Min";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(3, 6);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(167, 17);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "TimeEvolvingTermination";
+            // 
+            // numTimeEvolvingTermination
+            // 
+            this.numTimeEvolvingTermination.Location = new System.Drawing.Point(205, 3);
+            this.numTimeEvolvingTermination.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numTimeEvolvingTermination.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
+            this.numTimeEvolvingTermination.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numTimeEvolvingTermination.Name = "numTimeEvolvingTermination";
+            this.numTimeEvolvingTermination.Size = new System.Drawing.Size(80, 22);
+            this.numTimeEvolvingTermination.TabIndex = 3;
+            this.numTimeEvolvingTermination.Value = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.label14);
+            this.panel12.Controls.Add(this.label15);
+            this.panel12.Controls.Add(this.numFitnessThresholdTermination);
+            this.panel12.Location = new System.Drawing.Point(3, 206);
+            this.panel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(318, 30);
+            this.panel12.TabIndex = 13;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(280, 6);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(0, 17);
+            this.label14.TabIndex = 6;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 6);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(192, 17);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "FitnessThresholdTermination";
+            // 
+            // numFitnessThresholdTermination
+            // 
+            this.numFitnessThresholdTermination.DecimalPlaces = 7;
+            this.numFitnessThresholdTermination.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            458752});
+            this.numFitnessThresholdTermination.Location = new System.Drawing.Point(205, 3);
+            this.numFitnessThresholdTermination.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numFitnessThresholdTermination.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numFitnessThresholdTermination.Minimum = new decimal(new int[] {
+            1874919423,
+            2328306,
+            0,
+            -2147483648});
+            this.numFitnessThresholdTermination.Name = "numFitnessThresholdTermination";
+            this.numFitnessThresholdTermination.Size = new System.Drawing.Size(99, 22);
+            this.numFitnessThresholdTermination.TabIndex = 3;
+            this.numFitnessThresholdTermination.Value = new decimal(new int[] {
+            999995,
+            0,
+            0,
+            393216});
             // 
             // gbResult
             // 
@@ -1037,6 +1279,12 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numWordLen)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinimumThread)).EndInit();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMaximumThread)).EndInit();
             this.panelGAToolbox.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -1053,6 +1301,12 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEliteSelection)).EndInit();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTimeEvolvingTermination)).EndInit();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numFitnessThresholdTermination)).EndInit();
             this.gbResult.ResumeLayout(false);
             this.gbResult.PerformLayout();
             this.ResumeLayout(false);
@@ -1138,6 +1392,22 @@
         private System.Windows.Forms.Button btnAddWordDictionaries;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel panelExtraWordsDic;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.NumericUpDown numTimeEvolvingTermination;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.NumericUpDown numFitnessThresholdTermination;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.NumericUpDown numMinimumThread;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.NumericUpDown numMaximumThread;
     }
 }
 

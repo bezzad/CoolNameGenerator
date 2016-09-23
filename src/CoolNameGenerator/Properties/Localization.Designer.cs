@@ -241,6 +241,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fitness Threshold Termination.
+        /// </summary>
+        public static string FitnessThresholdTermination {
+            get {
+                return ResourceManager.GetString("FitnessThresholdTermination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generation.
         /// </summary>
         public static string Generation {
@@ -322,11 +331,29 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Maximum Thread.
+        /// </summary>
+        public static string MaximumThread {
+            get {
+                return ResourceManager.GetString("MaximumThread", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The minimum size for a population is 2 chromosomes..
         /// </summary>
         public static string minimum_size_for_a_population_is_2_chromosomes {
             get {
                 return ResourceManager.GetString("minimum_size_for_a_population_is_2_chromosomes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimum Thread.
+        /// </summary>
+        public static string MinimumThread {
+            get {
+                return ResourceManager.GetString("MinimumThread", resourceCulture);
             }
         }
         
@@ -480,6 +507,15 @@ namespace CoolNameGenerator.Properties {
         public static string TimeEvolving {
             get {
                 return ResourceManager.GetString("TimeEvolving", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time Evolving Termination.
+        /// </summary>
+        public static string TimeEvolvingTermination {
+            get {
+                return ResourceManager.GetString("TimeEvolvingTermination", resourceCulture);
             }
         }
         

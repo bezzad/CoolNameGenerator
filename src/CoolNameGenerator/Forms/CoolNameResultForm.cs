@@ -64,6 +64,10 @@ namespace CoolNameGenerator.Forms
                     ctrl.MutationProbability = (float)numMutationProbability.Value / 100;
                     ctrl.EliteSelectionNumber = (int)numEliteSelection.Value * pop / 100;
                     ctrl.GenerationsNumber = (int)numGenerationKeepingNumber.Value;
+                    ctrl.MinimumThread = (int) numMinimumThread.Value;
+                    ctrl.MaximumThread = (int) numMaximumThread.Value;
+                    ctrl.FitnessThresholdTermination = (double) numFitnessThresholdTermination.Value;
+                    ctrl.TimeEvolvingTermination = TimeSpan.FromMinutes((int)numTimeEvolvingTermination.Value);
 
                     var population = new Population(pop, pop + 1000, ctrl.CreateChromosome(), new PerformanceGenerationStrategy(ctrl.GenerationsNumber));
 

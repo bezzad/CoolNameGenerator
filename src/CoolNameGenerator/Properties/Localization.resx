@@ -276,4 +276,16 @@
   <data name="MatchScore" xml:space="preserve">
     <value>Match Score</value>
   </data>
+  <data name="FitnessThresholdTermination" xml:space="preserve">
+    <value>Fitness Threshold Termination</value>
+  </data>
+  <data name="MaximumThread" xml:space="preserve">
+    <value>Maximum Thread</value>
+  </data>
+  <data name="MinimumThread" xml:space="preserve">
+    <value>Minimum Thread</value>
+  </data>
+  <data name="TimeEvolvingTermination" xml:space="preserve">
+    <value>Time Evolving Termination</value>
+  </data>
 </root>
