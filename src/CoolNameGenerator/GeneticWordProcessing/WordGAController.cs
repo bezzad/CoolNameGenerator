@@ -120,6 +120,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
             UniqueWords.ApplySubWordsCoverageValueFunc = applyOnSubWordsSumCoverageablityValueFunc ?? Math.Log;
 
             WordsDic = dics;
+            UniqueWords.ServeWordsCoverage(WordsDic);
         }
 
         public override ITermination CreateTermination()

@@ -36,6 +36,11 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// </value>
         public double DuplicateMatchingFitness { get; set; }
 
+        /// <summary>
+        /// Weather include middle sub words of words or not?
+        /// </summary>
+        public bool IncludeMiddleSubWords { get; set; } = false;
+
         public static Func<double, double> ApplySubWordsCoverageValueFunc { get; set; }
 
         public string this[int index] => this.ElementAt(index);
@@ -43,7 +48,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// <summary>
         /// Sum of the all sub words by unique overall coverage 
         /// </summary>
-        public static Dictionary<string, double> SubWordsCoverage { get; set; } = new Dictionary<string, double>();
+        public static Dictionary<string, double> SubWordsCoverage { get; set; } 
 
         #endregion
 
@@ -60,18 +65,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         public UniqueWords(string name, IEnumerable<string> words, bool includeMiddleSubWords) : base(words)
         {
             Name = name;
-
-            foreach (var wordCoverage in this.GetUniqueSubWordsCoverage(includeMiddleSubWords))
-            {
-                if (SubWordsCoverage.ContainsKey(wordCoverage.Key))
-                {
-                    SubWordsCoverage[wordCoverage.Key] += wordCoverage.Value;
-                }
-                else
-                {
-                    SubWordsCoverage[wordCoverage.Key] = wordCoverage.Value;
-                }
-            }
+            IncludeMiddleSubWords = includeMiddleSubWords;
         }
 
         #endregion
@@ -136,6 +130,26 @@ namespace CoolNameGenerator.GeneticWordProcessing
             }
 
             return 0;
+        }
+
+        public static void ServeWordsCoverage(IEnumerable<UniqueWords> words)
+        {
+            SubWordsCoverage = new Dictionary<string, double>();
+
+            foreach (var uw in words)
+            {
+                foreach (var wordCoverage in uw.GetUniqueSubWordsCoverage(uw.IncludeMiddleSubWords))
+                {
+                    if (SubWordsCoverage.ContainsKey(wordCoverage.Key))
+                    {
+                        SubWordsCoverage[wordCoverage.Key] += wordCoverage.Value * uw.MatchingFitness;
+                    }
+                    else
+                    {
+                        SubWordsCoverage[wordCoverage.Key] = wordCoverage.Value * uw.MatchingFitness;
+                    }
+                }
+            }
         }
     }
 }
