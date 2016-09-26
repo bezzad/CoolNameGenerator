@@ -211,6 +211,13 @@
     <Compile Include="GeneticWordProcessing\WordFitness.cs" />
     <Compile Include="GeneticWordProcessing\WordGaController.cs" />
     <Compile Include="GeneticWordProcessing\UniqueWords.cs" />
+    <Compile Include="Graphics\BaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Graphics\BaseUserControl.Designer.cs">
+      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graphics\ControlsExtensions.cs" />
     <Compile Include="Graphics\WordLabel.cs">
       <SubType>Component</SubType>
     </Compile>

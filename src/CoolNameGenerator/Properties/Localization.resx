@@ -288,4 +288,13 @@
   <data name="TimeEvolvingTermination" xml:space="preserve">
     <value>Time Evolving Termination</value>
   </data>
+  <data name="IncludeMiddleSubWords" xml:space="preserve">
+    <value>Include Middle Sub Words</value>
+  </data>
+  <data name="DuplicateMatchScore" xml:space="preserve">
+    <value>Duplicate Match Score</value>
+  </data>
+  <data name="NoMatchScore" xml:space="preserve">
+    <value>No Match Score</value>
+  </data>
 </root>

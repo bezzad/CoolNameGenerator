@@ -196,6 +196,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Duplicate Match Score.
+        /// </summary>
+        public static string DuplicateMatchScore {
+            get {
+                return ResourceManager.GetString("DuplicateMatchScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Elite Selection Percent.
         /// </summary>
         public static string EliteSelectionPercent {
@@ -313,6 +322,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Include Middle Sub Words.
+        /// </summary>
+        public static string IncludeMiddleSubWords {
+            get {
+                return ResourceManager.GetString("IncludeMiddleSubWords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Match Score.
         /// </summary>
         public static string MatchScore {
@@ -372,6 +390,15 @@ namespace CoolNameGenerator.Properties {
         public static string MutationProbability {
             get {
                 return ResourceManager.GetString("MutationProbability", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Match Score.
+        /// </summary>
+        public static string NoMatchScore {
+            get {
+                return ResourceManager.GetString("NoMatchScore", resourceCulture);
             }
         }
         

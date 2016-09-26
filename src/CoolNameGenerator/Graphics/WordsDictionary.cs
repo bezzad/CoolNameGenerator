@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Text;
-using System.Windows.Forms;
 using CoolNameGenerator.GeneticWordProcessing;
 using CoolNameGenerator.Helper;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CoolNameGenerator.Graphics
 {
-    public partial class WordsDictionary : UserControl
+    public partial class WordsDictionary : BaseUserControl
     {
         #region Properties
 
@@ -52,6 +53,16 @@ namespace CoolNameGenerator.Graphics
             }
         }
 
+        public bool IncludeMiddleSubWords
+        {
+            get { return Words.IncludeMiddleSubWords; }
+            set
+            {
+                Words.IncludeMiddleSubWords = value;
+                chkIncludeMiddleSubWords.Checked = value;
+            }
+        }
+
         public new bool Enabled
         {
             get { return chkEnabled.Checked; }
@@ -61,6 +72,8 @@ namespace CoolNameGenerator.Graphics
                 chkEnabled.Checked = value;
             }
         }
+
+        public Color BorderColor { get; set; } = Color.OrangeRed;
 
         #endregion
 
@@ -74,6 +87,7 @@ namespace CoolNameGenerator.Graphics
             numDuplicateMatchScore.ValueChanged += (s, e) => Words.DuplicateMatchingFitness = (double)numDuplicateMatchScore.Value;
             numMatchScore.ValueChanged += (s, e) => Words.MatchingFitness = (double)numMatchScore.Value;
             numNoMatchScore.ValueChanged += (s, e) => Words.NoMatchingFitness = (double)numNoMatchScore.Value;
+            chkIncludeMiddleSubWords.CheckedChanged += (s, e) => Words.IncludeMiddleSubWords = chkIncludeMiddleSubWords.Checked;
             chkEnabled.CheckedChanged += (s, e) =>
             {
                 gbProperties.Enabled = chkEnabled.Checked;
@@ -109,6 +123,26 @@ namespace CoolNameGenerator.Graphics
                 txtFileAddress.Text = string.Empty;
                 gbProperties.Enabled = false;
             }
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            //get the text size in group-box
+            var tSize = TextRenderer.MeasureText(this.Text, this.Font);
+
+            var borderRect = e.ClipRectangle;
+            borderRect.Y = (borderRect.Y + (tSize.Height / 2));
+            borderRect.Height = (borderRect.Height - (tSize.Height / 2));
+            borderRect.X++;
+            borderRect.Width -= 2;
+            ControlPaint.DrawBorder(e.Graphics, borderRect, this.BorderColor, ButtonBorderStyle.Solid);
+
+            var textRect = e.ClipRectangle;
+            textRect.X = (textRect.X + 6);
+            textRect.Width = tSize.Width;
+            textRect.Height = tSize.Height;
+            e.Graphics.FillRectangle(new SolidBrush(this.BackColor), textRect);
+            e.Graphics.DrawString(this.Text, this.Font, new SolidBrush(this.ForeColor), textRect);
         }
 
         #endregion

@@ -39,7 +39,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// <summary>
         /// Weather include middle sub words of words or not?
         /// </summary>
-        public bool IncludeMiddleSubWords { get; set; } = false;
+        public bool IncludeMiddleSubWords { get; set; }
 
         public static Func<double, double> ApplySubWordsCoverageValueFunc { get; set; }
 

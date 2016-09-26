@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
-using CoolNameGenerator.Graphics;
 
-namespace CoolNameGenerator.Forms
+namespace CoolNameGenerator.Graphics
 {
-    public partial class BaseForm : Form
+    public partial class BaseUserControl : UserControl
     {
-        public BaseForm()
+        public BaseUserControl()
         {
             InitializeComponent();
 
@@ -20,6 +19,5 @@ namespace CoolNameGenerator.Forms
 
             // on loaded codes at child forms ...
         }
-
     }
 }

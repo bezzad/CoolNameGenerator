@@ -45,6 +45,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.numDuplicateMatchScore = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.chkIncludeMiddleSubWords = new System.Windows.Forms.CheckBox();
             this.gbControl.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -56,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numNoMatchScore)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDuplicateMatchScore)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtFileAddress
@@ -83,7 +86,7 @@
             this.gbControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbControl.Location = new System.Drawing.Point(0, 0);
             this.gbControl.Name = "gbControl";
-            this.gbControl.Size = new System.Drawing.Size(299, 221);
+            this.gbControl.Size = new System.Drawing.Size(299, 263);
             this.gbControl.TabIndex = 2;
             this.gbControl.TabStop = false;
             // 
@@ -94,7 +97,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 18);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(293, 200);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(293, 242);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // panel1
@@ -124,10 +127,11 @@
             // gbProperties
             // 
             this.gbProperties.Controls.Add(this.flowLayoutPanel2);
+            this.gbProperties.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbProperties.Enabled = false;
             this.gbProperties.Location = new System.Drawing.Point(3, 46);
             this.gbProperties.Name = "gbProperties";
-            this.gbProperties.Size = new System.Drawing.Size(286, 151);
+            this.gbProperties.Size = new System.Drawing.Size(286, 193);
             this.gbProperties.TabIndex = 6;
             this.gbProperties.TabStop = false;
             // 
@@ -136,10 +140,11 @@
             this.flowLayoutPanel2.Controls.Add(this.panel2);
             this.flowLayoutPanel2.Controls.Add(this.panel3);
             this.flowLayoutPanel2.Controls.Add(this.panel4);
+            this.flowLayoutPanel2.Controls.Add(this.panel5);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 18);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(280, 130);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(280, 172);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // panel2
@@ -174,9 +179,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 17);
+            this.label2.Size = new System.Drawing.Size(83, 17);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Match Score:";
+            this.label2.Text = "MatchScore";
             // 
             // panel3
             // 
@@ -210,9 +215,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 17);
+            this.label1.Size = new System.Drawing.Size(101, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "No Match Score:";
+            this.label1.Text = "NoMatchScore";
             // 
             // panel4
             // 
@@ -246,9 +251,27 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 17);
+            this.label3.Size = new System.Drawing.Size(142, 17);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Duplicate Match Score:";
+            this.label3.Text = "DuplicateMatchScore";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.chkIncludeMiddleSubWords);
+            this.panel5.Location = new System.Drawing.Point(3, 132);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(273, 37);
+            this.panel5.TabIndex = 7;
+            // 
+            // chkIncludeMiddleSubWords
+            // 
+            this.chkIncludeMiddleSubWords.AutoSize = true;
+            this.chkIncludeMiddleSubWords.Location = new System.Drawing.Point(9, 8);
+            this.chkIncludeMiddleSubWords.Name = "chkIncludeMiddleSubWords";
+            this.chkIncludeMiddleSubWords.Size = new System.Drawing.Size(182, 21);
+            this.chkIncludeMiddleSubWords.TabIndex = 1;
+            this.chkIncludeMiddleSubWords.Text = "IncludeMiddleSubWords";
+            this.chkIncludeMiddleSubWords.UseVisualStyleBackColor = true;
             // 
             // WordsDictionary
             // 
@@ -256,7 +279,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gbControl);
             this.Name = "WordsDictionary";
-            this.Size = new System.Drawing.Size(299, 221);
+            this.Size = new System.Drawing.Size(299, 263);
             this.gbControl.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -272,6 +295,8 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDuplicateMatchScore)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -295,5 +320,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.NumericUpDown numDuplicateMatchScore;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.CheckBox chkIncludeMiddleSubWords;
     }
 }
