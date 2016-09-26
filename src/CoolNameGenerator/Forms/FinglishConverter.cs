@@ -8,16 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using CoolNameGenerator.Properties;
 using CoolNameGenerator.Helper;
+using CoolNameGenerator.Properties;
 
 namespace CoolNameGenerator.Forms
 {
     public partial class FinglishConverter : BaseForm
     {
-        private Dictionary<string, string> _words;
-        private CancellationTokenSource _cts;
         private readonly object _syncLocker = new object();
+        private CancellationTokenSource _cts;
+        private Dictionary<string, string> _words;
 
 
         public FinglishConverter()
@@ -36,6 +36,7 @@ namespace CoolNameGenerator.Forms
                 FillGrid(data);
             }
         }
+
         private void btnSaveResult_Click(object sender, EventArgs e)
         {
             var path = GetWordsStorageFilePath();
@@ -45,6 +46,7 @@ namespace CoolNameGenerator.Forms
                 Process.Start(path);
             }
         }
+
         private async void btnConvert_Click(object sender, EventArgs e)
         {
             btnImportPersianWords.Enabled = false;
@@ -63,17 +65,21 @@ namespace CoolNameGenerator.Forms
                 btnConvert.Enabled = true;
                 numMaxParallelismDegree.Enabled = true;
                 btnCancel.Enabled = false;
-                Cursor = System.Windows.Forms.Cursors.Default;
+                Cursor = Cursors.Default;
             };
 
-            var persians = _words.Where(w => string.IsNullOrEmpty(w.Value) || w.Value.StartsWith("<HTML>")).Select(x => x.Key).ToArray();
+            var persians =
+                _words.Where(w => string.IsNullOrEmpty(w.Value) || w.Value.StartsWith("<HTML>"))
+                    .Select(x => x.Key)
+                    .ToArray();
             progConvert.Maximum = persians.Length;
             progConvert.Value = 0;
-            api.MaxParallelismDegree = (int)numMaxParallelismDegree.Value;
+            api.MaxParallelismDegree = (int) numMaxParallelismDegree.Value;
             var result = chkParallelProcess.Checked
                 ? await api.GetParallelFinglishAsync(persians, _cts)
                 : await api.GetFinglishAsync(persians, _cts);
         }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
@@ -93,7 +99,7 @@ namespace CoolNameGenerator.Forms
 
             foreach (DataGridViewRow dgvRow in dgvWords.Rows)
             {
-                if (((string)dgvRow.Cells["colPersianName"].Value).Equals(persian, StringComparison.OrdinalIgnoreCase))
+                if (((string) dgvRow.Cells["colPersianName"].Value).Equals(persian, StringComparison.OrdinalIgnoreCase))
                 {
                     dgvWords.InvokeIfRequired(() =>
                     {
@@ -131,13 +137,19 @@ namespace CoolNameGenerator.Forms
 
         protected string[] GetWordsByFormat()
         {
-            var result = _words.Select(kv => string.IsNullOrEmpty(kv.Value) ? kv.Key
-                : kv.Value.Trim().Length < 04 ? $"{kv.Value.Trim()}\t\t\t\t\t:\t\t{kv.Key}"
-                : kv.Value.Trim().Length < 08 ? $"{kv.Value.Trim()}\t\t\t\t:\t\t{kv.Key}"
-                : kv.Value.Trim().Length < 12 ? $"{kv.Value.Trim()}\t\t\t:\t\t{kv.Key}"
-                : kv.Value.Trim().Length < 16 ? $"{kv.Value.Trim()}\t\t:\t\t{kv.Key}"
-                : kv.Value.Trim().Length < 20 ? $"{kv.Value.Trim()}\t:\t\t{kv.Key}"
-                : $"{kv.Value.Trim()}:\t\t{kv.Key}").ToArray();
+            var result = _words.Select(kv => string.IsNullOrEmpty(kv.Value)
+                ? kv.Key
+                : kv.Value.Trim().Length < 04
+                    ? $"{kv.Value.Trim()}\t\t\t\t\t:\t\t{kv.Key}"
+                    : kv.Value.Trim().Length < 08
+                        ? $"{kv.Value.Trim()}\t\t\t\t:\t\t{kv.Key}"
+                        : kv.Value.Trim().Length < 12
+                            ? $"{kv.Value.Trim()}\t\t\t:\t\t{kv.Key}"
+                            : kv.Value.Trim().Length < 16
+                                ? $"{kv.Value.Trim()}\t\t:\t\t{kv.Key}"
+                                : kv.Value.Trim().Length < 20
+                                    ? $"{kv.Value.Trim()}\t:\t\t{kv.Key}"
+                                    : $"{kv.Value.Trim()}:\t\t{kv.Key}").ToArray();
 
             return result;
         }

@@ -12,78 +12,85 @@ using CoolNameGenerator.GA.Selections;
 using CoolNameGenerator.GA.Terminations;
 using CoolNameGenerator.Helper;
 using CoolNameGenerator.Helper.Threading;
-using CoolNameGenerator.Properties;
 
 namespace CoolNameGenerator.GA
 {
+
     #region Enums
+
     /// <summary>
-    /// The possible states for a genetic algorithm.
+    ///     The possible states for a genetic algorithm.
     /// </summary>
     public enum GeneticAlgorithmState
     {
         /// <summary>
-        /// The GA has not been started yet.
+        ///     The GA has not been started yet.
         /// </summary>
         NotStarted,
 
         /// <summary>
-        /// The GA has been started and is running.
+        ///     The GA has been started and is running.
         /// </summary>
         Started,
 
         /// <summary>
-        /// The GA has been stopped and is not running.
+        ///     The GA has been stopped and is not running.
         /// </summary>
         Stopped,
 
         /// <summary>
-        /// The GA has been resumed after a stop or termination reach and is running.
+        ///     The GA has been resumed after a stop or termination reach and is running.
         /// </summary>
         Resumed,
 
         /// <summary>
-        /// The GA has reach the termination condition and is not running.
+        ///     The GA has reach the termination condition and is not running.
         /// </summary>
         TerminationReached
     }
+
     #endregion
 
     /// <summary>
-    /// A genetic algorithm (GA) is a search heuristic that mimics the process of natural selection. 
-    /// This heuristic (also sometimes called a metaheuristic) is routinely used to generate useful solutions 
-    /// to optimization and search problems. Genetic algorithms belong to the larger class of evolutionary 
-    /// algorithms (EA), which generate solutions to optimization problems using techniques inspired by natural evolution, 
-    /// such as inheritance, mutation, selection, and crossover.
-    /// <para>
-    /// Genetic algorithms find application in bioinformatics, phylogenetics, computational science, engineering, 
-    /// economics, chemistry, manufacturing, mathematics, physics, pharmacometrics, game development and other fields.
-    /// </para>
-    /// <see href="http://http://en.wikipedia.org/wiki/Genetic_algorithm">Wikipedia</see>
+    ///     A genetic algorithm (GA) is a search heuristic that mimics the process of natural selection.
+    ///     This heuristic (also sometimes called a metaheuristic) is routinely used to generate useful solutions
+    ///     to optimization and search problems. Genetic algorithms belong to the larger class of evolutionary
+    ///     algorithms (EA), which generate solutions to optimization problems using techniques inspired by natural evolution,
+    ///     such as inheritance, mutation, selection, and crossover.
+    ///     <para>
+    ///         Genetic algorithms find application in bioinformatics, phylogenetics, computational science, engineering,
+    ///         economics, chemistry, manufacturing, mathematics, physics, pharmacometrics, game development and other fields.
+    ///     </para>
+    ///     <see href="http://http://en.wikipedia.org/wiki/Genetic_algorithm">Wikipedia</see>
     /// </summary>
     public sealed class GeneticAlgorithm : IGeneticAlgorithm
     {
         #region Constants
+
         /// <summary>
-        /// The default crossover probability.
+        ///     The default crossover probability.
         /// </summary>
         public const float DefaultCrossoverProbability = 0.75f;
 
         /// <summary>
-        /// The default mutation probability.
+        ///     The default mutation probability.
         /// </summary>
         public const float DefaultMutationProbability = 0.2f;
+
         #endregion
 
         #region Fields
+
         private bool _mStopRequested;
         private readonly object _syncLock = new object();
         private GeneticAlgorithmState _mState;
-        #endregion              
+
+        #endregion
 
         #region Constructors
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="GeneticAlgorithm"/> class.
+        ///     Initializes a new instance of the <see cref="GeneticAlgorithm" /> class.
         /// </summary>
         /// <param name="population">The chromosomes population.</param>
         /// <param name="fitness">The fitness evaluation function.</param>
@@ -91,11 +98,11 @@ namespace CoolNameGenerator.GA
         /// <param name="crossover">The crossover operator.</param>
         /// <param name="mutation">The mutation operator.</param>
         public GeneticAlgorithm(
-                          IPopulation population,
-                          IFitness fitness,
-                          ISelection selection,
-                          ICrossover crossover,
-                          IMutation mutation)
+            IPopulation population,
+            IFitness fitness,
+            ISelection selection,
+            ICrossover crossover,
+            IMutation mutation)
         {
             if (population == null) throw new ArgumentNullException(nameof(population));
             if (fitness == null) throw new ArgumentNullException(nameof(fitness));
@@ -120,7 +127,7 @@ namespace CoolNameGenerator.GA
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GeneticAlgorithm"/> class.
+        ///     Initializes a new instance of the <see cref="GeneticAlgorithm" /> class.
         /// </summary>
         /// <param name="population">The chromosomes population.</param>
         /// <param name="fitness">The fitness evaluation function.</param>
@@ -128,8 +135,8 @@ namespace CoolNameGenerator.GA
         /// <param name="crossover">The crossover operator.</param>
         /// <param name="mutation">The mutation operator.</param>
         /// <param name="termination">The termination operator.</param>
-        public GeneticAlgorithm(IPopulation population,IFitness fitness,ISelection selection,
-                          ICrossover crossover, IMutation mutation, ITermination termination)
+        public GeneticAlgorithm(IPopulation population, IFitness fitness, ISelection selection,
+            ICrossover crossover, IMutation mutation, ITermination termination)
         {
             if (population == null) throw new ArgumentNullException(nameof(population));
             if (fitness == null) throw new ArgumentNullException(nameof(fitness));
@@ -153,99 +160,100 @@ namespace CoolNameGenerator.GA
             State = GeneticAlgorithmState.NotStarted;
             TaskExecutor = new LinearTaskExecutor();
         }
+
         #endregion
 
         #region Events
+
         /// <summary>
-        /// Occurs when generation ran.
+        ///     Occurs when generation ran.
         /// </summary>
         public event EventHandler GenerationRan;
 
         /// <summary>
-        /// Occurs when termination reached.
+        ///     Occurs when termination reached.
         /// </summary>
         public event EventHandler TerminationReached;
 
         /// <summary>
-        /// Occurs when stopped.
+        ///     Occurs when stopped.
         /// </summary>
         public event EventHandler Stopped;
+
         #endregion
 
         #region Properties
+
         /// <summary>
-        /// Gets the population.
+        ///     Gets the population.
         /// </summary>
         /// <value>The population.</value>
-        public IPopulation Population { get; private set; }
+        public IPopulation Population { get; }
 
         /// <summary>
-        /// Gets the fitness function.
+        ///     Gets the fitness function.
         /// </summary>
-        public IFitness Fitness { get; private set; }
+        public IFitness Fitness { get; }
 
         /// <summary>
-        /// Gets or sets the selection operator.
+        ///     Gets or sets the selection operator.
         /// </summary>
         public ISelection Selection { get; set; }
 
         /// <summary>
-        /// Gets or sets the crossover operator.
+        ///     Gets or sets the crossover operator.
         /// </summary>
         /// <value>The crossover.</value>
         public ICrossover Crossover { get; set; }
 
         /// <summary>
-        /// Gets or sets the crossover probability.
+        ///     Gets or sets the crossover probability.
         /// </summary>
         public float CrossoverProbability { get; set; }
 
         /// <summary>
-        /// Gets or sets the mutation operator.
+        ///     Gets or sets the mutation operator.
         /// </summary>
         public IMutation Mutation { get; set; }
 
         /// <summary>
-        /// Gets or sets the mutation probability.
+        ///     Gets or sets the mutation probability.
         /// </summary>
         public float MutationProbability { get; set; }
 
         /// <summary>
-        /// Gets or sets the reinsertion operator.
+        ///     Gets or sets the reinsertion operator.
         /// </summary>
         public IReinsertion Reinsertion { get; set; }
 
         /// <summary>
-        /// Gets or sets the termination condition.
+        ///     Gets or sets the termination condition.
         /// </summary>
         public ITermination Termination { get; set; }
 
         /// <summary>
-        /// Gets the generations number.
+        ///     Gets the generations number.
         /// </summary>
         /// <value>The generations number.</value>
         public int GenerationsNumber => Population.GenerationsNumber;
 
         /// <summary>
-        /// Gets the best chromosome.
+        ///     Gets the best chromosome.
         /// </summary>
         /// <value>The best chromosome.</value>
         public IChromosome BestChromosome => Population.BestChromosome;
 
         /// <summary>
-        /// Gets the time evolving.
+        ///     Gets the time evolving.
         /// </summary>
         public TimeSpan TimeEvolving { get; private set; }
 
         /// <summary>
-        /// Gets the state.
+        ///     Gets the state.
         /// </summary>
         public GeneticAlgorithmState State
         {
-            get
-            {
-                return _mState;
-            }
+            get { return _mState; }
 
             private set
             {
@@ -261,13 +269,13 @@ namespace CoolNameGenerator.GA
         }
 
         /// <summary>
-        /// Gets a value indicating whether this instance is running.
+        ///     Gets a value indicating whether this instance is running.
         /// </summary>
         /// <value><c>true</c> if this instance is running; otherwise, <c>false</c>.</value>
         public bool IsRunning => State == GeneticAlgorithmState.Started || State == GeneticAlgorithmState.Resumed;
 
         /// <summary>
-        /// Gets or sets the task executor which will be used to execute fitness evaluation.
+        ///     Gets or sets the task executor which will be used to execute fitness evaluation.
         /// </summary>
         public ITaskExecutor TaskExecutor { get; set; }
 
@@ -276,7 +284,7 @@ namespace CoolNameGenerator.GA
         #region Methods
 
         /// <summary>
-        /// Starts the genetic algorithm using population, fitness, selection, crossover, mutation and termination configured.
+        ///     Starts the genetic algorithm using population, fitness, selection, crossover, mutation and termination configured.
         /// </summary>
         public void Start()
         {
@@ -292,10 +300,11 @@ namespace CoolNameGenerator.GA
         }
 
         /// <summary>
-        /// Resumes the last evolution of the genetic algorithm.
-        /// <remarks>
-        /// If genetic algorithm was not explicit Stop (calling Stop method), you will need provide a new extended Termination.
-        /// </remarks>
+        ///     Resumes the last evolution of the genetic algorithm.
+        ///     <remarks>
+        ///         If genetic algorithm was not explicit Stop (calling Stop method), you will need provide a new extended
+        ///         Termination.
+        ///     </remarks>
         /// </summary>
         public void Resume()
         {
@@ -308,13 +317,16 @@ namespace CoolNameGenerator.GA
 
                 if (Population.GenerationsNumber == 0)
                 {
-                    throw new InvalidOperationException("Attempt to resume a genetic algorithm which was not yet started.");
+                    throw new InvalidOperationException(
+                        "Attempt to resume a genetic algorithm which was not yet started.");
                 }
-                else if (Population.GenerationsNumber > 1)
+                if (Population.GenerationsNumber > 1)
                 {
                     if (Termination.HasReached(this))
                     {
-                        throw new InvalidOperationException("Attempt to resume a genetic algorithm with a termination ({0}) already reached. Please, specify a new termination or extend the current one.".With(Termination));
+                        throw new InvalidOperationException(
+                            "Attempt to resume a genetic algorithm with a termination ({0}) already reached. Please, specify a new termination or extend the current one."
+                                .With(Termination));
                     }
 
                     State = GeneticAlgorithmState.Resumed;
@@ -325,7 +337,7 @@ namespace CoolNameGenerator.GA
                     return;
                 }
 
-                bool terminationConditionReached = false;
+                var terminationConditionReached = false;
                 do
                 {
                     if (_mStopRequested)
@@ -336,8 +348,7 @@ namespace CoolNameGenerator.GA
                     var startDateTime = DateTime.Now;
                     terminationConditionReached = EvolveOneGeneration();
                     TimeEvolving += DateTime.Now - startDateTime;
-                }
-                while (!terminationConditionReached);
+                } while (!terminationConditionReached);
             }
             catch
             {
@@ -347,7 +358,7 @@ namespace CoolNameGenerator.GA
         }
 
         /// <summary>
-        /// Stops the genetic algorithm..
+        ///     Stops the genetic algorithm..
         /// </summary>
         public void Stop()
         {
@@ -363,7 +374,7 @@ namespace CoolNameGenerator.GA
         }
 
         /// <summary>
-        /// Evolve one generation.
+        ///     Evolve one generation.
         /// </summary>
         /// <returns>True if termination has been reached, otherwise false.</returns>
         private bool EvolveOneGeneration()
@@ -377,7 +388,7 @@ namespace CoolNameGenerator.GA
         }
 
         /// <summary>
-        /// Ends the current generation.
+        ///     Ends the current generation.
         /// </summary>
         /// <returns><c>true</c>, if current generation was ended, <c>false</c> otherwise.</returns>
         private bool EndCurrentGeneration()
@@ -406,21 +417,19 @@ namespace CoolNameGenerator.GA
         }
 
         /// <summary>
-        /// Evaluates the fitness.
+        ///     Evaluates the fitness.
         /// </summary>
         private void EvaluateFitness()
         {
             try
             {
-                var chromosomesWithoutFitness = Population.CurrentGeneration.Chromosomes.Where(c => !c.Fitness.HasValue).ToList();
+                var chromosomesWithoutFitness =
+                    Population.CurrentGeneration.Chromosomes.Where(c => !c.Fitness.HasValue).ToList();
 
                 foreach (var c in chromosomesWithoutFitness)
                 {
                     var c1 = c;
-                    TaskExecutor.Add(() =>
-                    {
-                        RunEvaluateFitness(c1);
-                    });
+                    TaskExecutor.Add(() => { RunEvaluateFitness(c1); });
                 }
 
                 if (!TaskExecutor.Start())
@@ -434,11 +443,12 @@ namespace CoolNameGenerator.GA
                 TaskExecutor.Clear();
             }
 
-            Population.CurrentGeneration.Chromosomes = Population.CurrentGeneration.Chromosomes.OrderByDescending(c => c.Fitness.Value).ToList();
+            Population.CurrentGeneration.Chromosomes =
+                Population.CurrentGeneration.Chromosomes.OrderByDescending(c => c.Fitness.Value).ToList();
         }
 
         /// <summary>
-        /// Runs the evaluate fitness.
+        ///     Runs the evaluate fitness.
         /// </summary>
         /// <returns>The evaluate fitness.</returns>
         /// <param name="chromosome">The chromosome.</param>
@@ -452,14 +462,15 @@ namespace CoolNameGenerator.GA
             }
             catch (Exception ex)
             {
-                throw new FitnessException(Fitness, "Error executing Fitness.Evaluate for chromosome: {0}".With(ex.Message), ex);
+                throw new FitnessException(Fitness,
+                    "Error executing Fitness.Evaluate for chromosome: {0}".With(ex.Message), ex);
             }
 
             return c.Fitness;
         }
 
         /// <summary>
-        /// Selects the parents.
+        ///     Selects the parents.
         /// </summary>
         /// <returns>The parents.</returns>
         private IList<IChromosome> SelectParents()
@@ -468,7 +479,7 @@ namespace CoolNameGenerator.GA
         }
 
         /// <summary>
-        /// Crosses the specified parents.
+        ///     Crosses the specified parents.
         /// </summary>
         /// <param name="parents">The parents.</param>
         /// <returns>The result chromosomes.</returns>
@@ -476,7 +487,7 @@ namespace CoolNameGenerator.GA
         {
             var offspring = new List<IChromosome>();
 
-            for (int i = 0; i < Population.MinSize; i += Crossover.ParentsNumber)
+            for (var i = 0; i < Population.MinSize; i += Crossover.ParentsNumber)
             {
                 var selectedParents = parents.Skip(i).Take(Crossover.ParentsNumber).ToList();
 
@@ -493,7 +504,7 @@ namespace CoolNameGenerator.GA
         }
 
         /// <summary>
-        /// Mutate the specified chromosomes.
+        ///     Mutate the specified chromosomes.
         /// </summary>
         /// <param name="chromosomes">The chromosomes.</param>
         private void Mutate(IList<IChromosome> chromosomes)
@@ -505,17 +516,18 @@ namespace CoolNameGenerator.GA
         }
 
         /// <summary>
-        /// Reinsert the specified offspring and parents.
+        ///     Reinsert the specified offspring and parents.
         /// </summary>
         /// <param name="offspring">The offspring chromosomes.</param>
         /// <param name="parents">The parents chromosomes.</param>
         /// <returns>
-        /// The reinserted chromosomes.
+        ///     The reinserted chromosomes.
         /// </returns>
         private IList<IChromosome> Reinsert(IList<IChromosome> offspring, IList<IChromosome> parents)
         {
             return Reinsertion.SelectChromosomes(Population, offspring, parents);
         }
+
         #endregion
     }
 }

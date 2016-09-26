@@ -3,13 +3,14 @@ using System;
 namespace CoolNameGenerator.Helper.Threading
 {
     /// <summary>
-    /// An ITaskExecutor's implementation that executes the tasks in a linear fashion.
+    ///     An ITaskExecutor's implementation that executes the tasks in a linear fashion.
     /// </summary>
     public class LinearTaskExecutor : TaskExecutorBase
     {
         #region implemented abstract members of TaskExecutorBase
+
         /// <summary>
-        /// Starts the tasks execution.
+        ///     Starts the tasks execution.
         /// </summary>
         /// <returns>If has reach the timeout false, otherwise true.</returns>
         public override bool Start()
@@ -26,7 +27,7 @@ namespace CoolNameGenerator.Helper.Threading
 
                 t();
 
-                if ((DateTime.Now - startTime) > Timeout)
+                if (DateTime.Now - startTime > Timeout)
                 {
                     return false;
                 }
@@ -35,6 +36,7 @@ namespace CoolNameGenerator.Helper.Threading
             IsRunning = false;
             return true;
         }
+
         #endregion
     }
 }

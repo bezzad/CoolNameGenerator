@@ -20,6 +20,5 @@ namespace CoolNameGenerator.Forms
 
             // on loaded codes at child forms ...
         }
-
     }
 }

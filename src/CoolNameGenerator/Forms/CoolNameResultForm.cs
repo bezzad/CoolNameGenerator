@@ -1,25 +1,23 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoolNameGenerator.GA;
 using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GA.Populations;
 using CoolNameGenerator.GeneticWordProcessing;
+using CoolNameGenerator.Graphics;
 using CoolNameGenerator.Helper;
 using CoolNameGenerator.Properties;
-using System.Linq;
-using CoolNameGenerator.GA.Terminations;
-using CoolNameGenerator.Graphics;
 
 namespace CoolNameGenerator.Forms
 {
     public partial class CoolNameResultForm : BaseForm
     {
-        private GeneticAlgorithm _ga;
         private readonly Dictionary<string, double?> _bestChromosomes = new Dictionary<string, double?>();
+        private GeneticAlgorithm _ga;
 
         public CoolNameResultForm()
         {
@@ -32,7 +30,7 @@ namespace CoolNameGenerator.Forms
             {
                 btnStart.Text = Localization.Stop;
 
-                wpResults.SetWordsCount((int)numPopulationSize.Value);
+                wpResults.SetWordsCount((int) numPopulationSize.Value);
                 SetOnDoubleClickForWordsToAddInGrid(wpResults);
 
                 Run();
@@ -42,7 +40,6 @@ namespace CoolNameGenerator.Forms
                 btnStart.Text = Localization.Start;
                 _ga?.Stop();
             }
-
         }
 
         private void finglishConverterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,19 +54,23 @@ namespace CoolNameGenerator.Forms
             {
                 try
                 {
-                    var pop = (int)numPopulationSize.Value;
-                    var ctrl = new WordGaController(() => new WordChromosome((int)numWordLen.Value, chkHasNumeric.Checked, chkHasHyphen.Checked));
+                    var pop = (int) numPopulationSize.Value;
+                    var ctrl =
+                        new WordGaController(
+                            () =>
+                                new WordChromosome((int) numWordLen.Value, chkHasNumeric.Checked, chkHasHyphen.Checked));
                     ctrl.LoadWordFiles(GetWordsDictionaries().ToList(), null);
-                    ctrl.CrossoverProbability = (float)numCrossoverProbability.Value / 100;
-                    ctrl.MutationProbability = (float)numMutationProbability.Value / 100;
-                    ctrl.EliteSelectionNumber = (int)numEliteSelection.Value * pop / 100;
-                    ctrl.GenerationsNumber = (int)numGenerationKeepingNumber.Value;
+                    ctrl.CrossoverProbability = (float) numCrossoverProbability.Value/100;
+                    ctrl.MutationProbability = (float) numMutationProbability.Value/100;
+                    ctrl.EliteSelectionNumber = (int) numEliteSelection.Value*pop/100;
+                    ctrl.GenerationsNumber = (int) numGenerationKeepingNumber.Value;
                     ctrl.MinimumThread = (int) numMinimumThread.Value;
                     ctrl.MaximumThread = (int) numMaximumThread.Value;
                     ctrl.FitnessThresholdTermination = (double) numFitnessThresholdTermination.Value;
-                    ctrl.TimeEvolvingTermination = TimeSpan.FromMinutes((int)numTimeEvolvingTermination.Value);
+                    ctrl.TimeEvolvingTermination = TimeSpan.FromMinutes((int) numTimeEvolvingTermination.Value);
 
-                    var population = new Population(pop, pop + 1000, ctrl.CreateChromosome(), new PerformanceGenerationStrategy(ctrl.GenerationsNumber));
+                    var population = new Population(pop, pop + 1000, ctrl.CreateChromosome(),
+                        new PerformanceGenerationStrategy(ctrl.GenerationsNumber));
 
                     _ga = new GeneticAlgorithm(population, ctrl.CreateFitness(), ctrl.CreateSelection(),
                         ctrl.CreateCrossover(), ctrl.CreateMutation(), ctrl.CreateTermination());
@@ -78,9 +79,11 @@ namespace CoolNameGenerator.Forms
                     {
                         var bestChromosome = _ga.Population.BestChromosome;
                         lblFitness.InvokeIfRequired(() => lblFitness.Text = bestChromosome.Fitness.ToString());
-                        bestChromosomeWord.InvokeIfRequired(() => bestChromosomeWord.SetChromosome((WordChromosome)bestChromosome));
+                        bestChromosomeWord.InvokeIfRequired(
+                            () => bestChromosomeWord.SetChromosome((WordChromosome) bestChromosome));
                         AddBestChromosomes(bestChromosome);
-                        lblGeneration.InvokeIfRequired(() => lblGeneration.Text = _ga.Population.GenerationsNumber.ToString());
+                        lblGeneration.InvokeIfRequired(
+                            () => lblGeneration.Text = _ga.Population.GenerationsNumber.ToString());
                         lblTimeEvolving.InvokeIfRequired(() => lblTimeEvolving.Text = _ga.TimeEvolving.ToString());
                         ctrl.Draw(bestChromosome);
                         DrawChromosomes(_ga.Population.CurrentGeneration.Chromosomes);
@@ -115,7 +118,7 @@ namespace CoolNameGenerator.Forms
         {
             if (bestChromosome.GetType() != typeof(WordChromosome)) return;
 
-            var ch = (WordChromosome)bestChromosome;
+            var ch = (WordChromosome) bestChromosome;
 
             AddBestChromosomes(ch.ToString(), ch.Fitness);
         }
@@ -127,7 +130,8 @@ namespace CoolNameGenerator.Forms
             _bestChromosomes[word] = fitness;
 
             dgvBestResults.InvokeIfRequired(() => dgvBestResults.Rows.Add(word, fitness));
-            dgvBestResults.InvokeIfRequired(() => dgvBestResults.Sort(dgvBestResults.Columns["colFitness"], ListSortDirection.Descending));
+            dgvBestResults.InvokeIfRequired(
+                () => dgvBestResults.Sort(dgvBestResults.Columns["colFitness"], ListSortDirection.Descending));
         }
 
         private void btnAddWordDictionaries_Click(object sender, EventArgs e)
@@ -172,14 +176,13 @@ namespace CoolNameGenerator.Forms
             finglishWordsDic.MatchingFitness = 4;
             finglishWordsDic.NoMatchingFitness = 0;
             AddWordsDic(finglishWordsDic);
-
         }
 
         private IEnumerable<UniqueWords> GetWordsDictionaries()
         {
-            return (from object ctrl in panelExtraWordsDic.Controls
-                    where ctrl.GetType() == typeof(WordsDictionary) && ((WordsDictionary)ctrl).Enabled
-                    select ((WordsDictionary)ctrl).Words);
+            return from object ctrl in panelExtraWordsDic.Controls
+                where ctrl.GetType() == typeof(WordsDictionary) && ((WordsDictionary) ctrl).Enabled
+                select ((WordsDictionary) ctrl).Words;
         }
 
         private void SetOnDoubleClickForWordsToAddInGrid(WordsPanel wp)

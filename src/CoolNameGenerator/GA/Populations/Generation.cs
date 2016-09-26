@@ -8,13 +8,14 @@ using CoolNameGenerator.Properties;
 namespace CoolNameGenerator.GA.Populations
 {
     /// <summary>
-    /// Represents a generation of a population.
+    ///     Represents a generation of a population.
     /// </summary>
     public sealed class Generation
     {
         #region Constructors
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="Generation"/> class.
+        ///     Initializes a new instance of the <see cref="Generation" /> class.
         /// </summary>
         /// <param name="number">The generation number.</param>
         /// <param name="chromosomes">The chromosomes of the generation..</param>
@@ -29,43 +30,48 @@ namespace CoolNameGenerator.GA.Populations
 
             if (chromosomes == null || chromosomes.Count < 2)
             {
-                throw new ArgumentOutOfRangeException(nameof(chromosomes), Localization.generation_should_have_at_least_2_chromosomes);
+                throw new ArgumentOutOfRangeException(nameof(chromosomes),
+                    Localization.generation_should_have_at_least_2_chromosomes);
             }
 
             Number = number;
             CreationDate = DateTime.Now;
             Chromosomes = chromosomes;
         }
+
         #endregion
 
         #region Properties
+
         /// <summary>
-        /// Gets the number.
+        ///     Gets the number.
         /// </summary>
         /// <value>The number.</value>
         public int Number { get; private set; }
 
         /// <summary>
-        /// Gets the creation date.
+        ///     Gets the creation date.
         /// </summary>
         public DateTime CreationDate { get; private set; }
 
         /// <summary>
-        /// Gets the chromosomes.
+        ///     Gets the chromosomes.
         /// </summary>
         /// <value>The chromosomes.</value>
         public IList<IChromosome> Chromosomes { get; internal set; }
 
         /// <summary>
-        /// Gets the best chromosome.
+        ///     Gets the best chromosome.
         /// </summary>
         /// <value>The best chromosome.</value>
         public IChromosome BestChromosome { get; set; }
+
         #endregion
 
         #region Methods
+
         /// <summary>
-        /// Ends the generation.
+        ///     Ends the generation.
         /// </summary>
         /// <param name="chromosomesNumber">Chromosomes number to keep on generation.</param>
         public void End(int chromosomesNumber)
@@ -84,7 +90,7 @@ namespace CoolNameGenerator.GA.Populations
         }
 
         /// <summary>
-        /// Validates the chromosome.
+        ///     Validates the chromosome.
         /// </summary>
         /// <param name="chromosome">The chromosome to validate.</param>
         /// <returns>True if a chromosome is valid.</returns>
@@ -92,11 +98,13 @@ namespace CoolNameGenerator.GA.Populations
         {
             if (!chromosome.Fitness.HasValue)
             {
-                throw new InvalidOperationException("There is unknown problem in current generation, because a chromosome has no fitness value.");
+                throw new InvalidOperationException(
+                    "There is unknown problem in current generation, because a chromosome has no fitness value.");
             }
 
             return true;
         }
+
         #endregion
     }
 }

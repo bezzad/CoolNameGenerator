@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GeneticWordProcessing;
 
 namespace CoolNameGenerator.Helper
@@ -16,7 +12,9 @@ namespace CoolNameGenerator.Helper
     /// <summary>String extensions.</summary>
     public static class StringExtensions
     {
-        private static readonly Regex SInsertUnderscoreBeforeUppercase = new Regex("(?<!_|^)([A-Z])", RegexOptions.Compiled);
+        private static readonly Regex SInsertUnderscoreBeforeUppercase = new Regex("(?<!_|^)([A-Z])",
+            RegexOptions.Compiled);
+
         private static readonly Regex SCapitalizeRegex = new Regex("((\\s|^)\\S)(\\S+)", RegexOptions.Compiled);
 
         /// <summary>Gets the word in the specified index.</summary>
@@ -34,16 +32,17 @@ namespace CoolNameGenerator.Helper
         /// <param name="source">The source string.</param>
         /// <param name="index">The index.</param>
         /// <param name="wordStartIndex">Word start index.</param>
-        [SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", Justification = "It's necessary for the method purpose.", MessageId = "2#")]
+        [SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters",
+            Justification = "It's necessary for the method purpose.", MessageId = "2#")]
         public static string GetWordFromIndex(this string source, int index, out int wordStartIndex)
         {
-            string[] strArray = source.Split(' ');
-            int length = strArray.Length;
-            int num1 = -1;
-            for (int index1 = 0; index1 < length; ++index1)
+            var strArray = source.Split(' ');
+            var length = strArray.Length;
+            var num1 = -1;
+            for (var index1 = 0; index1 < length; ++index1)
             {
-                string str = strArray[index1];
-                int num2 = num1 + str.Length;
+                var str = strArray[index1];
+                var num2 = num1 + str.Length;
                 if (num2 >= index)
                 {
                     wordStartIndex = num2 - (str.Length - 1);
@@ -65,7 +64,7 @@ namespace CoolNameGenerator.Helper
         /// <param name="source">The source string.</param>
         public static int CountWords(this string source)
         {
-            return source.Split(new char[1] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Length;
+            return source.Split(new char[1] {' '}, StringSplitOptions.RemoveEmptyEntries).Length;
         }
 
         /// <summary>Removes the accents.</summary>
@@ -73,9 +72,9 @@ namespace CoolNameGenerator.Helper
         /// <param name="source">The source string.</param>
         public static string RemoveAccents(this string source)
         {
-            string str = source.Normalize(NormalizationForm.FormD);
-            StringBuilder stringBuilder = new StringBuilder();
-            for (int index = 0; index < str.Length; ++index)
+            var str = source.Normalize(NormalizationForm.FormD);
+            var stringBuilder = new StringBuilder();
+            for (var index = 0; index < str.Length; ++index)
             {
                 if (CharUnicodeInfo.GetUnicodeCategory(str[index]) != UnicodeCategory.NonSpacingMark)
                     stringBuilder.Append(str[index]);
@@ -94,7 +93,8 @@ namespace CoolNameGenerator.Helper
         /// <summary>Removes the non numeric chars.</summary>
         /// <returns>The non numeric.</returns>
         /// <param name="source">The source string.</param>
-        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly", Justification = "Ok.", MessageId = "NonNumeric")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly", Justification = "Ok.",
+            MessageId = "NonNumeric")]
         public static string RemoveNonNumeric(this string source)
         {
             return Regex.Replace(source, "[^0-9]*", string.Empty);
@@ -107,11 +107,9 @@ namespace CoolNameGenerator.Helper
         public static string RemoveFromBorders(this string source, string remove)
         {
             remove = Regex.Escape(remove);
-            return Regex.Replace(source, string.Format((IFormatProvider)CultureInfo.InvariantCulture, "(^{0}|{1}$)", new object[2]
-            {
-        (object) remove,
-        (object) remove
-            }), string.Empty, RegexOptions.IgnoreCase);
+            return Regex.Replace(source,
+                string.Format(CultureInfo.InvariantCulture, "(^{0}|{1}$)", (object) remove, (object) remove),
+                string.Empty, RegexOptions.IgnoreCase);
         }
 
         /// <summary>Removes the chars "remove" from source borders.</summary>
@@ -120,12 +118,9 @@ namespace CoolNameGenerator.Helper
         /// <param name="remove">The chars to remove.</param>
         public static string RemoveFromBorders(this string source, params char[] remove)
         {
-            string str = Regex.Escape(new string(remove));
-            return Regex.Replace(source, string.Format((IFormatProvider)CultureInfo.InvariantCulture, "(^[{0}]|[{1}]$)", new object[2]
-            {
-        (object) str,
-        (object) str
-            }), string.Empty);
+            var str = Regex.Escape(new string(remove));
+            return Regex.Replace(source,
+                string.Format(CultureInfo.InvariantCulture, "(^[{0}]|[{1}]$)", (object) str, (object) str), string.Empty);
         }
 
         /// <summary>Removes the punctuations.</summary>
@@ -141,9 +136,9 @@ namespace CoolNameGenerator.Helper
         /// <param name="source">The source string.</param>
         public static string EscapeAccentsToHex(this string source)
         {
-            StringBuilder stringBuilder = new StringBuilder(source.Length);
-            int length = source.Length;
-            for (int index = 0; index < length; ++index)
+            var stringBuilder = new StringBuilder(source.Length);
+            var length = source.Length;
+            for (var index = 0; index < length; ++index)
             {
                 if (source[index].HasAccent())
                     stringBuilder.Append(Uri.HexEscape(source[index]));
@@ -158,13 +153,13 @@ namespace CoolNameGenerator.Helper
         /// <param name="source">The source string.</param>
         public static string EscapeAccentsToHtmlEntities(this string source)
         {
-            int length = source.Length;
-            StringBuilder stringBuilder = new StringBuilder();
-            for (int index = 0; index < length; ++index)
+            var length = source.Length;
+            var stringBuilder = new StringBuilder();
+            for (var index = 0; index < length; ++index)
             {
-                char ch = source[index];
-                if ((int)ch >= 160 && (int)ch < 256)
-                    stringBuilder.AppendFormat("&#{0};", (object)((int)ch).ToString((IFormatProvider)NumberFormatInfo.InvariantInfo));
+                var ch = source[index];
+                if (ch >= 160 && ch < 256)
+                    stringBuilder.AppendFormat("&#{0};", ((int) ch).ToString(NumberFormatInfo.InvariantInfo));
                 else
                     stringBuilder.Append(ch);
             }
@@ -184,8 +179,8 @@ namespace CoolNameGenerator.Helper
         /// <param name="source">The source string.</param>
         public static bool HasAccent(this string source)
         {
-            int length = source.Length;
-            for (int index = 0; index < length; ++index)
+            var length = source.Length;
+            for (var index = 0; index < length; ++index)
             {
                 if (source[index].HasAccent())
                     return true;
@@ -200,18 +195,18 @@ namespace CoolNameGenerator.Helper
         {
             if (string.IsNullOrEmpty(input))
                 return input;
-            return StringExtensions.SInsertUnderscoreBeforeUppercase.Replace(input, "_$1");
+            return SInsertUnderscoreBeforeUppercase.Replace(input, "_$1");
         }
 
         /// <summary>
-        /// Format the specified string. Is a String.Format(CultureInfo.InvariantCulture,..) shortcut.
+        ///     Format the specified string. Is a String.Format(CultureInfo.InvariantCulture,..) shortcut.
         /// </summary>
         /// <param name="source">The source string.</param>
         /// <param name="args">The arguments.</param>
         /// <returns>The formatted string.</returns>
         public static string With(this string source, params object[] args)
         {
-            return string.Format((IFormatProvider)CultureInfo.InvariantCulture, source, args);
+            return string.Format(CultureInfo.InvariantCulture, source, args);
         }
 
         /// <summary>Capitalize the string.</summary>
@@ -221,19 +216,19 @@ namespace CoolNameGenerator.Helper
         [SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase")]
         public static string Capitalize(this string source, int ignoreWordsLowerThanChars = 3)
         {
-            return StringExtensions.SCapitalizeRegex.Replace(source.ToLowerInvariant(), (MatchEvaluator)(m =>
+            return SCapitalizeRegex.Replace(source.ToLowerInvariant(), m =>
             {
                 if (m.Value.Trim().Length < ignoreWordsLowerThanChars)
                     return m.Value;
                 return m.Groups[1].Value.ToUpperInvariant() + m.Groups[3].Value;
-            }));
+            });
         }
 
         /// <summary>
-        ///  Returns a value indicating whether the specified substring occurs within this string
-        ///  <remarks>
-        ///  Based on http://stackoverflow.com/a/444818/956886.
-        /// </remarks>
+        ///     Returns a value indicating whether the specified substring occurs within this string
+        ///     <remarks>
+        ///         Based on http://stackoverflow.com/a/444818/956886.
+        ///     </remarks>
         /// </summary>
         /// <param name="source">The source.</param>
         /// <param name="substring">The substring.</param>
@@ -255,7 +250,9 @@ namespace CoolNameGenerator.Helper
                 finglish = x.Contains(':') ? x.Substring(0, x.IndexOf(':')).ToLower() : null
             }).SkipWhile(x => x.finglish?.Length < 3 || x.persian?.Length < 3);
 
-            var uniqueWords = pairWords.Distinct((a, b) => a.persian == b.persian, c => c.persian.GetHashCode()).ToDictionary(p => p.persian, p => p.finglish);
+            var uniqueWords =
+                pairWords.Distinct((a, b) => a.persian == b.persian, c => c.persian.GetHashCode())
+                    .ToDictionary(p => p.persian, p => p.finglish);
 
             return uniqueWords;
         }
@@ -274,7 +271,7 @@ namespace CoolNameGenerator.Helper
         }
 
         /// <summary>
-        /// Gets the sub words.
+        ///     Gets the sub words.
         /// </summary>
         /// <param name="word">The word.</param>
         /// <param name="includeMiddleSubWords">include middle sub words? by default is true.</param>
@@ -310,7 +307,7 @@ namespace CoolNameGenerator.Helper
         }
 
         /// <summary>
-        /// Gets the sub words.
+        ///     Gets the sub words.
         /// </summary>
         /// <param name="word">The word.</param>
         /// <param name="includeMiddleSubWords">include middle sub words? by default is true.</param>
@@ -321,12 +318,13 @@ namespace CoolNameGenerator.Helper
         }
 
         /// <summary>
-        /// Gets the sub words.
+        ///     Gets the sub words.
         /// </summary>
         /// <param name="word">The word.</param>
         /// <param name="includeMiddleSubWords">include middle sub words? by default is true.</param>
         /// <returns>Sub words.</returns>
-        public static Dictionary<string, double> GetSubWordsByCoverage(this string word, bool includeMiddleSubWords = true)
+        public static Dictionary<string, double> GetSubWordsByCoverage(this string word,
+            bool includeMiddleSubWords = true)
         {
             // word:    a b c d
             //          0 1 2 3
@@ -351,7 +349,7 @@ namespace CoolNameGenerator.Helper
                 for (var j = 2; j <= len - i; j++)
                 {
                     var wordBuffer = word.Substring(i, j);
-                    subWords[wordBuffer] = ((double)wordBuffer.Length / len);
+                    subWords[wordBuffer] = (double) wordBuffer.Length/len;
                 }
 
                 if (!includeMiddleSubWords) break; // just sub words which stated by the original word, first chars
@@ -360,7 +358,8 @@ namespace CoolNameGenerator.Helper
             return subWords;
         }
 
-        public static Dictionary<string, Dictionary<string, double>> GetWordsBySubWordsCoverage(this IEnumerable<string> words, bool includeMiddleSubWords = true)
+        public static Dictionary<string, Dictionary<string, double>> GetWordsBySubWordsCoverage(
+            this IEnumerable<string> words, bool includeMiddleSubWords = true)
         {
             var result = new Dictionary<string, Dictionary<string, double>>();
             foreach (var word in words)

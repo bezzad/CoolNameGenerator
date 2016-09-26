@@ -1,45 +1,53 @@
 using System;
 using Amib.Threading;
+using Action = System.Action;
 
 namespace CoolNameGenerator.Helper.Threading
 {
     /// <summary>
-    /// A ITaskExecutor's implementation using SmartThreadPool to execute tasks in parallel.
+    ///     A ITaskExecutor's implementation using SmartThreadPool to execute tasks in parallel.
     /// </summary>
     public sealed class SmartThreadPoolTaskExecutor : TaskExecutorBase, IDisposable
     {
         #region Fields
+
         private SmartThreadPool _mThreadPool;
+
         #endregion
 
         #region Constructors
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="SmartThreadPoolTaskExecutor"/> class.
+        ///     Initializes a new instance of the <see cref="SmartThreadPoolTaskExecutor" /> class.
         /// </summary>
         public SmartThreadPoolTaskExecutor()
         {
             MinThreads = 2;
             MaxThreads = 2;
         }
+
         #endregion
 
         #region Properties
+
         /// <summary>
-        /// Gets or sets the minimum threads.
+        ///     Gets or sets the minimum threads.
         /// </summary>
         /// <value>The minimum threads.</value>
         public int MinThreads { get; set; }
 
         /// <summary>
-        /// Gets or sets the max threads.
+        ///     Gets or sets the max threads.
         /// </summary>
         /// <value>The max threads.</value>
         public int MaxThreads { get; set; }
+
         #endregion
 
         #region Methods
+
         /// <summary>
-        /// Starts the tasks execution.
+        ///     Starts the tasks execution.
         /// </summary>
         /// <returns>If has reach the timeout false, otherwise true.</returns>
         public override bool Start()
@@ -53,7 +61,7 @@ namespace CoolNameGenerator.Helper.Threading
                 _mThreadPool.MaxThreads = MaxThreads;
                 var workItemResults = new IWorkItemResult[Tasks.Count];
 
-                for (int i = 0; i < Tasks.Count; i++)
+                for (var i = 0; i < Tasks.Count; i++)
                 {
                     var t = Tasks[i];
                     workItemResults[i] = _mThreadPool.QueueWorkItem(new WorkItemCallback(Run), t);
@@ -62,7 +70,10 @@ namespace CoolNameGenerator.Helper.Threading
                 _mThreadPool.Start();
 
                 // Timeout was reach?
-                if (!_mThreadPool.WaitForIdle(Timeout.TotalMilliseconds > int.MaxValue ? int.MaxValue : Convert.ToInt32(Timeout.TotalMilliseconds)))
+                if (
+                    !_mThreadPool.WaitForIdle(Timeout.TotalMilliseconds > int.MaxValue
+                        ? int.MaxValue
+                        : Convert.ToInt32(Timeout.TotalMilliseconds)))
                 {
                     if (_mThreadPool.IsShuttingdown)
                     {
@@ -97,7 +108,7 @@ namespace CoolNameGenerator.Helper.Threading
         }
 
         /// <summary>
-        /// Stops the tasks execution.
+        ///     Stops the tasks execution.
         /// </summary>
         public override void Stop()
         {
@@ -112,7 +123,7 @@ namespace CoolNameGenerator.Helper.Threading
         }
 
         /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        ///     Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
         public void Dispose()
         {
@@ -123,10 +134,11 @@ namespace CoolNameGenerator.Helper.Threading
 
         private object Run(object state)
         {
-            ((System.Action)state)();
+            ((Action) state)();
 
             return true;
         }
+
         #endregion
     }
 }

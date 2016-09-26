@@ -15,13 +15,13 @@ namespace CoolNameGenerator.Helper
         /// <param name="objects">The objects.</param>
         public static Type[] GetTypes(this IEnumerable objects)
         {
-            List<Type> typeList = new List<Type>();
+            var typeList = new List<Type>();
             if (objects != null)
             {
-                foreach (object @object in objects)
+                foreach (var @object in objects)
                 {
                     if (@object == null)
-                        typeList.Add((Type)null);
+                        typeList.Add(null);
                     else
                         typeList.Add(@object.GetType());
                 }
@@ -30,32 +30,32 @@ namespace CoolNameGenerator.Helper
         }
 
         /// <summary>
-        /// Iterates in the collection calling the action for each item.
+        ///     Iterates in the collection calling the action for each item.
         /// </summary>
         /// <param name="self">The enumerable it self.</param>
         /// <param name="action">The each action.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         public static void Each<T>(this IEnumerable<T> self, Action<T> action)
         {
-            foreach (T obj in self)
+            foreach (var obj in self)
                 action(obj);
         }
 
         /// <summary>
-        /// Iterates in the collection calling the action for each item using index.
+        ///     Iterates in the collection calling the action for each item using index.
         /// </summary>
         /// <param name="self">The enumerable it self.</param>
         /// <param name="action">The each action.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         public static void Each<T>(this IEnumerable<T> self, Action<T, int> action)
         {
-            List<T> list = self.ToList<T>();
-            for (int index = 0; index < list.Count; ++index)
+            var list = self.ToList();
+            for (var index = 0; index < list.Count; ++index)
                 action(list[index], index);
         }
 
         /// <summary>
-        /// Iterates in the collection calling the action for each item and concatenating the result.
+        ///     Iterates in the collection calling the action for each item and concatenating the result.
         /// </summary>
         /// <returns>The string.</returns>
         /// <param name="self">The enumerable it self.</param>
@@ -63,13 +63,13 @@ namespace CoolNameGenerator.Helper
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         public static string ToString<T>(this IEnumerable<T> self, Func<T, object> function)
         {
-            StringBuilder result = new StringBuilder();
-            self.Each<T>((Action<T>)(i => result.Append(function(i))));
+            var result = new StringBuilder();
+            self.Each(i => result.Append(function(i)));
             return result.ToString();
         }
 
         /// <summary>
-        /// Iterates in the collection calling the action for each item using String.Format.
+        ///     Iterates in the collection calling the action for each item using String.Format.
         /// </summary>
         /// <returns>The string.</returns>
         /// <param name="self">The enumerable it self.</param>
@@ -77,7 +77,7 @@ namespace CoolNameGenerator.Helper
         /// <typeparam name="T">The 1st type parameter.</typeparam>
         public static string ToString<T>(this IEnumerable<T> self, string format)
         {
-            return self.ToString<T>((Func<T, object>)(i => (object)string.Format((IFormatProvider)CultureInfo.InvariantCulture, format, new object[1] { (object)i })));
+            return self.ToString(i => (object) string.Format(CultureInfo.InvariantCulture, format, (object) i));
         }
     }
 }

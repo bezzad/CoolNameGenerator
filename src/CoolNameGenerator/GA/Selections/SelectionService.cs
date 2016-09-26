@@ -1,19 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using CoolNameGenerator.Helper;
 using CoolNameGenerator.Helper.Reflection;
 
 namespace CoolNameGenerator.GA.Selections
 {
     /// <summary>
-    /// Selection service.
+    ///     Selection service.
     /// </summary>
     public static class SelectionService
     {
         #region Methods
+
         /// <summary>
-        /// Gets available selection types.
+        ///     Gets available selection types.
         /// </summary>
         /// <returns>All available selection types.</returns>
         [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
@@ -23,7 +23,7 @@ namespace CoolNameGenerator.GA.Selections
         }
 
         /// <summary>
-        /// Gets the available selection names.
+        ///     Gets the available selection names.
         /// </summary>
         /// <returns>The selection names.</returns>
         [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
@@ -33,7 +33,7 @@ namespace CoolNameGenerator.GA.Selections
         }
 
         /// <summary>
-        /// Creates the ISelection's implementation with the specified name.
+        ///     Creates the ISelection's implementation with the specified name.
         /// </summary>
         /// <returns>The selection implementation instance.</returns>
         /// <param name="name">The selection name.</param>
@@ -44,7 +44,7 @@ namespace CoolNameGenerator.GA.Selections
         }
 
         /// <summary>
-        /// Gets the selection type by the name.
+        ///     Gets the selection type by the name.
         /// </summary>
         /// <returns>The selection type.</returns>
         /// <param name="name">The name of selection.</param>
@@ -52,6 +52,7 @@ namespace CoolNameGenerator.GA.Selections
         {
             return TypeHelper.GetTypeByName<ISelection>(name);
         }
+
         #endregion
     }
 }

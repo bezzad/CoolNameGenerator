@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Diagnostics;
 using CoolNameGenerator.Helper;
-using CoolNameGenerator.Properties;
 
 namespace CoolNameGenerator.GA.Chromosomes
 {
     /// <summary>
-    /// A base class for chromosomes.
+    ///     A base class for chromosomes.
     /// </summary>
     [DebuggerDisplay("Fitness:{Fitness}, Genes:{Length}")]
     public abstract class ChromosomeBase : IChromosome
     {
         #region Fields
+
         private Gene[] _mGenes;
+
         #endregion
 
         #region Constructors        
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChromosomeBase"/> class.
+        ///     Initializes a new instance of the <see cref="ChromosomeBase" /> class.
         /// </summary>
         /// <param name="length">The length, in genes, of the chromosome.</param>
         protected ChromosomeBase(int length)
@@ -27,38 +29,41 @@ namespace CoolNameGenerator.GA.Chromosomes
             Length = length;
             _mGenes = new Gene[length];
         }
+
         #endregion
 
         #region Properties
+
         /// <summary>
-        /// Gets or sets the fitness of the chromosome in the current problem.
+        ///     Gets or sets the fitness of the chromosome in the current problem.
         /// </summary>
         public double? Fitness { get; set; }
 
         /// <summary>
-        /// Gets the length, in genes, of the chromosome.
+        ///     Gets the length, in genes, of the chromosome.
         /// </summary>
         public int Length { get; private set; }
 
         #endregion
 
         #region Methods
+
         /// <summary>
-        /// Implements the operator ==.
+        ///     Implements the operator ==.
         /// </summary>
         /// <param name="first">The first.</param>
         /// <param name="second">The second.</param>
         /// <returns>
-        /// The result of the operator.
+        ///     The result of the operator.
         /// </returns>
         public static bool operator ==(ChromosomeBase first, ChromosomeBase second)
         {
-            if (object.ReferenceEquals(first, second))
+            if (ReferenceEquals(first, second))
             {
                 return true;
             }
 
-            if (((object)first == null) || ((object)second == null))
+            if (((object) first == null) || ((object) second == null))
             {
                 return false;
             }
@@ -67,12 +72,12 @@ namespace CoolNameGenerator.GA.Chromosomes
         }
 
         /// <summary>
-        /// Implements the operator !=.
+        ///     Implements the operator !=.
         /// </summary>
         /// <param name="first">The first.</param>
         /// <param name="second">The second.</param>
         /// <returns>
-        /// The result of the operator.
+        ///     The result of the operator.
         /// </returns>
         public static bool operator !=(ChromosomeBase first, ChromosomeBase second)
         {
@@ -80,24 +85,24 @@ namespace CoolNameGenerator.GA.Chromosomes
         }
 
         /// <summary>
-        /// Implements the operator &lt;.
+        ///     Implements the operator &lt;.
         /// </summary>
         /// <param name="first">The first.</param>
         /// <param name="second">The second.</param>
         /// <returns>
-        /// The result of the operator.
+        ///     The result of the operator.
         /// </returns>
         public static bool operator <(ChromosomeBase first, ChromosomeBase second)
         {
-            if (object.ReferenceEquals(first, second))
+            if (ReferenceEquals(first, second))
             {
                 return false;
             }
-            else if ((object)first == null)
+            if ((object) first == null)
             {
                 return true;
             }
-            else if ((object)second == null)
+            if ((object) second == null)
             {
                 return false;
             }
@@ -106,12 +111,12 @@ namespace CoolNameGenerator.GA.Chromosomes
         }
 
         /// <summary>
-        /// Implements the operator &gt;.
+        ///     Implements the operator &gt;.
         /// </summary>
         /// <param name="first">The first.</param>
         /// <param name="second">The second.</param>
         /// <returns>
-        /// The result of the operator.
+        ///     The result of the operator.
         /// </returns>
         public static bool operator >(ChromosomeBase first, ChromosomeBase second)
         {
@@ -119,20 +124,20 @@ namespace CoolNameGenerator.GA.Chromosomes
         }
 
         /// <summary>
-        /// Generates the gene for the specified index.
+        ///     Generates the gene for the specified index.
         /// </summary>
         /// <param name="geneIndex">Gene index.</param>
         /// <returns>The gene generated at the specified index.</returns>
         public abstract Gene GenerateGene(int geneIndex);
 
         /// <summary>
-        /// Creates a new chromosome using the same structure of this.
+        ///     Creates a new chromosome using the same structure of this.
         /// </summary>
         /// <returns>The new chromosome.</returns>
         public abstract IChromosome CreateNew();
 
         /// <summary>
-        /// Creates a clone.
+        ///     Creates a clone.
         /// </summary>
         /// <returns>The chromosome clone.</returns>
         public virtual IChromosome Clone()
@@ -145,7 +150,7 @@ namespace CoolNameGenerator.GA.Chromosomes
         }
 
         /// <summary>
-        /// Replaces the gene in the specified index.
+        ///     Replaces the gene in the specified index.
         /// </summary>
         /// <param name="index">The gene index to replace.</param>
         /// <param name="gene">The new gene.</param>
@@ -154,7 +159,8 @@ namespace CoolNameGenerator.GA.Chromosomes
         {
             if (index < 0 || index >= Length)
             {
-                throw new ArgumentOutOfRangeException(nameof(index), "There is no Gene on index {0} to be replaced.".With(index));
+                throw new ArgumentOutOfRangeException(nameof(index),
+                    "There is no Gene on index {0} to be replaced.".With(index));
             }
 
             _mGenes[index] = gene;
@@ -162,22 +168,24 @@ namespace CoolNameGenerator.GA.Chromosomes
         }
 
         /// <summary>
-        /// Replaces the genes starting in the specified index.
+        ///     Replaces the genes starting in the specified index.
         /// </summary>
         /// <param name="startIndex">Start index.</param>
         /// <param name="genes">The genes.</param>
         /// <remarks>
-        /// The genes to be replaced can't be greater than the available space between the start index and the end of the chromosome.
+        ///     The genes to be replaced can't be greater than the available space between the start index and the end of the
+        ///     chromosome.
         /// </remarks>
         public void ReplaceGenes(int startIndex, Gene[] genes)
         {
             if (genes == null) throw new ArgumentNullException(nameof(genes));
-            
+
             if (genes.Length > 0)
             {
                 if (startIndex < 0 || startIndex >= Length)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(startIndex), "There is no Gene on index {0} to be replaced.".With(startIndex));
+                    throw new ArgumentOutOfRangeException(nameof(startIndex),
+                        "There is no Gene on index {0} to be replaced.".With(startIndex));
                 }
 
                 var genesToBeReplacedLength = genes.Length;
@@ -186,7 +194,9 @@ namespace CoolNameGenerator.GA.Chromosomes
 
                 if (genesToBeReplacedLength > availableSpaceLength)
                 {
-                    throw new ArgumentException(nameof(genes), "The number of genes to be replaced is greater than available space, there is {0} genes between the index {1} and the end of chromosome, but there is {2} genes to be replaced.".With(availableSpaceLength, startIndex, genesToBeReplacedLength));
+                    throw new ArgumentException(nameof(genes),
+                        "The number of genes to be replaced is greater than available space, there is {0} genes between the index {1} and the end of chromosome, but there is {2} genes to be replaced."
+                            .With(availableSpaceLength, startIndex, genesToBeReplacedLength));
                 }
 
                 Array.Copy(genes, 0, _mGenes, startIndex, genes.Length);
@@ -196,7 +206,7 @@ namespace CoolNameGenerator.GA.Chromosomes
         }
 
         /// <summary>
-        /// Resizes the chromosome to the new length.
+        ///     Resizes the chromosome to the new length.
         /// </summary>
         /// <param name="newLength">The new length.</param>
         public void Resize(int newLength)
@@ -208,11 +218,11 @@ namespace CoolNameGenerator.GA.Chromosomes
         }
 
         /// <summary>
-        /// Gets the gene in the specified index.
+        ///     Gets the gene in the specified index.
         /// </summary>
         /// <param name="index">The gene index.</param>
         /// <returns>
-        /// The gene.
+        ///     The gene.
         /// </returns>
         public Gene GetGene(int index)
         {
@@ -220,7 +230,7 @@ namespace CoolNameGenerator.GA.Chromosomes
         }
 
         /// <summary>
-        /// Gets the genes.
+        ///     Gets the genes.
         /// </summary>
         /// <returns>The genes.</returns>
         public Gene[] GetGenes()
@@ -229,7 +239,7 @@ namespace CoolNameGenerator.GA.Chromosomes
         }
 
         /// <summary>
-        /// Compares the current object with another object of the same type.
+        ///     Compares the current object with another object of the same type.
         /// </summary>
         /// <returns>The to.</returns>
         /// <param name="other">The other chromosome.</param>
@@ -252,11 +262,14 @@ namespace CoolNameGenerator.GA.Chromosomes
         }
 
         /// <summary>
-        /// Determines whether the specified <see cref="System.Object"/> is equal to the current <see cref="ChromosomeBase"/>.
+        ///     Determines whether the specified <see cref="System.Object" /> is equal to the current <see cref="ChromosomeBase" />
+        ///     .
         /// </summary>
-        /// <param name="obj">The <see cref="System.Object"/> to compare with the current <see cref="ChromosomeBase"/>.</param>
-        /// <returns><c>true</c> if the specified <see cref="System.Object"/> is equal to the current
-        /// <see cref="ChromosomeBase"/>; otherwise, <c>false</c>.</returns>
+        /// <param name="obj">The <see cref="System.Object" /> to compare with the current <see cref="ChromosomeBase" />.</param>
+        /// <returns>
+        ///     <c>true</c> if the specified <see cref="System.Object" /> is equal to the current
+        ///     <see cref="ChromosomeBase" />; otherwise, <c>false</c>.
+        /// </returns>
         public override bool Equals(object obj)
         {
             var other = obj as IChromosome;
@@ -270,10 +283,10 @@ namespace CoolNameGenerator.GA.Chromosomes
         }
 
         /// <summary>
-        /// Returns a hash code for this instance.
+        ///     Returns a hash code for this instance.
         /// </summary>
         /// <returns>
-        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        ///     A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
         /// </returns>
         public override int GetHashCode()
         {
@@ -281,13 +294,13 @@ namespace CoolNameGenerator.GA.Chromosomes
         }
 
         /// <summary>
-        /// Creates the gene on specified index.
-        /// <remarks>
-        /// It's a shortcut to:  
-        /// <code>
+        ///     Creates the gene on specified index.
+        ///     <remarks>
+        ///         It's a shortcut to:
+        ///         <code>
         /// ReplaceGene(index, GenerateGene(index));
         /// </code>
-        /// </remarks>
+        ///     </remarks>
         /// </summary>
         /// <param name="index">The gene index.</param>
         protected virtual void CreateGene(int index)
@@ -296,27 +309,27 @@ namespace CoolNameGenerator.GA.Chromosomes
         }
 
         /// <summary>
-        /// Creates all genes
-        /// <remarks>
-        /// It's a shortcut to: 
-        /// <code>
+        ///     Creates all genes
+        ///     <remarks>
+        ///         It's a shortcut to:
+        ///         <code>
         /// for (int i = 0; i &lt; Length; i++)
         /// {
         ///     ReplaceGene(i, GenerateGene(i));
         /// }
         /// </code>
-        /// </remarks>
-        /// </summary>        
+        ///     </remarks>
+        /// </summary>
         protected virtual void CreateGenes()
         {
-            for (int i = 0; i < Length; i++)
+            for (var i = 0; i < Length; i++)
             {
                 ReplaceGene(i, GenerateGene(i));
             }
         }
 
         /// <summary>
-        /// Validates the length.
+        ///     Validates the length.
         /// </summary>
         /// <param name="length">The length.</param>
         /// <exception cref="System.ArgumentException">The minimum length for a chromosome is 2 genes.</exception>
@@ -327,6 +340,7 @@ namespace CoolNameGenerator.GA.Chromosomes
                 throw new ArgumentException("The minimum length for a chromosome is 2 genes.");
             }
         }
-        #endregion      
+
+        #endregion
     }
 }

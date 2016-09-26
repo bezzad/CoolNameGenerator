@@ -13,22 +13,24 @@ namespace CoolNameGenerator.Helper
 {
     public class FinglishConverterApi
     {
+        public delegate void ProgressChangedEventHandler(string persian, string finglish);
+
         protected const string FinglishWebApiBaseAddress = "http://f2f-onezeroir.rhcloud.com";
         protected const string FinglishWebApiQueryKey = "word";
         public int MaxParallelismDegree = Environment.ProcessorCount;
+        public EventHandler ProgressCompleted = delegate { };
 
-        public delegate void ProgressChangedEventHandler(string persian, string finglish);
+        public EventHandler ProgressStarted = delegate { };
         public event ProgressChangedEventHandler ProgressChanged = delegate { };
+
         protected virtual void OnProgressChanged(string persian, string finglish)
         {
             ProgressChanged?.Invoke(persian, finglish);
         }
 
-        public EventHandler ProgressStarted = delegate { };
-        public EventHandler ProgressCompleted = delegate { };
 
-
-        protected virtual async Task<List<Tuple<string, string>>> GetFinglishByOneHttpClientAsync(string[] persians, CancellationTokenSource cts)
+        protected virtual async Task<List<Tuple<string, string>>> GetFinglishByOneHttpClientAsync(string[] persians,
+            CancellationTokenSource cts)
         {
             var words = new List<Tuple<string, string>>();
 
@@ -85,7 +87,8 @@ namespace CoolNameGenerator.Helper
             return new List<Tuple<string, string>>();
         }
 
-        public async Task<List<Tuple<string, string>>> GetParallelFinglishAsync(string[] persians, CancellationTokenSource cts)
+        public async Task<List<Tuple<string, string>>> GetParallelFinglishAsync(string[] persians,
+            CancellationTokenSource cts)
         {
             var result = new List<List<Tuple<string, string>>>();
 
@@ -96,11 +99,14 @@ namespace CoolNameGenerator.Helper
                 var chunkedArray = persians.ChunkArray(MaxParallelismDegree);
                 var tasks = new Task[MaxParallelismDegree];
 
-                for (int tCount = 0; tCount < MaxParallelismDegree; tCount++)
+                for (var tCount = 0; tCount < MaxParallelismDegree; tCount++)
                 {
                     if (cts.IsCancellationRequested) return result.SelectMany(x => x).ToList();
 
-                    tasks[tCount] = Task.Run(async () => result.Add(await GetFinglishByOneHttpClientAsync(chunkedArray[tCount], cts)), cts.Token);
+                    tasks[tCount] =
+                        Task.Run(
+                            async () => result.Add(await GetFinglishByOneHttpClientAsync(chunkedArray[tCount], cts)),
+                            cts.Token);
                     await Task.Delay(50);
                 }
 
@@ -119,13 +125,16 @@ namespace CoolNameGenerator.Helper
         }
 
 
-
         public async Task<string> GetFinglish(string persian)
         {
-            var res = await GetAsync(FinglishWebApiBaseAddress, queryParams: new Dictionary<string, string> { { FinglishWebApiQueryKey, persian } });
+            var res =
+                await
+                    GetAsync(FinglishWebApiBaseAddress,
+                        new Dictionary<string, string> {{FinglishWebApiQueryKey, persian}});
 
             return res ?? "";
         }
+
         protected static async Task<string> GetAsync(string baseAddress, Dictionary<string, string> queryParams)
         {
             using (var client = new HttpClient())
@@ -137,7 +146,7 @@ namespace CoolNameGenerator.Helper
                 var query = queryParams.Aggregate("/?", (current, q) => current + $"{q.Key}={q.Value}&");
                 query = query.Remove(query.Length - 1);
 
-                HttpResponseMessage response = await client.GetAsync(query);
+                var response = await client.GetAsync(query);
                 if (response.IsSuccessStatusCode)
                 {
                     var rawResponse = await response.Content.ReadAsByteArrayAsync();

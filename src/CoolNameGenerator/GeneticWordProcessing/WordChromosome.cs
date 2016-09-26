@@ -9,7 +9,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
     public class WordChromosome : ChromosomeBase
     {
         #region Properties     
-         
+
         public const int MaxCharactersLong = 67;
         public const int MaxHyphenUsage = 4;
         public bool HasNumeric { get; set; }
@@ -30,17 +30,19 @@ namespace CoolNameGenerator.GeneticWordProcessing
         }
 
         public WordChromosome(bool hasNumeric, bool hasHyphen) : this(FastRandom.Next(3, 8), hasNumeric, hasHyphen)
-        { }
+        {
+        }
 
         public WordChromosome() : this(FastRandom.Next(3, 8), false, false)
-        { }
+        {
+        }
 
         #endregion
 
         #region Methods    
 
         /// <summary>
-        /// Generates the gene.
+        ///     Generates the gene.
         /// </summary>
         /// <param name="geneIndex">Index of the gene.</param>
         /// <returns>The new Gene.</returns>
@@ -50,7 +52,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         }
 
         /// <summary>
-        /// Generates the gens.
+        ///     Generates the gens.
         /// </summary>
         /// <param name="wordLength">Length of the word.</param>
         /// <param name="hasNumeric">if set to <c>true</c> [has numeric].</param>
@@ -58,9 +60,12 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// <returns></returns>
         public Gene[] GenerateGens(int wordLength, bool hasNumeric, bool hasHyphen)
         {
-            var resourceChars = hasNumeric && hasHyphen ? Words.EnglishNumericLettersByHyphen
-                : hasNumeric ? Words.EnglishNumericLetters
-                    : hasHyphen ? Words.EnglishLettersByHyphen
+            var resourceChars = hasNumeric && hasHyphen
+                ? Words.EnglishNumericLettersByHyphen
+                : hasNumeric
+                    ? Words.EnglishNumericLetters
+                    : hasHyphen
+                        ? Words.EnglishLettersByHyphen
                         : Words.EnglishLetters;
 
             var genes = new List<Gene>();
@@ -81,10 +86,10 @@ namespace CoolNameGenerator.GeneticWordProcessing
         }
 
         /// <summary>
-        /// Creates a new chromosome using the same structure of this.
+        ///     Creates a new chromosome using the same structure of this.
         /// </summary>
         /// <returns>
-        /// The new chromosome.
+        ///     The new chromosome.
         /// </returns>
         public override IChromosome CreateNew()
         {

@@ -10,7 +10,7 @@ namespace CoolNameGenerator.Helper
         /// <param name="value">The char.</param>
         public static bool HasAccent(this char value)
         {
-            return "áàãâäéèêëíìóòõôöúùûüñçÁÀÃÂÄÉÈÊËÍÌÓÒÕÔÖÚÙÛÜÑÇ".Contains<char>(value);
+            return "áàãâäéèêëíìóòõôöúùûüñçÁÀÃÂÄÉÈÊËÍÌÓÒÕÔÖÚÙÛÜÑÇ".Contains(value);
         }
     }
 }

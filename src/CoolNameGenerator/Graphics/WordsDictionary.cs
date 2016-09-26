@@ -2,15 +2,38 @@
 using System.Drawing;
 using System.IO;
 using System.Text;
-using CoolNameGenerator.GeneticWordProcessing;
-using CoolNameGenerator.Helper;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CoolNameGenerator.GeneticWordProcessing;
+using CoolNameGenerator.Helper;
 
 namespace CoolNameGenerator.Graphics
 {
     public partial class WordsDictionary : BaseUserControl
     {
+        #region Constructors
+
+        public WordsDictionary()
+        {
+            InitializeComponent();
+
+            btnBrowse.Click += BtnBrowse_Click;
+            numDuplicateMatchScore.ValueChanged +=
+                (s, e) => Words.DuplicateMatchingFitness = (double) numDuplicateMatchScore.Value;
+            numMatchScore.ValueChanged += (s, e) => Words.MatchingFitness = (double) numMatchScore.Value;
+            numNoMatchScore.ValueChanged += (s, e) => Words.NoMatchingFitness = (double) numNoMatchScore.Value;
+            chkIncludeMiddleSubWords.CheckedChanged +=
+                (s, e) => Words.IncludeMiddleSubWords = chkIncludeMiddleSubWords.Checked;
+            chkEnabled.CheckedChanged += (s, e) =>
+            {
+                gbProperties.Enabled = chkEnabled.Checked;
+                txtFileAddress.Enabled = chkEnabled.Checked;
+                btnBrowse.Enabled = chkEnabled.Checked;
+            };
+        }
+
+        #endregion
+
         #region Properties
 
         public UniqueWords Words { get; set; }
@@ -23,33 +46,27 @@ namespace CoolNameGenerator.Graphics
             set
             {
                 Words.DuplicateMatchingFitness = value;
-                numDuplicateMatchScore.Value = (decimal)value;
+                numDuplicateMatchScore.Value = (decimal) value;
             }
         }
 
         public double MatchingFitness
         {
-            get
-            {
-                return Words.MatchingFitness;
-            }
+            get { return Words.MatchingFitness; }
             set
             {
                 Words.MatchingFitness = value;
-                numMatchScore.Value = (decimal)value;
+                numMatchScore.Value = (decimal) value;
             }
         }
 
         public double NoMatchingFitness
         {
-            get
-            {
-                return Words.NoMatchingFitness;
-            }
+            get { return Words.NoMatchingFitness; }
             set
             {
                 Words.NoMatchingFitness = value;
-                numNoMatchScore.Value = (decimal)value;
+                numNoMatchScore.Value = (decimal) value;
             }
         }
 
@@ -74,27 +91,6 @@ namespace CoolNameGenerator.Graphics
         }
 
         public Color BorderColor { get; set; } = Color.OrangeRed;
-
-        #endregion
-
-        #region Constructors
-
-        public WordsDictionary()
-        {
-            InitializeComponent();
-
-            btnBrowse.Click += BtnBrowse_Click;
-            numDuplicateMatchScore.ValueChanged += (s, e) => Words.DuplicateMatchingFitness = (double)numDuplicateMatchScore.Value;
-            numMatchScore.ValueChanged += (s, e) => Words.MatchingFitness = (double)numMatchScore.Value;
-            numNoMatchScore.ValueChanged += (s, e) => Words.NoMatchingFitness = (double)numNoMatchScore.Value;
-            chkIncludeMiddleSubWords.CheckedChanged += (s, e) => Words.IncludeMiddleSubWords = chkIncludeMiddleSubWords.Checked;
-            chkEnabled.CheckedChanged += (s, e) =>
-            {
-                gbProperties.Enabled = chkEnabled.Checked;
-                txtFileAddress.Enabled = chkEnabled.Checked;
-                btnBrowse.Enabled = chkEnabled.Checked;
-            };
-        }
 
         #endregion
 
@@ -128,21 +124,21 @@ namespace CoolNameGenerator.Graphics
         protected override void OnPaint(PaintEventArgs e)
         {
             //get the text size in group-box
-            var tSize = TextRenderer.MeasureText(this.Text, this.Font);
+            var tSize = TextRenderer.MeasureText(Text, Font);
 
             var borderRect = e.ClipRectangle;
-            borderRect.Y = (borderRect.Y + (tSize.Height / 2));
-            borderRect.Height = (borderRect.Height - (tSize.Height / 2));
+            borderRect.Y = borderRect.Y + tSize.Height/2;
+            borderRect.Height = borderRect.Height - tSize.Height/2;
             borderRect.X++;
             borderRect.Width -= 2;
-            ControlPaint.DrawBorder(e.Graphics, borderRect, this.BorderColor, ButtonBorderStyle.Solid);
+            ControlPaint.DrawBorder(e.Graphics, borderRect, BorderColor, ButtonBorderStyle.Solid);
 
             var textRect = e.ClipRectangle;
-            textRect.X = (textRect.X + 6);
+            textRect.X = textRect.X + 6;
             textRect.Width = tSize.Width;
             textRect.Height = tSize.Height;
-            e.Graphics.FillRectangle(new SolidBrush(this.BackColor), textRect);
-            e.Graphics.DrawString(this.Text, this.Font, new SolidBrush(this.ForeColor), textRect);
+            e.Graphics.FillRectangle(new SolidBrush(BackColor), textRect);
+            e.Graphics.DrawString(Text, Font, new SolidBrush(ForeColor), textRect);
         }
 
         #endregion

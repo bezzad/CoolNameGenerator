@@ -5,13 +5,6 @@ namespace CoolNameGenerator.GeneticWordProcessing
 {
     public class WordChromosomeInfo
     {
-        #region Properties      
-
-        public List<Tuple<string, string>> MatchedUniqueWords { get; set; }
-        public List<string> MatchedUniqueSubWords { get; set; }
-
-        #endregion
-
         public WordChromosomeInfo()
         {
             Reset();
@@ -22,5 +15,12 @@ namespace CoolNameGenerator.GeneticWordProcessing
             MatchedUniqueWords = new List<Tuple<string, string>>();
             MatchedUniqueSubWords = new List<string>();
         }
+
+        #region Properties      
+
+        public List<Tuple<string, string>> MatchedUniqueWords { get; set; }
+        public List<string> MatchedUniqueSubWords { get; set; }
+
+        #endregion
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using CoolNameGenerator.GA;
+﻿using CoolNameGenerator.GA;
 using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.GA.Crossovers;
 using CoolNameGenerator.GA.Fitnesses;
@@ -12,36 +11,36 @@ namespace CoolNameGenerator.GeneticWordProcessing
     public abstract class GeneticControllerBase : IGeneticAlgoritmController
     {
         /// <summary>
-        /// Gets the Genetic Algorithm.
+        ///     Gets the Genetic Algorithm.
         /// </summary>
         /// <value>The Genetic Algorithm.</value>
         protected GeneticAlgorithm GA { get; private set; }
 
         /// <summary>
-        /// Creates the chromosome.
+        ///     Creates the chromosome.
         /// </summary>
         /// <returns>
-        /// The chromosome.
+        ///     The chromosome.
         /// </returns>
         public abstract IChromosome CreateChromosome();
 
         /// <summary>
-        /// Creates the fitness.
+        ///     Creates the fitness.
         /// </summary>
         /// <returns>
-        /// The fitness.
+        ///     The fitness.
         /// </returns>
         public abstract IFitness CreateFitness();
 
         /// <summary>
-        /// Initializes this instance.
+        ///     Initializes this instance.
         /// </summary>
         public virtual void Initialize()
         {
         }
 
         /// <summary>
-        /// Configure the Genetic Algorithm.
+        ///     Configure the Genetic Algorithm.
         /// </summary>
         /// <param name="ga">The genetic algorithm.</param>
         public virtual void ConfigGa(GeneticAlgorithm ga)
@@ -50,16 +49,16 @@ namespace CoolNameGenerator.GeneticWordProcessing
         }
 
         /// <summary>
-        /// Draws the sample.
+        ///     Draws the sample.
         /// </summary>
         /// <param name="bestChromosome">The current best chromosome</param>
         public abstract void Draw(IChromosome bestChromosome);
 
         /// <summary>
-        /// Creates the termination.
+        ///     Creates the termination.
         /// </summary>
         /// <returns>
-        /// The termination.
+        ///     The termination.
         /// </returns>
         public virtual ITermination CreateTermination()
         {
@@ -67,7 +66,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         }
 
         /// <summary>
-        /// Creates the crossover.
+        ///     Creates the crossover.
         /// </summary>
         /// <returns>The crossover.</returns>
         public virtual ICrossover CreateCrossover()
@@ -76,7 +75,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         }
 
         /// <summary>
-        /// Creates the mutation.
+        ///     Creates the mutation.
         /// </summary>
         /// <returns>The mutation.</returns>
         public virtual IMutation CreateMutation()
@@ -85,7 +84,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         }
 
         /// <summary>
-        /// Creates the selection.
+        ///     Creates the selection.
         /// </summary>
         /// <returns>The selection.</returns>
         public virtual ISelection CreateSelection()

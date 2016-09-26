@@ -1,19 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using CoolNameGenerator.Helper;
 using CoolNameGenerator.Helper.Reflection;
 
 namespace CoolNameGenerator.GA.Crossovers
 {
     /// <summary>
-    /// Crossover service.
+    ///     Crossover service.
     /// </summary>
     public static class CrossoverService
     {
         #region Methods
+
         /// <summary>
-        /// Gets available crossover types.
+        ///     Gets available crossover types.
         /// </summary>
         /// <returns>All available crossover types.</returns>
         [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
@@ -23,7 +23,7 @@ namespace CoolNameGenerator.GA.Crossovers
         }
 
         /// <summary>
-        /// Gets the available crossover names.
+        ///     Gets the available crossover names.
         /// </summary>
         /// <returns>The crossover names.</returns>
         [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
@@ -33,7 +33,7 @@ namespace CoolNameGenerator.GA.Crossovers
         }
 
         /// <summary>
-        /// Creates the ICrossover's implementation with the specified name.
+        ///     Creates the ICrossover's implementation with the specified name.
         /// </summary>
         /// <returns>The crossover implementation instance.</returns>
         /// <param name="name">The crossover name.</param>
@@ -44,7 +44,7 @@ namespace CoolNameGenerator.GA.Crossovers
         }
 
         /// <summary>
-        /// Gets the crossover type by the name.
+        ///     Gets the crossover type by the name.
         /// </summary>
         /// <returns>The crossover type.</returns>
         /// <param name="name">The name of crossover.</param>
@@ -52,6 +52,7 @@ namespace CoolNameGenerator.GA.Crossovers
         {
             return TypeHelper.GetTypeByName<ICrossover>(name);
         }
+
         #endregion
     }
 }

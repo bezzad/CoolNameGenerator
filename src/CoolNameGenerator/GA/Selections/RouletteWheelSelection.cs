@@ -9,53 +9,64 @@ using CoolNameGenerator.GA.Randomizations;
 namespace CoolNameGenerator.GA.Selections
 {
     /// <summary>
-    /// Roulette Wheel Selection
-    /// <remarks>
-    /// Is a kind of Fitness Proportionate Selection. 
-    /// <see href=" http://watchmaker.uncommons.org/manual/ch03s02.html">Fitness-Proportionate Selection</see>
-    /// <para>
-    /// In the Roulette wheel selection method [Holland, 1992], the first step is to calculate the cumulative fitness of the 
-    /// whole population through the sum of the fitness of all individuals. After that, the probability of selection is 
-    /// calculated for each individual.
-    /// </para>
-    /// <para>
-    /// Then, an array is built containing cumulative probabilities of the individuals. So, n random numbers are generated in the range 0 to fitness sum.
-    /// and for each random number an array element which can have higher value is searched for. Therefore, individuals are selected according to their 
-    /// probabilities of selection. 
-    /// </para>
-    /// <see href="http://en.wikipedia.org/wiki/Fitness_proportionate_selection">Wikipedia</see>
-    /// </remarks>
+    ///     Roulette Wheel Selection
+    ///     <remarks>
+    ///         Is a kind of Fitness Proportionate Selection.
+    ///         <see href=" http://watchmaker.uncommons.org/manual/ch03s02.html">Fitness-Proportionate Selection</see>
+    ///         <para>
+    ///             In the Roulette wheel selection method [Holland, 1992], the first step is to calculate the cumulative
+    ///             fitness of the
+    ///             whole population through the sum of the fitness of all individuals. After that, the probability of
+    ///             selection is
+    ///             calculated for each individual.
+    ///         </para>
+    ///         <para>
+    ///             Then, an array is built containing cumulative probabilities of the individuals. So, n random numbers are
+    ///             generated in the range 0 to fitness sum.
+    ///             and for each random number an array element which can have higher value is searched for. Therefore,
+    ///             individuals are selected according to their
+    ///             probabilities of selection.
+    ///         </para>
+    ///         <see href="http://en.wikipedia.org/wiki/Fitness_proportionate_selection">Wikipedia</see>
+    ///     </remarks>
     /// </summary>
     [DisplayName("Roulette Wheel")]
     public class RouletteWheelSelection : SelectionBase
     {
         #region Constructors
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="RouletteWheelSelection"/> class.
+        ///     Initializes a new instance of the <see cref="RouletteWheelSelection" /> class.
         /// </summary>
         public RouletteWheelSelection() : base(2)
         {
         }
+
         #endregion
 
         #region ISelection implementation
+
         /// <summary>
-        /// Selects from wheel.
+        ///     Selects from wheel.
         /// </summary>
         /// <param name="number">The number.</param>
         /// <param name="chromosomes">The chromosomes.</param>
         /// <param name="rouletteWheel">The roulette wheel.</param>
         /// <param name="getPointer">The get pointer.</param>
         /// <returns>The selected chromosomes.</returns>
-        protected static IList<IChromosome> SelectFromWheel(int number, IList<IChromosome> chromosomes, IList<double> rouletteWheel, Func<double> getPointer)
+        protected static IList<IChromosome> SelectFromWheel(int number, IList<IChromosome> chromosomes,
+            IList<double> rouletteWheel, Func<double> getPointer)
         {
             var selected = new List<IChromosome>();
 
-            for (int i = 0; i < number; i++)
+            for (var i = 0; i < number; i++)
             {
                 var pointer = getPointer();
 
-                var chromosomeIndex = rouletteWheel.Select((value, index) => new { Value = value, Index = index }).FirstOrDefault(r => r.Value >= pointer).Index;
+                var chromosomeIndex =
+                    rouletteWheel.Select((value, index) => new {Value = value, Index = index})
+                        .FirstOrDefault(r => r.Value >= pointer)
+                        .Index;
                 selected.Add(chromosomes[chromosomeIndex]);
             }
 
@@ -63,11 +74,12 @@ namespace CoolNameGenerator.GA.Selections
         }
 
         /// <summary>
-        /// Calculates the cumulative percent.
+        ///     Calculates the cumulative percent.
         /// </summary>
         /// <param name="chromosomes">The chromosomes.</param>
         /// <param name="rouletteWheel">The roulette wheel.</param>
-        protected static void CalculateCumulativePercentFitness(IList<IChromosome> chromosomes, IList<double> rouletteWheel)
+        protected static void CalculateCumulativePercentFitness(IList<IChromosome> chromosomes,
+            IList<double> rouletteWheel)
         {
             var sumFitness = chromosomes.Sum(c => c.Fitness.Value);
 
@@ -75,13 +87,13 @@ namespace CoolNameGenerator.GA.Selections
 
             foreach (var c in chromosomes)
             {
-                cumulativePercent += c.Fitness.Value / sumFitness;
+                cumulativePercent += c.Fitness.Value/sumFitness;
                 rouletteWheel.Add(cumulativePercent);
             }
         }
 
         /// <summary>
-        /// Performs the selection of chromosomes from the generation specified.
+        ///     Performs the selection of chromosomes from the generation specified.
         /// </summary>
         /// <param name="number">The number of chromosomes to select.</param>
         /// <param name="generation">The generation where the selection will be made.</param>
@@ -95,6 +107,7 @@ namespace CoolNameGenerator.GA.Selections
 
             return SelectFromWheel(number, chromosomes, rouletteWheel, FastRandom.Next);
         }
+
         #endregion
     }
 }

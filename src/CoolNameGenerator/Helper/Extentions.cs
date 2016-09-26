@@ -20,16 +20,15 @@ namespace CoolNameGenerator.Helper
             {
                 action();
             }
-
         }
 
         public static T[][] ChunkArray<T>(this T[] array, int chunkCount)
         {
             var result = new T[chunkCount][];
             var arrRemainLen = array.Length;
-            var chunkFloatSize = (double)arrRemainLen / chunkCount;
+            var chunkFloatSize = (double) arrRemainLen/chunkCount;
             if (chunkFloatSize < 1 && chunkFloatSize > 0) chunkFloatSize = 1;
-            var chunkSize = (int)Math.Round(chunkFloatSize);
+            var chunkSize = (int) Math.Round(chunkFloatSize);
 
             // product some arrays[] with chunkCount number
             for (int cc = 0, srcIndex = 0; cc < chunkCount; cc++, srcIndex += chunkSize, arrRemainLen -= chunkSize)
@@ -50,6 +49,7 @@ namespace CoolNameGenerator.Helper
         {
             return items.Distinct(new DelegateComparer<T>(equals, hashCode));
         }
+
         public static IEnumerable<T> Distinct<T>(this IEnumerable<T> items, Func<T, T, bool> equals)
         {
             return items.Distinct(new DelegateComparer<T>(equals, null));
@@ -57,7 +57,7 @@ namespace CoolNameGenerator.Helper
 
         public static T Index<T>(this HashSet<T> hashSet, T containObj) where T : IEquatable<T>
         {
-            return hashSet.First(x => ((IEquatable<T>)x).Equals(containObj));
+            return hashSet.First(x => ((IEquatable<T>) x).Equals(containObj));
         }
 
 
@@ -69,8 +69,7 @@ namespace CoolNameGenerator.Helper
             var r = isLigth & hash[0] < minByte ? hash[0] + minByte : hash[0];
             var g = isLigth & hash[1] < minByte ? hash[1] + minByte : hash[1];
             var b = isLigth & hash[2] < minByte ? hash[2] + minByte : hash[2];
-            return Color.FromArgb(r,g, b);
+            return Color.FromArgb(r, g, b);
         }
-        
     }
 }

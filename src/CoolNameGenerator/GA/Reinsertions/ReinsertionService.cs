@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using CoolNameGenerator.Helper;
 using CoolNameGenerator.Helper.Reflection;
 
 namespace CoolNameGenerator.GA.Reinsertions
 {
     /// <summary>
-    /// Reinsertion service.
+    ///     Reinsertion service.
     /// </summary>
     public static class ReinsertionService
     {
         #region Methods
+
         /// <summary>
-        /// Gets available reinsertion types.
+        ///     Gets available reinsertion types.
         /// </summary>
         /// <returns>All available reinsertion types.</returns>
         [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
@@ -23,7 +23,7 @@ namespace CoolNameGenerator.GA.Reinsertions
         }
 
         /// <summary>
-        /// Gets the available reinsertion names.
+        ///     Gets the available reinsertion names.
         /// </summary>
         /// <returns>The reinsertion names.</returns>
         [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
@@ -33,7 +33,7 @@ namespace CoolNameGenerator.GA.Reinsertions
         }
 
         /// <summary>
-        /// Creates the IReinsertion's implementation with the specified name.
+        ///     Creates the IReinsertion's implementation with the specified name.
         /// </summary>
         /// <returns>The reinsertion implementation instance.</returns>
         /// <param name="name">The reinsertion name.</param>
@@ -44,7 +44,7 @@ namespace CoolNameGenerator.GA.Reinsertions
         }
 
         /// <summary>
-        /// Gets the reinsertion type by the name.
+        ///     Gets the reinsertion type by the name.
         /// </summary>
         /// <returns>The reinsertion type.</returns>
         /// <param name="name">The name of reinsertion.</param>
@@ -52,6 +52,7 @@ namespace CoolNameGenerator.GA.Reinsertions
         {
             return TypeHelper.GetTypeByName<IReinsertion>(name);
         }
+
         #endregion
     }
 }

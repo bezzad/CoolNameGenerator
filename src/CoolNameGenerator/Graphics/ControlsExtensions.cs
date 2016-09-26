@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoolNameGenerator.Properties;
 
@@ -15,9 +13,10 @@ namespace CoolNameGenerator.Graphics
             var controls = control.Controls.Cast<Control>().ToArray();
 
             return controls.SelectMany(ctrl => GetControls(ctrl, type))
-                                      .Concat(controls)
-                                      .Where(c => c.GetType() == type);
+                .Concat(controls)
+                .Where(c => c.GetType() == type);
         }
+
         public static IEnumerable<Control> GetControls(this Control control)
         {
             var controls = control.Controls.Cast<Control>().ToArray();
@@ -31,6 +30,7 @@ namespace CoolNameGenerator.Graphics
 
             return items.SelectMany(GetToolStripItems).Concat(items);
         }
+
         public static IEnumerable<ToolStripItem> GetToolStripItems(this ToolStripMenuItem mewnItem)
         {
             var items = new List<ToolStripItem>();
@@ -56,6 +56,7 @@ namespace CoolNameGenerator.Graphics
 
             return items.SelectMany(GetToolStripMenuItems).Concat(items);
         }
+
         public static IEnumerable<ToolStripMenuItem> GetToolStripMenuItems(this ToolStripMenuItem mewnItem)
         {
             var items = new List<ToolStripMenuItem>();
@@ -77,7 +78,7 @@ namespace CoolNameGenerator.Graphics
             var menuItems = GetToolStripMenuItems(menu);
             var items = GetToolStripItems(menu);
 
-            foreach (ToolStripMenuItem item in menuItems)
+            foreach (var item in menuItems)
             {
                 var replacmentText = Localization.ResourceManager.GetString(item.Text);
                 if (!string.IsNullOrEmpty(replacmentText))
@@ -86,7 +87,7 @@ namespace CoolNameGenerator.Graphics
                 }
             }
 
-            foreach (ToolStripItem item in items)
+            foreach (var item in items)
             {
                 var replacmentText = Localization.ResourceManager.GetString(item.Text);
                 if (!string.IsNullOrEmpty(replacmentText))
@@ -95,6 +96,7 @@ namespace CoolNameGenerator.Graphics
                 }
             }
         }
+
         public static void LocalizingGridColumns(this DataGridView dgv)
         {
             foreach (DataGridViewColumn col in dgv.Columns)
@@ -106,6 +108,7 @@ namespace CoolNameGenerator.Graphics
                 }
             }
         }
+
         public static void LocalizingControl(this Control ctrl)
         {
             if (!string.IsNullOrEmpty(ctrl?.Text))
@@ -115,15 +118,15 @@ namespace CoolNameGenerator.Graphics
 
             var controls = GetControls(ctrl);
 
-            foreach (Control c in controls)
+            foreach (var c in controls)
             {
                 if (c.GetType() == typeof(MenuStrip))
                 {
-                    LocalizingMenuStrip((MenuStrip)c);
+                    LocalizingMenuStrip((MenuStrip) c);
                 }
                 else if (c.GetType() == typeof(DataGridView))
                 {
-                    LocalizingGridColumns((DataGridView)c);
+                    LocalizingGridColumns((DataGridView) c);
                 }
                 else
                 {
@@ -135,7 +138,5 @@ namespace CoolNameGenerator.Graphics
                 }
             }
         }
-
-
     }
 }

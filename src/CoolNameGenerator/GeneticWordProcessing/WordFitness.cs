@@ -9,21 +9,20 @@ using CoolNameGenerator.Properties;
 
 namespace CoolNameGenerator.GeneticWordProcessing
 {
-
     /// <summary>
-    /// Word chromosome fitness.
+    ///     Word chromosome fitness.
     /// </summary>
     /// <seealso cref="CoolNameGenerator.GA.Fitnesses.IFitness" />
     public class WordFitness : IFitness
     {
         /// <summary>
-        /// Gets or sets the evaluate function.
+        ///     Gets or sets the evaluate function.
         /// </summary>
         /// <value>The evaluate function.</value>
         public Func<WordChromosome, double> EvaluateFunc { get; set; }
 
         /// <summary>
-        /// Evaluates the specified chromosome.
+        ///     Evaluates the specified chromosome.
         /// </summary>
         /// <param name="chromosome">The chromosome.</param>
         /// <returns>The chromosome fitness.</returns>
@@ -38,7 +37,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
         }
 
         /// <summary>
-        /// Evaluates the length of word.
+        ///     Evaluates the length of word.
         /// </summary>
         /// <param name="len">The word length.</param>
         /// <returns>Score between -10 ~ 10</returns>
@@ -62,7 +61,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
             if (len == 3 || len == 13) return 1;
             if (len == 2 || (len > 13 && len < 20)) return 0;
 
-            return -1 * Math.Abs(len - 19);
+            return -1*Math.Abs(len - 19);
         }
 
 
@@ -92,7 +91,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
 
         /// <summary>
-        /// Evaluates the matching English character words.
+        ///     Evaluates the matching English character words.
         /// </summary>
         /// <param name="word">The chromosome word.</param>
         /// <param name="wordsLists">The list of words to matching by them.</param>
@@ -106,7 +105,8 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
             if (word.Length < 2)
             {
-                throw new ArgumentOutOfRangeException(nameof(word), Localization.The_argument_must_be_have_more_than_2_length);
+                throw new ArgumentOutOfRangeException(nameof(word),
+                    Localization.The_argument_must_be_have_more_than_2_length);
             }
 
             if (!wordsLists.Any())
@@ -130,9 +130,11 @@ namespace CoolNameGenerator.GeneticWordProcessing
                 {
                     if (lst?.Contains(subWords[c]) == true) // Is Matched Word!?
                     {
-                        word.EvaluateInfo.MatchedUniqueWords.Add(Tuple.Create(subWords[c], lst.Name)); // add found sub word to chromosome info
+                        word.EvaluateInfo.MatchedUniqueWords.Add(Tuple.Create(subWords[c], lst.Name));
+                            // add found sub word to chromosome info
 
-                        if (matchedWords[lst.Name].Add(subWords[c])) // Able to add matched subWord (or Not if duplicate match)?
+                        if (matchedWords[lst.Name].Add(subWords[c]))
+                            // Able to add matched subWord (or Not if duplicate match)?
                         {
                             score += lst.MatchingFitness; // Add match fitness of this list
                         }
@@ -141,14 +143,16 @@ namespace CoolNameGenerator.GeneticWordProcessing
                     }
                     else // No Match Word!
                     {
-                        score += lst?.NoMatchingFitness ?? 0; // increase or decrease no match fitness according by this list 
+                        score += lst?.NoMatchingFitness ?? 0;
+                            // increase or decrease no match fitness according by this list 
                     }
                 }
                 //
                 // Check this sub word in all sub words of all words by coverage percentage for any matched sub word by sub word
                 var coverageOfSubWord = UniqueWords.CheckWordsCoveragePercentageFor(subWords[c]);
                 sumCoveragePercent += coverageOfSubWord;
-                if (coverageOfSubWord > 0) word.EvaluateInfo.MatchedUniqueSubWords.Add(subWords[c]); // add found sub word to chromosome info
+                if (coverageOfSubWord > 0)
+                    word.EvaluateInfo.MatchedUniqueSubWords.Add(subWords[c]); // add found sub word to chromosome info
                 //
                 // decrease score if exist duplicate sub words in a word
                 for (var i = c + 1; i < subWords.Count; i++)
@@ -166,17 +170,17 @@ namespace CoolNameGenerator.GeneticWordProcessing
                 if (overlapCount == 0) score += 3;
                 else if (overlapCount == 1) score += 10;
                 else if (countOfNatrualWords == 2) score += 7;
-                else score -= overlapCount * 5;
+                else score -= overlapCount*5;
             }
             else if (countOfNatrualWords == 1) score += 10;
             //
             // Check Matching Natural Words Count Score
             //
-            if (countOfNatrualWords < 3) score += (double)countOfNatrualWords * 5 / 2; // good word
+            if (countOfNatrualWords < 3) score += (double) countOfNatrualWords*5/2; // good word
             else if (countOfNatrualWords == 3) score += 0; // not good or bad word
-            else if (countOfNatrualWords > 3) score += (countOfNatrualWords - 3) * -5; // bad word
+            else if (countOfNatrualWords > 3) score += (countOfNatrualWords - 3)*-5; // bad word
 
-            return (score) + sumCoveragePercent;
+            return score + sumCoveragePercent;
         }
     }
 }

@@ -1,19 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using CoolNameGenerator.Helper;
 using CoolNameGenerator.Helper.Reflection;
 
 namespace CoolNameGenerator.GA.Populations
 {
     /// <summary>
-    /// Population service.
+    ///     Population service.
     /// </summary>
     public static class PopulationService
     {
         #region Methods
+
         /// <summary>
-        /// Gets available generation strategy types.
+        ///     Gets available generation strategy types.
         /// </summary>
         /// <returns>All available generation strategy types.</returns>
         [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
@@ -23,7 +23,7 @@ namespace CoolNameGenerator.GA.Populations
         }
 
         /// <summary>
-        /// Gets the available generation strategy names.
+        ///     Gets the available generation strategy names.
         /// </summary>
         /// <returns>The generation strategy names.</returns>
         [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
@@ -33,7 +33,7 @@ namespace CoolNameGenerator.GA.Populations
         }
 
         /// <summary>
-        /// Creates the IGenerationStrategy's implementation with the specified name.
+        ///     Creates the IGenerationStrategy's implementation with the specified name.
         /// </summary>
         /// <returns>The generation strategy implementation instance.</returns>
         /// <param name="name">The generation strategy name.</param>
@@ -44,7 +44,7 @@ namespace CoolNameGenerator.GA.Populations
         }
 
         /// <summary>
-        /// Gets the generation strategy type by the name.
+        ///     Gets the generation strategy type by the name.
         /// </summary>
         /// <returns>The generation strategy type.</returns>
         /// <param name="name">The name of generation strategy.</param>
@@ -52,6 +52,7 @@ namespace CoolNameGenerator.GA.Populations
         {
             return TypeHelper.GetTypeByName<IGenerationStrategy>(name);
         }
+
         #endregion
     }
 }

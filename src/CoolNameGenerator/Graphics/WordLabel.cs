@@ -1,28 +1,15 @@
 ﻿using System;
-using CoolNameGenerator.Helper;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using CoolNameGenerator.GA.Chromosomes;
-using CoolNameGenerator.GA.Randomizations;
 using CoolNameGenerator.GeneticWordProcessing;
+using CoolNameGenerator.Helper;
 
 namespace CoolNameGenerator.Graphics
 {
-    public sealed class WordLabel : System.Windows.Forms.RichTextBox
+    public sealed class WordLabel : RichTextBox
     {
         private readonly ToolTip _toolTip;
-
-        public override string Text
-        {
-            get { return base.Text; }
-            set
-            {
-                this.InvokeIfRequired(() => base.Text = value);
-            }
-        }
-
-        public double Fitness { get; set; }
 
 
         public WordLabel(WordChromosome word) : this(word.ToString(), word.Fitness ?? 0)
@@ -54,10 +41,10 @@ namespace CoolNameGenerator.Graphics
             // 
             // Initialize Control
             // 
-            this.AutoSize = false;
-            BorderStyle = System.Windows.Forms.BorderStyle.None;
-            Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            Size = new System.Drawing.Size(180, 50);
+            AutoSize = false;
+            BorderStyle = BorderStyle.None;
+            Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Size = new Size(180, 50);
             Text = "Word";
             Padding = new Padding(10);
             ReadOnly = true;
@@ -65,6 +52,13 @@ namespace CoolNameGenerator.Graphics
             BackColor = Color.WhiteSmoke;
         }
 
+        public override string Text
+        {
+            get { return base.Text; }
+            set { this.InvokeIfRequired(() => base.Text = value); }
+        }
+
+        public double Fitness { get; set; }
 
 
         private void SetTooltip(WordChromosome chromosome)
@@ -74,8 +68,10 @@ namespace CoolNameGenerator.Graphics
                 var wordLine = $"Word: {Text}";
                 var fitnessLine = chromosome.Fitness != null ? $"Fitness: {chromosome.Fitness}" : "";
                 var lenLine = $"Length: {Text.Length}";
-                var matchedWordsLine = $"Matched Words:{Environment.NewLine}{string.Join(Environment.NewLine, chromosome.EvaluateInfo.MatchedUniqueWords.Select(m => $"[{m.Item2}:\t{m.Item1}]"))}";
-                var matchedSubWordsLine = $"Matched SubWords:{Environment.NewLine}{string.Join(Environment.NewLine, chromosome.EvaluateInfo.MatchedUniqueSubWords)}";
+                var matchedWordsLine =
+                    $"Matched Words:{Environment.NewLine}{string.Join(Environment.NewLine, chromosome.EvaluateInfo.MatchedUniqueWords.Select(m => $"[{m.Item2}:\t{m.Item1}]"))}";
+                var matchedSubWordsLine =
+                    $"Matched SubWords:{Environment.NewLine}{string.Join(Environment.NewLine, chromosome.EvaluateInfo.MatchedUniqueSubWords)}";
 
 
                 var tooltipContent = $"{wordLine}" +
@@ -103,7 +99,7 @@ namespace CoolNameGenerator.Graphics
 
             this.InvokeIfRequired(() =>
             {
-                this.Select(0, Text.Length);
+                Select(0, Text.Length);
                 SelectionBackColor = Color.WhiteSmoke;
                 foreach (var matchedWord in word.EvaluateInfo.MatchedUniqueWords)
                 {

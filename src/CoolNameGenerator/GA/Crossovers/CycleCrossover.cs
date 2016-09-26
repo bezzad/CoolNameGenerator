@@ -1,40 +1,51 @@
-﻿using CoolNameGenerator.GA.Chromosomes;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using CoolNameGenerator.GA.Chromosomes;
 
 namespace CoolNameGenerator.GA.Crossovers
 {
     /// <summary>
-    /// Cycle Crossover (CX).
-    /// <remarks>
-    /// The Cycle Crossover (CX) proposed by Oliver builds offspring in such a way that each 
-    /// city (and its position) comes from one of the parents.
-    /// <see href="http://arxiv.org/ftp/arxiv/papers/1203/1203.3097.pdf">A Comparative Study of Adaptive Crossover Operators for Genetic Algorithms to Resolve the Traveling Salesman Problem</see>
-    /// <para>
-    /// The Cycle Crossover operator identifies a number of so-called cycles between two parent chromosomes. 
-    /// Then, to form Child 1, cycle one is copied from parent 1, cycle 2 from parent 2, cycle 3 from parent 1, and so on.
-    /// <see ref="http://www.rubicite.com/Tutorials/GeneticAlgorithms/CrossoverOperators/CycleCrossoverOperator.aspx">Crossover Technique: Cycle Crossover</see>
-    /// </para>
-    /// </remarks>
+    ///     Cycle Crossover (CX).
+    ///     <remarks>
+    ///         The Cycle Crossover (CX) proposed by Oliver builds offspring in such a way that each
+    ///         city (and its position) comes from one of the parents.
+    ///         <see href="http://arxiv.org/ftp/arxiv/papers/1203/1203.3097.pdf">
+    ///             A Comparative Study of Adaptive Crossover
+    ///             Operators for Genetic Algorithms to Resolve the Traveling Salesman Problem
+    ///         </see>
+    ///         <para>
+    ///             The Cycle Crossover operator identifies a number of so-called cycles between two parent chromosomes.
+    ///             Then, to form Child 1, cycle one is copied from parent 1, cycle 2 from parent 2, cycle 3 from parent 1, and
+    ///             so on.
+    ///             <see
+    ///                 ref="http://www.rubicite.com/Tutorials/GeneticAlgorithms/CrossoverOperators/CycleCrossoverOperator.aspx">
+    ///                 Crossover
+    ///                 Technique: Cycle Crossover
+    ///             </see>
+    ///         </para>
+    ///     </remarks>
     /// </summary>
     [DisplayName("Cycle (CX)")]
     public class CycleCrossover : CrossoverBase
     {
         #region Constructors
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="CycleCrossover"/> class.
+        ///     Initializes a new instance of the <see cref="CycleCrossover" /> class.
         /// </summary>
         public CycleCrossover()
             : base(2, 2)
         {
             IsOrdered = true;
         }
+
         #endregion
 
         #region Methods
+
         /// <summary>
-        /// Performs the cross with specified parents generating the children.
+        ///     Performs the cross with specified parents generating the children.
         /// </summary>
         /// <param name="parents">The parents chromosomes.</param>
         /// <returns>The offspring (children) of the parents.</returns>
@@ -45,7 +56,8 @@ namespace CoolNameGenerator.GA.Crossovers
 
             if (parents.AnyHasRepeatedGene())
             {
-                throw new CrossoverException(this, "The Cycle Crossover (CX) can be only used with ordered chromosomes. The specified chromosome has repeated genes.");
+                throw new CrossoverException(this,
+                    "The Cycle Crossover (CX) can be only used with ordered chromosomes. The specified chromosome has repeated genes.");
             }
 
             var cycles = new List<List<int>>();
@@ -56,7 +68,7 @@ namespace CoolNameGenerator.GA.Crossovers
             var parent2Genes = parent2.GetGenes();
 
             // Search for the cycles.
-            for (int i = 0; i < parent1.Length; i++)
+            for (var i = 0; i < parent1.Length; i++)
             {
                 if (!cycles.SelectMany(p => p).Contains(i))
                 {
@@ -67,11 +79,11 @@ namespace CoolNameGenerator.GA.Crossovers
             }
 
             // Copy the cycles to the offpring.
-            for (int i = 0; i < cycles.Count; i++)
+            for (var i = 0; i < cycles.Count; i++)
             {
                 var cycle = cycles[i];
 
-                if (i % 2 == 0)
+                if (i%2 == 0)
                 {
                     // Copy cycle index pair: values from Parent 1 and copied to Child 1, and values from Parent 2 will be copied to Child 2.
                     CopyCycleIndexPair(cycle, parent1Genes, offspring1, parent2Genes, offspring2);
@@ -83,18 +95,19 @@ namespace CoolNameGenerator.GA.Crossovers
                 }
             }
 
-            return new List<IChromosome>() { offspring1, offspring2 };
+            return new List<IChromosome> {offspring1, offspring2};
         }
 
         /// <summary>
-        /// Copies the cycle index pair.
+        ///     Copies the cycle index pair.
         /// </summary>
         /// <param name="cycle">The cycle.</param>
         /// <param name="fromParent1Genes">From parent1 genes.</param>
         /// <param name="toOffspring1">To offspring1.</param>
         /// <param name="fromParent2Genes">From parent2 genes.</param>
         /// <param name="toOffspring2">To offspring2.</param>
-        private static void CopyCycleIndexPair(IList<int> cycle, Gene[] fromParent1Genes, IChromosome toOffspring1, Gene[] fromParent2Genes, IChromosome toOffspring2)
+        private static void CopyCycleIndexPair(IList<int> cycle, Gene[] fromParent1Genes, IChromosome toOffspring1,
+            Gene[] fromParent2Genes, IChromosome toOffspring2)
         {
             foreach (var geneCycleIndex in cycle)
             {
@@ -104,7 +117,7 @@ namespace CoolNameGenerator.GA.Crossovers
         }
 
         /// <summary>
-        /// Creates the cycle recursively.
+        ///     Creates the cycle recursively.
         /// </summary>
         /// <param name="parent1Genes">The parent one's genes.</param>
         /// <param name="parent2Genes">The parent two's genes.</param>
@@ -116,7 +129,9 @@ namespace CoolNameGenerator.GA.Crossovers
             {
                 var parent2Gene = parent2Genes[geneIndex];
                 cycle.Add(geneIndex);
-                var newGeneIndex = parent1Genes.Select((g, i) => new { Value = g.Value, Index = i }).First(g => g.Value.Equals(parent2Gene.Value));
+                var newGeneIndex =
+                    parent1Genes.Select((g, i) => new {g.Value, Index = i})
+                        .First(g => g.Value.Equals(parent2Gene.Value));
 
                 if (geneIndex != newGeneIndex.Index)
                 {
@@ -124,6 +139,7 @@ namespace CoolNameGenerator.GA.Crossovers
                 }
             }
         }
+
         #endregion
     }
 }

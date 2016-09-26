@@ -1,26 +1,27 @@
-﻿using CoolNameGenerator.GA.Chromosomes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using CoolNameGenerator.GA.Chromosomes;
 using CoolNameGenerator.Helper;
 
 namespace CoolNameGenerator.GA.Crossovers
 {
     /// <summary>
-    /// Two-Point Crossover (C2)
-    /// <remarks>
-    /// Two-point crossover calls for two points to be selected on the parents. 
-    /// Everything between the two points is swapped between the parents, rendering two children.
-    /// <see href="http://en.wikipedia.org/wiki/Crossover_(genetic_algorithm)#Two-point_crossover">Wikipedia</see>
-    /// </remarks>
+    ///     Two-Point Crossover (C2)
+    ///     <remarks>
+    ///         Two-point crossover calls for two points to be selected on the parents.
+    ///         Everything between the two points is swapped between the parents, rendering two children.
+    ///         <see href="http://en.wikipedia.org/wiki/Crossover_(genetic_algorithm)#Two-point_crossover">Wikipedia</see>
+    ///     </remarks>
     /// </summary>
     [DisplayName("Two-Point")]
     public class TwoPointCrossover : OnePointCrossover
     {
         #region Constructors
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="TwoPointCrossover"/> class.
+        ///     Initializes a new instance of the <see cref="TwoPointCrossover" /> class.
         /// </summary>
         /// <param name="swapPointOneGeneIndex">Swap point one gene index.</param>
         /// <param name="swapPointTwoGeneIndex">Swap point two gene index.</param>
@@ -28,7 +29,8 @@ namespace CoolNameGenerator.GA.Crossovers
         {
             if (swapPointOneGeneIndex >= swapPointTwoGeneIndex)
             {
-                throw new ArgumentOutOfRangeException(nameof(swapPointTwoGeneIndex), "The the swap point two index should be greater than swap point one index.");
+                throw new ArgumentOutOfRangeException(nameof(swapPointTwoGeneIndex),
+                    "The the swap point two index should be greater than swap point one index.");
             }
 
             SwapPointOneGeneIndex = swapPointOneGeneIndex;
@@ -37,34 +39,38 @@ namespace CoolNameGenerator.GA.Crossovers
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TwoPointCrossover"/> class.
+        ///     Initializes a new instance of the <see cref="TwoPointCrossover" /> class.
         /// </summary>
         public TwoPointCrossover() : this(0, 1)
         {
         }
+
         #endregion
 
         #region Properties
+
         /// <summary>
-        /// Gets or sets the index of the swap point one gene.
+        ///     Gets or sets the index of the swap point one gene.
         /// </summary>
         /// <value>The index of the swap point one gene.</value>
         public int SwapPointOneGeneIndex { get; set; }
 
         /// <summary>
-        /// Gets or sets the index of the swap point two gene.
+        ///     Gets or sets the index of the swap point two gene.
         /// </summary>
         /// <value>The index of the swap point two gene.</value>
         public int SwapPointTwoGeneIndex { get; set; }
+
         #endregion
 
         #region Methods       
+
         /// <summary>
-        /// Performs the cross with specified parents generating the children.
+        ///     Performs the cross with specified parents generating the children.
         /// </summary>
         /// <param name="parents">The parents chromosomes.</param>
         /// <returns>
-        /// The offspring (children) of the parents.
+        ///     The offspring (children) of the parents.
         /// </returns>
         protected override IList<IChromosome> PerformCross(IList<IChromosome> parents)
         {
@@ -77,14 +83,15 @@ namespace CoolNameGenerator.GA.Crossovers
             {
                 throw new ArgumentOutOfRangeException(
                     nameof(parents),
-                    "The swap point two index is {0}, but there is only {1} genes. The swap should result at least one gene to each sides.".With(SwapPointTwoGeneIndex, parentLength));
+                    "The swap point two index is {0}, but there is only {1} genes. The swap should result at least one gene to each sides."
+                        .With(SwapPointTwoGeneIndex, parentLength));
             }
 
             return CreateChildren(firstParent, secondParent);
         }
 
         /// <summary>
-        /// Creates the child.
+        ///     Creates the child.
         /// </summary>
         /// <returns>The child.</returns>
         /// <param name="leftParent">Left parent.</param>
@@ -95,11 +102,13 @@ namespace CoolNameGenerator.GA.Crossovers
             var secondCutGenesCount = SwapPointTwoGeneIndex + 1;
             var child = leftParent.CreateNew();
             child.ReplaceGenes(0, leftParent.GetGenes().Take(firstCutGenesCount).ToArray());
-            child.ReplaceGenes(firstCutGenesCount, rightParent.GetGenes().Skip(firstCutGenesCount).Take(secondCutGenesCount - firstCutGenesCount).ToArray());
+            child.ReplaceGenes(firstCutGenesCount,
+                rightParent.GetGenes().Skip(firstCutGenesCount).Take(secondCutGenesCount - firstCutGenesCount).ToArray());
             child.ReplaceGenes(secondCutGenesCount, leftParent.GetGenes().Skip(secondCutGenesCount).ToArray());
 
             return child;
         }
+
         #endregion
     }
 }

@@ -8,17 +8,19 @@ using System.Reflection;
 namespace CoolNameGenerator.Helper.Reflection
 {
     /// <summary>
-    /// Type helper.
+    ///     Type helper.
     /// </summary>
     public static class TypeHelper
     {
         #region Methods
+
         /// <summary>
-        /// Gets types by interface name
+        ///     Gets types by interface name
         /// </summary>
         /// <typeparam name="TInterface">The interface.</typeparam>
         /// <returns>All types that implements the interface specified.</returns>
-        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "is a good use for this case")]
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter",
+            Justification = "is a good use for this case")]
         public static IList<Type> GetTypesByInterface<TInterface>()
         {
             var interfaceType = typeof(TInterface);
@@ -26,23 +28,24 @@ namespace CoolNameGenerator.Helper.Reflection
 
             var selectedAssemblies = assemblies.Where(
                 a => a.FullName.Equals(Assembly.GetExecutingAssembly().FullName, StringComparison.OrdinalIgnoreCase));
-                //a => a.FullName.StartsWith("GeneticSharp.", StringComparison.OrdinalIgnoreCase));
+            //a => a.FullName.StartsWith("GeneticSharp.", StringComparison.OrdinalIgnoreCase));
 
 
             var types = selectedAssemblies.SelectMany(a => a.GetTypes())
-                    .Where(t => t.GetInterfaces().Any(i => i == interfaceType) && !t.IsAbstract)
-                    .OrderBy(t => t.Name)
-                    .ToList();
+                .Where(t => t.GetInterfaces().Any(i => i == interfaceType) && !t.IsAbstract)
+                .OrderBy(t => t.Name)
+                .ToList();
 
             return types;
         }
 
         /// <summary>
-        /// Gets the available crossover names.
+        ///     Gets the available crossover names.
         /// </summary>
         /// <typeparam name="TInterface">The interface.</typeparam>
         /// <returns>The crossover names.</returns>
-        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "is a good use for this case")]
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter",
+            Justification = "is a good use for this case")]
         public static IList<string> GetDisplayNamesByInterface<TInterface>()
         {
             return GetTypesByInterface<TInterface>()
@@ -51,7 +54,7 @@ namespace CoolNameGenerator.Helper.Reflection
         }
 
         /// <summary>
-        /// Creates the TInterface's implementation with the specified name.
+        ///     Creates the TInterface's implementation with the specified name.
         /// </summary>
         /// <returns>The TInterface's implementation instance.</returns>
         /// <param name="name">The TInterface's implementation name.</param>
@@ -63,30 +66,35 @@ namespace CoolNameGenerator.Helper.Reflection
 
             try
             {
-                return (TInterface)Activator.CreateInstance(crossoverType, constructorArgs);
+                return (TInterface) Activator.CreateInstance(crossoverType, constructorArgs);
             }
             catch (MissingMethodException ex)
             {
-                throw new ArgumentException("A {0}'s implementation with name '{1}' was found, but seems the constructor args were invalid.".With(typeof(TInterface).Name, name), "constructorArgs", ex);
+                throw new ArgumentException(
+                    "A {0}'s implementation with name '{1}' was found, but seems the constructor args were invalid."
+                        .With(typeof(TInterface).Name, name), "constructorArgs", ex);
             }
         }
 
         /// <summary>
-        /// Gets the TInterface's implementation with the specified name.
+        ///     Gets the TInterface's implementation with the specified name.
         /// </summary>
         /// <returns>The TInterface's implementation type.</returns>
         /// <param name="name">The TInterface's implementation name.</param>
         /// <typeparam name="TInterface">The interface.</typeparam>
-        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "is a good use for this case")]
+        [SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter",
+            Justification = "is a good use for this case")]
         public static Type GetTypeByName<TInterface>(string name)
         {
             var interfaceName = typeof(TInterface).Name;
             var crossoverType = GetTypesByInterface<TInterface>()
-                .FirstOrDefault(t => GetDisplayNameAttribute(t).DisplayName.Equals(name, StringComparison.OrdinalIgnoreCase));
+                .FirstOrDefault(
+                    t => GetDisplayNameAttribute(t).DisplayName.Equals(name, StringComparison.OrdinalIgnoreCase));
 
             if (crossoverType == null)
             {
-                throw new ArgumentException("There is no {0} implementation with name '{1}'.".With(interfaceName, name), nameof(name));
+                throw new ArgumentException(
+                    "There is no {0} implementation with name '{1}'.".With(interfaceName, name), nameof(name));
             }
 
             return crossoverType;
@@ -103,6 +111,7 @@ namespace CoolNameGenerator.Helper.Reflection
 
             return attribute as DisplayNameAttribute;
         }
+
         #endregion
     }
 }

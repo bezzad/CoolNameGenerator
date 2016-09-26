@@ -3,23 +3,26 @@
 namespace CoolNameGenerator.GA.Populations
 {
     /// <summary>
-    /// An IGenerationStrategy's implementation that keeps all generations to further evaluation.
-    /// <remarks>
-    /// This strategy can be slow and can suffer of OutOfMemoryException when you have great population and a long term termination.
-    /// </remarks>
+    ///     An IGenerationStrategy's implementation that keeps all generations to further evaluation.
+    ///     <remarks>
+    ///         This strategy can be slow and can suffer of OutOfMemoryException when you have great population and a long term
+    ///         termination.
+    ///     </remarks>
     /// </summary>
     [DisplayName("Tracking")]
     public class TrackingGenerationStrategy : IGenerationStrategy
     {
         #region Methods
+
         /// <summary>
-        /// Register that a new generation has been created.
+        ///     Register that a new generation has been created.
         /// </summary>
         /// <param name="population">The population where the new generation has been created.</param>
         public void RegisterNewGeneration(IPopulation population)
         {
             // Do nothing, because wants to keep all generations in the line.
         }
+
         #endregion
     }
 }

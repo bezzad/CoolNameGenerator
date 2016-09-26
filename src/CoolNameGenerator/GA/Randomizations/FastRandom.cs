@@ -15,11 +15,11 @@ namespace CoolNameGenerator.GA.Randomizations
                 throw new ArgumentOutOfRangeException(nameof(minValue), Localization.Argument_MinMaxValue);
             }
 
-            return (int)Math.Round(Next() * (maxValue - minValue) + minValue);
+            return (int) Math.Round(Next()*(maxValue - minValue) + minValue);
         }
 
         /// <summary>
-        /// Randoms the number.
+        ///     Randoms the number.
         /// </summary>
         /// <param name="maxValue">One more than the greatest legal return value</param>
         /// <returns>An int [0..maxValue)</returns>
@@ -34,18 +34,18 @@ namespace CoolNameGenerator.GA.Randomizations
         }
 
         /// <summary>
-        /// Randoms the number.
+        ///     Randoms the number.
         /// </summary>
         /// <returns>A double [0..1)</returns>
         public static double Next()
         {
             var guid = Guid.NewGuid().GetHashCode();
-            var floatingGuid = Math.Abs((double)guid / (int.MaxValue));
+            var floatingGuid = Math.Abs((double) guid/int.MaxValue);
             return floatingGuid;
         }
 
         /// <summary>
-        /// Gets an integer array with unique values between minimum value (inclusive) and maximum value (exclusive).
+        ///     Gets an integer array with unique values between minimum value (inclusive) and maximum value (exclusive).
         /// </summary>
         /// <returns>The integer array.</returns>
         /// <param name="count">The array length</param>
@@ -54,7 +54,8 @@ namespace CoolNameGenerator.GA.Randomizations
         public static int[] GetUniqueInts(int count, int minValue, int maxValue)
         {
             if (count > maxValue - minValue)
-                throw new ArgumentOutOfRangeException(nameof(count), Localization.OutOfRangeException_indexMustLessThan.With("count of array", "max - min"));
+                throw new ArgumentOutOfRangeException(nameof(count),
+                    Localization.OutOfRangeException_indexMustLessThan.With("count of array", "max - min"));
 
             var result = new HashSet<int>();
 
@@ -63,13 +64,14 @@ namespace CoolNameGenerator.GA.Randomizations
             {
                 while (!result.Add(Next(minValue, maxValue)))
                 {
-                };
+                }
+                ;
             }
             return result.ToArray();
         }
 
         /// <summary>
-        /// Gets an integer array with values between minimum value (inclusive) and maximum value (exclusive).
+        ///     Gets an integer array with values between minimum value (inclusive) and maximum value (exclusive).
         /// </summary>
         /// <returns>The integer array.</returns>
         /// <param name="count">The array length</param>
@@ -93,22 +95,22 @@ namespace CoolNameGenerator.GA.Randomizations
 
         int[] IRandomization.GetInts(int length, int min, int max)
         {
-            return FastRandom.GetInts(length, min, max);
+            return GetInts(length, min, max);
         }
 
         int[] IRandomization.GetUniqueInts(int length, int min, int max)
         {
-            return FastRandom.GetUniqueInts(length, min, max);
+            return GetUniqueInts(length, min, max);
         }
 
         public float GetFloat()
         {
-            return (float)Next();
+            return (float) Next();
         }
 
         public float GetFloat(float min, float max)
         {
-            return (float)GetDouble(min, max);
+            return (float) GetDouble(min, max);
         }
 
         public double GetDouble()
@@ -123,7 +125,7 @@ namespace CoolNameGenerator.GA.Randomizations
                 throw new ArgumentOutOfRangeException(nameof(min), Localization.Argument_MinMaxValue);
             }
 
-            return Next() * (max - min) + min;
+            return Next()*(max - min) + min;
         }
 
         public int GetInt(int min, int max)

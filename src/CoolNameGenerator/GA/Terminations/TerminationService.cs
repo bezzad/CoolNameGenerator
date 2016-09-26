@@ -1,19 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using CoolNameGenerator.Helper;
 using CoolNameGenerator.Helper.Reflection;
 
 namespace CoolNameGenerator.GA.Terminations
 {
     /// <summary>
-    /// Termination service.
+    ///     Termination service.
     /// </summary>
     public static class TerminationService
     {
         #region Methods
+
         /// <summary>
-        /// Gets available termination types.
+        ///     Gets available termination types.
         /// </summary>
         /// <returns>All available termination types.</returns>
         [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
@@ -23,7 +23,7 @@ namespace CoolNameGenerator.GA.Terminations
         }
 
         /// <summary>
-        /// Gets the available termination names.
+        ///     Gets the available termination names.
         /// </summary>
         /// <returns>The termination names.</returns>
         [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
@@ -33,7 +33,7 @@ namespace CoolNameGenerator.GA.Terminations
         }
 
         /// <summary>
-        /// Creates the ITermination's implementation with the specified name.
+        ///     Creates the ITermination's implementation with the specified name.
         /// </summary>
         /// <returns>The ITermination's implementation instance.</returns>
         /// <param name="name">The ITermination name.</param>
@@ -44,7 +44,7 @@ namespace CoolNameGenerator.GA.Terminations
         }
 
         /// <summary>
-        /// Gets the termination type by the name.
+        ///     Gets the termination type by the name.
         /// </summary>
         /// <returns>The termination type.</returns>
         /// <param name="name">The name of termination.</param>
@@ -52,6 +52,7 @@ namespace CoolNameGenerator.GA.Terminations
         {
             return TypeHelper.GetTypeByName<ITermination>(name);
         }
+
         #endregion
     }
 }

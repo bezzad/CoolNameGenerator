@@ -2,19 +2,41 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using CoolNameGenerator.GA.Chromosomes;
-using CoolNameGenerator.Helper;
 using CoolNameGenerator.Properties;
 
 namespace CoolNameGenerator.GA.Populations
 {
     /// <summary>
-    /// Represents a population of candidate solutions (chromosomes).
+    ///     Represents a population of candidate solutions (chromosomes).
     /// </summary>
     public class Population : IPopulation
     {
-        #region Constructors
+        #region Events
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="Population"/> class.
+        ///     Occurs when best chromosome changed.
+        /// </summary>
+        public event EventHandler BestChromosomeChanged;
+
+        #endregion
+
+        #region Protected methods
+
+        /// <summary>
+        ///     Raises the best chromosome changed event.
+        /// </summary>
+        /// <param name="args">The event arguments.</param>
+        protected virtual void OnBestChromosomeChanged(EventArgs args)
+        {
+            BestChromosomeChanged?.Invoke(this, args);
+        }
+
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Population" /> class.
         /// </summary>
         /// <param name="minSize">The minimum size (chromosomes).</param>
         /// <param name="maxSize">The maximum size (chromosomes).</param>
@@ -23,12 +45,14 @@ namespace CoolNameGenerator.GA.Populations
         {
             if (minSize < 2)
             {
-                throw new ArgumentOutOfRangeException(nameof(minSize), Localization.minimum_size_for_a_population_is_2_chromosomes);
+                throw new ArgumentOutOfRangeException(nameof(minSize),
+                    Localization.minimum_size_for_a_population_is_2_chromosomes);
             }
 
             if (maxSize < minSize)
             {
-                throw new ArgumentOutOfRangeException(nameof(maxSize), Localization.maximum_size_for_a_population_should_be_equal_or_greater_than_minimum_size);
+                throw new ArgumentOutOfRangeException(nameof(maxSize),
+                    Localization.maximum_size_for_a_population_should_be_equal_or_greater_than_minimum_size);
             }
 
             if (adamChromosome == null) throw new ArgumentNullException(nameof(adamChromosome));
@@ -42,7 +66,7 @@ namespace CoolNameGenerator.GA.Populations
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Population"/> class.
+        ///     Initializes a new instance of the <see cref="Population" /> class.
         /// </summary>
         /// <param name="minSize">The minimum size (chromosomes).</param>
         /// <param name="maxSize">The maximum size (chromosomes).</param>
@@ -52,16 +76,21 @@ namespace CoolNameGenerator.GA.Populations
         {
             if (minSize < 2)
             {
-                throw new ArgumentOutOfRangeException(nameof(minSize), Localization.minimum_size_for_a_population_is_2_chromosomes);
+                throw new ArgumentOutOfRangeException(nameof(minSize),
+                    Localization.minimum_size_for_a_population_is_2_chromosomes);
             }
 
             if (maxSize < minSize)
             {
-                throw new ArgumentOutOfRangeException(nameof(maxSize), Localization.maximum_size_for_a_population_should_be_equal_or_greater_than_minimum_size);
+                throw new ArgumentOutOfRangeException(nameof(maxSize),
+                    Localization.maximum_size_for_a_population_should_be_equal_or_greater_than_minimum_size);
             }
 
             if (adamChromosome == null) throw new ArgumentNullException(nameof(adamChromosome));
-            if (generationStrategy == null) { throw new ArgumentNullException(nameof(generationStrategy)); }
+            if (generationStrategy == null)
+            {
+                throw new ArgumentNullException(nameof(generationStrategy));
+            }
 
             CreationDate = DateTime.Now;
             MinSize = minSize;
@@ -70,78 +99,77 @@ namespace CoolNameGenerator.GA.Populations
             Generations = new List<Generation>();
             GenerationStrategy = generationStrategy;
         }
-        #endregion
 
-        #region Events
-        /// <summary>
-        /// Occurs when best chromosome changed.
-        /// </summary>
-        public event EventHandler BestChromosomeChanged;
         #endregion
 
         #region Properties
+
         /// <summary>
-        /// Gets or sets the creation date.
+        ///     Gets or sets the creation date.
         /// </summary>
         public DateTime CreationDate { get; protected set; }
 
         /// <summary>
-        /// Gets or sets the generations.
-        /// <remarks>
-        /// The information of Generations can vary depending of the IGenerationStrategy used.
-        /// </remarks>
+        ///     Gets or sets the generations.
+        ///     <remarks>
+        ///         The information of Generations can vary depending of the IGenerationStrategy used.
+        ///     </remarks>
         /// </summary>
         /// <value>The generations.</value>
-        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly", Justification = "Parent classes need to set it.")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly",
+            Justification = "Parent classes need to set it.")]
         public IList<Generation> Generations { get; protected set; }
 
         /// <summary>
-        /// Gets or sets the current generation.
+        ///     Gets or sets the current generation.
         /// </summary>
         /// <value>The current generation.</value>
         public Generation CurrentGeneration { get; protected set; }
 
         /// <summary>
-        /// Gets or sets the total number of generations executed.
-        /// <remarks>
-        /// Use this information to know how many generations have been executed, because Generations.Count can vary depending of the IGenerationStrategy used.
-        /// </remarks>
+        ///     Gets or sets the total number of generations executed.
+        ///     <remarks>
+        ///         Use this information to know how many generations have been executed, because Generations.Count can vary
+        ///         depending of the IGenerationStrategy used.
+        ///     </remarks>
         /// </summary>
         public int GenerationsNumber { get; protected set; }
 
         /// <summary>
-        /// Gets or sets the minimum size.
+        ///     Gets or sets the minimum size.
         /// </summary>
         /// <value>The minimum size.</value>
         public int MinSize { get; set; }
 
         /// <summary>
-        /// Gets or sets the size of the max.
+        ///     Gets or sets the size of the max.
         /// </summary>
         /// <value>The size of the max.</value>
         public int MaxSize { get; set; }
 
         /// <summary>
-        /// Gets or sets the best chromosome.
+        ///     Gets or sets the best chromosome.
         /// </summary>
         /// <value>The best chromosome.</value>
         public IChromosome BestChromosome { get; protected set; }
 
         /// <summary>
-        /// Gets or sets the generation strategy.
+        ///     Gets or sets the generation strategy.
         /// </summary>
         public IGenerationStrategy GenerationStrategy { get; set; }
 
         /// <summary>
-        /// Gets or sets the original chromosome of all population.
+        ///     Gets or sets the original chromosome of all population.
         /// </summary>
         /// <value>The adam chromosome.</value>
         protected IChromosome AdamChromosome { get; set; }
+
         #endregion
 
         #region Public methods
+
         /// <summary>
-        /// Creates the initial generation.
+        ///     Creates the initial generation.
         /// </summary>
         public virtual void CreateInitialGeneration()
         {
@@ -156,7 +184,8 @@ namespace CoolNameGenerator.GA.Populations
 
                 if (c == null)
                 {
-                    throw new InvalidOperationException("The Adam chromosome's 'CreateNew' method generated a null chromosome. This is a invalid behavior, please, check your chromosome code.");
+                    throw new InvalidOperationException(
+                        "The Adam chromosome's 'CreateNew' method generated a null chromosome. This is a invalid behavior, please, check your chromosome code.");
                 }
 
                 c.ValidateGenes();
@@ -168,7 +197,7 @@ namespace CoolNameGenerator.GA.Populations
         }
 
         /// <summary>
-        /// Creates a new generation.
+        ///     Creates a new generation.
         /// </summary>
         /// <param name="chromosomes">The chromosomes for new generation.</param>
         public virtual void CreateNewGeneration(IList<IChromosome> chromosomes)
@@ -183,8 +212,8 @@ namespace CoolNameGenerator.GA.Populations
         }
 
         /// <summary>
-        /// Ends the current generation.
-        /// </summary>        
+        ///     Ends the current generation.
+        /// </summary>
         public virtual void EndCurrentGeneration()
         {
             CurrentGeneration.End(MaxSize);
@@ -195,17 +224,6 @@ namespace CoolNameGenerator.GA.Populations
 
                 OnBestChromosomeChanged(EventArgs.Empty);
             }
-        }
-        #endregion
-
-        #region Protected methods
-        /// <summary>
-        /// Raises the best chromosome changed event.
-        /// </summary>
-        /// <param name="args">The event arguments.</param>
-        protected virtual void OnBestChromosomeChanged(EventArgs args)
-        {
-            BestChromosomeChanged?.Invoke(this, args);
         }
 
         #endregion
