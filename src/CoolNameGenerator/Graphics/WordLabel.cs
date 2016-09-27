@@ -9,8 +9,24 @@ namespace CoolNameGenerator.Graphics
 {
     public sealed class WordLabel : RichTextBox
     {
-        private readonly ToolTip _toolTip;
 
+        private readonly ToolTip _toolTip;
+        public override string Text
+        {
+            get { return base.Text; }
+            set
+            {
+                this.InvokeIfRequired(() =>
+                {
+                    base.Text = value;
+                    ZoomFactor = TextLength < 11 ? 2 : 1;
+                });
+            }
+        }
+        public double Fitness { get; set; }
+
+
+        #region Constructors
 
         public WordLabel(WordChromosome word) : this(word.ToString(), word.Fitness ?? 0)
         {
@@ -25,6 +41,7 @@ namespace CoolNameGenerator.Graphics
         public WordLabel(string text) : this()
         {
             Text = text;
+            Size = TextLength < 11? new Size(180, 30): new Size(180, 50);
         }
 
         public WordLabel()
@@ -43,23 +60,20 @@ namespace CoolNameGenerator.Graphics
             // 
             AutoSize = false;
             BorderStyle = BorderStyle.None;
-            Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Pixel, 0); // new Font("Lucinda Console", 5F); //
             Size = new Size(180, 50);
             Text = "Word";
             Padding = new Padding(10);
             ReadOnly = true;
             WordWrap = true;
             BackColor = Color.WhiteSmoke;
+            AutoWordSelection = true;
+            DetectUrls = false;
         }
 
-        public override string Text
-        {
-            get { return base.Text; }
-            set { this.InvokeIfRequired(() => base.Text = value); }
-        }
+        #endregion
 
-        public double Fitness { get; set; }
-
+        #region Methods
 
         private void SetTooltip(WordChromosome chromosome)
         {
@@ -99,16 +113,21 @@ namespace CoolNameGenerator.Graphics
 
             this.InvokeIfRequired(() =>
             {
-                Select(0, Text.Length);
-                SelectionBackColor = Color.WhiteSmoke;
+                SelectAll();
+                SelectionColor = ForeColor;
                 foreach (var matchedWord in word.EvaluateInfo.MatchedUniqueWords)
                 {
+                    //SelectedText = matchedWord.Item1;
                     var indexOfWord = wordText.IndexOf(matchedWord.Item1, StringComparison.Ordinal);
                     Select(indexOfWord, matchedWord.Item1.Length);
 
-                    SelectionBackColor = matchedWord.Item1.ToColor();
+                    SelectionColor = matchedWord.Item1.ToColor();
                 }
             });
         }
+
+        #endregion
+
     }
 }
+

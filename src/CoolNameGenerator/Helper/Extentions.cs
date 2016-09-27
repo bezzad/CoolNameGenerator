@@ -26,9 +26,9 @@ namespace CoolNameGenerator.Helper
         {
             var result = new T[chunkCount][];
             var arrRemainLen = array.Length;
-            var chunkFloatSize = (double) arrRemainLen/chunkCount;
+            var chunkFloatSize = (double)arrRemainLen / chunkCount;
             if (chunkFloatSize < 1 && chunkFloatSize > 0) chunkFloatSize = 1;
-            var chunkSize = (int) Math.Round(chunkFloatSize);
+            var chunkSize = (int)Math.Round(chunkFloatSize);
 
             // product some arrays[] with chunkCount number
             for (int cc = 0, srcIndex = 0; cc < chunkCount; cc++, srcIndex += chunkSize, arrRemainLen -= chunkSize)
@@ -57,18 +57,17 @@ namespace CoolNameGenerator.Helper
 
         public static T Index<T>(this HashSet<T> hashSet, T containObj) where T : IEquatable<T>
         {
-            return hashSet.First(x => ((IEquatable<T>) x).Equals(containObj));
+            return hashSet.First(x => ((IEquatable<T>)x).Equals(containObj));
         }
 
 
-        public static Color ToColor(this string text, bool isLigth = true)
+        public static Color ToColor(this string text, byte minRgb = 50, byte maxRgb = 50)
         {
-            var minByte = 70;
             var md5 = MD5.Create();
             var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(text));
-            var r = isLigth & hash[0] < minByte ? hash[0] + minByte : hash[0];
-            var g = isLigth & hash[1] < minByte ? hash[1] + minByte : hash[1];
-            var b = isLigth & hash[2] < minByte ? hash[2] + minByte : hash[2];
+            var r = hash[0] < minRgb ? hash[0] + minRgb : hash[0] > maxRgb ? hash[0] - maxRgb : hash[0];
+            var g = hash[1] < minRgb ? hash[1] + minRgb : hash[1] > maxRgb ? hash[1] - maxRgb : hash[1];
+            var b = hash[2] < minRgb ? hash[2] + minRgb : hash[2] > maxRgb ? hash[2] - maxRgb : hash[2];
             return Color.FromArgb(r, g, b);
         }
     }
