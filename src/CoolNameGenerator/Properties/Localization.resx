@@ -297,4 +297,10 @@
   <data name="NoMatchScore" xml:space="preserve">
     <value>No Match Score</value>
   </data>
+  <data name="Probability" xml:space="preserve">
+    <value>Probability</value>
+  </data>
+  <data name="Percent" xml:space="preserve">
+    <value>Percent</value>
+  </data>
 </root>

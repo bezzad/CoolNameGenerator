@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoolNameGenerator.GA;
 using CoolNameGenerator.GA.Chromosomes;
+using CoolNameGenerator.GA.Crossovers;
+using CoolNameGenerator.GA.Mutations;
 using CoolNameGenerator.GA.Populations;
+using CoolNameGenerator.GA.Selections;
 using CoolNameGenerator.GeneticWordProcessing;
 using CoolNameGenerator.Graphics;
 using CoolNameGenerator.Helper;
@@ -30,7 +33,7 @@ namespace CoolNameGenerator.Forms
             {
                 btnStart.Text = Localization.Stop;
 
-                wpResults.SetWordsCount((int) numPopulationSize.Value);
+                wpResults.SetWordsCount((int)numPopulationSize.Value);
                 SetOnDoubleClickForWordsToAddInGrid(wpResults);
 
                 Run();
@@ -54,20 +57,20 @@ namespace CoolNameGenerator.Forms
             {
                 try
                 {
-                    var pop = (int) numPopulationSize.Value;
+                    var pop = (int)numPopulationSize.Value;
                     var ctrl =
                         new WordGaController(
                             () =>
-                                new WordChromosome((int) numWordLen.Value, chkHasNumeric.Checked, chkHasHyphen.Checked));
+                                new WordChromosome((int)numWordLen.Value, chkHasNumeric.Checked, chkHasHyphen.Checked));
                     ctrl.LoadWordFiles(GetWordsDictionaries().ToList(), null);
-                    ctrl.CrossoverProbability = (float) numCrossoverProbability.Value/100;
-                    ctrl.MutationProbability = (float) numMutationProbability.Value/100;
-                    ctrl.EliteSelectionNumber = (int) numEliteSelection.Value*pop/100;
-                    ctrl.GenerationsNumber = (int) numGenerationKeepingNumber.Value;
-                    ctrl.MinimumThread = (int) numMinimumThread.Value;
-                    ctrl.MaximumThread = (int) numMaximumThread.Value;
-                    ctrl.FitnessThresholdTermination = (double) numFitnessThresholdTermination.Value;
-                    ctrl.TimeEvolvingTermination = TimeSpan.FromMinutes((int) numTimeEvolvingTermination.Value);
+                    ctrl.CrossoverProbability = (float)numCrossoverProbability.Value / 100;
+                    ctrl.MutationProbability = (float)numMutationProbability.Value / 100;
+                    ctrl.EliteSelectionNumber = (int)numEliteSelection.Value * pop / 100;
+                    ctrl.GenerationsNumber = (int)numGenerationKeepingNumber.Value;
+                    ctrl.MinimumThread = (int)numMinimumThread.Value;
+                    ctrl.MaximumThread = (int)numMaximumThread.Value;
+                    ctrl.FitnessThresholdTermination = (double)numFitnessThresholdTermination.Value;
+                    ctrl.TimeEvolvingTermination = TimeSpan.FromMinutes((int)numTimeEvolvingTermination.Value);
 
                     var population = new Population(pop, pop + 1000, ctrl.CreateChromosome(),
                         new PerformanceGenerationStrategy(ctrl.GenerationsNumber));
@@ -80,7 +83,7 @@ namespace CoolNameGenerator.Forms
                         var bestChromosome = _ga.Population.BestChromosome;
                         lblFitness.InvokeIfRequired(() => lblFitness.Text = bestChromosome.Fitness.ToString());
                         bestChromosomeWord.InvokeIfRequired(
-                            () => bestChromosomeWord.SetChromosome((WordChromosome) bestChromosome));
+                            () => bestChromosomeWord.SetChromosome((WordChromosome)bestChromosome));
                         AddBestChromosomes(bestChromosome);
                         lblGeneration.InvokeIfRequired(
                             () => lblGeneration.Text = _ga.Population.GenerationsNumber.ToString());
@@ -118,7 +121,7 @@ namespace CoolNameGenerator.Forms
         {
             if (bestChromosome.GetType() != typeof(WordChromosome)) return;
 
-            var ch = (WordChromosome) bestChromosome;
+            var ch = (WordChromosome)bestChromosome;
 
             AddBestChromosomes(ch.ToString(), ch.Fitness);
         }
@@ -147,42 +150,63 @@ namespace CoolNameGenerator.Forms
         protected override async void LoadCompleted(object sender, EventArgs e)
         {
             base.LoadCompleted(sender, e);
+            try
+            {
+                Cursor = Cursors.WaitCursor;
 
-            var englishWordsDic = new WordsDictionary();
-            await englishWordsDic.LoadData(FileExtensions.GetResourcePath("EnglishWords", "txt"));
-            englishWordsDic.DuplicateMatchingFitness = -4;
-            englishWordsDic.MatchingFitness = 6;
-            englishWordsDic.NoMatchingFitness = -1;
-            AddWordsDic(englishWordsDic);
+                cbCrossover.DisplayMember = "Name";
+                cbMutation.DisplayMember = "Name";
+                cbSelection.DisplayMember = "Name";
+                cbCrossover.DataSource = typeof(CrossoverBase).GetSubClassesType().ToList();
+                cbMutation.DataSource = typeof(MutationBase).GetSubClassesType().ToList();
+                cbSelection.DataSource = typeof(SelectionBase).GetSubClassesType().ToList();
+                cbCrossover.SelectedItem = typeof(UniformCrossover);
+                cbMutation.SelectedItem = typeof(UniformMutation);
+                cbSelection.SelectedItem = typeof(EliteSelection);
 
-            var englishNamesDic = new WordsDictionary();
-            await englishNamesDic.LoadData(FileExtensions.GetResourcePath("EnglishNames", "txt"));
-            englishNamesDic.DuplicateMatchingFitness = -20;
-            englishNamesDic.MatchingFitness = 4;
-            englishNamesDic.NoMatchingFitness = 0;
-            AddWordsDic(englishNamesDic);
+                var englishWordsDic = new WordsDictionary();
+                await englishWordsDic.LoadData(FileExtensions.GetResourcePath("EnglishWords", "txt"));
+                englishWordsDic.DuplicateMatchingFitness = -4;
+                englishWordsDic.MatchingFitness = 6;
+                englishWordsDic.NoMatchingFitness = -1;
+                AddWordsDic(englishWordsDic);
 
-            var finglishNamesDic = new WordsDictionary();
-            await finglishNamesDic.LoadData(FileExtensions.GetResourcePath("FinglishNames", "txt"));
-            finglishNamesDic.DuplicateMatchingFitness = -4;
-            finglishNamesDic.MatchingFitness = 10;
-            finglishNamesDic.NoMatchingFitness = -2;
-            AddWordsDic(finglishNamesDic);
+                var englishNamesDic = new WordsDictionary();
+                await englishNamesDic.LoadData(FileExtensions.GetResourcePath("EnglishNames", "txt"));
+                englishNamesDic.DuplicateMatchingFitness = -20;
+                englishNamesDic.MatchingFitness = 4;
+                englishNamesDic.NoMatchingFitness = 0;
+                AddWordsDic(englishNamesDic);
 
-
-            var finglishWordsDic = new WordsDictionary();
-            await finglishWordsDic.LoadData(FileExtensions.GetResourcePath("FinglishWords", "txt"));
-            finglishWordsDic.DuplicateMatchingFitness = -10;
-            finglishWordsDic.MatchingFitness = 4;
-            finglishWordsDic.NoMatchingFitness = 0;
-            AddWordsDic(finglishWordsDic);
+                var finglishNamesDic = new WordsDictionary();
+                await finglishNamesDic.LoadData(FileExtensions.GetResourcePath("FinglishNames", "txt"));
+                finglishNamesDic.DuplicateMatchingFitness = -4;
+                finglishNamesDic.MatchingFitness = 10;
+                finglishNamesDic.NoMatchingFitness = -2;
+                AddWordsDic(finglishNamesDic);
+                
+                var finglishWordsDic = new WordsDictionary();
+                await finglishWordsDic.LoadData(FileExtensions.GetResourcePath("FinglishWords", "txt"));
+                finglishWordsDic.DuplicateMatchingFitness = -10;
+                finglishWordsDic.MatchingFitness = 4;
+                finglishWordsDic.NoMatchingFitness = 0;
+                AddWordsDic(finglishWordsDic);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
         }
 
         private IEnumerable<UniqueWords> GetWordsDictionaries()
         {
             return from object ctrl in panelExtraWordsDic.Controls
-                where ctrl.GetType() == typeof(WordsDictionary) && ((WordsDictionary) ctrl).Enabled
-                select ((WordsDictionary) ctrl).Words;
+                   where ctrl.GetType() == typeof(WordsDictionary) && ((WordsDictionary)ctrl).Enabled
+                   select ((WordsDictionary)ctrl).Words;
         }
 
         private void SetOnDoubleClickForWordsToAddInGrid(WordsPanel wp)

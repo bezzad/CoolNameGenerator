@@ -430,6 +430,15 @@ namespace CoolNameGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Percent.
+        /// </summary>
+        public static string Percent {
+            get {
+                return ResourceManager.GetString("Percent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Persian Name.
         /// </summary>
         public static string PersianName {
@@ -453,6 +462,15 @@ namespace CoolNameGenerator.Properties {
         public static string PopulationSize {
             get {
                 return ResourceManager.GetString("PopulationSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Probability.
+        /// </summary>
+        public static string Probability {
+            get {
+                return ResourceManager.GetString("Probability", resourceCulture);
             }
         }
         

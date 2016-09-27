@@ -70,5 +70,14 @@ namespace CoolNameGenerator.Helper
             var b = hash[2] < minRgb ? hash[2] + minRgb : hash[2] > maxRgb ? hash[2] - maxRgb : hash[2];
             return Color.FromArgb(r, g, b);
         }
+
+        public static IEnumerable<Type> GetSubClassesType(this Type baseClass)
+        {
+            var types = AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(assembly => assembly.GetTypes())
+                .Where(t => t.IsSubclassOf(baseClass) && !t.IsAbstract);
+
+            return types;
+        }
     }
 }
