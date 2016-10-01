@@ -14,22 +14,18 @@ namespace CoolNameGenerator.GeneticWordProcessing
 {
     public class WordGaController : GeneticControllerBase
     {
+        #region Properties
+
         public static volatile IList<UniqueWords> WordsDic;
 
-        public WordGaController(Func<IChromosome> chromosomeFactory)
-        {
-            ChromosomeFactory = chromosomeFactory;
-        }
+        public Func<IChromosome> ChromosomeFactory { get; set; }
 
-        public WordGaController()
-        {
-            ChromosomeFactory = () => new WordChromosome();
-        }
+        public Action<IChromosome> DrawAction { get; set; }
 
         /// <summary>
-        ///     Gets or sets the mutation probability.
+        /// Gets or sets the crossover pointer.
         /// </summary>
-        public float MutationProbability { get; set; } = 0.5f;
+        public ICrossover CrossoverPointer { get; set; }
 
         /// <summary>
         ///     Gets or sets the crossover probability.
@@ -37,9 +33,29 @@ namespace CoolNameGenerator.GeneticWordProcessing
         public float CrossoverProbability { get; set; } = 0.7f;
 
         /// <summary>
+        /// Gets or sets the mutation pointer.
+        /// </summary>
+        public IMutation MutationPointer { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the mutation probability.
+        /// </summary>
+        public float MutationProbability { get; set; } = 0.5f;
+
+        /// <summary>
+        /// Gets or sets the selection pointer.
+        /// </summary>
+        public ISelection SelectionPointer { get; set; }
+
+        /// <summary>
         ///     Minimum number chromosomes support to be selected.
         /// </summary>
         public int EliteSelectionNumber { get; set; } = 30;
+
+        /// <summary>
+        /// Gets or sets the minimum size of the population.
+        /// </summary>
+        public int MinimumPopulationSize { get; set; }
 
         /// <summary>
         ///     The number of generations to keep in the population
@@ -69,8 +85,23 @@ namespace CoolNameGenerator.GeneticWordProcessing
         /// </summary>
         public int MaximumThread { get; set; } = 50;
 
-        public Func<IChromosome> ChromosomeFactory { get; set; }
-        public Action<IChromosome> DrawAction { get; set; }
+        #endregion
+
+        #region Constructors
+
+        public WordGaController(Func<IChromosome> chromosomeFactory)
+        {
+            ChromosomeFactory = chromosomeFactory;
+        }
+
+        public WordGaController()
+        {
+            ChromosomeFactory = () => new WordChromosome();
+        }
+
+        #endregion
+
+        #region Methods
 
         public override void ConfigGa(GeneticAlgorithm ga)
         {
@@ -116,8 +147,7 @@ namespace CoolNameGenerator.GeneticWordProcessing
             DrawAction?.Invoke(bestChromosome);
         }
 
-        public void LoadWordFiles(IList<UniqueWords> dics,
-            Func<double, double> applyOnSubWordsSumCoverageablityValueFunc)
+        public void LoadWordFiles(IList<UniqueWords> dics, Func<double, double> applyOnSubWordsSumCoverageablityValueFunc)
         {
             UniqueWords.ApplySubWordsCoverageValueFunc = applyOnSubWordsSumCoverageablityValueFunc ?? Math.Log;
 
@@ -133,17 +163,20 @@ namespace CoolNameGenerator.GeneticWordProcessing
 
         public override ICrossover CreateCrossover()
         {
-            return new UniformCrossover();
+            return CrossoverPointer ?? new UniformCrossover();
         }
 
         public override IMutation CreateMutation()
         {
-            return new UniformMutation(true);
+            return MutationPointer ?? new UniformMutation(true);
         }
 
         public override ISelection CreateSelection()
         {
-            return new EliteSelection(EliteSelectionNumber);
+            return SelectionPointer ?? new EliteSelection(EliteSelectionNumber);
         }
+
+        #endregion
+
     }
 }

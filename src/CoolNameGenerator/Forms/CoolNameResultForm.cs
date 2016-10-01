@@ -27,21 +27,30 @@ namespace CoolNameGenerator.Forms
             InitializeComponent();
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private async void btnStart_Click(object sender, EventArgs e)
         {
-            if (btnStart.Text == Localization.Start)
+            try
             {
-                btnStart.Text = Localization.Stop;
+                if (btnStart.Text == Localization.Start)
+                {
+                    btnStart.Text = Localization.Stop;
 
-                wpResults.SetWordsCount((int)numPopulationSize.Value);
-                SetOnDoubleClickForWordsToAddInGrid(wpResults);
+                    wpResults.SetWordsCount((int)numPopulationSize.Value);
+                    SetOnDoubleClickForWordsToAddInGrid(wpResults);
 
-                Run();
+                    await Run();
+                }
+                else
+                {
+                    btnStart.Text = Localization.Start;
+                    _ga?.Stop();
+                }
             }
-            else
+            catch (Exception ex)
             {
                 btnStart.Text = Localization.Start;
                 _ga?.Stop();
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -51,56 +60,33 @@ namespace CoolNameGenerator.Forms
         }
 
 
-        private async void Run()
+        private async Task Run()
         {
             await Task.Run(() =>
             {
-                try
+                var ctrl = GetGaController();
+                var population = new Population(ctrl.MinimumPopulationSize, ctrl.MinimumPopulationSize + 1000,
+                    ctrl.CreateChromosome(), new PerformanceGenerationStrategy(ctrl.GenerationsNumber));
+
+                _ga = new GeneticAlgorithm(population, ctrl.CreateFitness(), ctrl.CreateSelection(),
+                    ctrl.CreateCrossover(), ctrl.CreateMutation(), ctrl.CreateTermination());
+
+                _ga.GenerationRan += delegate
                 {
-                    var pop = (int)numPopulationSize.Value;
-                    var ctrl =
-                        new WordGaController(
-                            () =>
-                                new WordChromosome((int)numWordLen.Value, chkHasNumeric.Checked, chkHasHyphen.Checked));
-                    ctrl.LoadWordFiles(GetWordsDictionaries().ToList(), null);
-                    ctrl.CrossoverProbability = (float)numCrossoverProbability.Value / 100;
-                    ctrl.MutationProbability = (float)numMutationProbability.Value / 100;
-                    ctrl.EliteSelectionNumber = (int)numEliteSelection.Value * pop / 100;
-                    ctrl.GenerationsNumber = (int)numGenerationKeepingNumber.Value;
-                    ctrl.MinimumThread = (int)numMinimumThread.Value;
-                    ctrl.MaximumThread = (int)numMaximumThread.Value;
-                    ctrl.FitnessThresholdTermination = (double)numFitnessThresholdTermination.Value;
-                    ctrl.TimeEvolvingTermination = TimeSpan.FromMinutes((int)numTimeEvolvingTermination.Value);
+                    var bestChromosome = _ga.Population.BestChromosome;
+                    lblFitness.InvokeIfRequired(() => lblFitness.Text = bestChromosome.Fitness.ToString());
+                    bestChromosomeWord.InvokeIfRequired(() => bestChromosomeWord.SetChromosome((WordChromosome)bestChromosome));
+                    AddBestChromosomes(bestChromosome);
+                    lblGeneration.InvokeIfRequired(() => lblGeneration.Text = _ga.Population.GenerationsNumber.ToString());
+                    lblTimeEvolving.InvokeIfRequired(() => lblTimeEvolving.Text = _ga.TimeEvolving.ToString());
+                    ctrl.Draw(bestChromosome);
+                    DrawChromosomes(_ga.Population.CurrentGeneration.Chromosomes);
+                };
 
-                    var population = new Population(pop, pop + 1000, ctrl.CreateChromosome(),
-                        new PerformanceGenerationStrategy(ctrl.GenerationsNumber));
+                _ga.TerminationReached += GaTerminationReached;
 
-                    _ga = new GeneticAlgorithm(population, ctrl.CreateFitness(), ctrl.CreateSelection(),
-                        ctrl.CreateCrossover(), ctrl.CreateMutation(), ctrl.CreateTermination());
-
-                    _ga.GenerationRan += delegate
-                    {
-                        var bestChromosome = _ga.Population.BestChromosome;
-                        lblFitness.InvokeIfRequired(() => lblFitness.Text = bestChromosome.Fitness.ToString());
-                        bestChromosomeWord.InvokeIfRequired(
-                            () => bestChromosomeWord.SetChromosome((WordChromosome)bestChromosome));
-                        AddBestChromosomes(bestChromosome);
-                        lblGeneration.InvokeIfRequired(
-                            () => lblGeneration.Text = _ga.Population.GenerationsNumber.ToString());
-                        lblTimeEvolving.InvokeIfRequired(() => lblTimeEvolving.Text = _ga.TimeEvolving.ToString());
-                        ctrl.Draw(bestChromosome);
-                        DrawChromosomes(_ga.Population.CurrentGeneration.Chromosomes);
-                    };
-
-                    _ga.TerminationReached += GaTerminationReached;
-
-                    ctrl.ConfigGa(_ga);
-                    _ga.Start();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                ctrl.ConfigGa(_ga);
+                _ga.Start();
             });
         }
 
@@ -184,7 +170,7 @@ namespace CoolNameGenerator.Forms
                 finglishNamesDic.MatchingFitness = 10;
                 finglishNamesDic.NoMatchingFitness = -2;
                 AddWordsDic(finglishNamesDic);
-                
+
                 var finglishWordsDic = new WordsDictionary();
                 await finglishWordsDic.LoadData(FileExtensions.GetResourcePath("FinglishWords", "txt"));
                 finglishWordsDic.DuplicateMatchingFitness = -10;
@@ -219,6 +205,33 @@ namespace CoolNameGenerator.Forms
                     AddBestChromosomes(word?.Text, word?.Fitness);
                 };
             }
+        }
+
+        private WordGaController GetGaController()
+        {
+            var ctrl =
+                new WordGaController(() => new WordChromosome((int)numWordLen.Value, chkHasNumeric.Checked, chkHasHyphen.Checked))
+                {
+                    MinimumPopulationSize = (int)numPopulationSize.Value,
+                    CrossoverProbability = (float)numCrossoverProbability.Value / 100,
+                    MutationProbability = (float)numMutationProbability.Value / 100,
+                    GenerationsNumber = (int)numGenerationKeepingNumber.Value,
+                    MinimumThread = (int)numMinimumThread.Value,
+                    MaximumThread = (int)numMaximumThread.Value,
+                    FitnessThresholdTermination = (double)numFitnessThresholdTermination.Value,
+                    TimeEvolvingTermination = TimeSpan.FromMinutes((int)numTimeEvolvingTermination.Value)
+                };
+            ctrl.EliteSelectionNumber = (int)numEliteSelection.Value * ctrl.MinimumPopulationSize / 100;
+            ctrl.LoadWordFiles(GetWordsDictionaries().ToList(), null);
+            cbCrossover.InvokeIfRequired(() => ctrl.CrossoverPointer = (ICrossover)Activator.CreateInstance((Type)cbCrossover.SelectedItem));
+            cbMutation.InvokeIfRequired(() => ctrl.MutationPointer = (IMutation)Activator.CreateInstance((Type)cbMutation.SelectedItem));
+            cbSelection.InvokeIfRequired(() => ctrl.SelectionPointer =
+                    (Type)cbSelection.SelectedItem == typeof(EliteSelection)
+                    ? (ISelection)Activator.CreateInstance((Type)cbSelection.SelectedItem, ctrl.EliteSelectionNumber)
+                    : (ISelection)Activator.CreateInstance((Type)cbSelection.SelectedItem));
+
+
+            return ctrl;
         }
     }
 }
